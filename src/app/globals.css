@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+/*
+  Videflo brand theme.
+  Everything visual is derived from the tokens below — change a value here and it
+  propagates across every page. Do not hard-code hex values in components.
+*/
+@theme {
+  /* ---- Surfaces ------------------------------------------------------ */
+  --color-paper: #fcfaf6; /* soft off-white — default page surface */
+  --color-cream: #f7f2e8; /* warm cream — alternating bands */
+  --color-shell: #f1e9d8; /* deeper cream — quiet emphasis */
+  --color-ink: #1b1a18; /* deep charcoal — text + dark sections */
+  --color-ink-raised: #26241f; /* raised surface on charcoal */
+
+  /* ---- Text ---------------------------------------------------------- */
+  --color-ink-soft: #38352f; /* secondary headings on light */
+  --color-ink-muted: #5b5347; /* body copy on light (AA on cream) */
+  --color-ink-faint: #6f6759; /* meta / captions on light (AA on cream) */
+  --color-cream-muted: #cdc6b8; /* body copy on charcoal */
+  --color-cream-faint: #a29a88; /* meta / captions on charcoal */
+
+  /* ---- Accents ------------------------------------------------------- */
+  --color-gold: #e6b85c; /* warm yellow — accents on dark only */
+  --color-gold-soft: #f0d29a;
+  --color-gold-deep: #8a5f18; /* gold-family text on light (AA, 5.0:1) */
+  /*
+    The wordmark's "flo" on light surfaces — the app's own `accentDeep`, the dark
+    end of its gold gradient.
+
+    This is a logotype, which WCAG 1.4.3 explicitly exempts from contrast
+    requirements, and nothing depends on reading it: the link's accessible name is
+    "Videflo — home". That exemption is what lets the mark stay actually gold. Any
+    value dark enough to pass as body text (#a6741c, #8a5f18) turns visibly brown
+    on cream and stops reading as the brand colour at all.
+
+    Kept separate from `gold-deep`, which body links use and which does need the
+    full 4.5:1. Do not merge the two.
+  */
+  --color-gold-mark: #c9974a;
+  --color-rec: #c0563c; /* restrained warm recording red */
+
+  /* ---- Lines --------------------------------------------------------- */
+  --color-line: #e3dbc9; /* hairline on light */
+  --color-line-strong: #d3c9b2;
+  --color-line-dark: #35322c; /* hairline on charcoal */
+
+  /* ---- Type ---------------------------------------------------------- */
+  --font-display:
+    var(--font-fraunces), ui-serif, Georgia, "Times New Roman", serif;
+  --font-sans:
+    var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+
+  /* Fluid display scale. Lower bounds are tuned for a 320px viewport. */
+  --text-display-xl: clamp(2.375rem, 7.2vw, 5rem);
+  --text-display-xl--line-height: 1.04;
+  --text-display-xl--letter-spacing: -0.022em;
+
+  --text-display-lg: clamp(2rem, 5.2vw, 3.5rem);
+  --text-display-lg--line-height: 1.08;
+  --text-display-lg--letter-spacing: -0.018em;
+
+  --text-display-md: clamp(1.625rem, 3.6vw, 2.5rem);
+  --text-display-md--line-height: 1.15;
+  --text-display-md--letter-spacing: -0.014em;
+
+  --text-display-sm: clamp(1.3125rem, 2.4vw, 1.75rem);
+  --text-display-sm--line-height: 1.25;
+  --text-display-sm--letter-spacing: -0.01em;
+
+  --text-lead: clamp(1.0625rem, 1.5vw, 1.3125rem);
+  --text-lead--line-height: 1.6;
+
+  /* ---- Shadows (soft, never heavy) ---------------------------------- */
+  --shadow-soft:
+    0 1px 2px rgb(27 26 24 / 0.04), 0 12px 28px -12px rgb(27 26 24 / 0.14);
+  --shadow-lift:
+    0 2px 4px rgb(27 26 24 / 0.05), 0 28px 60px -24px rgb(27 26 24 / 0.24);
+}
+
+@layer base {
+  html {
+    /* Sticky header height + breathing room for in-page anchors. */
+    scroll-padding-top: 6rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Visible, high-contrast focus on every interactive element. */
+  :focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+
+  /* Dark sections invert the focus ring so it stays visible. */
+  .on-dark :focus-visible {
+    outline-color: var(--color-gold);
+  }
+
+  ::selection {
+    background-color: color-mix(in srgb, var(--color-gold) 45%, transparent);
+    color: var(--color-ink);
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  /* Long emails / URLs in legal + support copy must never widen the page. */
+  a[href^="mailto:"],
+  a[href^="http"] {
+    overflow-wrap: break-word;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/*
+  Scroll-reveal.
+
+  Gated behind `scripting: enabled` so that if JavaScript never runs the hidden
+  state is never applied and all content renders normally. Browsers without
+  support for the `scripting` media feature simply skip the animation.
+*/
+@media (prefers-reduced-motion: no-preference) and (scripting: enabled) {
+  [data-reveal] {
+    opacity: 0;
+    transform: translate3d(0, 1.25rem, 0);
+  }
+
+  [data-reveal][data-visible="true"] {
+    opacity: 1;
+    transform: none;
+    transition:
+      opacity 700ms ease-out,
+      transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+}
+
+/*
+  Fine film grain. Used sparingly over dark surfaces and the Tape frames so they
+  read as home-video stills rather than flat gradients.
+*/
+@utility grain-layer {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
