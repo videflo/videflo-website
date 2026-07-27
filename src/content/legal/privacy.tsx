@@ -6,9 +6,17 @@
  *  This document is a carefully written starting point, not legal advice, and it
  *  has not been reviewed by a lawyer. Before videflo.com goes live:
  *
- *    1. Have counsel review the whole document for the jurisdictions Videflo
- *       will be offered in (note GDPR / UK GDPR / CCPA-CPRA obligations, and
- *       Apple's own App Store privacy requirements).
+ *    1. Have counsel review the whole document for the launch markets, which are
+ *       set in `availability.launchMarkets` in the site config: the United
+ *       States (CCPA/CPRA and other state laws), Canada (PIPEDA), Australia
+ *       (Privacy Act 1988 / APPs) and New Zealand (Privacy Act 2020) — plus
+ *       Apple's own App Store privacy requirements.
+ *
+ *       Videflo is deliberately NOT sold in the EEA or the UK at launch, so the
+ *       GDPR is addressed but not relied on. Before adding any European market,
+ *       re-read "International users and transfers": an EU Article 27
+ *       representative and a UK representative may have to be APPOINTED, which
+ *       is an action, not a wording change.
  *    2. Replace every `<Placeholder>` value — they render visibly on the page.
  *    3. Confirm the factual claims against the shipping build. In particular the
  *       "Diagnostics and analytics" section asserts what the app does and does
@@ -35,7 +43,8 @@ import {
   Placeholder,
   UL,
 } from "@/components/legal/prose";
-import { contact, legal, site } from "@/config/site";
+import { availability, contact, legal, site } from "@/config/site";
+import { formatList } from "@/lib/format";
 
 export const privacySections: readonly LegalSection[] = [
   {
@@ -44,9 +53,10 @@ export const privacySections: readonly LegalSection[] = [
     content: (
       <>
         <P>
-          This Privacy Policy explains how {legal.entityName} (“{site.name}”,
-          “we”, “us”) handles information in connection with the {site.name}{" "}
-          iPhone app and this website.
+          This Privacy Policy explains how {legal.entityName},{" "}
+          {legal.entityDescription} (“{site.name}”, “we”, “us”), handles
+          information in connection with the {site.name} iPhone app and this
+          website. It applies wherever you use {site.name}.
         </P>
         <P>
           {site.name} is built to be local-first. The videos you record are
@@ -384,12 +394,22 @@ export const privacySections: readonly LegalSection[] = [
           way as any other recording, and are not sent to us.
         </P>
         <P>
+          The age at which someone can consent to an online service on their own
+          varies between our launch markets — it is 13 in the{" "}
+          {legal.governingCountry} under COPPA, while Canada, Australia, and New
+          Zealand judge it by whether the young person can understand what they
+          are agreeing to. Where a parent or guardian’s consent is required,
+          they must be the one to accept our{" "}
+          <A href="/terms">Terms of Service</A> and to supervise use of the app.
+        </P>
+        <P>
           If you believe a child has provided us with personal information,
           please contact <Mail address={contact.privacyEmail} /> so we can
           delete it.{" "}
           <Placeholder>
-            Owner to confirm the minimum age stated here matches the App Store
-            age rating and the Terms of Service.
+            Owner to confirm the minimum age matches the App Store age rating
+            and the Terms of Service, and counsel to confirm the position for
+            each market Videflo is offered in.
           </Placeholder>
         </P>
       </>
@@ -417,23 +437,135 @@ export const privacySections: readonly LegalSection[] = [
   },
   {
     id: "international",
-    heading: "International users",
+    heading: "International users and transfers",
     content: (
       <>
         <P>
-          {site.name} is operated from {legal.governingCountry}. If you use{" "}
-          {site.name} from another country, any information we do process may be
-          transferred to and handled in {legal.governingCountry} or in other
-          countries where our service providers operate, which may have
-          different data protection laws than your own.
+          {site.name} is operated from {legal.governingState},{" "}
+          {legal.governingCountry}. It is currently offered through the App
+          Store in {formatList(availability.launchMarkets)}. We expect to add
+          more countries over time, and will update this policy when we do.
+        </P>
+        <P>
+          If you use {site.name} from outside the {legal.governingCountry}, the
+          limited information we do process — a support email, a subscription
+          status relayed by Apple — is transferred to and handled in the{" "}
+          {legal.governingCountry}, and in other countries where our service
+          providers operate. Those countries may have data protection laws that
+          differ from your own. Where the law of your country requires it, we
+          take reasonable steps to see that the information stays protected to a
+          comparable standard — including under Australian Privacy Principle 8
+          and Information Privacy Principle 12 of New Zealand’s Privacy Act
+          2020.
+        </P>
+        <Callout title="Your recordings are not part of any transfer">
+          <p>
+            This section is about the small amount of information we handle, not
+            about your Tapes. Your recordings stay on your device, are never
+            uploaded to us, and therefore never cross a border because of{" "}
+            {site.name}.
+          </p>
+        </Callout>
+        <H3>Europe and the United Kingdom</H3>
+        <P>
+          {site.name} is not currently offered in the European Economic Area or
+          the United Kingdom, and we do not target users there. If you write to
+          us from those regions we will still handle your message carefully and
+          honour the rights described below, but the app is not sold in your
+          country yet.
         </P>
         <P>
           <Placeholder>
-            Owner and counsel to confirm the transfer mechanism and any
-            additional disclosures required for EU, UK, and other regions before
-            launch.
+            Before adding any EEA or UK country in App Store Connect: confirm
+            whether GDPR Article 27 requires an EU representative to be
+            appointed and the UK GDPR a UK representative, and confirm the
+            transfer mechanism you rely on. If they apply, a person or firm must
+            actually be appointed and named here — it is not a wording change.
+            Set <code>availability.offeredInEeaUk</code> to true in the site
+            config at the same time.
           </Placeholder>
         </P>
+      </>
+    ),
+  },
+  {
+    id: "regional-rights",
+    heading: "Regional privacy rights",
+    content: (
+      <>
+        <P>
+          Some of the rights below may not apply to you, and some may go further
+          than the law of your country requires. We would rather offer them to
+          everyone than make you prove where you live.
+        </P>
+
+        <H3>The United States</H3>
+        <P>
+          If you are in California, you may request to know, delete, or correct
+          personal information we hold, and you may not be discriminated against
+          for exercising those rights. We do not sell your personal information,
+          and we do not share it for cross-context behavioural advertising, as
+          those terms are defined by the CCPA as amended by the CPRA.
+        </P>
+        <P>
+          A growing number of other states — including {legal.governingState},
+          where {site.name} is registered — give residents comparable rights to
+          access, correct, delete, and obtain a copy of their personal
+          information. Write to us and we will honour them.
+        </P>
+
+        <H3>Canada</H3>
+        <P>
+          Under PIPEDA you may ask what personal information we hold about you,
+          ask us to correct it, and challenge how we have handled it. If you are
+          not satisfied with our response, you may complain to the Office of the
+          Privacy Commissioner of Canada.
+        </P>
+
+        <H3>Australia</H3>
+        <P>
+          Under the Privacy Act 1988 and the Australian Privacy Principles you
+          may request access to the personal information we hold about you and
+          ask us to correct it. If you believe we have mishandled it, you may
+          complain to us first, and then to the Office of the Australian
+          Information Commissioner if you are not satisfied.
+        </P>
+
+        <H3>New Zealand</H3>
+        <P>
+          Under the Privacy Act 2020 you have the right to access the personal
+          information we hold about you and to request correction. Complaints
+          can be made to the Office of the Privacy Commissioner.
+        </P>
+
+        <H3>Everywhere else</H3>
+        <P>
+          Other countries and states grant similar rights. Write to{" "}
+          <Mail address={contact.privacyEmail} /> and we will handle your
+          request as the law that applies to you requires. We will not charge
+          you for it except where the law allows, and we may need to verify your
+          identity before acting.
+        </P>
+        <P>
+          Where the GDPR or UK GDPR applies to you, {legal.entityName} is the
+          controller of the limited personal information described in this
+          policy, and our lawful bases are: performing our agreement with you
+          (providing the app and answering support requests); our legitimate
+          interests (keeping the app secure and working); your consent (the
+          device permissions you grant in iOS); and compliance with legal
+          obligations. As noted above, {site.name} is not currently sold in
+          those regions.
+        </P>
+
+        <Callout title="What we can and cannot do for you">
+          <p>
+            Because your Tapes live on your device rather than our servers, we
+            cannot retrieve, correct, export, or delete a recording on your
+            behalf — we have no copy of it. Those actions are yours to take in
+            the app, and deleting {site.name} removes its local data from your
+            iPhone.
+          </p>
+        </Callout>
       </>
     ),
   },
@@ -473,11 +605,11 @@ export const privacySections: readonly LegalSection[] = [
           </LI>
         </UL>
         <P>
-          {legal.entityName} —{" "}
+          The data controller is {legal.entityName}, {legal.entityDescription}.{" "}
           <Placeholder>
-            legal entity name to be confirmed on business registration
+            Confirm the exact registered name against the Utah filing before
+            publication.
           </Placeholder>
-          .
         </P>
       </>
     ),

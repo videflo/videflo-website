@@ -26,6 +26,7 @@ config file.
 - [Connecting videflo.com](#connecting-videflocom)
 - [Design system](#design-system)
 - [Accessibility and motion](#accessibility-and-motion)
+- [Expanding to new markets](#expanding-to-new-markets)
 - [Known limitations](#known-limitations)
 
 ---
@@ -205,18 +206,75 @@ Both documents render bracketed placeholders **visibly on the page**, in a
 highlighted style, so an unfinished document can never be mistaken for a finished
 one. Search for `<Placeholder>` to find every one.
 
-What counsel needs to decide:
+**The entity is a Utah LLC, launching in the United States, Canada, Australia
+and New Zealand.** The launch markets live in `availability.launchMarkets` in
+`src/config/site.ts`, and they drive real wording in both documents — not just a
+sentence, but which privacy and consumer-law regimes get addressed:
 
-- The **dispute-resolution mechanism** (Terms § Dispute resolution) — informal
-  resolution plus a named venue, or binding arbitration with a class-action
-  waiver. The draft deliberately does not choose.
+| Market        | Privacy                        | Consumer law                     |
+| ------------- | ------------------------------ | -------------------------------- |
+| United States | CCPA/CPRA + other state laws   | —                                |
+| Canada        | PIPEDA                         | Provincial consumer protection   |
+| Australia     | Privacy Act 1988 / APPs, APP 8 | **Australian Consumer Law**      |
+| New Zealand   | Privacy Act 2020, IPP 12       | **Consumer Guarantees Act 1993** |
+
+> **Do not remove the Australia/New Zealand carve-outs** in Terms § Disclaimers
+> and § Limitation of liability. Those consumer guarantees cannot be excluded,
+> and _purporting_ to exclude them is itself a breach of the Australian Consumer
+> Law. They are the highest-risk wording in the document.
+
+**Europe is deliberately switched off at launch** (`availability.offeredInEeaUk`
+is `false`), which is what keeps GDPR Article 27 out of scope for now. See
+[expanding to new markets](#expanding-to-new-markets).
+
+Decided already (owner):
+
+- **Dispute resolution** — 30 days of informal resolution, then exclusive venue
+  in Utah, with a carve-out preserving consumers' right to sue in their home
+  country. No arbitration clause, no class-action waiver.
+- **Governing law** — State of Utah, United States, with mandatory local
+  consumer law preserved.
+
+Still needs counsel:
+
+- Whether the **Utah venue and the consumer carve-out are enforceable** in the
+  four launch markets.
 - Whether the **disclaimers, limitation of liability, and indemnification**
-  clauses are enforceable in each market you sell in.
+  clauses hold up there — especially against the Australian Consumer Law.
 - The **minimum age**, which must match the App Store age rating.
 - Compliance with Apple's required licensed-application terms (the EULA schedule
   in the Apple Developer Program agreement), including Apple as a third-party
   beneficiary.
-- Whatever GDPR / UK GDPR / CCPA-CPRA disclosures apply to your markets.
+
+### Expanding to new markets
+
+Adding a country is a config change plus a legal check, in that order:
+
+1. Add it to `availability.launchMarkets` in `src/config/site.ts`. Both legal
+   pages name the markets from that array, so the prose updates itself.
+2. Check whether the new market brings its own privacy or consumer regime, and
+   add a subsection to Privacy § Regional privacy rights if so.
+
+**Adding any EEA or UK country is different, and is a hard gate.** Offering the
+app to people in Europe triggers the GDPR, and with it the question of whether
+**Article 27 requires you to appoint an EU representative** (and the UK GDPR a UK
+representative). That is a person or firm you retain and name with contact
+details — no sentence on this website satisfies it. Budget roughly
+€150–900/year for the EU depending on provider, plus the UK on top unless your
+provider bundles it.
+
+Do this **before** selecting those countries in App Store Connect, not after:
+
+1. Ask counsel whether the Article 27(2)(a) exemption applies. Videflo is a
+   plausible candidate — no account, no server, recordings never leave the device
+   — but “occasional” is read narrowly, so get an answer rather than assuming.
+2. If it does not apply, appoint representatives and add their names and
+   addresses to the Privacy Policy.
+3. Confirm the international transfer mechanism (SCCs, UK Addendum, adequacy).
+4. Set `availability.offeredInEeaUk` to `true`, and revisit the EEA/UK wording in
+   Privacy § International users and transfers plus the digital-consent age
+   (13–16, varies by member state) in Terms § Eligibility.
+5. Only then switch the countries on.
 
 ### 2. Confirm the factual claims about the app — required
 
@@ -234,9 +292,14 @@ implementation and the product names in App Store Connect.
 
 In `src/config/site.ts`:
 
-- `legal.entityName` — currently the placeholder `Videflo LLC`
-- `legal.entityAddress` — currently `[Business address to be provided]`
-- `legal.governingState` — currently `[State to be provided]`
+- `legal.governingState` — **done**, set to `Utah`
+- `legal.entityDescription` — **done**, `a Utah limited liability company`
+- `legal.entityName` — currently `Videflo LLC`. Confirm the exact registered
+  name, including punctuation, against the Utah Division of Corporations filing.
+  The legal pages print it verbatim.
+- `legal.entityAddress` — still `[Business address to be provided]`, and still
+  rendering visibly on both legal pages. GDPR and CCPA both effectively require
+  an identifiable business with contact details, and so does Apple.
 - `contact.legalEmail` and `contact.privacyEmail` — must be real, monitored
   inboxes, or point them at `supportEmail`
 

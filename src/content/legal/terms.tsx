@@ -6,16 +6,22 @@
  *  This is a drafting starting point, not legal advice, and it has not been
  *  reviewed by a lawyer. Before videflo.com goes live:
  *
- *    1. Have counsel review the entire document, with particular attention to
- *       the disclaimers, limitation of liability, indemnification, governing law,
- *       and dispute-resolution sections — these are the clauses most likely to be
- *       unenforceable if written generically, and consumer-protection law in some
- *       jurisdictions overrides them.
+ *    1. Have counsel review the entire document for the launch markets set in
+ *       `availability.launchMarkets`: the United States, Canada, Australia and
+ *       New Zealand. Pay particular attention to the disclaimers, limitation of
+ *       liability, indemnification, governing law and dispute-resolution
+ *       sections — these are the clauses most likely to be unenforceable if
+ *       written generically. Note especially that the Australian Consumer Law
+ *       and New Zealand's Consumer Guarantees Act create guarantees that CANNOT
+ *       be excluded, and that purporting to exclude them is itself a breach;
+ *       carve-outs for both are in the Disclaimers and Limitation of liability
+ *       sections and must not be removed.
  *    2. Replace every `<Placeholder>` value — they render visibly on the page.
- *    3. Decide the dispute-resolution mechanism (informal resolution only, courts
- *       of a named venue, or arbitration with a class-action waiver). The section
- *       below deliberately does NOT impose arbitration; that is a decision for
- *       the owner and counsel.
+ *    3. DECIDED (owner, this revision): informal resolution for 30 days, then
+ *       exclusive venue in Utah, with an explicit carve-out preserving the right
+ *       of consumers to sue in their home country under their own mandatory law.
+ *       No arbitration clause and no class-action waiver. Counsel still needs to
+ *       confirm this is enforceable in each market Videflo is sold in.
  *    4. Confirm the subscription terms match what is actually configured in App
  *       Store Connect — in particular that no free trial or introductory offer is
  *       described here unless one really exists.
@@ -30,13 +36,15 @@ import type { LegalSection } from "@/components/legal/LegalPage";
 import {
   A,
   Callout,
+  H3,
   LI,
   Mail,
   P,
   Placeholder,
   UL,
 } from "@/components/legal/prose";
-import { contact, legal, site } from "@/config/site";
+import { availability, contact, legal, site } from "@/config/site";
+import { formatList } from "@/lib/format";
 
 export const termsSections: readonly LegalSection[] = [
   {
@@ -63,12 +71,23 @@ export const termsSections: readonly LegalSection[] = [
     content: (
       <>
         <P>
-          You must be old enough to form a binding contract where you live, and
-          at least the minimum age required by the App Store for this app, to
-          use {site.name}.{" "}
+          You must be old enough to form a binding contract in the country where
+          you live, and at least the minimum age required by the App Store for
+          this app, to use {site.name}. The minimum age differs by country: it
+          is higher in some places, and several countries set a separate minimum
+          age for consenting to online services.
+        </P>
+        <P>
+          If you are under that age, you may use {site.name} only with the
+          involvement of a parent or guardian, who accepts these Terms on your
+          behalf and is responsible for your use of the app.
+        </P>
+        <P>
           <Placeholder>
-            Owner to state the minimum age and confirm it matches the App Store
-            age rating.
+            Owner to state the specific minimum age and confirm it matches the
+            App Store age rating across the launch markets. Revisit before
+            adding EU countries, where the digital-consent age is 13 to 16
+            depending on the member state.
           </Placeholder>
         </P>
         <P>
@@ -95,6 +114,18 @@ export const termsSections: readonly LegalSection[] = [
           currently provide cloud backup, cross-device sync, sharing between
           accounts, web playback, or an Android version, and nothing in these
           Terms should be read as a commitment to build them.
+        </P>
+        <P>
+          {site.name} is currently offered through the Apple App Store in{" "}
+          {formatList(availability.launchMarkets)}. We expect to add more
+          countries over time. Pricing, currency, and the languages the app is
+          offered in vary by region and can change.
+        </P>
+        <P>
+          Being able to download {site.name} in your country is not a
+          representation that it complies with any local requirement beyond
+          those Apple applies, and you are responsible for your own compliance
+          with the law where you use it.
         </P>
       </>
     ),
@@ -302,7 +333,58 @@ export const termsSections: readonly LegalSection[] = [
             copy, resell, sublicense, or redistribute the app or any part of it.
           </LI>
         </UL>
+        <P>
+          Recording laws differ sharply between countries and, in the United
+          States, between states — some require the consent of everyone being
+          recorded, particularly for audio. You are responsible for knowing and
+          following the rules that apply where you are recording.
+        </P>
       </>
+    ),
+  },
+  {
+    id: "export",
+    heading: "Export controls and sanctions",
+    content: (
+      <>
+        <P>
+          {site.name} is provided from the {legal.governingCountry} and is
+          subject to its export control and sanctions laws, as well as those of
+          any other country that applies to you.
+        </P>
+        <P>By using {site.name}, you confirm that:</P>
+        <UL>
+          <LI>
+            you are not located in, and are not ordinarily resident in, a
+            country or territory subject to comprehensive{" "}
+            {legal.governingCountry} sanctions;
+          </LI>
+          <LI>
+            you are not listed on any {legal.governingCountry} government list
+            of prohibited or restricted parties; and
+          </LI>
+          <LI>
+            you will not export, re-export, or transfer {site.name} in breach of
+            those laws.
+          </LI>
+        </UL>
+        <P>
+          Apple applies its own controls on where the App Store distributes
+          apps, which operate independently of these Terms.
+        </P>
+      </>
+    ),
+  },
+  {
+    id: "language",
+    heading: "Language",
+    content: (
+      <P>
+        These Terms are written in English. If we provide a translation, it is
+        offered for convenience only, and the English version governs to the
+        extent the two conflict — except where the law of your country requires
+        otherwise, in which case the version in your language governs.
+      </P>
     ),
   },
   {
@@ -398,6 +480,18 @@ export const termsSections: readonly LegalSection[] = [
           so some of the above may not apply to you, and nothing in these Terms
           limits rights you have under mandatory consumer protection law.
         </P>
+        <Callout title="Australia and New Zealand">
+          <p>
+            Nothing in these Terms excludes, restricts, or modifies any
+            guarantee, right, or remedy you have under the Australian Consumer
+            Law or, in New Zealand, the Consumer Guarantees Act 1993 and the
+            Fair Trading Act 1986, where those laws apply to you. Those
+            guarantees cannot be excluded. Where we are permitted to limit our
+            liability for a breach of them, our liability is limited to
+            re-supplying the Service or paying the cost of having it
+            re-supplied.
+          </p>
+        </Callout>
       </>
     ),
   },
@@ -424,6 +518,13 @@ export const termsSections: readonly LegalSection[] = [
           such damages, and even if a limited remedy fails of its essential
           purpose. Some jurisdictions do not allow certain limitations, so parts
           of this section may not apply to you.
+        </P>
+        <P>
+          Nothing in this section limits liability that cannot be limited by law
+          — including liability for death or personal injury caused by
+          negligence, for fraud, and for any consumer guarantee that applicable
+          law says cannot be excluded, such as those under the Australian
+          Consumer Law and New Zealand’s Consumer Guarantees Act 1993.
         </P>
       </>
     ),
@@ -466,12 +567,29 @@ export const termsSections: readonly LegalSection[] = [
     id: "governing-law",
     heading: "Governing law",
     content: (
-      <P>
-        These Terms are governed by the laws of the State of{" "}
-        <Placeholder>{legal.governingState}</Placeholder>,{" "}
-        {legal.governingCountry}, excluding its conflict-of-laws rules, except
-        where the mandatory law of your country of residence applies instead.
-      </P>
+      <>
+        <P>
+          {legal.entityName} is {legal.entityDescription}. These Terms and any
+          dispute arising out of them are governed by the laws of the State of{" "}
+          {legal.governingState}, {legal.governingCountry}, excluding its
+          conflict-of-laws rules.
+        </P>
+        <Callout title="This does not take away your local consumer rights">
+          <p>
+            If you are a consumer, you keep the protection of the mandatory
+            consumer-law rules of the country where you live, and nothing in
+            these Terms limits them. Where those rules conflict with{" "}
+            {legal.governingState} law, the mandatory rules of your country
+            apply. That includes, without limitation, the Australian Consumer
+            Law, New Zealand’s Consumer Guarantees Act 1993, and Canadian
+            provincial consumer-protection legislation.
+          </p>
+        </Callout>
+        <P>
+          The United Nations Convention on Contracts for the International Sale
+          of Goods does not apply to these Terms.
+        </P>
+      </>
     ),
   },
   {
@@ -479,18 +597,50 @@ export const termsSections: readonly LegalSection[] = [
     heading: "Dispute resolution",
     content: (
       <>
+        <H3>Talk to us first</H3>
         <P>
-          If you have a problem, please contact us first at{" "}
-          <Mail address={contact.legalEmail} />. Most issues can be resolved
-          informally, and we will try to do that within 30 days.
+          If something goes wrong, please contact us at{" "}
+          <Mail address={contact.legalEmail} /> before starting formal
+          proceedings, and describe the problem and the outcome you are looking
+          for. We will make a genuine effort to resolve it with you within 30
+          days. Most problems are settled this way, and it costs neither of us
+          anything.
         </P>
+
+        <H3>If that does not resolve it</H3>
+        <P>
+          Any dispute that is not resolved informally will be brought
+          exclusively in {legal.venue}, and you and {legal.entityName} each
+          consent to the personal jurisdiction of those courts —{" "}
+          <strong className="text-ink">
+            except where the paragraph below gives you a different right.
+          </strong>
+        </P>
+
+        <Callout title="Consumers may sue where they live">
+          <p>
+            If you are a consumer, nothing above prevents you from bringing
+            proceedings in the courts of the country where you live, or from
+            relying on any mandatory consumer-protection law of that country.
+            You may also complain to your local consumer-protection regulator —
+            for example the ACCC in Australia, the Commerce Commission in New
+            Zealand, or your provincial consumer affairs office in Canada. We do
+            not require you to arbitrate, and these Terms contain no
+            class-action waiver.
+          </p>
+        </Callout>
+
+        <P>
+          Purchases are made from Apple rather than from us, so a dispute about
+          billing, a charge, or a refund is generally between you and Apple. See{" "}
+          <A href="/terms#refunds">Refunds</A>.
+        </P>
+
         <P>
           <Placeholder>
-            Placeholder — the dispute-resolution mechanism has not been decided.
-            Owner and counsel to choose between informal resolution and the
-            courts of a named venue, or binding arbitration with a class-action
-            waiver, and to confirm what is enforceable for consumers in each
-            market before launch.
+            Counsel to confirm this venue and consumer carve-out are enforceable
+            in the markets Videflo will be sold in, and to advise whether any
+            market requires additional or different dispute-resolution wording.
           </Placeholder>
         </P>
       </>

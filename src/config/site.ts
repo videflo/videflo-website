@@ -75,6 +75,36 @@ export const appStore = {
 } as const;
 
 /** ------------------------------------------------------------------------
+ *  Availability
+ *
+ *  Which App Store markets Videflo is offered in. This drives real wording in
+ *  the Privacy Policy and Terms — not just a sentence, but which privacy and
+ *  consumer-law regimes those documents have to address.
+ *
+ *  WHEN YOU EXPAND: update `launchMarkets`, and if the new market is in the EEA
+ *  or the UK, set `offeredInEeaUk` to true and read the note beside it first.
+ *  --------------------------------------------------------------------- */
+export const availability = {
+  launchMarkets: [
+    "the United States",
+    "Canada",
+    "Australia",
+    "New Zealand",
+  ] as readonly string[],
+  /**
+   * Videflo is deliberately NOT offered in the European Economic Area or the
+   * United Kingdom at launch.
+   *
+   * Flipping this to `true` is not only a copy change. Offering the app to
+   * people in the EEA or UK is what triggers the GDPR, and with it the question
+   * of whether Article 27 requires an EU representative to be appointed (and the
+   * UK GDPR a UK representative). Sort that out BEFORE you select those
+   * countries in App Store Connect, not after.
+   */
+  offeredInEeaUk: false,
+} as const;
+
+/** ------------------------------------------------------------------------
  *  Social
  *
  *  Add an entry to make a link appear in the footer. Leave the array empty and
@@ -87,17 +117,28 @@ export const socials: readonly SocialLink[] = [
 ];
 
 /** ------------------------------------------------------------------------
- *  Legal — ALL PLACEHOLDERS. Confirm with counsel and business registration.
+ *  Legal
+ *
+ *  The entity is registered in Utah. Remaining placeholders are marked and
+ *  render visibly on the legal pages until supplied.
  *  --------------------------------------------------------------------- */
 export const legal = {
-  /** PLACEHOLDER — replace with the registered legal entity name. */
+  /**
+   * PARTIAL PLACEHOLDER — confirm the exact registered name, including
+   * punctuation ("Videflo LLC" vs "Videflo, LLC"), against the Utah Division of
+   * Corporations filing. The legal pages print this verbatim.
+   */
   entityName: "Videflo LLC",
-  /** PLACEHOLDER — replace with the registered business address. */
+  /** How the entity is described in the legal pages. */
+  entityDescription: "a Utah limited liability company",
+  /** PLACEHOLDER — replace with the registered or registered-agent address. */
   entityAddress: "[Business address to be provided]",
-  /** PLACEHOLDER — governing state for the Terms of Service. */
-  governingState: "[State to be provided]",
-  /** PLACEHOLDER — governing country for the Terms of Service. */
+  /** Governing state for the Terms of Service. */
+  governingState: "Utah",
+  /** Governing country for the Terms of Service. */
   governingCountry: "United States",
+  /** Venue for disputes not resolved informally. */
+  venue: "the state and federal courts located in Utah",
   /**
    * Dates shown on the legal pages. Update whenever the documents change.
    * `display` is what visitors read; `iso` feeds <time dateTime>.
