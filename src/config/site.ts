@@ -156,13 +156,19 @@ export const primaryNav: readonly NavItem[] = [
   { label: "How It Works", href: "/#how-it-works" },
   { label: "Why Videflo", href: "/#why-videflo" },
   { label: "Privacy", href: "/privacy" },
-  { label: "Support", href: "/support" },
+  /**
+   * The Help Center is the front door for questions about the app — it is what
+   * Videflo's own Settings screen links to. `/support` still exists and is still
+   * linked from the footer; it is the contact page behind it.
+   */
+  { label: "Help", href: "/help" },
 ];
 
 export const footerNav: readonly NavItem[] = [
   { label: "How It Works", href: "/#how-it-works" },
   { label: "Why Videflo", href: "/#why-videflo" },
-  { label: "Support", href: "/support" },
+  { label: "Help Center", href: "/help" },
+  { label: "Contact Support", href: "/support" },
   { label: "Privacy Policy", href: "/privacy" },
   { label: "Terms of Service", href: "/terms" },
 ];

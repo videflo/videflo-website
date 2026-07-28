@@ -89,6 +89,24 @@ export default function SupportPage() {
                 were doing when the problem happened.
               </p>
             </div>
+
+            {/*
+              The Help Center is the fuller answer to most questions; this page
+              is the way to reach a person. Point at it before the topic list so
+              nobody works through the sections looking for something that has
+              its own article.
+            */}
+            <p className="text-ink-muted mt-7 text-[1.0625rem] leading-relaxed">
+              Looking for how something works?{" "}
+              <Link
+                href="/help"
+                className="text-ink hover:text-gold-deep font-semibold underline decoration-1 underline-offset-4"
+              >
+                The Help Center
+              </Link>{" "}
+              has step-by-step guides for every part of {site.name}, and a
+              search across all of them.
+            </p>
           </div>
         </Container>
       </Section>
@@ -297,10 +315,12 @@ export default function SupportPage() {
                 </h2>
                 <P>
                   Exporting turns a whole Tape into one ordinary video file you
-                  can keep anywhere. Open the Tape and choose{" "}
-                  <strong className="text-ink">Export</strong>; when it is
-                  ready, iOS lets you save it to Photos or Files, or send it to
-                  someone.
+                  can keep anywhere. Open the Tape, choose{" "}
+                  <strong className="text-ink">Prepare Tape</strong>, and when
+                  it is ready choose{" "}
+                  <strong className="text-ink">Export to Photos</strong>. The
+                  video lands in your photo library, where you can share it,
+                  AirDrop it, or save it to Files like any other video.
                 </P>
                 <UL>
                   <LI>

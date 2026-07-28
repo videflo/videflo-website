@@ -25,6 +25,7 @@ export function Section({
   id,
   tone = "paper",
   spacing = "default",
+  overflow = "hidden",
   className,
   labelledBy,
 }: {
@@ -32,6 +33,20 @@ export function Section({
   id?: string;
   tone?: SectionTone;
   spacing?: SectionSpacing;
+  /**
+   * Sections clip by default so decorative artwork can bleed past the gutter
+   * without widening the page.
+   *
+   * `"visible"` is for a section holding something that is *meant* to escape it
+   * — the Help Center's search results panel, which hangs below its field.
+   *
+   * This is a prop rather than an `overflow-visible` passed through `className`
+   * on purpose: `cn()` concatenates, it does not resolve conflicts, so two
+   * `overflow-*` utilities in one class list would be settled by the order
+   * Tailwind happens to emit them in rather than by intent. Choosing between
+   * them here means exactly one is ever produced.
+   */
+  overflow?: "hidden" | "visible";
   className?: string;
   /** id of the heading that names this section, for screen readers. */
   labelledBy?: string;
@@ -41,7 +56,8 @@ export function Section({
       id={id}
       aria-labelledby={labelledBy}
       className={cn(
-        "relative overflow-hidden",
+        "relative",
+        overflow === "visible" ? "overflow-visible" : "overflow-hidden",
         tones[tone],
         spacings[spacing],
         className,

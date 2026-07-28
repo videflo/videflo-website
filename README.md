@@ -5,9 +5,9 @@ moments into continuous _Tapes_ you can revisit for years.
 
 > **Capture Today. Cherish Forever.** · Life in Tapes.
 
-Four pages, a custom 404, and no moving parts: everything is statically
-generated, every asset is local, and every launch-critical value lives in one
-config file.
+Four marketing pages, a 50-page Help Center, a custom 404, and no moving parts:
+everything is statically generated, every asset is local, and every
+launch-critical value lives in one config file.
 
 ---
 
@@ -17,6 +17,8 @@ config file.
 - [Getting started](#getting-started)
 - [Everyday commands](#everyday-commands)
 - [Project layout](#project-layout)
+- [The Help Center](#the-help-center)
+- [Adding a Help Center article](#adding-a-help-center-article)
 - [Configuration — start here](#configuration--start-here)
 - [Before launch: the checklist](#before-launch-the-checklist)
 - [Replacing images](#replacing-images)
@@ -108,7 +110,10 @@ src/
     page.tsx                Homepage (composes the section components)
     privacy/page.tsx        Privacy Policy
     terms/page.tsx          Terms of Service
-    support/page.tsx        Support + FAQ
+    support/page.tsx        Contact + support topics + FAQ
+    help/page.tsx           Help Center hub (search, topics, FAQ)
+    help/[slug]/page.tsx    One route serving every help article
+    help/topics/[topic]/    One route serving every help category
     not-found.tsx           Custom 404
     sitemap.ts              /sitemap.xml
     robots.ts               /robots.txt
@@ -126,6 +131,14 @@ src/
     faq.ts                  Support FAQ (also feeds FAQPage structured data)
     legal/privacy.tsx       Privacy Policy sections
     legal/terms.tsx         Terms of Service sections
+    help/                   ⭐ The Help Center's entire content
+      types.ts              The article content model
+      categories.ts         The eleven topics
+      articles/*.ts         One file per topic, holding its articles
+      faq.ts                The hub's own FAQ
+      index.ts              Registry, related-article resolution, search index,
+                            and the build-time consistency checks
+      search-index.ts       Split point so the index loads on demand
 
   components/
     layout/                 SiteHeader, SiteFooter, SkipToContent
@@ -135,6 +148,8 @@ src/
     visuals/                PhoneMockup, TapeFrame, TapeFlow
     legal/                  LegalPage shell + prose primitives
     support/                FaqAccordion
+    help/                   ArticleBody, HelpSearch, HelpCards, CategoryIcon,
+                            HelpBreadcrumbs, RichText
 
   lib/cn.ts                 Tiny class-name joiner
 
@@ -143,8 +158,101 @@ public/
   brand/                    Icon / logo source files
 ```
 
-Only three components are client components (`SiteHeader`, `Reveal`,
-`AppStoreButton`) — everything else renders on the server.
+Only four components are client components (`SiteHeader`, `Reveal`,
+`AppStoreButton`, `HelpSearch`) — everything else renders on the server.
+
+---
+
+## The Help Center
+
+`/help` is the single source of truth for questions about the app. It holds
+**11 categories and 38 articles**, and it is what Videflo's own Settings screen
+opens when someone taps **Help → Help Center**.
+
+### The shape of it
+
+| Route                  | What it is                                          |
+| ---------------------- | --------------------------------------------------- |
+| `/help`                | Hub — search, 6 popular articles, 11 topics, FAQ    |
+| `/help/topics/<topic>` | One page per category, listing its articles         |
+| `/help/<slug>`         | One page per article                                |
+| `/help/topics`         | Redirects to `/help` — the URL is guessable by      |
+|                        | trimming a segment, so it answers instead of 404ing |
+
+The hub, the 11 topic pages and the 38 articles are **statically generated at
+build time** — 50 pages — and every one of them is **included in
+`/sitemap.xml`**. Both the routes and the sitemap entries are derived from the
+content registry rather than from a hand-kept list, so publishing an article
+adds it to both automatically.
+
+### Content is data, not JSX
+
+Articles live in `src/content/help/articles/*.ts` as typed objects — overview,
+sections, steps, tips, common mistakes, troubleshooting, FAQs, related links.
+Nothing about an article is written as markup. That single decision is what lets
+the same words feed the page, the `TechArticle` / `FAQPage` / `BreadcrumbList` /
+`CollectionPage` / `ItemList` structured data, and the search index without any
+two of them drifting apart.
+
+### Search
+
+**Built from the structured article content itself** — every heading, step, tip,
+mistake, troubleshooting entry and FAQ answer is flattened into a search index at
+build time. There is no separate keyword list to maintain, so search can never
+fall out of step with the prose.
+
+- Matching is AND across terms, over the full article text.
+- Ranking is scored on lightly stemmed words (`src/lib/stem.ts`), so "restore"
+  finds "**Restoring** a purchase" and "export" finds "**Exporting** a Tape".
+  Stemming affects order only, never which articles match.
+- The index is a **separate chunk fetched on first focus or hover**, not part of
+  the page's first load — most visitors come to read one article rather than to
+  search all of them.
+- Keyboard: `/` focuses the field, arrows move, Enter opens, Escape clears. The
+  field is an ARIA combobox over a listbox, with a polite live result count.
+
+### Reading on a phone
+
+Article pages **collapse the table of contents into a single `<details>` row
+below the `lg` breakpoint**. Expanded, an eight-entry contents pushed the first
+sentence roughly a screen and a half down an iPhone — and since the app links
+here directly, the phone is the common case, not the edge case. The desktop
+sticky sidebar is unchanged.
+
+### What the app links to
+
+- **Help Center** → `https://videflo.com/help` (this site).
+- **Share Feedback** → **Featurebase**, which remains the destination for
+  feedback and feature requests. That integration is unchanged by this site.
+
+---
+
+## Adding a Help Center article
+
+Add one object to the array in the matching `src/content/help/articles/*.ts`
+file. That is the whole job — the hub, the topic page, the search index, the
+sitemap, and the related-article links are all derived from it, and the page is
+statically generated at `/help/<slug>`.
+
+Two rules the build enforces for you, in `src/content/help/index.ts`:
+
+- **Slugs are unique and URL-shaped**, and a `related` entry must name an
+  article that exists. Either mistake fails the build rather than shipping a
+  broken link.
+- **A category cannot be empty**, so a topic card never leads nowhere.
+
+Two rules it can't enforce, and that matter more:
+
+- **Every sentence must describe the app as it actually behaves.** Nothing in
+  here may promise cloud backup, accounts, sync, in-app sharing, playback speed
+  control, Android, or iPad — none of which exist.
+- **Slugs are permanent once published.** They get linked from the app, from
+  other articles, and from people's bookmarks.
+
+The only markup allowed in article strings is `**emphasis**`, which renders as
+bold. Use it for what the reader will look for on screen — button and setting
+names — and nothing else. Article text is also flattened into the search index
+and into structured data, so it stays plain on purpose.
 
 ---
 
@@ -340,7 +448,10 @@ have to open a component to change words:
   No cloud backup, sharing, sync, AI, Android, or web playback — none of those
   exist, and the site must not imply otherwise.
 - **FAQ** — `faq.ts`. Answers are plain strings so the same words appear on the
-  page and in the FAQPage structured data without drifting apart.
+  page and in the FAQPage structured data without drifting apart. This is the
+  `/support` FAQ; the Help Center keeps its own in `content/help/faq.ts`.
+- **Help Center** — `help/`. See [The Help Center](#the-help-center) and
+  [Adding a Help Center article](#adding-a-help-center-article).
 - **Legal** — `legal/privacy.tsx`, `legal/terms.tsx`. Sections are an array; add,
   remove or reorder entries and the table of contents follows automatically.
   Anchor `id`s are linked from elsewhere, so keep them stable.
@@ -479,8 +590,18 @@ owns page width and gutters. Use them rather than adding one-off padding.
 
 ## Known limitations
 
-- **The App Store link does not exist yet.** By design — see
-  [the App Store URL](#the-app-store-url).
+- **The App Store link does not exist yet.** `appStore.url` in
+  `src/config/site.ts` is still `null`, so every download call to action renders
+  a clearly-labelled **“Coming soon to the App Store”** state instead of pointing
+  at a dead link. This is deliberate and is the correct state until the app
+  ships — see [the App Store URL](#the-app-store-url).
+- **The Featurebase public root portal still needs final verification.** The app
+  links **Share Feedback** at a Featurebase workspace that has not yet been
+  confirmed to resolve. Note that a status-code check cannot settle it:
+  Featurebase serves its single-page-app shell — HTTP 200 — for any path,
+  whether or not the workspace exists. Open it in a browser and confirm a real
+  workspace loads before release. Nothing on this site depends on it; the link
+  lives in the iOS app (`Videflo/App/VidefloLinks.swift`).
 - **The legal pages are unreviewed drafts** with visible placeholders. See
   [the checklist](#before-launch-the-checklist).
 - **The Tape tiles and the phone screen are placeholders** — designed ones, not
