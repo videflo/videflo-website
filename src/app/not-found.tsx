@@ -1,16 +1,35 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ComingSoon } from "@/components/gate/ComingSoon";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
+import { gate } from "@/config/gate";
 import { primaryNav } from "@/config/site";
 
-export const metadata: Metadata = {
-  title: "Page not found",
-  description: "That page doesn’t exist — but your memories are still here.",
-  robots: { index: false, follow: true },
-};
+export const metadata: Metadata = gate.enabled
+  ? {
+      title: "Videflo — Coming Soon",
+      description: "Videflo is coming soon.",
+      robots: { index: false, follow: false },
+    }
+  : {
+      title: "Page not found",
+      description:
+        "That page doesn’t exist — but your memories are still here.",
+      robots: { index: false, follow: true },
+    };
 
 export default function NotFound() {
+  /*
+    Nothing reaches this page while the gate is up — `src/proxy.ts` rewrites
+    unknown paths to the Coming Soon route before Next.js can 404 them. The
+    branch exists for a different reason: the root layout serialises its
+    `notFound` slot into the React flight payload of *every* page it renders, so
+    without it the 404 copy below, and its links to `/privacy`, `/support` and
+    `/help`, would ship inside the Coming Soon response itself.
+  */
+  if (gate.enabled) return <ComingSoon />;
+
   return (
     <div className="bg-cream">
       <Container>
