@@ -52,12 +52,35 @@ export function proxy(request: NextRequest) {
  *  - `/robots.txt`     gated separately, in `src/app/robots.ts`
  *  - `/sitemap.xml`    gated separately, in `src/app/sitemap.ts`
  *  - the icon files    so the browser tab still shows the Videflo mark
+ *  - the AASA file     Universal Links, below
+ *  - `/invite/*`       Shared Tape invitations, below
  *
  * Note what is *not* excluded: `public/images/*` and `public/brand/*`. The
  * marketing photography is part of the hidden site, so it is gated too.
+ *
+ * ## Why invitations are outside the gate
+ *
+ * These two are a deliberate hole in a rule whose whole purpose is that no page
+ * is published by accident, so they are named rather than pattern-matched, and
+ * they are the narrowest pair that makes invitations work at all.
+ *
+ * `/.well-known/apple-app-site-association` must be reachable, unredirected and
+ * as `application/json`, or iOS never associates the domain and **every**
+ * invitation link opens Safari instead of Videflo — including for people who
+ * already have the app. A rewritten association file is an HTML page wearing the
+ * wrong name, which fails silently and looks exactly like a broken product.
+ *
+ * `/invite/*` is the fallback a person without Videflo lands on. Gating it would
+ * show them Coming Soon, which answers none of the questions somebody holding an
+ * invitation actually has. The page names no Tape, no sender and no secret — it
+ * says an invitation exists and where to get the app — so publishing it reveals
+ * nothing about the unreleased site or about anybody's memories.
+ *
+ * Nothing else moves. The marketing pages, the legal documents, support and help
+ * all stay hidden until `gate.enabled` is turned off.
  */
 export const config = {
   matcher: [
-    "/((?!_next/|robots\\.txt|sitemap\\.xml|favicon\\.ico|icon\\.png|apple-icon\\.png).*)",
+    "/((?!_next/|\\.well-known/apple-app-site-association|invite/|robots\\.txt|sitemap\\.xml|favicon\\.ico|icon\\.png|apple-icon\\.png).*)",
   ],
 };

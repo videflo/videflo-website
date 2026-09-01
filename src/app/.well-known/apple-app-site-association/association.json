@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["28G88GCG2R.com.thomastoailoa.Videflo"],
+        "components": [
+          {
+            "/": "/invite/*",
+            "comment": "Shared Tape invitations open directly in Videflo when it is installed."
+          }
+        ]
+      }
+    ]
+  }
+}
