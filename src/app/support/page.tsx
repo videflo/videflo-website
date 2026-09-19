@@ -4,23 +4,25 @@ import { FaqAccordion } from "@/components/support/FaqAccordion";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Section } from "@/components/ui/Section";
-import { contact, site } from "@/config/site";
+import { contact, site, subscription } from "@/config/site";
 import { faq } from "@/content/faq";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata({
   title: "Support",
-  description: `Help with ${site.name} — Tapes, recording permissions, exporting, subscriptions, and keeping your memories safe.`,
+  description: `Help with ${site.name} — your account, subscriptions, Videflo Cloud, Shared Tapes, exporting, permissions, and how to reach a person.`,
   path: "/support",
 });
 
 const topics = [
-  { id: "subscriptions", label: "Subscriptions" },
+  { id: "account", label: "Account & signing in" },
+  { id: "subscriptions", label: "Subscriptions & storage" },
   { id: "restore", label: "Restore Purchases" },
+  { id: "storage", label: "Videflo Cloud & backups" },
+  { id: "sharing", label: "Shared Tapes" },
   { id: "permissions", label: "Camera & microphone" },
   { id: "photos", label: "Photos access" },
   { id: "export", label: "Exporting a Tape" },
-  { id: "storage", label: "Storage & backups" },
   { id: "troubleshooting", label: "Troubleshooting" },
 ] as const;
 
@@ -140,15 +142,57 @@ export default function SupportPage() {
 
             <div className="lg:col-span-8">
               <article
-                id="subscriptions"
+                id="account"
                 className="border-line scroll-mt-28 border-t pt-10 first:border-0 first:pt-0"
               >
                 <h2 className="font-display text-display-sm text-ink font-semibold">
-                  Subscriptions and App Store billing
+                  Your account and signing in
                 </h2>
                 <P>
-                  Any {site.name} subscription is purchased through the Apple
-                  App Store and billed to your Apple Account. Apple handles the
+                  {site.name} uses{" "}
+                  <strong className="text-ink">Sign in with Apple</strong> and
+                  nothing else. There is no {site.name} password to create or
+                  forget: tap the button, confirm with Face ID, and your account
+                  exists. If you are asked for a password, it is Apple asking
+                  for your Apple Account password, and Apple can reset it.
+                </P>
+                <P>
+                  On first sign-in {site.name} asks for a Profile — a display
+                  name, a username, and a photo or one of the built-in avatars.
+                  The username can&rsquo;t be changed once it&rsquo;s claimed;
+                  everything else can be edited in{" "}
+                  <strong className="text-ink">Settings → Profile</strong>.
+                </P>
+                <UL>
+                  <LI>
+                    <strong className="text-ink">Sign Out</strong> is in
+                    Settings → Profile → Account. Signing out leaves your Tapes
+                    in {site.name} Cloud exactly as they are.
+                  </LI>
+                  <LI>
+                    <strong className="text-ink">Delete Account</strong> is at
+                    the bottom of Settings. It permanently deletes your account
+                    and every Tape you own in {site.name} Cloud, and it cannot
+                    be undone. Recordings you added to someone else&rsquo;s
+                    Shared Tape stay in that Tape. It does not cancel your
+                    subscription — do that in your Apple Account.
+                  </LI>
+                </UL>
+              </article>
+
+              <article
+                id="subscriptions"
+                className="border-line mt-12 scroll-mt-28 border-t pt-10"
+              >
+                <h2 className="font-display text-display-sm text-ink font-semibold">
+                  Subscriptions, storage and App Store billing
+                </h2>
+                <P>
+                  {site.name} is one monthly subscription that includes{" "}
+                  {subscription.includedStorageLabel} of {site.name} Cloud.
+                  Larger capacities are available from Settings → {site.name}{" "}
+                  Cloud → Manage Storage. It is purchased through the Apple App
+                  Store and billed to your Apple Account. Apple handles the
                   payment, the receipts, and the renewals — we never see your
                   card details.
                 </P>
@@ -172,7 +216,15 @@ export default function SupportPage() {
                   </LI>
                   <LI>
                     Prices are shown by Apple in your local currency and can
-                    differ by region.
+                    differ by region. In the United States the base subscription
+                    is {subscription.basePriceUSD} a{" "}
+                    {subscription.billingPeriod}; the larger capacities are
+                    priced on the subscription screen.
+                  </LI>
+                  <LI>
+                    Moving to a larger capacity takes effect straight away and
+                    Apple prorates it. Moving to a smaller one takes effect at
+                    your next renewal.
                   </LI>
                 </UL>
                 <P>
@@ -218,8 +270,10 @@ export default function SupportPage() {
                     you used to buy the subscription.
                   </LI>
                   <LI>
-                    Open {site.name}&rsquo;s settings and choose{" "}
-                    <strong className="text-ink">Restore Purchases</strong>.
+                    Open {site.name} and sign in with Apple. If the subscription
+                    screen appears, tap{" "}
+                    <strong className="text-ink">Restore Purchases</strong> on
+                    it.
                   </LI>
                   <LI>
                     If nothing is found, check that the subscription is still
@@ -232,9 +286,14 @@ export default function SupportPage() {
                 </UL>
                 <Callout>
                   <p>
-                    Restoring a purchase brings back access to paid features. It
-                    does not bring back your recordings — those live on the
-                    device where they were made.
+                    Restoring a purchase brings back access. Your Tapes come
+                    back separately, from {site.name} Cloud, as soon as you sign
+                    in to the same {site.name} account — they appear in your
+                    library and play by streaming, and{" "}
+                    <strong className="text-ink">
+                      Download to This iPhone
+                    </strong>{" "}
+                    puts the files back on the device.
                   </p>
                 </Callout>
               </article>
@@ -290,15 +349,17 @@ export default function SupportPage() {
                   Photos access
                 </h2>
                 <P>
-                  {site.name} uses your photo library in two places: choosing a
-                  cover photo for a Tape or Collection, and saving an exported
-                  Tape.
+                  {site.name} uses your photo library in three places: choosing
+                  a cover photo for a Tape or Collection, adding videos you
+                  filmed before {site.name} to a new Tape, and saving an export.
                 </P>
                 <P>
-                  When you pick a cover photo, iOS shows you its own picker and
-                  hands {site.name} only the item you chose — the app does not
-                  browse your library. Saving an exported video to Photos asks
-                  for permission to add to your library, which you can review in{" "}
+                  When you pick a cover photo or choose videos to add, iOS shows
+                  you its own picker and hands {site.name} only the items you
+                  chose — the app does not browse your library, which is why no
+                  permission prompt appears. Saving a video to Photos asks for
+                  permission to <em>add</em> to your library, which you can
+                  review in{" "}
                   <strong className="text-ink">
                     Settings → {site.name} → Photos
                   </strong>
@@ -314,27 +375,37 @@ export default function SupportPage() {
                   Exporting a Tape
                 </h2>
                 <P>
-                  Exporting turns a whole Tape into one ordinary video file you
-                  can keep anywhere. Open the Tape, choose{" "}
-                  <strong className="text-ink">Prepare Tape</strong>, and when
-                  it is ready choose{" "}
-                  <strong className="text-ink">Export to Photos</strong>. The
-                  video lands in your photo library, where you can share it,
-                  AirDrop it, or save it to Files like any other video.
+                  Exporting turns a whole Tape into one ordinary video and saves
+                  it to your Photos library. Open the Tape, tap the{" "}
+                  <strong className="text-ink">⋯</strong> menu in the player,
+                  and choose <strong className="text-ink">Export Tape</strong>.
+                  {site.name} shows the progress and tells you when the video is
+                  in Photos, where you can share it, AirDrop it, or save it to
+                  Files like any other video.
                 </P>
                 <UL>
                   <LI>
-                    Preparing a long Tape takes time, and a higher recording
-                    quality takes longer. You can keep using the rest of the app
-                    while it works.
+                    Keep {site.name} on screen while it exports. A long Tape or
+                    a higher recording quality takes longer, and you can cancel
+                    at any time.
                   </LI>
                   <LI>
-                    Exporting never alters your original recordings — it makes a
-                    new copy.
+                    A Tape stored only in {site.name} Cloud exports too — it
+                    streams while it renders, without downloading first.
                   </LI>
                   <LI>
-                    Make sure there is enough free space on your iPhone for the
-                    exported file before you start.
+                    Exporting never alters your original recordings and leaves
+                    nothing behind in {site.name} — it makes one new copy in
+                    Photos.
+                  </LI>
+                  <LI>
+                    Whether the date and time are stamped into the export is set
+                    in Settings → Export Settings →{" "}
+                    <strong className="text-ink">Export with Timestamp</strong>.
+                  </LI>
+                  <LI>
+                    On a Shared Tape, only the owner can export the whole Tape.
+                    Every member can watch it.
                   </LI>
                 </UL>
               </article>
@@ -344,42 +415,94 @@ export default function SupportPage() {
                 className="border-line mt-12 scroll-mt-28 border-t pt-10"
               >
                 <h2 className="font-display text-display-sm text-ink font-semibold">
-                  Storage and device backups
+                  Videflo Cloud, storage and backups
                 </h2>
                 <P>
-                  {site.name} is local-first: your recordings are created and
-                  kept on your iPhone, and nothing is uploaded to us. That is
-                  good for your privacy — and it means the safety of your
-                  recordings depends on your device.
+                  Recordings are saved on your iPhone first. While{" "}
+                  <strong className="text-ink">
+                    Back Up to {site.name} Cloud
+                  </strong>{" "}
+                  is on — it is on by default — each recording is also copied to{" "}
+                  {site.name} Cloud, where it survives a lost or replaced phone.
+                  Your original files are never changed. Both switches live in
+                  Settings → {site.name} Cloud → Backup Settings, and the second
+                  one, <strong className="text-ink">Use Cellular Data</strong>,
+                  decides whether backups may run away from Wi-Fi.
                 </P>
-                <Callout title="Videflo cannot recover a lost Tape">
-                  <p>
-                    There is no cloud backup in {site.name}. If your iPhone is
-                    lost, stolen, damaged, or erased, or if the app is deleted,
-                    recordings that exist only inside {site.name} may be gone
-                    for good.
-                  </p>
-                </Callout>
-                <H3>Two things worth doing today</H3>
                 <UL>
                   <LI>
                     <strong className="text-ink">
-                      Keep an iPhone backup switched on.
+                      Remove from This iPhone
                     </strong>{" "}
-                    A backup that includes app data will include your Tapes.
-                    Check it in{" "}
-                    <strong className="text-ink">
-                      Settings → your name → iCloud
-                    </strong>
-                    , or back up to a computer. Video is large, so make sure the
-                    backup has room to complete.
+                    frees the space a Tape uses once every recording in it is
+                    safely in {site.name} Cloud. The Tape stays in your library
+                    and plays by streaming.
                   </LI>
                   <LI>
                     <strong className="text-ink">
-                      Export the Tapes you could not replace.
+                      Download to This iPhone
                     </strong>{" "}
-                    An exported copy in Photos, in Files, or on a computer is a
-                    second copy that does not depend on {site.name} at all.
+                    brings the files back for offline watching.
+                  </LI>
+                  <LI>
+                    <strong className="text-ink">Manage Storage</strong> shows
+                    how much of your allowance is used, lets you free space by
+                    removing your largest Tapes from the phone, and offers the
+                    larger capacities.
+                  </LI>
+                  <LI>
+                    If you go over your allowance, {site.name} keeps everything
+                    already stored and pauses new uploads. You have{" "}
+                    {subscription.overAllowanceGraceDays} days to free space or
+                    choose a larger capacity; nothing is deleted automatically.
+                  </LI>
+                </UL>
+                <Callout title="Cloud protection starts when the upload finishes">
+                  <p>
+                    A recording is protected once its upload has completed. With
+                    backup switched off, or before an upload finishes, it exists
+                    on your iPhone alone — so keep an iPhone backup switched on
+                    as well, and export the Tapes you could not replace. And if
+                    your subscription lapses, nothing is deleted: your Tapes
+                    stay on your iPhone and in {site.name} Cloud until you
+                    subscribe again.
+                  </p>
+                </Callout>
+              </article>
+
+              <article
+                id="sharing"
+                className="border-line mt-12 scroll-mt-28 border-t pt-10"
+              >
+                <h2 className="font-display text-display-sm text-ink font-semibold">
+                  Shared Tapes
+                </h2>
+                <P>
+                  Any Tape you own can be shared. Open the Tape&rsquo;s menu and
+                  choose <strong className="text-ink">Invite to Tape</strong>,
+                  then pick people from Friends &amp; Family, search {site.name}{" "}
+                  by @username, or send a link by text with{" "}
+                  <strong className="text-ink">Invite by Text</strong>. Someone
+                  who accepts sees the whole Tape, can watch it, and can add
+                  their own recordings with Continue Recording.
+                </P>
+                <UL>
+                  <LI>
+                    A Tape with invitations out but nobody accepted yet is still
+                    private. It becomes Shared when the first person joins.
+                  </LI>
+                  <LI>
+                    The owner can cancel invitations, remove someone, stop the
+                    Tape accepting new recordings, and delete it for everyone.
+                    Members can leave; their recordings stay in the Tape.
+                  </LI>
+                  <LI>
+                    The owner&rsquo;s {site.name} Cloud allowance pays for the
+                    whole Tape, including recordings other people add.
+                  </LI>
+                  <LI>
+                    A Friends &amp; Family connection on its own gives nobody
+                    access to your Tapes — it only makes inviting quicker.
                   </LI>
                 </UL>
               </article>
@@ -411,9 +534,18 @@ export default function SupportPage() {
                 <H3>Exporting fails or stalls</H3>
                 <P>
                   Free up storage, make sure your iPhone is not in Low Power
-                  Mode, and try again with the screen awake. If it keeps
-                  failing, tell us the Tape&rsquo;s length and recording quality
-                  so we can reproduce it.
+                  Mode, and try again with {site.name} on screen. A Tape stored
+                  only in {site.name} Cloud needs a connection while it exports.
+                  If it keeps failing, tell us the Tape&rsquo;s length and
+                  recording quality so we can reproduce it.
+                </P>
+                <H3>A Tape says it needs attention, or backup seems stuck</H3>
+                <P>
+                  Check that Back Up to {site.name} Cloud is on, that the phone
+                  is online (or on Wi-Fi if Use Cellular Data is off), and that
+                  your storage allowance isn&rsquo;t full. {site.name} retries
+                  on its own; a Tape that has stopped will say so on its card
+                  and offer to retry.
                 </P>
                 <H3>Still stuck?</H3>
                 <P>

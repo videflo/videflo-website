@@ -7,6 +7,7 @@ import { playbackArticles } from "./articles/playback";
 import { privacyArticles } from "./articles/privacy";
 import { recordingArticles } from "./articles/recording";
 import { settingsArticles } from "./articles/settings";
+import { sharingArticles } from "./articles/sharing";
 import { storageArticles } from "./articles/storage";
 import { subscriptionArticles } from "./articles/subscription";
 import { tapeArticles } from "./articles/tapes";
@@ -36,6 +37,7 @@ export const helpArticles: readonly HelpArticle[] = [
   ...collectionArticles,
   ...playbackArticles,
   ...exportingArticles,
+  ...sharingArticles,
   ...storageArticles,
   ...subscriptionArticles,
   ...privacyArticles,
@@ -76,15 +78,15 @@ export const helpCategoryIndex = helpCategories.map((category) => ({
  * deliberate edit to this line, and something has to come off it.
  *
  * Six entries, spanning six different categories: what it is, first use, the
- * core habit, getting video out, the one that prevents heartbreak, and the most
- * common billing problem.
+ * core habit, sharing a memory, how it's kept safe, and the most common billing
+ * problem.
  */
 const POPULAR_SLUGS = [
   "what-is-videflo",
   "create-your-first-tape",
   "continue-recording-a-tape",
-  "prepare-and-export-a-tape",
-  "backups-and-new-iphone",
+  "shared-tapes",
+  "videflo-cloud",
   "restore-purchases",
 ] as const;
 

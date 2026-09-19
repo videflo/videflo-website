@@ -5,7 +5,7 @@ import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata({
   title: "Privacy Policy",
-  description: `How ${site.name} handles information. ${site.name} is local-first: your recordings are created and stored on your device.`,
+  description: `How ${site.name} handles information — your account, your recordings on your iPhone and in ${site.name} Cloud, Shared Tapes, subscriptions, and the controls you have.`,
   path: "/privacy",
 });
 
@@ -13,7 +13,7 @@ export default function PrivacyPage() {
   return (
     <LegalPage
       title="Privacy Policy"
-      summary={`${site.name} is a local-first app. This page explains what information is involved when you use it, what stays on your device, and who to contact about privacy.`}
+      summary={`This page explains what information is involved when you use ${site.name} — on your iPhone, in ${site.name} Cloud, and when you share a Tape — who can see it, how long it is kept, and the controls you have.`}
       updated={legal.privacy}
       sections={privacySections}
     />

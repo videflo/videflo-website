@@ -11,12 +11,12 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
     overview: [
       "Videflo is a camcorder for the moments you want to keep. It records video the way you'd expect — but instead of leaving you with a pile of separate clips, it keeps everything from one occasion together as a single **Tape**.",
       "A Tape is one memory that can keep growing. You make a Tape for an event or a chapter of life, and add to it whenever the moment happens. Press play, and the whole thing runs from beginning to end as one continuous video.",
-      "That's the entire idea. There's no timeline to edit, no clips to line up, and nothing to stitch together afterwards.",
+      "Every recording is protected in **Videflo Cloud** automatically, and a Tape can be shared with the people who were there so they can add their own recordings to it. That's the entire idea. There's no timeline to edit, no clips to line up, and nothing to stitch together afterwards.",
     ],
     sections: [
       {
         id: "the-words",
-        heading: "The three words you'll see",
+        heading: "The words you'll see",
         blocks: [
           {
             kind: "definitions",
@@ -36,6 +36,16 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
                 description:
                   "A group of Tapes that belong together — like a folder called “2026” or “The Grandchildren”. Entirely optional.",
               },
+              {
+                term: "Videflo Cloud",
+                description:
+                  "Where your recordings are protected. Backup is automatic, and it's what brings your Tapes to a new iPhone and lets other people add to a Shared Tape.",
+              },
+              {
+                term: "Shared Tape",
+                description:
+                  "A Tape you've invited someone to. Everyone on it can watch the whole thing and add their own recordings.",
+              },
             ],
           },
         ],
@@ -50,7 +60,7 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
           },
           {
             kind: "text",
-            text: "In Videflo you make one Tape called **Emma's Birthday** and record into it all afternoon. When you watch it back, the whole day plays through in the order it happened. One thing to find, one thing to keep, one thing to show her in twenty years.",
+            text: "In Videflo you make one Tape called **Emma's Birthday** and record into it all afternoon. Grandma, who filmed the candles from the other side of the table, adds her recording to the same Tape. When you watch it back, the whole day plays through in the order it happened. One thing to find, one thing to keep, one thing to show her in twenty years.",
           },
         ],
       },
@@ -61,21 +71,17 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
           {
             kind: "list",
             items: [
-              "**Not a video editor.** There are no filters, transitions, music tracks, or timelines. You can trim the start and end of a recording, and that's on purpose.",
-              "**Not a social network.** There's no feed, no profile, no followers, and nothing is published anywhere.",
-              "**Not a cloud service.** Your recordings are made and kept on your iPhone. Videflo has no copy of them and no way to fetch them back.",
+              "**Not a video editor.** There are no filters, transitions, music tracks, timelines or trimming. A Tape is what happened, kept whole.",
+              "**Not a social network.** There's no feed, no followers, no likes, and nothing is ever public. A Tape is seen only by the people you invite to it.",
+              "**Not a replacement for your originals.** Videflo Cloud is a copy. The recording on your iPhone is never edited, and you can export any Tape to Photos whenever you like.",
             ],
-          },
-          {
-            kind: "text",
-            text: "The last one matters most, so it has its own article — please read **Backups and moving to a new iPhone** before you rely on Videflo for something irreplaceable.",
           },
         ],
       },
     ],
     tips: [
       "Name a Tape after **one event**, not a life stage. “Emma's Birthday” works beautifully. “Emma” would grow forever and never feel finished.",
-      "You can have as many Tapes as your iPhone has room for. Making a new one costs nothing.",
+      "You can have as many Tapes as you like. Making a new one costs nothing.",
       "A Tape with a single recording in it is a perfectly normal Tape. Not every memory needs eleven parts.",
     ],
     pitfalls: [
@@ -87,23 +93,22 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
       {
         mistake:
           "Expecting your Tapes to appear in the Photos app automatically.",
-        fix: "They don't — Videflo keeps them in its own storage. Use **Export** when you want a copy in Photos.",
+        fix: "They don't — Videflo keeps them in its own library. Use **Export Tape** when you want a copy in Photos.",
       },
     ],
     faqs: [
       {
         question: "How long can a Tape be?",
         answer: [
-          "Videflo sets no limit. A Tape can hold as many recordings as you like, and can grow over months or years.",
-          "The practical limit is the free space on your iPhone, since video is large. Longer Tapes also take longer to prepare when you want to export one.",
+          "Videflo sets no limit on how many recordings a Tape holds, and a Tape can grow over months or years.",
+          "The practical limits are the free space on your iPhone and your Videflo Cloud allowance, since video is large. Longer Tapes also take longer to export.",
         ],
       },
       {
         question:
           "Can I put an existing video from my camera roll into a Tape?",
         answer: [
-          "No. Videflo records the footage in a Tape itself, so everything inside one was captured through the app.",
-          "Photos from your library are used in one place only: choosing a cover image for a Tape or a Collection.",
+          "Yes, when you create a Tape. Under **Optional Setup** on the Start a New Tape screen, choose **Add Videos** and pick them from Photos. They become recordings in the new Tape, in the order you tapped them, keeping their original dates.",
         ],
       },
       {
@@ -125,7 +130,7 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
     slug: "download-videflo",
     title: "Downloading and installing Videflo",
     description:
-      "What you need to run Videflo, and how to get it onto your iPhone.",
+      "What you need to run Videflo, and what happens the first time you open it.",
     category: "getting-started",
     keywords: [
       "install",
@@ -150,7 +155,7 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
             items: [
               "**An iPhone running iOS 18 or later.** You can check in the Settings app under **General → About**, and update under **General → Software Update**.",
               "**Enough free space for video.** A few gigabytes to start with is sensible — see **How much space Tapes use**.",
-              "**An Apple Account.** You already have one if you've ever installed an app. Videflo doesn't ask you to create an account of its own.",
+              "**An Apple Account.** You already have one if you've ever installed an app. Videflo uses it for Sign in with Apple and for the subscription — there's no separate Videflo password.",
             ],
           },
           {
@@ -200,12 +205,22 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
               {
                 title: "A short introduction explains what a Tape is.",
                 detail:
-                  "Four screens, and you can go back at any point. You can replay it later from Settings.",
+                  "A few screens, and you can go back at any point. You can replay it later from Settings → About Videflo.",
+              },
+              {
+                title: "Sign in with Apple.",
+                detail:
+                  "One tap and Face ID. This creates your Videflo account — see **Accounts, signing in, and signing out**.",
               },
               {
                 title: "The subscription screen appears.",
                 detail:
-                  "Choose a plan, or restore a purchase you've already made.",
+                  "Subscribe, or tap **Restore Purchases** if you've already paid on this Apple Account.",
+              },
+              {
+                title: "Set up your Profile.",
+                detail:
+                  "A display name, a photo or one of Videflo's avatars, and a username. This is how family will find and recognise you.",
               },
               {
                 title:
@@ -215,7 +230,7 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
           },
           {
             kind: "text",
-            text: "Videflo asks for camera and microphone access the first time you actually start recording — not on the way in.",
+            text: "Videflo asks for camera and microphone access the first time you actually start recording — not on the way in. It asks about notifications once, after you've signed in.",
           },
         ],
       },
@@ -244,7 +259,7 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
       {
         question: "Is Videflo free?",
         answer: [
-          "The app is free to download, and a subscription is required to use it. The subscription screen shows the current plans and prices in your own currency before you commit to anything.",
+          "The app is free to download, and a subscription is required to use it. The subscription screen shows the current price in your own currency before you commit to anything.",
         ],
       },
       {
@@ -271,7 +286,7 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
     slug: "accounts-and-signing-in",
     title: "Accounts, signing in, and signing out",
     description:
-      "Videflo has no account to create. Here's what that means and what your Apple Account is used for.",
+      "Sign in with Apple, your Profile, what your account is for, and how to sign out or delete it.",
     category: "getting-started",
     keywords: [
       "login",
@@ -284,38 +299,76 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
       "forgot password",
       "sign out",
       "logout",
+      "delete account",
     ],
     overview: [
-      "There's no Videflo account. No email address to give, no password to invent, and nothing to sign into or out of.",
-      "Your Tapes live on your iPhone rather than on a server somewhere, so there's no account for them to belong to. It's one less thing to remember, and one less place your details could sit.",
+      "Videflo has an account, and it's created with **Sign in with Apple** — one tap and Face ID. There's no Videflo password to invent and nothing to remember.",
+      "Your account is what makes Videflo Cloud work: it's where your Tapes are protected, it's how they follow you to a new iPhone, and it's how the people you invite to a Shared Tape know who you are.",
     ],
     sections: [
       {
-        id: "apple-account",
-        heading: "Where your Apple Account comes in",
+        id: "sign-in",
+        heading: "Signing in",
+        blocks: [
+          {
+            kind: "steps",
+            steps: [
+              {
+                title: "Tap **Sign in with Apple**.",
+                detail:
+                  "It appears after the introduction the first time you open Videflo, and whenever you've signed out.",
+              },
+              {
+                title:
+                  "Confirm with Face ID, Touch ID, or your Apple Account password.",
+                detail:
+                  "Apple may offer to share or hide your email address. Either is fine — Videflo never shows your email address to anyone, and nobody can search for you by it.",
+              },
+              {
+                title: "That's it. Your Videflo account now exists.",
+              },
+            ],
+          },
+          {
+            kind: "note",
+            title: "The account is separate from the subscription",
+            text: [
+              "Your Videflo account is who you are. Your subscription, bought from Apple, is what unlocks the app. Both use your Apple Account, and both come back on a new iPhone — the account when you sign in, the subscription when you tap **Restore Purchases**.",
+            ],
+          },
+        ],
+      },
+      {
+        id: "profile",
+        heading: "Your Profile",
         blocks: [
           {
             kind: "text",
-            text: "Your Apple Account — the one you already use for the App Store — does two things, and only two:",
+            text: "The first time you sign in, Videflo asks you to set up a Profile before you go any further:",
           },
           {
-            kind: "list",
+            kind: "definitions",
             items: [
-              "**It's how you get the app.** Downloading anything from the App Store uses it.",
-              "**It's who the subscription belongs to.** Apple handles the payment and the renewals, and the subscription follows that Apple Account rather than the app.",
+              {
+                term: "Display name",
+                description:
+                  "What people see — “Grandma Sue”, “Tom”. You can change it any time in **Settings → Profile → Edit Profile**.",
+              },
+              {
+                term: "Photo or avatar",
+                description:
+                  "A picture of you, or one of Videflo's built-in avatars. Required, and changeable later.",
+              },
+              {
+                term: "Username",
+                description:
+                  "Unique, and how people find you — they search Videflo for your @username. Choose it carefully: once claimed, a username can't be changed.",
+              },
             ],
           },
           {
             kind: "text",
-            text: "That second point is genuinely useful: set up a new iPhone, sign in to the same Apple Account, install Videflo, and tap **Restore Purchases** — your subscription comes straight back.",
-          },
-          {
-            kind: "warning",
-            title: "Your subscription travels. Your recordings don't.",
-            text: [
-              "Restoring a purchase brings back your access to the app. It does not bring back your Tapes, because those were saved on the iPhone where you made them.",
-              "Moving your recordings to a new iPhone is a separate job — see **Backups and moving to a new iPhone**.",
-            ],
+            text: "Your Profile is shown to the people you interact with: your Friends & Family, anyone on a Tape you share or join, and anyone who searches for your exact username. There's no public directory.",
           },
         ],
       },
@@ -324,53 +377,79 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
         heading: "Signing out",
         blocks: [
           {
+            kind: "steps",
+            steps: [
+              { title: "Open **Settings** from the gear on Home." },
+              { title: "Tap **Profile**, then scroll to **Account**." },
+              { title: "Tap **Sign Out**." },
+            ],
+          },
+          {
             kind: "text",
-            text: "There's nothing to sign out of inside Videflo. If you're handing your iPhone to someone else and want the app closed off, the options are to delete the app or to lock the phone as usual.",
+            text: "Signing out returns you to the sign-in screen. Everything in Videflo Cloud stays exactly as it is, and signing back in brings it all back. Recordings on this iPhone that hadn't finished uploading stay on the phone too — they're not deleted by signing out.",
+          },
+        ],
+      },
+      {
+        id: "delete-account",
+        heading: "Deleting your account",
+        blocks: [
+          {
+            kind: "text",
+            text: "**Delete Account** is at the very bottom of Settings, on its own. It's permanent, and Videflo asks you to confirm before doing anything.",
           },
           {
             kind: "warning",
-            title: "Deleting the app deletes your Tapes",
+            title: "What Delete Account does",
             text: [
-              "Videflo's recordings are stored inside the app, so removing it removes them unless they're in an iPhone backup or you've exported them.",
+              "It deletes your account and Profile, your Friends & Family connections, and every Tape you own from Videflo Cloud — including recordings other people added to your Shared Tapes.",
+              "Recordings you added to somebody else's Shared Tape stay in that Tape, because it's their memory, but they're no longer attributed to you.",
+              "Videos already on this iPhone are not deleted by this. Your subscription is not cancelled either — that lives in your Apple Account.",
             ],
           },
         ],
       },
     ],
+    tips: [
+      "Use the same Apple Account on every iPhone you own. That's what makes your account and your subscription follow you.",
+      "If you're handing your iPhone to someone else, signing out is the right move — deleting the app would remove the recordings on that phone.",
+    ],
     faqs: [
       {
         question: "I forgot my Videflo password. How do I reset it?",
         answer: [
-          "There isn't one — Videflo never asks you to create a password or an account.",
-          "If you're being asked for a password, it's Apple asking you to confirm an App Store purchase. That's your Apple Account password, and Apple can help you reset it.",
+          "There isn't one — Videflo uses Sign in with Apple and never asks you to create a password.",
+          "If you're being asked for a password, it's Apple asking for your Apple Account password, and Apple can help you reset it.",
         ],
       },
       {
-        question: "Can two people share one subscription?",
+        question: "Can two people share one account?",
         answer: [
-          "Videflo's subscription isn't set up for Family Sharing today, so it applies to the Apple Account that bought it.",
-          "Each person's Tapes stay on their own iPhone regardless, since nothing is shared between devices.",
+          "Videflo's subscription isn't set up for Family Sharing today, so it applies to the Apple Account that bought it — and each person needs their own Videflo account to appear on a Shared Tape under their own name.",
+          "You don't need to share an account to share memories. Make a Tape and invite them to it.",
         ],
       },
       {
         question: "Do you have my email address?",
         answer: [
-          "Only if you've written to us. Videflo doesn't ask for one, and the app doesn't send us any account details — there are none to send.",
+          "Yes — Sign in with Apple gives Videflo the email address on your Apple Account, or Apple's private relay address if you chose Hide My Email. It identifies your account. It's never shown to other Videflo users, and nobody can search for you by it.",
+        ],
+      },
+      {
+        question: "Can I change my username?",
+        answer: [
+          "No. A username is fixed once it's claimed. Your display name and photo can be changed whenever you like.",
         ],
       },
     ],
-    related: [
-      "restore-purchases",
-      "backups-and-new-iphone",
-      "privacy-and-security",
-    ],
+    related: ["restore-purchases", "shared-tapes", "privacy-and-security"],
   },
 
   {
     slug: "create-your-first-tape",
     title: "Creating your first Tape",
     description:
-      "Name it, choose how it will be filmed, and start recording — three decisions, one screen.",
+      "Name it, choose how it will be filmed, and start recording — with a few optional extras if you want them.",
     category: "getting-started",
     keywords: ["new tape", "start", "begin", "setup", "first time", "make"],
     overview: [
@@ -388,7 +467,7 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
               {
                 title: "On the **Home** tab, tap **Start a New Tape**.",
                 detail:
-                  "If this is your very first Tape, the button in the middle of the screen says **Start Your First Tape** — same thing. You can also start one from the **Tapes** tab.",
+                  "If this is your very first Tape, the button in the middle of the screen says **Start Your First Tape** — same thing. You can also start one from the **Camera** tab.",
               },
               {
                 title: "Type a name under **Tape Name**.",
@@ -409,13 +488,13 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
               {
                 title: "Tap **Create Tape & Record**.",
                 detail:
-                  "The camera opens straight away, with the Tape already made and waiting.",
+                  "The camera opens straight away, with the Tape already made and waiting. Or tap **Create Tape** to make it now and add memories later.",
               },
               {
                 title:
                   "Press the big round button to start, and **Finish** when you're done.",
                 detail:
-                  "Videflo saves the recording into your new Tape and takes you back.",
+                  "Videflo saves the recording into your new Tape, starts protecting it in Videflo Cloud, and takes you back.",
               },
             ],
           },
@@ -424,6 +503,36 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
             title: "Nothing is created if you cancel",
             text: [
               "Tapping **Cancel** on the setup screen leaves your library exactly as it was. No empty Tape is left behind.",
+            ],
+          },
+        ],
+      },
+      {
+        id: "optional-setup",
+        heading: "Optional Setup",
+        blocks: [
+          {
+            kind: "text",
+            text: "Below the name and quality is an **Optional Setup** area. Everything in it can be done later, but it's handy to do at the start:",
+          },
+          {
+            kind: "definitions",
+            items: [
+              {
+                term: "Cover Photo",
+                description:
+                  "Take a photo or choose one from your library to represent the Tape. Otherwise Videflo uses a frame from the footage.",
+              },
+              {
+                term: "Add Videos",
+                description:
+                  "Choose videos you already have in Photos — the ones you filmed before Videflo — and they become the first recordings in the Tape, in the order you tapped them, keeping their original dates.",
+              },
+              {
+                term: "Invite to Tape",
+                description:
+                  "Choose people to invite the moment the Tape exists, so they can add their own recordings. See **Shared Tapes**.",
+              },
             ],
           },
         ],
@@ -456,7 +565,7 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
       {
         mistake:
           "Choosing High (4K) for a Tape you plan to grow all year, then running out of space in March.",
-        fix: "Standard looks lovely and uses roughly a quarter of the space. Save High for the Tapes where the detail genuinely matters.",
+        fix: "Standard looks lovely and uses roughly a quarter of the space — on your iPhone and in Videflo Cloud. Save High for the Tapes where the detail genuinely matters.",
       },
       {
         mistake:
@@ -479,9 +588,9 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
         ],
       },
       {
-        question: "Does creating a Tape use up storage before I record?",
+        question: "What happens to videos I add from Photos?",
         answer: [
-          "Practically none. A Tape with no recordings in it is just a name and a couple of settings. The space goes on the video you film into it.",
+          "Videflo makes its own copy of each one and never touches the original in Photos. A landscape video in a portrait Tape is shown whole, with bars at the sides, rather than cropped.",
         ],
       },
     ],
@@ -538,9 +647,9 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
           },
           {
             kind: "note",
-            title: "Choosing a cover photo asks for nothing at all",
+            title: "Choosing a photo or a video asks for nothing at all",
             text: [
-              "When you pick a cover image, iOS shows you its own picker and hands Videflo only the picture you chose. The app never sees the rest of your library, which is why no permission prompt appears.",
+              "When you pick a cover image, or choose videos from Photos to add to a new Tape, iOS shows you its own picker and hands Videflo only the items you chose. The app never sees the rest of your library, which is why no permission prompt appears.",
             ],
           },
         ],
@@ -560,7 +669,7 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
               },
               {
                 title:
-                  "Turn **Camera**, **Microphone**, and **Photos** on or off as you like.",
+                  "Turn **Camera**, **Microphone**, **Photos**, and **Notifications** on or off as you like.",
               },
             ],
           },
@@ -645,7 +754,7 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
     slug: "finding-your-way-around",
     title: "Finding your way around",
     description:
-      "The three tabs, what lives on each one, and where the settings are hiding.",
+      "The four tabs, what lives on each one, the Together row, and where the settings are hiding.",
     category: "getting-started",
     keywords: [
       "navigation",
@@ -655,9 +764,10 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
       "where is",
       "layout",
       "menu",
+      "bell",
     ],
     overview: [
-      "Videflo has three tabs along the bottom and one settings screen. That's the whole app — everything else is something you tap on a Tape.",
+      "Videflo has four tabs along the bottom, one settings screen, and a notification bell. That's the whole app — everything else is something you tap on a Tape.",
     ],
     sections: [
       {
@@ -671,11 +781,13 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
           {
             kind: "list",
             items: [
-              "**Continue Your Story** — a large card for the Tape you filmed into most recently. Tap the picture to watch it, or the gold **Continue Recording** button to add to it.",
+              "**Continue Your Story** — a large card for the Tape you filmed into most recently. Tap the picture to watch it, or **Continue Recording** to add to it.",
               "**Start a New Tape** — begins a fresh Tape.",
+              "**Together** — a row of the people you share memories with. Tap someone to see what you share, or the **+** circle to add someone.",
               "**Recent Tapes** — the next few Tapes you've been working on. Tap one to open it.",
               "**See All Tapes** — jumps you over to the Tapes tab.",
-              "**The gear icon, top right** — Settings.",
+              "**The bell** — notifications: invitations, requests, and new memories on Shared Tapes.",
+              "**The gear icon** — Settings.",
             ],
           },
         ],
@@ -686,11 +798,21 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
         blocks: [
           {
             kind: "text",
-            text: "Everything you've ever recorded, newest first. Tap a Tape to watch it. Press and hold one to bring up its menu — continue recording, manage recordings, add to a Collection, choose a cover photo, prepare, export, rename, delete.",
+            text: "Everything you've recorded and everything shared with you, newest first. Tap a Tape to watch it. Press and hold one to bring up its menu — continue recording, manage recordings, invite people, add to a Collection, choose a cover photo, pin, rename, remove from or download to this iPhone, delete.",
           },
           {
             kind: "text",
-            text: "In the header there's a magnifying glass for searching, and a button that switches between the picture grid and a tighter list.",
+            text: "In the header there's a magnifying glass for searching, filters — **All**, **On iPhone**, **Cloud**, **Shared** — and a button that switches between the picture grid and a tighter list.",
+          },
+        ],
+      },
+      {
+        id: "camera",
+        heading: "Camera",
+        blocks: [
+          {
+            kind: "text",
+            text: "Straight to filming. Choose a Tape to continue, or start a new one, and the recording screen opens with that Tape's own orientation and quality.",
           },
         ],
       },
@@ -710,7 +832,7 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
         blocks: [
           {
             kind: "text",
-            text: "The gear on the Home tab. It holds the timestamp preferences, your subscription status and **Restore Purchases**, links to help and feedback, **Replay Introduction**, and the app's version number. Every setting is listed in **Every setting explained**.",
+            text: "The gear on the Home tab. It holds your Profile, playback and export preferences, the Videflo Cloud card (status, storage, backup settings), your subscription, notifications, links to help and feedback, About Videflo, and — at the very bottom — Delete Account. Every screen is described in **Every setting explained**.",
           },
         ],
       },
@@ -730,13 +852,14 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
     ],
     tips: [
       "Videflo shows a warm branded screen while it starts up. It's loading your library, and it's quick — there's no progress to wait on.",
-      "If a Tape has a coloured dot or a percentage on its card, it's being prepared for export. You can carry on using the app while that runs.",
+      "A small cloud mark on a Tape's card tells you how it's protected — being backed up, backed up, or stored only in Videflo Cloud. See **Videflo Cloud: how backup works**.",
+      "A Tape's card lights up gently at the edge when somebody else has added a new memory to a Shared Tape since you last opened it.",
     ],
     faqs: [
       {
         question: "Where's the button to edit a video?",
         answer: [
-          "There isn't a general editor. To trim the start or end of one recording, open the Tape's menu, choose **Manage Recordings**, then tap **Edit** on the recording you want to shorten.",
+          "There isn't one. Videflo doesn't trim, cut or filter — a Tape is kept exactly as it was recorded. If a recording isn't wanted, you can delete it from **Manage Recordings**.",
         ],
       },
       {
@@ -744,6 +867,12 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
         answer: [
           "No. A Tape plays in the order things happened, which is what makes it a record of the day rather than an edit of it.",
           "You can reorder the Tapes inside a Collection, though.",
+        ],
+      },
+      {
+        question: "What's the pin for?",
+        answer: [
+          "**Pin Tape** tells Videflo which Tape you'd like to record into by default, so Camera and Home stop asking — handy when you're filming one thing all month. **Unpin Tape** undoes it. Pinning doesn't move the Tape or change anything about it.",
         ],
       },
     ],

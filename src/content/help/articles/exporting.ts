@@ -2,24 +2,25 @@ import type { HelpArticle } from "../types";
 
 export const exportingArticles: readonly HelpArticle[] = [
   {
-    slug: "prepare-and-export-a-tape",
-    title: "Preparing and exporting a Tape",
+    slug: "export-a-tape",
+    title: "Exporting a Tape to Photos",
     description:
-      "Exporting a whole Tape as one ordinary video file, saved into your Photos library.",
+      "Turning a whole Tape into one ordinary video, saved straight into your Photos library.",
     category: "exporting",
     keywords: [
       "export",
       "save to photos",
-      "prepare",
       "camera roll",
       "video file",
       "download",
       "copy out",
       "percent",
+      "send",
+      "airdrop",
     ],
     overview: [
       "Exporting makes an ordinary video file out of a whole Tape and saves it into your Photos library. From there it behaves like any other video: you can share it, AirDrop it, copy it to a computer, or back it up with everything else.",
-      "It happens in two steps. **Prepare** builds the single video file, which takes some time. **Export to Photos** copies that finished file across, which is quick.",
+      "It's one step. Choose **Export Tape**, watch the percentage, and the video is in Photos. Nothing is left behind in Videflo — there's no prepared copy to manage or delete afterwards.",
     ],
     sections: [
       {
@@ -30,129 +31,111 @@ export const exportingArticles: readonly HelpArticle[] = [
             kind: "steps",
             steps: [
               {
-                title:
-                  "Press and hold the Tape, or open the three-dot menu while watching it.",
+                title: "Open the Tape so it's playing.",
               },
               {
                 title:
-                  "Choose **Prepare Tape**, then pick **With Timestamp** or **Without Timestamp**.",
+                  "Tap the **⋯** menu in the player and choose **Export Tape**.",
+              },
+              {
+                title: "Confirm.",
                 detail:
-                  "With Timestamp draws the filming date permanently into the video. See **The date stamp on your Tapes**.",
+                  "Videflo checks there's enough free space for the export before it starts, and tells you if there isn't.",
               },
               {
-                title: "Wait while it prepares.",
+                title: "Wait while it exports.",
                 detail:
-                  "A percentage appears on the Tape's card. You can carry on using the rest of the app, and even leave Videflo for a while.",
+                  "**Exporting 42%** counts up as it works. It's real progress, not an estimate. Keep Videflo on screen — you can cancel at any time, and nothing is kept from a cancelled export.",
               },
               {
-                title:
-                  "When it says **Tape Ready**, choose **Export to Photos**.",
+                title: "**Export Complete · Saved to Photos.** Tap **Done**.",
                 detail:
                   "The first time, iOS asks permission to add to your library.",
               },
-              {
-                title: "The video appears in Photos, in your Recents.",
-              },
             ],
           },
         ],
       },
       {
-        id: "why-prepare",
-        heading: "Why there's a Prepare step",
+        id: "what-you-get",
+        heading: "What the exported video is",
         blocks: [
           {
-            kind: "text",
-            text: "A Tape isn't a single file on disk — it's your original recordings, played back as one continuous piece. That's what keeps your footage safe and untouched, but it means there's no ready-made file to hand to Photos.",
-          },
-          {
-            kind: "text",
-            text: "**Prepare** builds that file once. After it's built, exporting the same Tape again is instant, because the work is already done.",
+            kind: "list",
+            items: [
+              "**The whole Tape, in order**, at the quality it was recorded at. On a Shared Tape that includes everyone's recordings.",
+              "**A new file.** Your original recordings are never touched, whatever happens during the export.",
+              "**With or without the date stamp**, depending on **Export with Timestamp** in Settings → Export Settings. See **Timestamps**.",
+            ],
           },
           {
             kind: "note",
-            title: "Your originals are never touched",
+            title: "A Tape that lives only in Videflo Cloud exports too",
             text: [
-              "Preparing creates a brand-new copy. Every original recording stays exactly as it was, whatever happens during the export.",
+              "If you've removed a Tape from this iPhone, Export Tape streams it from Videflo Cloud while it renders. It doesn't download the Tape first, and it doesn't leave a copy on the phone afterwards — you'll need a connection, and a long Tape takes longer than one that's already here.",
             ],
           },
         ],
       },
       {
-        id: "states",
-        heading: "The labels you'll see on a Tape",
+        id: "sending",
+        heading: "Sending the video to someone",
         blocks: [
           {
-            kind: "definitions",
+            kind: "text",
+            text: "Once it's in Photos, share it the way you share any video: open the **Photos** app, find it in Recents, tap the share button, and choose AirDrop, Messages, a shared album, or saving to Files.",
+          },
+          {
+            kind: "list",
             items: [
-              {
-                term: "A percentage",
-                description:
-                  "Preparation is running. Real progress, not an estimate. **Cancel Preparation** appears in the menu while it does.",
-              },
-              {
-                term: "Tape Ready",
-                description:
-                  "A prepared file exists and **Export to Photos** will be quick.",
-              },
-              {
-                term: "Tape Changed",
-                description:
-                  "You've added, trimmed, or deleted a recording since preparing. The prepared file is now out of date — choose **Prepare Again** for an export that includes the change.",
-              },
-              {
-                term: "Preparation Failed",
-                description:
-                  "Something went wrong, most often storage. Free some space and try again; nothing was lost.",
-              },
+              "**A Tape built over a holiday can be several gigabytes** — past what Messages, Mail or WhatsApp will carry, and some services quietly squash the video to fit.",
+              "**AirDrop** is best for someone in the same room — full quality, no size limit, nothing uploaded anywhere.",
+              "**A single recording** is often the friendlier thing to send — see **Saving one recording to Photos**.",
+              "**Want them to have the memory itself, not a copy?** Invite them to the Tape instead — see **Shared Tapes**. They can watch it in Videflo and add their own recordings.",
             ],
           },
         ],
       },
       {
-        id: "background",
-        heading: "Leaving the app while it prepares",
+        id: "who-can-export",
+        heading: "Who can export a Shared Tape",
         blocks: [
           {
             kind: "text",
-            text: "Preparation keeps going for a while after you switch away, but iOS eventually suspends it. If that happens the Tape is shown as interrupted when you come back, and one tap on **Prepare Again** restarts it. Nothing is corrupted, and no partial file is left behind.",
-          },
-          {
-            kind: "text",
-            text: "For a long Tape, the reliable approach is to start it, leave Videflo on screen, and put the phone on a charger.",
+            text: "Only the Tape's owner. Every member can watch the whole Tape in Videflo, but **Export Tape** appears in the owner's menu alone — access to watch a memory isn't the same as permission to hand out copies of it.",
           },
         ],
       },
     ],
     tips: [
-      "Check your free space first. The prepared file is roughly as large as all the recordings in the Tape put together, and it needs to exist alongside them.",
-      "Once a Tape is exported, you can delete the prepared copy from the Tape's menu to get that space back. Your recordings stay untouched and you can prepare again whenever you like.",
-      "Preparing a long 4K Tape can take a good while. Plug in and start it before you make a cup of tea.",
-      "Exporting is the single best way to protect an irreplaceable Tape, because the copy in Photos is included in your normal iPhone backup.",
+      "Check your free space first. The exported file is roughly as large as all the recordings in the Tape put together.",
+      "Exporting a long 4K Tape can take a good while. Plug in and start it before you make a cup of tea.",
+      "Exporting is a fine way to keep a copy outside Videflo altogether — the video in Photos is included in your normal iPhone backup and iCloud Photos.",
     ],
     pitfalls: [
       {
-        mistake: "Looking for an Export button without preparing first.",
-        fix: "**Export to Photos** only appears once the Tape says **Tape Ready**. Prepare it first — that's the step that builds the file.",
+        mistake: "Looking for Export Tape in the press-and-hold menu.",
+        fix: "It's in the player. Open the Tape, then tap **⋯** at the top.",
       },
       {
         mistake:
           "Exporting, then adding another recording, then wondering why the file in Photos is missing it.",
-        fix: "An exported file is a snapshot. The Tape will now say **Tape Changed** — prepare and export again to get a fresh copy.",
+        fix: "An exported file is a snapshot of the Tape at that moment. Export again for a fresh copy.",
       },
       {
-        mistake: "Starting a big export with almost no free storage.",
-        fix: "Preparation needs room for the whole new file. Free up space first, or the export will fail part way through.",
+        mistake: "Switching to another app in the middle of an export.",
+        fix: "Exporting runs while Videflo is on screen. Leave it in the foreground until it says **Export Complete**.",
       },
     ],
     troubleshooting: [
       {
-        problem: "Preparation fails every time.",
+        problem: "Export fails or stops part way.",
         solutions: [
           "Free up storage — this is by far the most common cause.",
           "Switch off Low Power Mode.",
           "Keep Videflo on screen with the phone plugged in and try again.",
-          "If one particular Tape always fails, check **Manage Recordings** for a recording whose file is missing.",
+          "If the Tape lives in Videflo Cloud, check your connection.",
+          "If one particular Tape always fails, check **Manage Recordings** for a recording marked unavailable — a Tape exports whole or not at all.",
         ],
       },
       {
@@ -191,17 +174,13 @@ export const exportingArticles: readonly HelpArticle[] = [
         ],
       },
       {
-        question: "Does deleting the prepared copy delete my Tape?",
+        question: "Does exporting use my Videflo Cloud allowance?",
         answer: [
-          "No. It removes only the export-ready file. Every original recording stays safe and playable, and you can prepare again at any time.",
+          "No. The exported video goes into Photos on your iPhone. Nothing is uploaded, and nothing changes in Videflo Cloud.",
         ],
       },
     ],
-    related: [
-      "export-a-single-recording",
-      "sharing-your-videos",
-      "storage-space",
-    ],
+    related: ["export-a-single-recording", "timestamps", "shared-tapes"],
   },
 
   {
@@ -219,7 +198,7 @@ export const exportingArticles: readonly HelpArticle[] = [
       "quick export",
     ],
     overview: [
-      "Sometimes you only want one bit — the twenty seconds where the dog does the thing. You don't have to prepare the whole Tape for that.",
+      "Sometimes you only want one bit — the twenty seconds where the dog does the thing. You don't have to export the whole Tape for that.",
       "Individual recordings can be saved straight to your Photos library, and because there's nothing to build first, it's quick.",
     ],
     sections: [
@@ -253,7 +232,7 @@ export const exportingArticles: readonly HelpArticle[] = [
             kind: "note",
             title: "This one has no date stamp",
             text: [
-              "Burning the date into the picture is offered when you prepare a whole Tape. A single recording saved this way is exported as filmed.",
+              "The **Export with Timestamp** setting applies to exporting a whole Tape. A single recording saved this way is exported exactly as filmed.",
             ],
           },
         ],
@@ -268,12 +247,12 @@ export const exportingArticles: readonly HelpArticle[] = [
               {
                 term: "Export one recording",
                 description:
-                  "Quick, no preparation, no date stamp option. Best for sending someone a moment.",
+                  "Quick, no date stamp. Best for sending someone a moment.",
               },
               {
-                term: "Prepare and export the Tape",
+                term: "Export the Tape",
                 description:
-                  "The complete memory as one video, with the option to burn in the date. Best for keeping and for handing on.",
+                  "The complete memory as one video, with the date stamp if you've turned it on. Best for keeping and for handing on.",
               },
             ],
           },
@@ -281,15 +260,14 @@ export const exportingArticles: readonly HelpArticle[] = [
       },
     ],
     tips: [
-      "Trim the recording first if it has a slow start — the export copies whatever the recording currently is.",
+      "Want it shorter? Export it, then trim the copy in the Photos app. Videflo never trims — the recording in the Tape stays whole.",
       "Saving a recording to Photos doesn't remove it from the Tape. You end up with two copies, which is rather the point.",
     ],
     troubleshooting: [
       {
         problem: "Export to Photos is greyed out or missing.",
         solutions: [
-          "Check the recording's file still exists — a recording marked unavailable can't be exported.",
-          "Wait for any preparation on that Tape to finish.",
+          "Check the recording isn't marked unavailable — a recording with no file on this iPhone and no finished copy in Videflo Cloud can't be exported.",
         ],
       },
       {
@@ -305,123 +283,17 @@ export const exportingArticles: readonly HelpArticle[] = [
       {
         question: "Can I export several recordings at once?",
         answer: [
-          "Not in one go — they're exported one at a time. To get everything together, prepare and export the whole Tape instead.",
-        ],
-      },
-    ],
-    related: [
-      "prepare-and-export-a-tape",
-      "manage-recordings",
-      "sharing-your-videos",
-    ],
-  },
-
-  {
-    slug: "sharing-your-videos",
-    title: "Sharing a Tape with someone",
-    description:
-      "How to send a memory to family — and why it goes through Photos rather than Videflo.",
-    category: "exporting",
-    keywords: [
-      "send",
-      "share",
-      "airdrop",
-      "message",
-      "whatsapp",
-      "email video",
-      "family",
-      "link",
-    ],
-    overview: [
-      "Videflo has no share button, and no way to send a Tape from inside the app. That's deliberate: nothing you film ever leaves your iPhone unless you choose to take it out.",
-      "Sharing works by exporting first. Once a Tape is a video in your Photos library, every way you already share videos works exactly as normal.",
-    ],
-    sections: [
-      {
-        id: "how",
-        heading: "Sending a Tape to someone",
-        blocks: [
-          {
-            kind: "steps",
-            steps: [
-              {
-                title: "Export the Tape.",
-                detail:
-                  "Prepare it, then **Export to Photos**. See **Preparing and exporting a Tape**.",
-              },
-              { title: "Open the **Photos** app and find it in Recents." },
-              {
-                title: "Tap the share button — the square with an arrow.",
-              },
-              {
-                title: "Choose how to send it.",
-                detail:
-                  "AirDrop, Messages, Mail, WhatsApp, a shared album, or saving to Files — whatever you normally use.",
-              },
-            ],
-          },
+          "Not in one go — they're exported one at a time. To get everything together, export the whole Tape instead.",
         ],
       },
       {
-        id: "big-files",
-        heading: "Tapes are often too big to message",
-        blocks: [
-          {
-            kind: "text",
-            text: "A Tape built over a whole holiday can easily be several gigabytes, which is well past what Messages, Mail, or WhatsApp will carry. Some services quietly squash the video down to fit, which is a shame for something you filmed at 4K.",
-          },
-          {
-            kind: "list",
-            items: [
-              "**AirDrop** is the best option for someone in the same room — full quality, no size limit, nothing uploaded anywhere.",
-              "**A shared album** in Photos suits family who are further away, though iCloud will reduce the quality somewhat.",
-              "**A single recording** rather than the whole Tape is often the friendlier thing to send.",
-              "**A computer** is best for anything genuinely large — copy the exported file across and share it from there.",
-            ],
-          },
-        ],
-      },
-    ],
-    tips: [
-      "Export **With Timestamp** for anything you're sending to family. The date travels with the video and doesn't rely on anyone's file names.",
-      "Sending one recording rather than a two-hour Tape is usually kinder to the person receiving it.",
-      "AirDrop keeps the video at full quality and never uploads it anywhere.",
-    ],
-    pitfalls: [
-      {
-        mistake: "Hunting for a share button inside Videflo.",
-        fix: "There isn't one. Export to Photos, then share from there.",
-      },
-      {
-        mistake:
-          "Emailing a large export and assuming it went. Most mail systems reject video that size.",
-        fix: "AirDrop it, or put it in a shared album.",
-      },
-    ],
-    faqs: [
-      {
-        question: "Can I send someone a link to a Tape?",
+        question:
+          "Can I export a recording somebody else added to a Shared Tape?",
         answer: [
-          "No. Videflo doesn't host anything, so there's no link to give. A Tape only exists on your iPhone until you export it.",
-        ],
-      },
-      {
-        question: "Can two people record into the same Tape?",
-        answer: [
-          "No. A Tape lives on one iPhone and there's no sharing or syncing between devices.",
-        ],
-      },
-      {
-        question: "Does Videflo upload my videos anywhere when I share?",
-        answer: [
-          "No. Videflo hands the exported file to your Photos library on the device. Anything that happens after that is between you and the app you choose to share with.",
+          "Export to Photos is offered for every recording you can play, so yes — it's part of the Tape you're on. Exporting the whole Tape in one go is for the owner only.",
         ],
       },
     ],
-    related: [
-      "prepare-and-export-a-tape",
-      "privacy-and-security",
-      "backups-and-new-iphone",
-    ],
+    related: ["export-a-tape", "manage-recordings", "shared-tapes"],
   },
 ] as const;

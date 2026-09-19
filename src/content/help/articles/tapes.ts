@@ -17,10 +17,11 @@ export const tapeArticles: readonly HelpArticle[] = [
       "organise",
       "tidy",
       "menu",
+      "pin",
     ],
     overview: [
       "Everything you can do to a Tape lives in one menu. Press and hold a Tape — on Home, in the Tapes tab, or inside a Collection — and it appears.",
-      "Two of those actions permanently delete video. They're marked clearly here, and the app asks you to confirm both.",
+      "One of those actions permanently deletes video, from your iPhone and from Videflo Cloud together. It's marked clearly here, and the app asks you to confirm it.",
     ],
     sections: [
       {
@@ -31,42 +32,48 @@ export const tapeArticles: readonly HelpArticle[] = [
             kind: "definitions",
             items: [
               {
+                term: "Pin Tape / Unpin Tape",
+                description:
+                  "Makes this the Tape Videflo records into by default, so Camera and Home stop asking which one. It changes nothing else about the Tape.",
+              },
+              {
                 term: "Continue Recording",
-                description: "Opens the camera to add more to this Tape.",
+                description:
+                  "Opens the camera to add more to this Tape. On a Tape with nothing in it yet, it reads **Record First Memory**.",
               },
               {
                 term: "Manage Recordings",
                 description:
-                  "Opens the list of individual recordings inside the Tape, where you can play, rename, trim, or delete them one at a time.",
+                  "Opens the list of individual recordings inside the Tape, where you can play, rename, export or delete them one at a time.",
               },
               {
-                term: "Add to Collection / Move to Collection",
+                term: "Invite to Tape / Manage Invites / Manage Shared Tape",
                 description:
-                  "Puts the Tape in a Collection. A Tape can be in one Collection at a time, so moving it takes it out of the previous one.",
+                  "The same row, named for where the Tape is: personal, invitations out, or shared. It opens the people screen — see **Shared Tapes**.",
               },
               {
-                term: "Choose Cover Photo / Remove Cover Photo",
+                term: "Add to Collection / Move to Collection / Remove from Collection",
                 description:
-                  "Picks a picture from your photo library to represent the Tape, or goes back to the automatic one.",
-              },
-              {
-                term: "Prepare Tape",
-                description:
-                  "Builds the single video file that exporting needs. Takes a while for long Tapes, and you can keep using the app while it works.",
-              },
-              {
-                term: "Export to Photos",
-                description:
-                  "Saves the prepared Tape into your photo library, with or without the date stamp.",
+                  "Puts the Tape in a Collection, or takes it out. A Tape can be in one Collection at a time, so moving it takes it out of the previous one.",
               },
               {
                 term: "Rename",
                 description: "Changes the Tape's name. Nothing else changes.",
               },
               {
-                term: "Delete",
+                term: "Cover Photo",
                 description:
-                  "Permanently removes the Tape and all its video from your iPhone.",
+                  "Take a photo, choose one from your library, or remove the cover and go back to the automatic one.",
+              },
+              {
+                term: "Remove from This iPhone / Download to This iPhone",
+                description:
+                  "Frees the space a fully protected Tape uses on your phone, or brings the files back. See **Videflo Cloud: how backup works**.",
+              },
+              {
+                term: "Delete Tape",
+                description:
+                  "Permanently removes the Tape and all its video — from your iPhone and from Videflo Cloud. On a Tape somebody shared with you, this row is **Leave Tape** instead.",
               },
             ],
           },
@@ -86,7 +93,7 @@ export const tapeArticles: readonly HelpArticle[] = [
           },
           {
             kind: "text",
-            text: "Rename as often as you like — it only changes the label. The recordings, the order, the quality and the cover are all untouched. You can also rename from the three-dot menu while watching a Tape.",
+            text: "Rename as often as you like — it only changes the label. The recordings, the order, the quality and the cover are all untouched, and the new name reaches Videflo Cloud and every member of a Shared Tape. You can also rename from the three-dot menu while watching a Tape.",
           },
         ],
       },
@@ -96,16 +103,16 @@ export const tapeArticles: readonly HelpArticle[] = [
         blocks: [
           {
             kind: "warning",
-            title: "This cannot be undone",
+            title: "This cannot be undone, anywhere",
             text: [
-              "Deleting a Tape deletes every recording inside it from your iPhone. Videflo has no copy, no cloud, and no bin to fish it out of.",
+              "Deleting a Tape deletes every recording inside it from your iPhone **and** from Videflo Cloud, in one step. There's no bin to fish it out of, and on a Shared Tape it disappears for every member — including recordings they added.",
               "If there's any chance you'll want it, export it first — that leaves a copy in your Photos library that survives the deletion.",
             ],
           },
           {
             kind: "steps",
             steps: [
-              { title: "Press and hold the Tape and choose **Delete**." },
+              { title: "Press and hold the Tape and choose **Delete Tape**." },
               {
                 title:
                   "Read the confirmation, which names the Tape you're about to remove.",
@@ -113,6 +120,13 @@ export const tapeArticles: readonly HelpArticle[] = [
               {
                 title: "Tap **Delete** to confirm, or **Cancel** to back out.",
               },
+            ],
+          },
+          {
+            kind: "note",
+            title: "Videflo needs to reach Videflo Cloud to delete",
+            text: [
+              "Because deletion removes the cloud copy too, a Tape that has ever been backed up can't be deleted while you're offline or signed out. Videflo refuses rather than leaving a copy you can't see — try again once you're connected.",
             ],
           },
         ],
@@ -134,14 +148,14 @@ export const tapeArticles: readonly HelpArticle[] = [
     ],
     tips: [
       "Tapes are listed with whatever you filmed into most recently at the top, so the Tape you're actively growing is always easy to find.",
-      "Deleting the **prepared** copy of a Tape frees up a lot of space and doesn't touch your recordings — see **How much space Tapes use**.",
+      "Short of space on the phone? Don't delete — use **Remove from This iPhone** on a Tape that's already backed up. It stays in your library and plays by streaming.",
       "Renaming a Tape doesn't rename anything you've already exported to Photos.",
     ],
     pitfalls: [
       {
         mistake:
-          "Deleting a Tape to free up space, when it was the prepared copy taking the room.",
-        fix: "Use **Delete Prepared Tape** instead. It removes only the export-ready file and leaves every original recording safe and playable.",
+          "Deleting a Tape to free up space, when removing it from the phone would have done.",
+        fix: "**Remove from This iPhone** frees the same space and keeps the Tape safe in Videflo Cloud. Delete is for memories you genuinely don't want.",
       },
       {
         mistake:
@@ -154,13 +168,13 @@ export const tapeArticles: readonly HelpArticle[] = [
         problem: "The menu doesn't appear when I tap a Tape.",
         solutions: [
           "Press and *hold* rather than tapping. A tap opens the Tape for watching.",
-          "While a Tape is being prepared, some actions are hidden. Wait for it to finish or cancel the preparation.",
         ],
       },
       {
-        problem: "A Tape shows a percentage and won't open properly.",
+        problem: "Delete Tape is greyed out or says it can't delete right now.",
         solutions: [
-          "It's being prepared for export. Let it finish — or open its menu and choose **Cancel Preparation**.",
+          "Check you're online and signed in — a Tape that has a copy in Videflo Cloud can only be deleted while Videflo can reach it.",
+          "Wait for any upload of that Tape to finish, then try again.",
         ],
       },
     ],
@@ -168,7 +182,7 @@ export const tapeArticles: readonly HelpArticle[] = [
       {
         question: "Can I undo deleting a Tape?",
         answer: [
-          "No. Deletion is permanent and immediate, and Videflo keeps no copy. The only way back is an iPhone backup made before the deletion, or a copy you exported.",
+          "No. Deletion is permanent and removes the copy in Videflo Cloud as well. The only way back is a copy you exported to Photos, or an iPhone backup made before the deletion.",
         ],
       },
       {
@@ -181,18 +195,18 @@ export const tapeArticles: readonly HelpArticle[] = [
       {
         question: "Can I sort my Tapes alphabetically?",
         answer: [
-          "Not today — the library is ordered by recent activity. Search is the quickest way to find a specific one, and Collections are the way to group them.",
+          "Not today — the library is ordered by recent activity. Search is the quickest way to find a specific one, the filters narrow it to Shared or cloud-only Tapes, and Collections are the way to group them.",
         ],
       },
     ],
-    related: ["manage-recordings", "collections", "storage-space"],
+    related: ["manage-recordings", "collections", "videflo-cloud"],
   },
 
   {
     slug: "manage-recordings",
     title: "Managing the recordings inside a Tape",
     description:
-      "Play, rename, trim, or delete the individual pieces a Tape is made of.",
+      "Play, rename, export, or delete the individual pieces a Tape is made of.",
     category: "tapes",
     keywords: [
       "segments",
@@ -206,7 +220,7 @@ export const tapeArticles: readonly HelpArticle[] = [
     ],
     overview: [
       "Almost everywhere in Videflo, a Tape is treated as one whole thing. **Manage Recordings** is the one screen that opens it up and shows the individual recordings inside.",
-      "It's where you'd go to remove a recording you didn't mean to keep, trim one that starts too early, or give a recording a name so you can find it later.",
+      "It's where you'd go to remove a recording you didn't mean to keep, save one recording on its own to Photos, or give a recording a name so you can find it later.",
     ],
     sections: [
       {
@@ -225,7 +239,7 @@ export const tapeArticles: readonly HelpArticle[] = [
               {
                 title: "Each recording appears in the order it was filmed.",
                 detail:
-                  "Numbered, with its length, and its own row of actions.",
+                  "Numbered, with its length, who filmed it on a Shared Tape, and its own row of actions.",
               },
             ],
           },
@@ -244,25 +258,28 @@ export const tapeArticles: readonly HelpArticle[] = [
                   "Watches that one recording on its own, without the rest of the Tape.",
               },
               {
-                term: "Edit",
-                description:
-                  "Opens the trim editor, where you can shorten the start and the end. See **Trimming a recording**.",
-              },
-              {
                 term: "Rename Recording",
                 description:
-                  "Gives it a name of your own. Leave the box empty to go back to the plain default, like “Recording 3”.",
-              },
-              {
-                term: "Delete",
-                description:
-                  "Removes that recording from the Tape and deletes its video. Permanent.",
+                  "Gives it a name of your own. Leave the box empty to go back to the plain default, like “Recording 3”. Names reach Videflo Cloud, so they're there on a new iPhone too.",
               },
               {
                 term: "Export to Photos",
                 description:
-                  "Saves that single recording into your photo library, without preparing the whole Tape.",
+                  "Saves that single recording into your photo library, as filmed.",
               },
+              {
+                term: "Delete",
+                description:
+                  "Removes that recording from the Tape and deletes its video from your iPhone. Permanent. See the note below for what happens to the copy in Videflo Cloud.",
+              },
+            ],
+          },
+          {
+            kind: "note",
+            title: "Deleting one recording, and Videflo Cloud",
+            text: [
+              "On a **personal** Tape, deleting a recording removes it from this iPhone. Its copy in Videflo Cloud isn't removed today — it still counts toward your allowance, and it would be rebuilt if the Tape came back to a new iPhone. To remove a memory everywhere, delete the whole Tape.",
+              "On a **Shared** Tape, only the owner can delete a recording, and doing so removes it from Videflo Cloud for everyone — including a recording somebody else added. Renaming stays with the person who filmed it.",
             ],
           },
         ],
@@ -305,13 +322,13 @@ export const tapeArticles: readonly HelpArticle[] = [
     tips: [
       "Play a recording before deleting it. Row four of a long list is rarely what you remember it being.",
       "Naming recordings is optional and most people never do it — but on a Tape that's grown over a year, “Christmas morning” beats “Recording 11”.",
-      "Deleting a recording marks any prepared copy of the Tape as **Tape Changed**. Prepare it again before your next export.",
+      "Want a recording without the slow start? Videflo doesn't trim, but you can export it to Photos and trim the copy there — the original in the Tape stays whole.",
     ],
     pitfalls: [
       {
         mistake:
           "Deleting several recordings to free up space without checking what they were.",
-        fix: "Play each one first. Deleted footage is gone for good, and a five-second clip barely moves the storage needle anyway.",
+        fix: "Play each one first. Deleted footage is gone for good — and if space is the problem, **Remove from This iPhone** on the whole Tape frees far more without deleting anything.",
       },
       {
         mistake:
@@ -323,7 +340,7 @@ export const tapeArticles: readonly HelpArticle[] = [
       {
         problem: "A recording shows as unavailable or won't play.",
         solutions: [
-          "Its video file is missing — usually because storage ran out mid-save, or a restore didn't bring everything back.",
+          "Its file isn't on this iPhone and Videflo Cloud doesn't have a finished copy either — usually because storage ran out mid-save, or an upload never completed before the phone was replaced.",
           "The rest of the Tape still plays. Deleting the broken entry tidies the list.",
         ],
       },
@@ -345,150 +362,19 @@ export const tapeArticles: readonly HelpArticle[] = [
       {
         question: "Does deleting a recording free up space straight away?",
         answer: [
-          "Yes — the video file is removed from your iPhone at that point.",
+          "On your iPhone, yes — the video file is removed at that point. On a personal Tape the copy in Videflo Cloud stays until you delete the Tape, so your allowance doesn't change; on a Shared Tape an owner's delete frees the cloud copy too.",
         ],
       },
       {
-        question: "Can I hide a recording instead of deleting it?",
+        question: "Can I hide or trim a recording instead of deleting it?",
         answer: [
-          "No. A Tape plays everything it contains, so the only way to leave something out is to delete it or trim it away.",
-        ],
-      },
-    ],
-    related: ["trim-a-recording", "managing-your-tapes", "storage-space"],
-  },
-
-  {
-    slug: "trim-a-recording",
-    title: "Trimming a recording",
-    description:
-      "Shorten the start or the end of one recording — the only editing Videflo does.",
-    category: "tapes",
-    keywords: [
-      "edit",
-      "crop",
-      "cut",
-      "shorten",
-      "handles",
-      "trim start",
-      "trim end",
-      "editor",
-    ],
-    overview: [
-      "Every recording has a bit at the start where you're pressing the button and a bit at the end where you're reaching for it again. Trimming tidies those away.",
-      "This is the whole of Videflo's editing. There's no cutting from the middle, no splitting, no filters, and no soundtrack — a Tape is meant to be what happened, lightly tidied.",
-    ],
-    sections: [
-      {
-        id: "how",
-        heading: "Trimming",
-        blocks: [
-          {
-            kind: "steps",
-            steps: [
-              {
-                title: "Open the Tape's menu and choose **Manage Recordings**.",
-              },
-              { title: "Find the recording and tap **Edit**." },
-              {
-                title: "Drag the handles at either end of the filmstrip.",
-                detail:
-                  "The picture follows your finger as you drag, so you can see the exact frame you're landing on.",
-              },
-              {
-                title:
-                  "Check the **Start**, **Duration** and **End** figures underneath.",
-              },
-              {
-                title: "Tap **Save**.",
-                detail:
-                  "**Reset** puts the handles back to the full length; **Cancel** leaves the recording completely untouched.",
-              },
-            ],
-          },
-          {
-            kind: "note",
-            title: "Nothing changes until you tap Save",
-            text: [
-              "Dragging the handles is just looking. You can move them about as much as you like, then back out with **Cancel** and the recording is exactly as it was.",
-            ],
-          },
-        ],
-      },
-      {
-        id: "what-happens",
-        heading: "What Saving does",
-        blocks: [
-          {
-            kind: "text",
-            text: "Videflo writes a new, shorter video file and points the Tape at it. The original is removed once the new one is safely saved, so you'll get back the storage the trimmed-away footage was using.",
-          },
-          {
-            kind: "warning",
-            title: "Trimmed footage is gone",
-            text: [
-              "Once you've saved a trim, the parts you cut away can't be brought back. If you might want them, export the recording to Photos before trimming.",
-            ],
-          },
-        ],
-      },
-    ],
-    tips: [
-      "Leave a beat of breathing room at each end. Trimming right up to the first word makes the recording feel clipped when it plays after another one.",
-      "Recordings have a minimum length, so the handles won't let you trim a recording down to nothing.",
-      "Trimming marks any prepared copy of the Tape as **Tape Changed**, so prepare it again before your next export.",
-    ],
-    pitfalls: [
-      {
-        mistake:
-          "Trying to cut an interruption out of the middle of a recording.",
-        fix: "Not possible — trimming works from the ends only. If the middle is unusable, the options are to keep it or delete the whole recording.",
-      },
-      {
-        mistake: "Trimming aggressively to save storage.",
-        fix: "The savings are small compared to deleting a prepared Tape copy, and trims can't be undone. Trim for how it watches, not for space.",
-      },
-    ],
-    troubleshooting: [
-      {
-        problem: "The preview doesn't move when I drag a handle.",
-        solutions: [
-          "Drag slowly — the picture follows the handle you're actually holding, so make sure you've grabbed one rather than the strip itself.",
-          "Close the editor and reopen it if it stays frozen.",
-        ],
-      },
-      {
-        problem: "Save fails or the editor closes with an error.",
-        solutions: [
-          "Free up storage — Videflo needs room to write the trimmed copy before it removes the original.",
-          "Try again with the app in the foreground and the screen awake.",
-          "Your original recording is never modified during a failed save, so nothing is lost.",
-        ],
-      },
-    ],
-    faqs: [
-      {
-        question: "Can I undo a trim?",
-        answer: [
-          "No. Once saved, the trimmed-away footage is deleted from your iPhone.",
-        ],
-      },
-      {
-        question: "Does trimming re-encode and reduce quality?",
-        answer: [
-          "Videflo writes a new file covering the range you kept, at the quality the Tape was recorded at. The part you kept looks like it always did.",
-        ],
-      },
-      {
-        question: "Can I trim a whole Tape rather than one recording?",
-        answer: [
-          "No. Trimming works on individual recordings, which is also what gives you control over exactly where a Tape starts and ends.",
+          "No. A Tape plays everything it contains exactly as it was recorded — Videflo has no trimming or editing. The only way to leave something out is to delete it.",
         ],
       },
     ],
     related: [
-      "manage-recordings",
-      "prepare-and-export-a-tape",
+      "managing-your-tapes",
+      "export-a-single-recording",
       "storage-space",
     ],
   },
@@ -523,7 +409,11 @@ export const tapeArticles: readonly HelpArticle[] = [
               {
                 title: "Press and hold the Tape or Collection.",
               },
-              { title: "Choose **Choose Cover Photo**." },
+              {
+                title: "Choose **Take Photo** or **Choose from Library**.",
+                detail:
+                  "You can also add a cover under **Optional Setup** when you create a Tape.",
+              },
               {
                 title: "Pick a picture in the Photos picker that appears.",
                 detail:
@@ -531,6 +421,8 @@ export const tapeArticles: readonly HelpArticle[] = [
               },
               {
                 title: "The cover updates everywhere that Tape appears.",
+                detail:
+                  "A Tape's cover is backed up with it, so it's there on a new iPhone and on every member's copy of a Shared Tape.",
               },
             ],
           },
@@ -542,7 +434,7 @@ export const tapeArticles: readonly HelpArticle[] = [
         blocks: [
           {
             kind: "text",
-            text: "Press and hold again and choose **Remove Cover Photo**. The Tape goes back to using a frame from its own footage, and the copy Videflo made is deleted.",
+            text: "Press and hold again and choose **Remove Cover**. The Tape goes back to using a frame from its own footage, and the copy Videflo made is deleted.",
           },
           {
             kind: "text",
@@ -575,16 +467,16 @@ export const tapeArticles: readonly HelpArticle[] = [
     ],
     troubleshooting: [
       {
-        problem: "The cover went back to a video frame on its own.",
-        solutions: [
-          "The stored image is missing — this can happen after restoring from a backup. Simply choose it again.",
-        ],
-      },
-      {
         problem: "The picker opens but nothing happens when I pick a photo.",
         solutions: [
           "Very large photographs take a second to bring in. Give it a moment before tapping again.",
           "If it fails, Videflo shows a message and leaves the existing cover alone. Try a different picture.",
+        ],
+      },
+      {
+        problem: "Take Photo says camera access is off.",
+        solutions: [
+          "Turn on **Settings → Videflo → Camera**, or choose a picture from your library instead.",
         ],
       },
     ],
@@ -602,10 +494,8 @@ export const tapeArticles: readonly HelpArticle[] = [
         ],
       },
       {
-        question: "Does Videflo get access to all my photos?",
-        answer: [
-          "No. iOS shows you its own picker and hands the app only the single picture you tapped, which is why no permission prompt appears.",
-        ],
+        question: "Who can change the cover of a Shared Tape?",
+        answer: ["The Tape's owner. Members see the cover the owner chose."],
       },
     ],
     related: ["managing-your-tapes", "collections", "privacy-and-security"],
@@ -618,7 +508,7 @@ export const tapeArticles: readonly HelpArticle[] = [
     category: "tapes",
     keywords: ["find", "search", "filter", "magnifying glass", "look for"],
     overview: [
-      "Once you've a few dozen Tapes, scrolling stops being the fastest way to find one. Both the Tapes tab and the Collections tab have a search that filters as you type.",
+      "Once you've a few dozen Tapes, scrolling stops being the fastest way to find one. Both the Tapes tab and the Collections tab have a search that filters as you type, and the Tapes tab has filters for where a Tape lives.",
     ],
     sections: [
       {
@@ -640,6 +530,36 @@ export const tapeArticles: readonly HelpArticle[] = [
               },
               {
                 title: "Tap the **✕** to clear, or **Cancel** to close search.",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "filters",
+        heading: "Filtering by where a Tape lives",
+        blocks: [
+          {
+            kind: "definitions",
+            items: [
+              {
+                term: "All",
+                description: "Every Tape, yours and shared with you.",
+              },
+              {
+                term: "On iPhone",
+                description:
+                  "Tapes whose files are on this phone, so they play without a connection.",
+              },
+              {
+                term: "Cloud",
+                description:
+                  "Tapes stored only in Videflo Cloud — removed from this iPhone, or not yet downloaded on a new one.",
+              },
+              {
+                term: "Shared",
+                description:
+                  "Tapes with more than one person on them, whether you own them or joined them.",
               },
             ],
           },

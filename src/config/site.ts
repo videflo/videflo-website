@@ -2,8 +2,10 @@
  * Central site configuration.
  *
  * This is the ONLY place launch-critical values live. Anything marked
- * `PLACEHOLDER` must be replaced or confirmed by the owner before the site goes
- * public. Nothing here is fetched at runtime — it is compiled into the pages.
+ * `OWNER DECISION` is a business fact the repository cannot supply; the pages
+ * are written so that a missing value is simply absent rather than rendered as
+ * a placeholder. Nothing here is fetched at runtime — it is compiled into the
+ * pages.
  */
 
 /** ------------------------------------------------------------------------
@@ -44,11 +46,14 @@ export const contact = {
   /** Visible support address across the site. */
   supportEmail: "support@videflo.com",
   /**
-   * PLACEHOLDER — legal / privacy contact address.
-   * Point this at a real, monitored inbox before publishing the legal pages.
+   * OWNER DECISION — confirm this inbox exists and is monitored before the
+   * legal pages are published. The Terms direct disputes here.
    */
   legalEmail: "legal@videflo.com",
-  /** PLACEHOLDER — privacy requests inbox. May be the same as legalEmail. */
+  /**
+   * OWNER DECISION — confirm this inbox exists and is monitored. The Privacy
+   * Policy directs privacy requests here. May be the same as `legalEmail`.
+   */
   privacyEmail: "privacy@videflo.com",
 } as const;
 
@@ -72,6 +77,32 @@ export const appStore = {
     "Videflo isn’t on the App Store yet. Email us and we’ll let you know the day it arrives:",
   /** Platform statement — keep accurate. Videflo is iPhone-only today. */
   platformNote: "Made for iPhone",
+} as const;
+
+/** ------------------------------------------------------------------------
+ *  Subscription and Videflo Cloud
+ *
+ *  Product facts mirrored from the shipping app (`SubscriptionProducts.swift`,
+ *  `CloudStorageCapacity.swift`, `Videflo.storekit`). Videflo sells ONE
+ *  auto-renewing monthly subscription that includes Videflo Cloud, at three
+ *  storage capacities that are upgrades within the same subscription group.
+ *  There is no yearly plan, no lifetime purchase, no free trial and no Family
+ *  Sharing. Change these only when the app and App Store Connect change.
+ *
+ *  `basePriceUSD` is the US App Store price of the 50 GB subscription. It is
+ *  the only price written on the site; the App Store shows every price in the
+ *  visitor's own currency, and the larger capacities are priced there rather
+ *  than here.
+ *  --------------------------------------------------------------------- */
+export const subscription = {
+  basePriceUSD: "$9.99",
+  billingPeriod: "month",
+  /** The Videflo Cloud allowance included with the base subscription. */
+  includedStorageLabel: "50 GB",
+  /** Every capacity on sale, smallest first, as the app labels them. */
+  storageCapacityLabels: ["50 GB", "100 GB", "250 GB"] as readonly string[],
+  /** Days an account may stay over its allowance before it is asked to act. */
+  overAllowanceGraceDays: 30,
 } as const;
 
 /** ------------------------------------------------------------------------
@@ -119,20 +150,24 @@ export const socials: readonly SocialLink[] = [
 /** ------------------------------------------------------------------------
  *  Legal
  *
- *  The entity is registered in Utah. Remaining placeholders are marked and
- *  render visibly on the legal pages until supplied.
+ *  The entity is registered in Utah. Values marked OWNER DECISION are business
+ *  facts the repository cannot confirm; the legal pages omit a postal address
+ *  entirely while `entityAddress` is null rather than printing a placeholder.
  *  --------------------------------------------------------------------- */
 export const legal = {
   /**
-   * PARTIAL PLACEHOLDER — confirm the exact registered name, including
-   * punctuation ("Videflo LLC" vs "Videflo, LLC"), against the Utah Division of
+   * OWNER DECISION — confirm the exact registered name, including punctuation
+   * ("Videflo LLC" vs "Videflo, LLC"), against the Utah Division of
    * Corporations filing. The legal pages print this verbatim.
    */
   entityName: "Videflo LLC",
   /** How the entity is described in the legal pages. */
   entityDescription: "a Utah limited liability company",
-  /** PLACEHOLDER — replace with the registered or registered-agent address. */
-  entityAddress: "[Business address to be provided]",
+  /**
+   * OWNER DECISION — the public business or registered-agent mailing address.
+   * While null, the Contact sections list email only.
+   */
+  entityAddress: null as string | null,
   /** Governing state for the Terms of Service. */
   governingState: "Utah",
   /** Governing country for the Terms of Service. */
@@ -143,8 +178,8 @@ export const legal = {
    * Dates shown on the legal pages. Update whenever the documents change.
    * `display` is what visitors read; `iso` feeds <time dateTime>.
    */
-  privacy: { display: "July 26, 2026", iso: "2026-07-26" },
-  terms: { display: "July 26, 2026", iso: "2026-07-26" },
+  privacy: { display: "September 19, 2026", iso: "2026-09-19" },
+  terms: { display: "September 19, 2026", iso: "2026-09-19" },
 } as const;
 
 /** ------------------------------------------------------------------------

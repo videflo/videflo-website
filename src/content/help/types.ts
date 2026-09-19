@@ -16,8 +16,11 @@
  *
  * ACCURACY RULE (inherited from `src/content/faq.ts`, and the reason this file
  * exists at all): every sentence must describe Videflo as it actually behaves
- * today. Nothing here may promise cloud backup, accounts, sync, in-app sharing,
- * playback speed control, Android, or iPad.
+ * today — Videflo 1.0: Sign in with Apple, one monthly subscription with
+ * Videflo Cloud at three capacities, automatic backup, Shared Tapes, Friends &
+ * Family, notifications, Export Tape to Photos. Nothing here may promise
+ * playback speed control, trimming, a "Prepare Tape" step, a yearly plan, a
+ * free trial, Family Sharing, Android, or iPad.
  */
 
 /** A topic in the Help Center. Categories are the top level of navigation. */
@@ -28,6 +31,7 @@ export type HelpCategoryId =
   | "collections"
   | "playback"
   | "exporting"
+  | "sharing"
   | "storage"
   | "subscription"
   | "privacy"

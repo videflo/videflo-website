@@ -17,7 +17,7 @@ import { pageMetadata } from "@/lib/metadata";
 export const metadata = pageMetadata({
   title: "Help Center",
   description:
-    "Everything you need to capture, organize, and relive life’s memories with Videflo — guides for recording, Tapes, Collections, playback, exporting, storage, and subscriptions.",
+    "Everything you need to capture, organize, and relive life’s memories with Videflo — guides for recording, Tapes, Shared Tapes, Videflo Cloud, playback, exporting, and subscriptions.",
   path: "/help",
 });
 
@@ -38,7 +38,7 @@ function HubStructuredData() {
         url: `${site.url}/help`,
         name: `Help Center — ${site.name}`,
         description:
-          "Guides and answers for recording, organising, watching, and exporting your Tapes.",
+          "Guides and answers for recording, sharing, protecting, watching, and exporting your Tapes.",
         isPartOf: { "@id": `${site.url}/#website` },
         inLanguage: "en-US",
       },

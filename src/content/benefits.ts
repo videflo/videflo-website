@@ -1,10 +1,10 @@
 /**
  * Videflo's current, shipped capabilities.
  *
- * Everything here must be true of the app as it exists today. Do not add cloud
- * backup, sharing, sync, AI features, Android or web playback — none of those
- * exist. The local-first entry deliberately does NOT imply that keeping files on
- * the device protects them; the caveat below the list carries that.
+ * Everything here must be true of the app as it exists today (Videflo 1.0).
+ * Do not add AI features, Android, iPad or web playback — none of those exist.
+ * The Videflo Cloud entry deliberately does NOT promise that a recording can
+ * never be lost; the caveat beneath the list on the homepage carries that.
  */
 export type Benefit = { title: string; body: string };
 
@@ -18,15 +18,19 @@ export const benefits: readonly Benefit[] = [
     body: "There are no timelines to trim or clips to arrange. Press record, and the Tape grows on its own.",
   },
   {
+    title: "Protected in Videflo Cloud",
+    body: "Every recording is backed up automatically, so a Tape survives a lost phone and follows you to a new iPhone. Your originals stay on your device, untouched.",
+  },
+  {
+    title: "Shared Tapes",
+    body: "Invite family to a Tape and everyone can add their own recordings to it. One memory, filmed by all the people who were there.",
+  },
+  {
     title: "Organized memories",
     body: "Give each Tape a name and gather related ones into Collections, so the memory you want is never buried.",
   },
   {
     title: "Export anytime",
-    body: "Save a copy of a finished Tape out of Videflo whenever you want to keep it elsewhere or share it with family.",
-  },
-  {
-    title: "Local-first privacy",
-    body: "Your recordings are created and stored on your iPhone. Nothing leaves the app unless you export it yourself.",
+    body: "Save any Tape to Photos as one finished video whenever you want to keep it elsewhere or send it on.",
   },
 ];

@@ -9,8 +9,8 @@ import type { HelpFaq } from "./types";
  * each one exists to send a reader somewhere useful rather than to be the last
  * word on the subject.
  *
- * Answers are plain text so the same words are rendered on the page and emitted
- * as FAQPage structured data with no chance of the two drifting apart.
+ * Answers are plain text so the same words are rendered on the page and
+ * emitted as FAQPage structured data with no chance of the two drifting apart.
  */
 export type HelpFaqItem = HelpFaq & {
   /** Slug of the article that covers this properly. */
@@ -29,24 +29,23 @@ export const helpFaq: readonly HelpFaqItem[] = [
   {
     question: "Do I need to create an account?",
     answer: [
-      "No. Videflo has no account, no password, and nothing to sign into. Your Apple Account is used for the App Store purchase and nothing else.",
+      "Yes, and it takes one tap: Videflo uses Sign in with Apple. There's no Videflo password. Your account is what protects your Tapes in Videflo Cloud, brings them to a new iPhone, and lets you share a Tape with family.",
     ],
     article: "accounts-and-signing-in",
   },
   {
     question: "Where are my recordings stored?",
     answer: [
-      "On your iPhone, inside Videflo's own storage. Videflo is local-first: nothing is uploaded to us, and we have no copy of anything you film.",
+      "On your iPhone first, inside Videflo's own library — and, once each upload finishes, in Videflo Cloud as well. Your original files on the phone are never changed, and a Tape is seen by nobody but you unless you invite them to it.",
     ],
-    article: "privacy-and-security",
+    article: "videflo-cloud",
   },
   {
     question: "Does Videflo back up my videos to the cloud?",
     answer: [
-      "No. There's no cloud backup, and Videflo cannot recover recordings from a lost, damaged, or erased iPhone.",
-      "Please keep an iPhone backup switched on, and export the Tapes you couldn't bear to lose so that a second copy exists outside the app.",
+      "Yes, automatically. Every recording is copied to Videflo Cloud in the background, so a Tape survives a lost or replaced phone. A recording is protected once its upload has finished; until then it exists only on your iPhone.",
     ],
-    article: "backups-and-new-iphone",
+    article: "videflo-cloud",
   },
   {
     question: "How do I add more footage to a Tape I already made?",
@@ -57,11 +56,18 @@ export const helpFaq: readonly HelpFaqItem[] = [
     article: "continue-recording-a-tape",
   },
   {
+    question: "Can I share a Tape with my family?",
+    answer: [
+      "Yes. Press and hold the Tape and choose Invite to Tape — pick people from Friends & Family, search by @username, or send a link by text. Everyone who joins can watch the whole Tape and add their own recordings to it.",
+    ],
+    article: "shared-tapes",
+  },
+  {
     question: "How do I get a Tape out of the app?",
     answer: [
-      "Prepare it, then choose Export to Photos. Preparing builds one video file from the whole Tape; exporting copies that file into your photo library, where you can share it like any other video.",
+      "Open the Tape, tap the ⋯ menu and choose Export Tape. Videflo turns the whole Tape into one video and saves it straight to your Photos library, where you can share it like any other video.",
     ],
-    article: "prepare-and-export-a-tape",
+    article: "export-a-tape",
   },
   {
     question: "Why can't I change a Tape's orientation or quality?",
@@ -74,30 +80,37 @@ export const helpFaq: readonly HelpFaqItem[] = [
   {
     question: "Can I edit my videos in Videflo?",
     answer: [
-      "Only lightly. You can trim the start and end of an individual recording. There are no filters, transitions, music, or timeline editing — a Tape is meant to be what happened.",
+      "No. There's no trimming, no filters, no transitions, and no timeline — a Tape is kept exactly as it was recorded. You can delete a recording you don't want, and you can export a Tape to Photos and edit the copy there.",
     ],
-    article: "trim-a-recording",
+    article: "manage-recordings",
   },
   {
     question: "What happens if I delete the app?",
     answer: [
-      "Deleting Videflo removes its data from your iPhone, including your Tapes and recordings. Unless they're in a device backup, or you exported them, they can't be recovered.",
+      "Deleting Videflo removes the recordings on that iPhone. Everything already in Videflo Cloud stays safe and comes back when you reinstall and sign in; a recording that hadn't finished uploading is lost with the phone.",
       "Deleting the app also doesn't cancel a subscription — that lives in your Apple Account and has to be cancelled there.",
     ],
-    article: "manage-subscription",
+    article: "backups-and-new-iphone",
+  },
+  {
+    question: "How much does Videflo cost?",
+    answer: [
+      "One monthly subscription — $9.99 a month in the United States, shown in your own currency on the App Store — with 50 GB of Videflo Cloud included. 100 GB and 250 GB are available as upgrades.",
+    ],
+    article: "subscription-plans",
   },
   {
     question: "How do I cancel my subscription?",
     answer: [
       "Subscriptions are billed and managed by Apple. On your iPhone, open the Settings app, tap your name at the top, then Subscriptions, and select Videflo.",
-      "Cancelling stops the next renewal; you keep access until the end of the period you've already paid for.",
+      "Cancelling stops the next renewal; you keep access until the end of the period you've already paid for, and nothing is deleted.",
     ],
     article: "manage-subscription",
   },
   {
     question: "I've paid but Videflo is asking me to subscribe again.",
     answer: [
-      "Tap Restore Purchases and let it finish, making sure the iPhone is signed in to the Apple Account that bought the subscription.",
+      "Tap Restore Purchases on the subscription screen and let it finish, making sure the iPhone is signed in to the Apple Account that bought the subscription.",
       "If nothing is found, check the subscription is still active in Settings → your name → Subscriptions.",
     ],
     article: "restore-purchases",
@@ -118,13 +131,6 @@ export const helpFaq: readonly HelpFaqItem[] = [
     article: "camera-and-microphone-permissions",
   },
   {
-    question: "Can I share a Tape with my family?",
-    answer: [
-      "Yes, once it's exported. Videflo has no share button of its own — export the Tape to your Photos library, then share it from there by AirDrop, message, or a shared album.",
-    ],
-    article: "sharing-your-videos",
-  },
-  {
     question: "Is Videflo available on Android or iPad?",
     answer: [
       "No. Videflo is an iPhone app and requires iOS 18 or later. There's no iPad, Mac, or Android version.",
@@ -135,7 +141,7 @@ export const helpFaq: readonly HelpFaqItem[] = [
     question: "Something isn't working. What should I try first?",
     answer: [
       "Force-close Videflo and reopen it, then restart your iPhone. Check free storage and turn off Low Power Mode.",
-      "Please don't delete and reinstall the app as a first step — that would delete your Tapes. Email us before doing anything that drastic.",
+      "Please don't delete and reinstall the app as a first step — a recording that hadn't finished uploading would go with it. Check your Tapes say Backed Up, and email us before doing anything drastic.",
     ],
     article: "troubleshooting-app",
   },

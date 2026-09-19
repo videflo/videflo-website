@@ -12,6 +12,11 @@ import { site } from "@/config/site";
  * and opens the app directly — this page is never rendered. It exists for the
  * one case the app cannot handle: a person who does not have Videflo yet.
  *
+ * A link under `/invite/` is one of two things, and this page cannot tell which
+ * (the app asks the server once the person is signed in): an invitation to add
+ * to a Shared Tape, or an invitation to connect as Friends & Family. The copy
+ * therefore says "invited on Videflo" rather than naming either.
+ *
  * ## What it deliberately does not know
  *
  * The invitation secret is in the URL, and this page never reads it, renders it,
@@ -31,7 +36,7 @@ import { site } from "@/config/site";
  */
 export const metadata: Metadata = {
   title: `You're invited — ${site.name}`,
-  description: `Someone invited you to contribute to a Tape on ${site.name}.`,
+  description: `Someone invited you on ${site.name}.`,
   /*
     Never indexed. These URLs are private one-time links; a crawler following one
     would put it in a search index, and a search result for an invitation is an
@@ -53,13 +58,13 @@ export default function InvitePage() {
         <Eyebrow>Invitation</Eyebrow>
 
         <h1 className="text-ink mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
-          You&rsquo;ve been invited to a Tape
+          You&rsquo;ve been invited on {site.name}
         </h1>
 
         <p className="text-ink-soft mt-5 text-lg">
-          Someone wants you to add your memories to a Tape on {site.name} — a
-          private video archive shared by the few people who were actually
-          there.
+          Someone wants to share memories with you on {site.name} — a private
+          video archive kept by the few people who were actually there. Get the
+          app, sign in with Apple, and the invitation is waiting.
         </p>
 
         <div className="mt-10">

@@ -51,21 +51,22 @@ export function Benefits() {
             </dl>
 
             {/*
-              Required caveat: local-first storage is a privacy property, not a
-              backup. Do not remove or soften this without owner sign-off.
+              Required caveat: Videflo Cloud is a protective copy, not a
+              guarantee, and a recording made with backup switched off — or
+              interrupted before its upload finished — exists on one iPhone only.
+              Do not remove or soften this without owner sign-off.
             */}
             <Reveal delay={120}>
               <p className="text-ink-faint mt-8 max-w-2xl text-sm leading-relaxed">
-                One important thing: because Tapes live on your device, they are
-                not backed up by Videflo. If your iPhone is lost, damaged,
-                erased, or the app is deleted, recordings that exist only inside
-                Videflo can be lost. Keep a device backup, and export the Tapes
-                you can&rsquo;t replace.{" "}
+                One honest note: Videflo Cloud protects a recording once its
+                upload has finished, and only while backup is switched on. Until
+                then a recording exists on your iPhone alone. Keep a device
+                backup too, and export the Tapes you couldn&rsquo;t replace.{" "}
                 <Link
                   href="/support#storage"
                   className="text-ink font-semibold underline decoration-1 underline-offset-4"
                 >
-                  How to protect your Tapes
+                  How Videflo keeps your Tapes safe
                 </Link>
               </p>
             </Reveal>

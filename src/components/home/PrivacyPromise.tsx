@@ -23,9 +23,10 @@ export function PrivacyPromise() {
             </Reveal>
             <Reveal delay={120}>
               <p className="text-lead text-ink-muted mt-7">
-                Videflo is designed with a local-first approach. Your Tapes are
-                created and stored on your device, and you decide when to export
-                them.
+                Your Tapes are recorded on your iPhone and protected in Videflo
+                Cloud. Nobody sees a Tape unless you invite them to it, and
+                Videflo has no ads, no trackers, and no interest in what you
+                film.
               </p>
             </Reveal>
             <Reveal delay={180}>
@@ -55,16 +56,16 @@ export function PrivacyPromise() {
             <ul className="border-line-strong bg-paper/70 flex flex-col gap-5 rounded-2xl border p-7 sm:p-8">
               {[
                 {
-                  title: "No account to create",
-                  body: "You can start recording without signing up or handing over an email address.",
+                  title: "Private unless you share",
+                  body: "A Tape is yours alone until you invite someone. Sharing is by name or by a link you send — there’s no feed, no followers, and nothing is ever public.",
                 },
                 {
-                  title: "Recording is always your choice",
-                  body: "Videflo asks for camera and microphone access before it can record anything, and iOS lets you change your mind at any time.",
+                  title: "Sign in with Apple, nothing else",
+                  body: "Videflo has no password of its own. Your email address is never shown to other people and can’t be used to find you.",
                 },
                 {
-                  title: "Exports happen on purpose",
-                  body: "A copy leaves Videflo only when you ask for one — then it’s yours to keep or share however you like.",
+                  title: "Your originals stay yours",
+                  body: "Videflo Cloud is a protective copy, never a replacement. The files on your iPhone are never edited, and you can delete a Tape everywhere in one step.",
                 },
               ].map((item) => (
                 <li key={item.title}>

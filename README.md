@@ -166,8 +166,8 @@ Only four components are client components (`SiteHeader`, `Reveal`,
 ## The Help Center
 
 `/help` is the single source of truth for questions about the app. It holds
-**11 categories and 38 articles**, and it is what Videflo's own Settings screen
-opens when someone taps **Help → Help Center**.
+**12 categories and 41 articles**, and it is what Videflo's own Settings screen
+opens when someone taps **Help Center**.
 
 ### The shape of it
 
@@ -179,8 +179,8 @@ opens when someone taps **Help → Help Center**.
 | `/help/topics`         | Redirects to `/help` — the URL is guessable by      |
 |                        | trimming a segment, so it answers instead of 404ing |
 
-The hub, the 11 topic pages and the 38 articles are **statically generated at
-build time** — 50 pages — and every one of them is **included in
+The hub, the 12 topic pages and the 41 articles are **statically generated at
+build time** — 54 pages — and every one of them is **included in
 `/sitemap.xml`**. Both the routes and the sitemap entries are derived from the
 content registry rather than from a hand-kept list, so publishing an article
 adds it to both automatically.
@@ -373,9 +373,9 @@ provider bundles it.
 
 Do this **before** selecting those countries in App Store Connect, not after:
 
-1. Ask counsel whether the Article 27(2)(a) exemption applies. Videflo is a
-   plausible candidate — no account, no server, recordings never leave the device
-   — but “occasional” is read narrowly, so get an answer rather than assuming.
+1. Ask counsel whether the Article 27(2)(a) exemption applies. Videflo 1.0 has
+   accounts and stores recordings in Videflo Cloud, so do not assume it does —
+   get an answer.
 2. If it does not apply, appoint representatives and add their names and
    addresses to the Privacy Policy.
 3. Confirm the international transfer mechanism (SCCs, UK Addendum, adequacy).
@@ -444,9 +444,10 @@ have to open a component to change words:
 - **Example Tapes** — `use-cases.ts`. Keep every name a single _event or chapter_
   (“Summer Vacation”, “Our First Year”), never a whole life. That distinction is
   the product idea.
-- **Benefits** — `benefits.ts`. Everything here must be true of the app _today_.
-  No cloud backup, sharing, sync, AI, Android, or web playback — none of those
-  exist, and the site must not imply otherwise.
+- **Benefits** — `benefits.ts`. Everything here must be true of the app _today_
+  (Videflo 1.0: Sign in with Apple, Videflo Cloud, Shared Tapes, Export Tape).
+  No AI, Android, iPad, or web playback — none of those exist, and the site must
+  not imply otherwise.
 - **FAQ** — `faq.ts`. Answers are plain strings so the same words appear on the
   page and in the FAQPage structured data without drifting apart. This is the
   `/support` FAQ; the Help Center keeps its own in `content/help/faq.ts`.

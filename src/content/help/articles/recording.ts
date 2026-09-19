@@ -91,7 +91,7 @@ export const recordingArticles: readonly HelpArticle[] = [
               {
                 title: "Tap **Finish** when you're done.",
                 detail:
-                  "Videflo saves everything from the session into your Tape as a single recording, and takes you back.",
+                  "Videflo saves everything from the session into your Tape as a single recording, takes you back, and starts protecting it in Videflo Cloud in the background.",
               },
             ],
           },
@@ -264,7 +264,7 @@ export const recordingArticles: readonly HelpArticle[] = [
     tips: [
       "It's worth making the Tape at the *start* of an occasion, even before anything interesting happens. Adding to it costs a tap; gathering scattered clips afterwards isn't possible.",
       "A Tape can grow for years. “Milo's First Year” filmed once a month is one of the nicest things Videflo does.",
-      "If you've already prepared the Tape for export, adding to it marks the prepared copy as **Tape Changed** — prepare it again when you next want a fresh export.",
+      "On a Shared Tape, everyone who's joined has their own **Continue Recording** — and each recording shows who filmed it.",
     ],
     pitfalls: [
       {
@@ -290,7 +290,7 @@ export const recordingArticles: readonly HelpArticle[] = [
         problem: "I can't find Continue Recording on a Tape.",
         solutions: [
           "Press and hold the Tape's picture rather than tapping it — tapping opens playback, holding opens the menu.",
-          "A Tape that's currently being prepared for export has some actions hidden while that runs. Wait for it to finish, or cancel the preparation.",
+          "On a Shared Tape, the owner may have chosen **Stop Accepting Recordings**. The Tape can still be watched, but nobody can add to it until they start accepting again.",
         ],
       },
     ],
@@ -304,7 +304,8 @@ export const recordingArticles: readonly HelpArticle[] = [
       {
         question: "Can I add to a Tape from a different iPhone?",
         answer: [
-          "No. Tapes live on the device where they were made, and Videflo has no sync between devices.",
+          "Yes. Sign in to the same Videflo account on the other iPhone and your Tapes appear from Videflo Cloud; Continue Recording works exactly as it does on the first phone, and the new recording is protected the same way.",
+          "Somebody else can add to your Tape from their own iPhone too, once you've invited them — see **Shared Tapes**.",
         ],
       },
       {
@@ -511,7 +512,7 @@ export const recordingArticles: readonly HelpArticle[] = [
     tips: [
       "Choose High for the wedding. Choose Standard for the Tuesday.",
       "Smooth is the one people forget about, and it's genuinely lovely for sports days and toddlers learning to run.",
-      "Higher quality also means longer export times. A 4K Tape takes noticeably longer to prepare than a 1080p one.",
+      "Higher quality also means larger uploads and longer export times. A 4K Tape uses roughly four times the Videflo Cloud allowance of a 1080p one, and takes noticeably longer to export.",
     ],
     pitfalls: [
       {
@@ -544,11 +545,7 @@ export const recordingArticles: readonly HelpArticle[] = [
         ],
       },
     ],
-    related: [
-      "create-your-first-tape",
-      "storage-space",
-      "prepare-and-export-a-tape",
-    ],
+    related: ["create-your-first-tape", "storage-space", "export-a-tape"],
   },
 
   {
@@ -769,12 +766,12 @@ export const recordingArticles: readonly HelpArticle[] = [
     tips: [
       "Turn on Do Not Disturb before filming something you can't repeat. It's the single most effective thing you can do.",
       "Long sessions are much happier on a charger. Video recording is one of the hardest things a phone does.",
-      "If the app closes unexpectedly, open it again straight away rather than reinstalling — reinstalling would remove the footage waiting to be recovered.",
+      "If the app closes unexpectedly, open it again straight away rather than reinstalling — footage waiting to be recovered hasn't reached Videflo Cloud yet, so reinstalling would remove it.",
     ],
     pitfalls: [
       {
         mistake: "Deleting and reinstalling the app after a crash to “fix” it.",
-        fix: "That deletes your Tapes and any footage waiting to be recovered. Reopen the app first and see what it offers you.",
+        fix: "That deletes any footage waiting to be recovered, and any recording that hadn't finished uploading. Reopen the app first and see what it offers you.",
       },
       {
         mistake:
@@ -809,7 +806,7 @@ export const recordingArticles: readonly HelpArticle[] = [
       {
         question: "Can Videflo recover a Tape I deleted on purpose?",
         answer: [
-          "No. Deleting a Tape removes its recordings from your iPhone permanently, and Videflo keeps no copy anywhere.",
+          "No. Deleting a Tape removes it from your iPhone and from Videflo Cloud in one step, permanently. Export a Tape to Photos first if you might want it back.",
         ],
       },
       {
@@ -819,10 +816,6 @@ export const recordingArticles: readonly HelpArticle[] = [
         ],
       },
     ],
-    related: [
-      "recording-a-tape",
-      "troubleshooting-recording",
-      "backups-and-new-iphone",
-    ],
+    related: ["recording-a-tape", "troubleshooting-recording", "videflo-cloud"],
   },
 ] as const;

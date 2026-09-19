@@ -56,9 +56,9 @@ export const playbackArticles: readonly HelpArticle[] = [
                   "Adds more to this Tape without leaving the screen.",
               },
               {
-                term: "The three-dot menu",
+                term: "The ⋯ menu",
                 description:
-                  "Manage Recordings, Rename, Prepare, Export, and Delete.",
+                  "Manage Recordings, Rename, **Export Tape**, and Delete Tape.",
               },
             ],
           },
@@ -84,7 +84,7 @@ export const playbackArticles: readonly HelpArticle[] = [
         blocks: [
           {
             kind: "text",
-            text: "There's no playback speed control, no loop, no picture-in-picture, and no AirPlay button. Videflo's player is built to show a memory the way it happened, and the controls are kept to what that needs.",
+            text: "There's no playback speed control, no loop, no picture-in-picture, no AirPlay button, and no trimming. Videflo's player is built to show a memory the way it happened, and the controls are kept to what that needs.",
           },
           {
             kind: "text",
@@ -97,6 +97,7 @@ export const playbackArticles: readonly HelpArticle[] = [
       "Tap the picture once to bring the controls back, and again to hide them. They also hide themselves after a few seconds.",
       "The controls won't disappear while your finger is on the filmstrip, so you can take your time.",
       "The date and time in the corner is the moment that footage was actually filmed, not the position in the Tape.",
+      "A Tape marked **In Videflo Cloud** plays by streaming. Give it a moment to start, and expect it to need a connection — **Download to This iPhone** if you'll be watching offline.",
     ],
     troubleshooting: [
       {
@@ -120,6 +121,7 @@ export const playbackArticles: readonly HelpArticle[] = [
         solutions: [
           "Close other apps and try again — 4K playback asks a lot of the phone.",
           "Switch off Low Power Mode, which limits performance.",
+          "If the Tape is streaming from Videflo Cloud, a weak connection shows up as stutter. Move to Wi-Fi, or download the Tape.",
           "Restart your iPhone if it persists.",
         ],
       },
@@ -144,7 +146,7 @@ export const playbackArticles: readonly HelpArticle[] = [
         ],
       },
     ],
-    related: ["scrubbing-through-a-tape", "timestamps", "manage-recordings"],
+    related: ["scrubbing-through-a-tape", "timestamps", "videflo-cloud"],
   },
 
   {
@@ -277,7 +279,7 @@ export const playbackArticles: readonly HelpArticle[] = [
         problem: "Thumbnails are blank or grey.",
         solutions: [
           "They load in the background — give a long Tape a few seconds.",
-          "A permanently blank section suggests that recording's file is missing. Check **Manage Recordings**.",
+          "On a streaming Tape they arrive as the footage does. A permanently blank section suggests a recording that isn't available — check **Manage Recordings**.",
         ],
       },
     ],
@@ -307,7 +309,7 @@ export const playbackArticles: readonly HelpArticle[] = [
     // not appear in the first three results for "timestamp" at all.
     title: "Timestamps: the date stamp on your Tapes",
     description:
-      "Turning the camcorder-style timestamp on or off, moving it to the other corner, and burning it into an export.",
+      "Turning the camcorder-style timestamp on or off, moving it to the other corner, and whether it's stamped into an export.",
     category: "playback",
     keywords: [
       "date",
@@ -322,7 +324,7 @@ export const playbackArticles: readonly HelpArticle[] = [
     ],
     overview: [
       "Videflo can show the date and time a piece of footage was filmed in the corner of the picture, the way a camcorder used to. It's on by default, because years later that little line is often the most valuable thing on screen.",
-      "It's an overlay, not part of the video — it's drawn on top while you watch, and your recordings are never altered. If you want it permanently in an exported file, there's an option for that at export time.",
+      "It's an overlay, not part of the video — it's drawn on top while you watch, and your recordings are never altered. Whether it's stamped permanently into a Tape you export is a separate setting, **Export with Timestamp**.",
     ],
     sections: [
       {
@@ -335,7 +337,7 @@ export const playbackArticles: readonly HelpArticle[] = [
               { title: "Open **Settings** from the gear on the Home tab." },
               {
                 title:
-                  "Under **Playback**, switch **Show Timestamp** on or off.",
+                  "Open **Playback Settings** and switch **Show Timestamp** on or off.",
               },
               {
                 title:
@@ -357,11 +359,11 @@ export const playbackArticles: readonly HelpArticle[] = [
         blocks: [
           {
             kind: "text",
-            text: "The date and time that piece of footage was filmed — for example **JUL 10 2026** above **8:42 PM**. On a Tape built over months, the stamp changes as playback crosses from one recording into the next, which is rather lovely to watch.",
+            text: "The date and time that piece of footage was filmed — for example **JUL 10 2026** above **8:42 PM** — in the time zone it was filmed in, so a holiday recorded abroad keeps its local time even when you watch it at home. On a Tape built over months, the stamp changes as playback crosses from one recording into the next, which is rather lovely to watch.",
           },
           {
             kind: "text",
-            text: "It's never the current time, and never your position in the Tape.",
+            text: "It's never the current time, and never your position in the Tape. On a Shared Tape, a recording somebody else made shows the time where they were.",
           },
         ],
       },
@@ -371,21 +373,21 @@ export const playbackArticles: readonly HelpArticle[] = [
         blocks: [
           {
             kind: "text",
-            text: "When you prepare a Tape for export, Videflo asks how you'd like it:",
+            text: "Whether an exported Tape carries the stamp is decided by one switch: **Settings → Export Settings → Export with Timestamp**. It's separate from Show Timestamp — you can watch with the stamp and export without it, or the other way round.",
           },
           {
             kind: "list",
             items: [
-              "**With Timestamp** — the date and time are drawn permanently into the exported video, so they'll be there wherever the file goes.",
-              "**Without Timestamp** — a clean picture.",
+              "**On** — the Tape's name, the date and the time are drawn permanently into the exported video, so they'll be there wherever the file goes.",
+              "**Off** — a clean picture.",
             ],
           },
           {
             kind: "warning",
-            title: "Burned-in stamps can't be removed",
+            title: "Stamped exports can't be un-stamped",
             text: [
-              "Choosing **With Timestamp** writes the text into the pixels of the exported copy. To get a clean version, prepare the Tape again choosing **Without Timestamp**.",
-              "Your original recordings are never affected either way.",
+              "With the switch on, the text is written into the pixels of the exported copy. To get a clean version, switch it off and export again.",
+              "Your original recordings are never affected either way, and a single recording saved from Manage Recordings is never stamped.",
             ],
           },
         ],
@@ -394,13 +396,13 @@ export const playbackArticles: readonly HelpArticle[] = [
     tips: [
       "Leave it on. It costs nothing, and in ten years it turns “a nice video of the garden” into “the afternoon before we moved house”.",
       "Move the stamp to the other corner if it lands on someone's face in a Tape you watch often.",
-      "Exporting **With Timestamp** is the right call for anything you're handing to family — the date survives being copied around.",
+      "Leave **Export with Timestamp** on for anything you're handing to family — the date survives being copied around.",
     ],
     pitfalls: [
       {
         mistake:
           "Expecting the setting to change a video you've already exported.",
-        fix: "It can't — an exported file is finished. Prepare and export again with the other choice.",
+        fix: "It can't — an exported file is finished. Change the switch and export again.",
       },
       {
         mistake: "Assuming the timestamp is burned into your recordings.",
@@ -411,14 +413,14 @@ export const playbackArticles: readonly HelpArticle[] = [
       {
         problem: "The timestamp isn't showing.",
         solutions: [
-          "Check **Show Timestamp** is on in Settings.",
+          "Check **Show Timestamp** is on in Settings → Playback Settings.",
           "It sits in the corner of the *picture*, not the corner of the screen — on a portrait Tape watched sideways, look at the edge of the video itself.",
         ],
       },
       {
         problem: "The date on a recording looks wrong.",
         solutions: [
-          "It's taken from your iPhone's clock at the moment of filming. If the clock was wrong then, the stamp reflects that.",
+          "It's taken from your iPhone's clock and time zone at the moment of filming. If the clock was wrong then, the stamp reflects that.",
           "There's no way to change a recording's date after the fact.",
         ],
       },
@@ -433,7 +435,7 @@ export const playbackArticles: readonly HelpArticle[] = [
       {
         question: "Can I show the timestamp on some Tapes and not others?",
         answer: [
-          "Not during playback — it's a single app-wide setting. Exports are per-export, though, so you can burn it into one Tape and leave another clean.",
+          "Not during playback — it's a single app-wide setting. Export with Timestamp is one switch too, so change it before exporting the Tape you want clean.",
         ],
       },
       {
@@ -443,10 +445,6 @@ export const playbackArticles: readonly HelpArticle[] = [
         ],
       },
     ],
-    related: [
-      "playback-basics",
-      "prepare-and-export-a-tape",
-      "settings-reference",
-    ],
+    related: ["playback-basics", "export-a-tape", "settings-reference"],
   },
 ] as const;

@@ -1,30 +1,36 @@
 /*
  * ============================================================================
- *  DRAFT — REQUIRES OWNER AND LEGAL REVIEW BEFORE PUBLICATION
+ *  TERMS OF SERVICE — Videflo 1.0
  * ============================================================================
  *
+ *  Written against the shipping product (Videflo 1.0, build 23): a required
+ *  Videflo account (Sign in with Apple), one auto-renewing monthly subscription
+ *  that includes Videflo Cloud at a choice of storage capacities, automatic
+ *  cloud protection of recordings, Shared Tapes with invited members, Delete
+ *  Tape that removes a Tape everywhere, and Delete Account.
+ *
  *  This is a drafting starting point, not legal advice, and it has not been
- *  reviewed by a lawyer. Before videflo.com goes live:
+ *  reviewed by a lawyer. Before publication:
  *
  *    1. Have counsel review the entire document for the launch markets set in
  *       `availability.launchMarkets`: the United States, Canada, Australia and
- *       New Zealand. Pay particular attention to the disclaimers, limitation of
- *       liability, indemnification, governing law and dispute-resolution
- *       sections — these are the clauses most likely to be unenforceable if
- *       written generically. Note especially that the Australian Consumer Law
- *       and New Zealand's Consumer Guarantees Act create guarantees that CANNOT
- *       be excluded, and that purporting to exclude them is itself a breach;
- *       carve-outs for both are in the Disclaimers and Limitation of liability
- *       sections and must not be removed.
- *    2. Replace every `<Placeholder>` value — they render visibly on the page.
- *    3. DECIDED (owner, this revision): informal resolution for 30 days, then
- *       exclusive venue in Utah, with an explicit carve-out preserving the right
- *       of consumers to sue in their home country under their own mandatory law.
- *       No arbitration clause and no class-action waiver. Counsel still needs to
- *       confirm this is enforceable in each market Videflo is sold in.
- *    4. Confirm the subscription terms match what is actually configured in App
- *       Store Connect — in particular that no free trial or introductory offer is
- *       described here unless one really exists.
+ *       New Zealand. Pay particular attention to the content licence, the
+ *       Shared Tape terms, the disclaimers, limitation of liability,
+ *       indemnification, governing law and dispute-resolution sections. Note
+ *       that the Australian Consumer Law and New Zealand's Consumer Guarantees
+ *       Act create guarantees that CANNOT be excluded; the carve-outs for both
+ *       are in the Disclaimers and Limitation of liability sections and must
+ *       not be removed.
+ *    2. Resolve every OWNER DECISION in `src/config/site.ts`. Nothing renders
+ *       as a placeholder; a missing value is omitted.
+ *    3. DECIDED (owner): informal resolution for 30 days, then exclusive venue
+ *       in Utah, with an explicit carve-out preserving consumers' right to sue
+ *       in their home country under their own mandatory law. No arbitration
+ *       clause and no class-action waiver. Counsel still needs to confirm this
+ *       is enforceable in each market.
+ *    4. Confirm the subscription terms match App Store Connect: one monthly
+ *       subscription, three storage capacities in one subscription group, no
+ *       free trial, no introductory offer, no Family Sharing.
  *    5. Confirm compliance with Apple's required "minimum terms" for licensed
  *       applications (the EULA schedule in the Apple Developer Program
  *       agreement), including Apple as a third-party beneficiary.
@@ -33,17 +39,14 @@
  */
 
 import type { LegalSection } from "@/components/legal/LegalPage";
+import { A, Callout, H3, LI, Mail, P, UL } from "@/components/legal/prose";
 import {
-  A,
-  Callout,
-  H3,
-  LI,
-  Mail,
-  P,
-  Placeholder,
-  UL,
-} from "@/components/legal/prose";
-import { availability, contact, legal, site } from "@/config/site";
+  availability,
+  contact,
+  legal,
+  site,
+  subscription,
+} from "@/config/site";
 import { formatList } from "@/lib/format";
 
 export const termsSections: readonly LegalSection[] = [
@@ -55,12 +58,13 @@ export const termsSections: readonly LegalSection[] = [
         <P>
           These Terms of Service (the “Terms”) are an agreement between you and{" "}
           {legal.entityName} (“{site.name}”, “we”, “us”) covering your use of
-          the {site.name} iPhone app and this website (together, the “Service”).
+          the {site.name} iPhone app, {site.name} Cloud, and this website
+          (together, the “Service”).
         </P>
         <P>
-          By downloading, installing, or using {site.name}, you agree to these
-          Terms and to our <A href="/privacy">Privacy Policy</A>. If you do not
-          agree, do not use the Service.
+          By downloading, installing, signing in to, or using {site.name}, you
+          agree to these Terms and to our <A href="/privacy">Privacy Policy</A>.
+          If you do not agree, do not use the Service.
         </P>
       </>
     ),
@@ -83,17 +87,9 @@ export const termsSections: readonly LegalSection[] = [
           behalf and is responsible for your use of the app.
         </P>
         <P>
-          <Placeholder>
-            Owner to state the specific minimum age and confirm it matches the
-            App Store age rating across the launch markets. Revisit before
-            adding EU countries, where the digital-consent age is 13 to 16
-            depending on the member state.
-          </Placeholder>
-        </P>
-        <P>
           If you use {site.name} on behalf of a household or family, you are
-          responsible for making sure anyone who uses your device follows these
-          Terms.
+          responsible for making sure anyone who uses your device or your
+          account follows these Terms.
         </P>
       </>
     ),
@@ -104,28 +100,60 @@ export const termsSections: readonly LegalSection[] = [
     content: (
       <>
         <P>
-          {site.name} is an iPhone app for recording home videos. It lets you
-          create a “Tape” for an event or chapter of life, add recordings to
-          that Tape over time, watch a Tape as one continuous video, organise
-          Tapes into Collections, and export copies of your Tapes.
+          {site.name} is an iPhone app for recording and keeping home videos. It
+          lets you create a “Tape” for an event or chapter of life, add
+          recordings to that Tape over time, watch a Tape as one continuous
+          video, organise Tapes into Collections, and export copies of your
+          Tapes to your photo library.
         </P>
         <P>
-          {site.name} stores your recordings on your device. It does not
-          currently provide cloud backup, cross-device sync, sharing between
-          accounts, web playback, or an Android version, and nothing in these
-          Terms should be read as a commitment to build them.
+          With a {site.name} account and an active subscription, {site.name}{" "}
+          also protects your recordings in {site.name} Cloud, plays them back
+          from {site.name} Cloud on any iPhone you sign in to, and lets you
+          share a Tape with people you invite so that they can add their own
+          recordings to it.
+        </P>
+        <P>
+          {site.name} is an iPhone app. It does not currently offer an iPad,
+          Mac, web or Android version, and nothing in these Terms should be read
+          as a commitment to build one.
         </P>
         <P>
           {site.name} is currently offered through the Apple App Store in{" "}
           {formatList(availability.launchMarkets)}. We expect to add more
           countries over time. Pricing, currency, and the languages the app is
-          offered in vary by region and can change.
+          offered in vary by region and can change. Being able to download{" "}
+          {site.name} in your country is not a representation that it complies
+          with any local requirement beyond those Apple applies, and you are
+          responsible for your own compliance with the law where you use it.
+        </P>
+      </>
+    ),
+  },
+  {
+    id: "accounts",
+    heading: "Your account",
+    content: (
+      <>
+        <P>
+          {site.name} requires an account, created and accessed with Sign in
+          with Apple. You may create one account for yourself. You are
+          responsible for everything that happens under your account, for
+          keeping your Apple Account and your iPhone secure, and for telling us
+          promptly if you believe your account has been used without your
+          permission.
         </P>
         <P>
-          Being able to download {site.name} in your country is not a
-          representation that it complies with any local requirement beyond
-          those Apple applies, and you are responsible for your own compliance
-          with the law where you use it.
+          Your Profile — your display name, username and photo or avatar — is
+          shown to other {site.name} users you interact with. You must not use a
+          name, username or picture that impersonates somebody else, that you do
+          not have the right to use, or that is offensive or unlawful. Usernames
+          are unique and cannot be changed once claimed.
+        </P>
+        <P>
+          You can sign out at any time, and you can permanently delete your
+          account from within the app — see{" "}
+          <A href="/terms#termination">Ending your account</A>.
         </P>
       </>
     ),
@@ -142,15 +170,18 @@ export const termsSections: readonly LegalSection[] = [
             backups;
           </LI>
           <LI>
-            what you record, and for having the right and any necessary consent
-            to record the people who appear in your videos;
+            what you record, import and share, and for having the right and any
+            necessary consent to record the people who appear in your videos and
+            to share those videos with the people you invite;
           </LI>
           <LI>
             complying with the laws that apply where you record, including laws
             about recording other people and about audio recording; and
           </LI>
           <LI>
-            keeping your own copies of anything you cannot afford to lose.
+            keeping your own copies of anything you cannot afford to lose.{" "}
+            {site.name} Cloud is a protective copy, not a guarantee — see{" "}
+            <A href="/terms#videflo-cloud">{site.name} Cloud</A>.
           </LI>
         </UL>
       </>
@@ -162,38 +193,178 @@ export const termsSections: readonly LegalSection[] = [
     content: (
       <>
         <P>
-          Your recordings, Tapes, Collections, names, and cover photos are
-          yours. You keep all rights in them. We claim no ownership of your
-          content.
+          Your recordings, imported videos, Tapes, Collections, names, cover
+          photos and Profile (together, your “Content”) are yours. You keep all
+          rights in them. We claim no ownership of your Content.
         </P>
         <P>
-          Because your content stays on your device, we do not need — and do not
-          ask for — a licence to host, distribute, or display it. If you choose
-          to send us content as part of a support request, you give us
-          permission to use it only to help you with that request.
+          To provide the Service, we need your permission to handle your
+          Content. You grant {legal.entityName} a worldwide, non-exclusive,
+          royalty-free licence to store, copy, transmit, stream, display and
+          otherwise process your Content solely as necessary to operate the
+          Service for you and for the people you choose to share with — for
+          example to keep a copy in {site.name} Cloud, to play a Tape back to
+          you, to render an export you request, and to show a Shared Tape to its
+          members. This licence exists only for that purpose, does not let us
+          use your Content for advertising, promotion or training any model, and
+          ends when you delete the Content or your account, except to the extent
+          it has been shared with others as described below or we are required
+          by law to retain it.
+        </P>
+        <P>
+          If you choose to send us content as part of a support request, you
+          give us permission to use it only to help you with that request.
+        </P>
+      </>
+    ),
+  },
+  {
+    id: "videflo-cloud",
+    heading: "Videflo Cloud",
+    content: (
+      <>
+        <P>
+          While{" "}
+          <strong className="text-ink">Back Up to {site.name} Cloud</strong> is
+          on, each recording you make and its Tape details are copied to{" "}
+          {site.name} Cloud. The original file stays on your iPhone and is never
+          modified by a backup. You can turn backup off, and you can choose
+          whether it may use cellular data, in the app’s Settings.
+        </P>
+        <H3>Storage allowance</H3>
+        <P>
+          Your subscription includes {subscription.includedStorageLabel} of{" "}
+          {site.name} Cloud storage. Larger capacities are available as upgrades
+          within the same subscription, at the price the App Store shows you.
+          The owner of a Tape pays for that Tape’s storage, including recordings
+          other members add to a Shared Tape. Recordings you add to somebody
+          else’s Shared Tape count against their allowance, not yours.
+        </P>
+        <P>
+          If your account is over its allowance — for example after moving to a
+          smaller capacity — {site.name} keeps everything already stored and
+          declines new uploads until you are within your allowance again. You
+          will have at least {subscription.overAllowanceGraceDays} days to free
+          up space or choose a larger capacity. {site.name} does not currently
+          delete stored content automatically; if that ever changes, we will
+          give you notice and a reasonable opportunity to download or export
+          your Content first.
+        </P>
+        <H3>Removing and downloading</H3>
+        <P>
+          Once a Tape is fully protected in {site.name} Cloud, you may remove
+          its files from your iPhone to free space; the Tape then plays by
+          streaming, and you may download it to your iPhone again at any time. A
+          copy on your iPhone and a copy in {site.name} Cloud are two different
+          things: playing a Tape from {site.name} Cloud does not put its files
+          back on your device.
+        </P>
+        <Callout title="A protective copy, not a guarantee">
+          <p>
+            {site.name} Cloud materially reduces the chance of losing a memory,
+            and we work to keep it reliable. It is still a service that depends
+            on your device, your network, Apple, and our providers, and it can
+            be interrupted. Keep your own device backup, and export the Tapes
+            you could not bear to lose. We are not responsible for loss of
+            Content that was never uploaded, that was removed from your iPhone
+            before its upload completed, or that you deleted.
+          </p>
+        </Callout>
+        <H3>If your subscription ends</H3>
+        <P>
+          {site.name} requires an active subscription to open. If yours ends,
+          your recordings stay on your iPhone and your Content stays in{" "}
+          {site.name} Cloud, and subscribing again restores access to all of it.
+          We do not currently delete the Content of a lapsed account
+          automatically. We may in future adopt a policy for accounts that stay
+          lapsed for an extended period; if we do, we will give you notice and a
+          reasonable opportunity to subscribe again or to recover your Content
+          before anything is removed.
+        </P>
+      </>
+    ),
+  },
+  {
+    id: "shared-tapes",
+    heading: "Shared Tapes",
+    content: (
+      <>
+        <P>
+          You may invite other {site.name} users to a Tape you own, by username
+          or by a single-use link sent as a text message. A person who accepts
+          becomes a member of that Tape: they can watch the whole Tape and add
+          their own recordings to it. Being connected to somebody in Friends
+          &amp; Family does not, on its own, give them access to any of your
+          Tapes.
+        </P>
+        <H3>If you own a Shared Tape</H3>
+        <UL>
+          <LI>
+            You control it. You may cancel invitations, remove members, stop the
+            Tape from accepting new recordings, and delete the Tape.
+          </LI>
+          <LI>
+            Deleting a Shared Tape deletes it for everyone, including recordings
+            that other members added. Do not delete a Tape that holds somebody
+            else’s recordings without considering them.
+          </LI>
+          <LI>
+            The Tape’s storage, including members’ recordings, counts against
+            your allowance.
+          </LI>
+          <LI>
+            You are responsible for whom you invite. Anyone who receives a link
+            you send can join the Tape until the link is used.
+          </LI>
+        </UL>
+        <H3>If you add a recording to somebody else’s Tape</H3>
+        <UL>
+          <LI>
+            Your recording becomes part of that person’s Tape. Every member can
+            watch it, and the owner can delete the Tape or remove you from it.
+          </LI>
+          <LI>
+            If you leave the Tape or delete your account, recordings you added
+            stay in the Tape — they are part of that person’s memory — but are
+            no longer attributed to you. Only the Tape’s owner can remove a
+            recording from a Shared Tape, so if you do not want a recording of
+            yours to remain, ask the owner to delete it.
+          </LI>
+          <LI>
+            Only the owner of a Shared Tape can export the whole Tape to their
+            photo library. Every member can watch it in the app.
+          </LI>
+          <LI>
+            You grant the Tape’s owner and its members permission to watch the
+            recordings you add, and the owner permission to keep them as part of
+            the Tape, on the terms described here.
+          </LI>
+        </UL>
+        <P>
+          You must only add recordings you have the right to share, and you must
+          not use a Shared Tape to harass, deceive or harm anybody. We may
+          remove content or suspend accounts that breach these Terms.
         </P>
       </>
     ),
   },
   {
     id: "device-storage",
-    heading: "Device storage and backups",
+    heading: "Device storage",
     content: (
       <>
         <P>
-          {site.name} is local-first: your recordings live on your iPhone. Video
-          files are large, and it is your responsibility to keep enough free
-          storage for the recordings you make.
+          Recordings are written to your iPhone first. Video files are large,
+          and it is your responsibility to keep enough free storage for the
+          recordings you make. {site.name} warns you while you record if space
+          is running low, and it lets you free space by removing Tapes that are
+          already protected in {site.name} Cloud.
         </P>
-        <Callout title="You are responsible for your own backups">
-          <p>
-            {site.name} does not back up your recordings and cannot recover
-            them. If your device is lost, stolen, damaged, or erased, if iOS or
-            the app is removed, or if a file is deleted, recordings that exist
-            only inside {site.name} may be permanently lost. Maintain your own
-            device backup and export the Tapes that matter most to you.
-          </p>
-        </Callout>
+        <P>
+          Deleting the {site.name} app removes the recordings stored on that
+          iPhone. It does not delete your account, your Content in {site.name}{" "}
+          Cloud, or your subscription.
+        </P>
       </>
     ),
   },
@@ -203,9 +374,11 @@ export const termsSections: readonly LegalSection[] = [
     content: (
       <>
         <P>
-          Some features of {site.name} may require a paid subscription. Where
-          offered, subscriptions are sold as auto-renewable monthly or yearly
-          plans through the Apple App Store.
+          {site.name} requires a paid subscription. It is sold as one
+          auto-renewable monthly subscription through the Apple App Store, and
+          includes {site.name} Cloud storage. The same subscription is offered
+          at more than one storage capacity; moving between capacities is a
+          change to your existing subscription, not a second subscription.
         </P>
         <P>
           The price and billing period that apply to you are the ones shown to
@@ -214,9 +387,9 @@ export const termsSections: readonly LegalSection[] = [
           and change over time.
         </P>
         <P>
-          {site.name} does not currently offer a free trial. If an introductory
-          offer or trial is made available in future, its terms will be shown by
-          Apple before you purchase.
+          {site.name} does not currently offer a free trial, an introductory
+          offer, or Family Sharing. If any is made available in future, its
+          terms will be shown by Apple before you purchase.
         </P>
       </>
     ),
@@ -238,7 +411,13 @@ export const termsSections: readonly LegalSection[] = [
           <LI>
             Your Apple Account is charged for the renewal within 24 hours before
             the end of the current period, at the then-current price for your
-            plan.
+            capacity.
+          </LI>
+          <LI>
+            Changing to a larger capacity takes effect when Apple processes the
+            change and is prorated by Apple. Changing to a smaller capacity
+            takes effect at your next renewal; until then you keep the allowance
+            you have paid for.
           </LI>
           <LI>
             Apple manages billing, receipts, and renewal notices. We do not
@@ -259,10 +438,10 @@ export const termsSections: readonly LegalSection[] = [
           remains active until the end of the period you have already paid for.
         </P>
         <P>
-          Deleting the {site.name} app does not cancel a subscription — the
-          subscription is held in your Apple Account, so it must be cancelled
-          there. The <A href="/support">Support</A> page explains where to find
-          it.
+          Deleting the {site.name} app, signing out, or deleting your{" "}
+          {site.name} account does not cancel a subscription — the subscription
+          is held in your Apple Account, so it must be cancelled there. The{" "}
+          <A href="/support">Support</A> page explains where to find it.
         </P>
       </>
     ),
@@ -292,15 +471,17 @@ export const termsSections: readonly LegalSection[] = [
     content: (
       <>
         <P>
-          If you reinstall {site.name} or set up a new iPhone, you can use{" "}
-          <strong className="text-ink">Restore Purchases</strong> in the app to
-          restore an eligible active subscription that was bought with the same
-          Apple Account.
+          Your subscription belongs to your Apple Account. If you reinstall{" "}
+          {site.name} or set up a new iPhone, sign in with Apple and, if the
+          subscription screen appears, use{" "}
+          <strong className="text-ink">Restore Purchases</strong> to restore an
+          eligible active subscription bought with the same Apple Account.
         </P>
         <P>
-          Restoring a purchase restores access to paid features only. It does
-          not restore your recordings, which are stored on the device where they
-          were made.
+          Restoring a purchase restores access. Your Tapes come back separately,
+          from {site.name} Cloud, when you sign in to the same {site.name}{" "}
+          account; recordings that were never backed up exist only on the iPhone
+          that made them.
         </P>
       </>
     ),
@@ -313,12 +494,21 @@ export const termsSections: readonly LegalSection[] = [
         <P>You agree not to:</P>
         <UL>
           <LI>
-            use {site.name} to record anyone unlawfully or without required
-            consent;
+            use {site.name} to record or share anyone unlawfully or without
+            required consent;
           </LI>
           <LI>
-            use {site.name} to create or store content that is illegal, or that
-            exploits or endangers a child;
+            use {site.name} to create, store or share content that is illegal,
+            or that exploits or endangers a child;
+          </LI>
+          <LI>
+            use invitations, Friends &amp; Family requests or Shared Tapes to
+            harass, deceive, impersonate or harm anybody, or send invitations to
+            people who have not agreed to receive them;
+          </LI>
+          <LI>
+            access or attempt to access another person’s account, Tape or
+            Content without their permission;
           </LI>
           <LI>
             reverse engineer, decompile, or attempt to extract the source code
@@ -326,8 +516,8 @@ export const termsSections: readonly LegalSection[] = [
             permits it;
           </LI>
           <LI>
-            interfere with or attempt to circumvent security, licensing, or
-            purchase verification; or
+            interfere with or attempt to circumvent security, storage
+            allowances, licensing, or purchase verification; or
           </LI>
           <LI>
             copy, resell, sublicense, or redistribute the app or any part of it.
@@ -393,9 +583,10 @@ export const termsSections: readonly LegalSection[] = [
     content: (
       <>
         <P>
-          The {site.name} app, this website, the {site.name} name and wordmark,
-          and the design, text, and graphics we create are owned by{" "}
-          {legal.entityName} and protected by intellectual property laws.
+          The {site.name} app, {site.name} Cloud, this website, the {site.name}{" "}
+          name and wordmark, the built-in avatars, and the design, text, and
+          graphics we create are owned by {legal.entityName} and protected by
+          intellectual property laws.
         </P>
         <P>
           We grant you a personal, limited, non-exclusive, non-transferable,
@@ -426,17 +617,21 @@ export const termsSections: readonly LegalSection[] = [
       <>
         <P>
           {site.name} is distributed by Apple and uses Apple services for
-          downloads, purchases, and restoring purchases. Your use of the App
-          Store and your Apple Account is governed by Apple’s terms, not ours.
+          downloads, sign-in, purchases, restoring purchases and notification
+          delivery. Your use of the App Store and your Apple Account is governed
+          by Apple’s terms, not ours.
         </P>
         <P>
           You acknowledge that Apple has no obligation to provide maintenance or
           support for {site.name}, and that Apple is a third-party beneficiary
-          of these Terms and may enforce them against you.{" "}
-          <Placeholder>
-            Counsel to confirm the full set of Apple-required
-            licensed-application terms is present.
-          </Placeholder>
+          of these Terms and may enforce them against you.
+        </P>
+        <P>
+          {site.name} Cloud runs on infrastructure provided by third parties,
+          and our subscription records are held by a subscription infrastructure
+          provider; both are named in the{" "}
+          <A href="/privacy#service-providers">Privacy Policy</A>. They act on
+          our behalf, and these Terms are between you and us alone.
         </P>
       </>
     ),
@@ -447,13 +642,18 @@ export const termsSections: readonly LegalSection[] = [
     content: (
       <>
         <P>
-          We may add, change, or remove features, or stop offering {site.name}
-          altogether. We may also stop supporting older versions of iOS.
+          We may add, change, or remove features, change the storage capacities
+          we offer, or stop offering {site.name} altogether. We may also stop
+          supporting older versions of iOS. {site.name} Cloud may occasionally
+          be unavailable for maintenance or for reasons outside our control; the
+          app is built so that recording and watching Tapes already on your
+          iPhone continue to work without a connection.
         </P>
         <P>
-          If we discontinue the Service, we will make reasonable efforts to give
-          notice so you can export your Tapes. Your recordings remain on your
-          device regardless.
+          If we discontinue the Service or {site.name} Cloud, we will make
+          reasonable efforts to give you notice and a reasonable period to
+          download your Tapes to your iPhone or export them to your photo
+          library before anything is removed.
         </P>
       </>
     ),
@@ -471,9 +671,10 @@ export const termsSections: readonly LegalSection[] = [
         </P>
         <P>
           We do not warrant that the Service will be uninterrupted, error-free,
-          or free from data loss, that a recording will always succeed, or that
-          a recording, Tape, or export will be preserved. You are responsible
-          for your own backups.
+          or free from data loss, that a recording, upload, download or export
+          will always succeed, or that a recording, Tape or Content in{" "}
+          {site.name} Cloud will be preserved. You are responsible for your own
+          backups.
         </P>
         <P>
           Some jurisdictions do not allow the exclusion of certain warranties,
@@ -537,26 +738,38 @@ export const termsSections: readonly LegalSection[] = [
         You agree to indemnify and hold harmless {legal.entityName} and its
         officers, employees, and agents from any claims, damages, liabilities,
         costs, and expenses (including reasonable legal fees) arising out of
-        your use of the Service, your content, or your breach of these Terms —
-        including a claim brought by someone who appears in a recording you
-        made.
+        your use of the Service, your Content, the Content you share or add to
+        somebody else’s Tape, or your breach of these Terms — including a claim
+        brought by someone who appears in a recording you made or shared.
       </P>
     ),
   },
   {
     id: "termination",
-    heading: "Termination",
+    heading: "Ending your account",
     content: (
       <>
         <P>
-          You may stop using {site.name} at any time by deleting the app.
-          Remember to cancel any subscription separately in your Apple Account
-          settings.
+          You may stop using {site.name} at any time. Signing out leaves your
+          account and your Content in {site.name} Cloud as they are. Deleting
+          the app removes the recordings on that iPhone only.
+        </P>
+        <P>
+          <strong className="text-ink">Delete Account</strong>, in the app’s
+          Settings, permanently deletes your account and every Tape you own in{" "}
+          {site.name} Cloud, including recordings other people added to your
+          Shared Tapes. Recordings you added to somebody else’s Shared Tape
+          remain in that Tape without attribution. Videos already on your iPhone
+          are not deleted by this, and your subscription is not cancelled —
+          cancel it separately in your Apple Account settings. Deletion cannot
+          be undone.
         </P>
         <P>
           We may suspend or terminate your access to the Service if you
-          materially breach these Terms or if we are required to do so by law.
-          Sections that by their nature should survive termination — including
+          materially breach these Terms, if we are required to do so by law, or
+          if we discontinue the Service as described above. Sections that by
+          their nature should survive termination — including your content
+          licence to the extent Content remains in other people’s Shared Tapes,
           intellectual property, disclaimers, limitation of liability, and
           indemnification — continue to apply.
         </P>
@@ -635,14 +848,6 @@ export const termsSections: readonly LegalSection[] = [
           billing, a charge, or a refund is generally between you and Apple. See{" "}
           <A href="/terms#refunds">Refunds</A>.
         </P>
-
-        <P>
-          <Placeholder>
-            Counsel to confirm this venue and consumer carve-out are enforceable
-            in the markets Videflo will be sold in, and to advise whether any
-            market requires additional or different dispute-resolution wording.
-          </Placeholder>
-        </P>
       </>
     ),
   },
@@ -677,16 +882,12 @@ export const termsSections: readonly LegalSection[] = [
           <LI>
             Support: <Mail address={contact.supportEmail} />
           </LI>
-          <LI>
-            Postal address: <Placeholder>{legal.entityAddress}</Placeholder>
-          </LI>
+          {legal.entityAddress ? (
+            <LI>Postal address: {legal.entityAddress}</LI>
+          ) : null}
         </UL>
         <P>
-          {legal.entityName} —{" "}
-          <Placeholder>
-            legal entity name to be confirmed on business registration
-          </Placeholder>
-          .
+          {legal.entityName}, {legal.entityDescription}.
         </P>
       </>
     ),

@@ -28,8 +28,7 @@ export const helpCategories: readonly HelpCategory[] = [
   {
     id: "tapes",
     title: "Tapes & Library",
-    description:
-      "Naming, tidying, trimming, and finding the Tapes you've made.",
+    description: "Naming, tidying, pinning, and finding the Tapes you've made.",
   },
   {
     id: "collections",
@@ -44,33 +43,39 @@ export const helpCategories: readonly HelpCategory[] = [
   },
   {
     id: "exporting",
-    title: "Exporting & Sharing",
+    title: "Exporting",
     description:
-      "Turning a Tape into an ordinary video file you can keep or send.",
+      "Saving a Tape, or one recording, to Photos as an ordinary video.",
+  },
+  {
+    id: "sharing",
+    title: "Shared Tapes",
+    description:
+      "Inviting family to a Tape, adding to someone else's, Friends & Family, and notifications.",
   },
   {
     id: "storage",
-    title: "Storage & Backup",
+    title: "Videflo Cloud & Storage",
     description:
-      "How much space Tapes use, freeing some up, and keeping a second copy.",
+      "How backup works, freeing space on your iPhone, and moving to a new one.",
   },
   {
     id: "subscription",
     title: "Subscription",
     description:
-      "Plans, billing, restoring a purchase, and cancelling — all through Apple.",
+      "The plan, storage capacities, restoring a purchase, and cancelling — all through Apple.",
   },
   {
     id: "privacy",
     title: "Privacy & Security",
     description:
-      "Where your recordings live, what leaves your iPhone, and what doesn't.",
+      "Your account, where your recordings live, who can see them, and what Videflo never does.",
   },
   {
     id: "settings",
     title: "App & Settings",
     description:
-      "Every switch in Settings explained, plus updates and getting in touch.",
+      "Every screen in Settings explained, plus updates and getting in touch.",
   },
   {
     id: "troubleshooting",

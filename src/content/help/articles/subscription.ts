@@ -3,9 +3,9 @@ import type { HelpArticle } from "../types";
 export const subscriptionArticles: readonly HelpArticle[] = [
   {
     slug: "subscription-plans",
-    title: "Plans, prices, and what a subscription includes",
+    title: "The subscription, storage capacities, and what's included",
     description:
-      "Monthly or yearly, what you get, and how billing works through the App Store.",
+      "One monthly subscription with Videflo Cloud included, three storage sizes, and how billing works through the App Store.",
     category: "subscription",
     keywords: [
       "price",
@@ -18,10 +18,13 @@ export const subscriptionArticles: readonly HelpArticle[] = [
       "pay",
       "upgrade",
       "paywall",
+      "50 gb",
+      "100 gb",
+      "250 gb",
     ],
     overview: [
-      "Videflo is a subscription app. Downloading it is free, and a subscription unlocks it — there's one tier, so subscribing gives you everything the app does.",
-      "You can pay monthly or yearly. Everything about the payment itself is handled by Apple, through the same Apple Account you use for any other App Store purchase.",
+      "Videflo is a subscription app. Downloading it is free, and one subscription unlocks everything — the camcorder, the library, Shared Tapes, exporting, and Videflo Cloud with **50 GB** of storage included.",
+      "There is one plan, billed monthly. The only choice you make is how much Videflo Cloud you'd like: 50 GB comes with the subscription, and 100 GB or 250 GB are available as an upgrade to it. Everything about the payment itself is handled by Apple, through the same Apple Account you use for any other App Store purchase.",
     ],
     sections: [
       {
@@ -30,39 +33,48 @@ export const subscriptionArticles: readonly HelpArticle[] = [
         blocks: [
           {
             kind: "text",
-            text: "All of it. There's no free tier, no locked features, and no limit on how many Tapes, recordings, or Collections you can make. Unlimited recording at every quality, playback, trimming, cover photos, preparing and exporting — one subscription, the whole app.",
+            text: "All of it. There's no free tier and no locked features. Unlimited Tapes, recordings and Collections at every quality, playback, cover photos, Shared Tapes, exporting to Photos, and automatic backup to Videflo Cloud — one subscription, the whole app.",
           },
           {
             kind: "text",
-            text: "Storage isn't part of the subscription, because Videflo doesn't store anything for you. Your recordings live on your iPhone, and the only limit on them is the space it has.",
+            text: "Storage is part of the subscription, because Videflo Cloud is where your Tapes are protected. The base subscription includes 50 GB; if you fill it, a larger capacity is a tap away.",
           },
         ],
       },
       {
-        id: "plans",
-        heading: "Monthly or yearly",
+        id: "capacities",
+        heading: "The three storage capacities",
         blocks: [
           {
             kind: "definitions",
             items: [
               {
-                term: "Monthly",
+                term: "50 GB",
                 description:
-                  "Renews every month. Best if you'd like to try Videflo across a few occasions before committing.",
+                  "Included with the subscription. Plenty for most families' everyday Tapes at Standard quality.",
               },
               {
-                term: "Yearly",
+                term: "100 GB",
                 description:
-                  "Renews once a year and works out cheaper per month. Best if you're keeping a Tape going across a whole year — which is rather the point of the app.",
+                  "The same Videflo, with twice the room. An upgrade to your existing subscription, not a second one.",
+              },
+              {
+                term: "250 GB",
+                description:
+                  "The largest capacity Videflo sells today. For 4K Tapes, big Shared Tapes, or years of memories.",
               },
             ],
+          },
+          {
+            kind: "text",
+            text: "Change capacity in **Settings → Videflo Cloud → Manage Storage → Storage Options**. Moving up takes effect straight away, and Apple prorates what you've already paid. Moving down takes effect at your next renewal — until then you keep the room you paid for.",
           },
           {
             kind: "note",
             title: "Prices are always shown before you buy",
             text: [
-              "The subscription screen shows the real price in your own currency, along with what the yearly plan works out to per month. Apple sets the local price, so it varies by country.",
-              "Videflo never shows an estimated or placeholder price — if the plans can't be loaded, it tells you so rather than guessing.",
+              "In the United States the subscription is $9.99 a month; the App Store shows every price in your own currency, and the larger capacities are priced on the subscription screen. Apple sets the local price, so it varies by country.",
+              "Videflo never shows an estimated or placeholder price — if the subscription can't be loaded from the App Store, it tells you so rather than guessing.",
             ],
           },
         ],
@@ -75,18 +87,28 @@ export const subscriptionArticles: readonly HelpArticle[] = [
             kind: "list",
             items: [
               "**Apple takes the payment**, using whatever payment method your Apple Account uses. We never see your card details.",
-              "**It renews automatically** until you cancel, which you do in your Apple Account rather than in Videflo.",
+              "**It renews automatically** every month until you cancel, which you do in your Apple Account rather than in Videflo.",
               "**Receipts come from Apple**, by email and in your Apple Account purchase history.",
-              "**Switching between monthly and yearly** is a plan change rather than a second subscription — you can never end up paying for both.",
+              "**Changing capacity is a change, not a second subscription** — you can never end up paying for two.",
             ],
+          },
+        ],
+      },
+      {
+        id: "storage-owner",
+        heading: "Who pays for a Shared Tape",
+        blocks: [
+          {
+            kind: "text",
+            text: "The owner. Every recording in a Tape counts against the allowance of the person who created it, including recordings other members add. Recordings you add to somebody else's Tape don't use your allowance at all.",
           },
         ],
       },
     ],
     tips: [
-      "If you plan to keep a Tape going all year — a child's year, a house renovation, a season — the yearly plan is the sensible one.",
+      "Standard quality goes a long way: a 4K Tape uses roughly four times the room of a 1080p one, on the phone and in Videflo Cloud.",
       "Cancelling doesn't take effect immediately. You keep access until the end of the period you've already paid for.",
-      "The subscription belongs to your Apple Account, so it comes with you to a new iPhone. Your recordings don't — see **Backups and moving to a new iPhone**.",
+      "The subscription belongs to your Apple Account, so it comes with you to a new iPhone. So do your Tapes — from Videflo Cloud, when you sign in.",
     ],
     faqs: [
       {
@@ -96,10 +118,14 @@ export const subscriptionArticles: readonly HelpArticle[] = [
         ],
       },
       {
+        question: "Is there a yearly plan?",
+        answer: ["Not today. Videflo is billed monthly."],
+      },
+      {
         question: "What happens to my Tapes if my subscription ends?",
         answer: [
-          "They stay on your iPhone. Nothing is deleted, and nothing is uploaded anywhere.",
-          "You'll need an active subscription to open the app and use them, and subscribing again restores access to everything exactly as it was.",
+          "Nothing is deleted. Your recordings stay on your iPhone, and everything already backed up stays in Videflo Cloud.",
+          "You'll need an active subscription to open the app, and subscribing again restores access to everything exactly as it was.",
         ],
       },
       {
@@ -111,21 +137,17 @@ export const subscriptionArticles: readonly HelpArticle[] = [
       {
         question: "Is there a family plan?",
         answer: [
-          "Videflo's subscription isn't set up for Family Sharing today, so it applies to the Apple Account that bought it.",
+          "Videflo's subscription isn't set up for Family Sharing today, so it applies to the Apple Account that bought it. Each person on a Shared Tape has their own account and subscription; the Tape's storage comes out of the owner's allowance.",
         ],
       },
       {
-        question: "Why does an app that stores nothing charge a subscription?",
+        question: "Why is Videflo a subscription?",
         answer: [
-          "Videflo is made by a very small team and has no advertising, no data to sell, and nobody's attention to resell. The subscription is what pays for it being built and kept working.",
+          "Videflo is made by a very small team and has no advertising, no data to sell, and nobody's attention to resell. The subscription pays for the app being built and kept working, and for the storage that keeps your memories safe.",
         ],
       },
     ],
-    related: [
-      "manage-subscription",
-      "restore-purchases",
-      "troubleshooting-subscription",
-    ],
+    related: ["manage-subscription", "restore-purchases", "videflo-cloud"],
   },
 
   {
@@ -144,10 +166,11 @@ export const subscriptionArticles: readonly HelpArticle[] = [
       "switch",
       "renewal",
       "turn off",
+      "downgrade",
     ],
     overview: [
-      "Subscriptions are managed in your Apple Account, not inside Videflo. Apple takes the payment, so Apple holds the controls — including cancelling, switching plans, and refunds.",
-      "Videflo's Settings screen has a **Manage Subscription** link that takes you straight there.",
+      "Subscriptions are managed in your Apple Account, not inside Videflo. Apple takes the payment, so Apple holds the controls — including cancelling and refunds.",
+      "Videflo's Settings screen has a **Manage Subscription** link, under **Videflo Plan**, that takes you straight there. Changing storage capacity is the one thing you do inside Videflo, in **Manage Storage**.",
     ],
     sections: [
       {
@@ -162,14 +185,13 @@ export const subscriptionArticles: readonly HelpArticle[] = [
               { title: "Tap **Subscriptions**." },
               {
                 title: "Choose **Videflo** from the list.",
-                detail:
-                  "From here you can switch plans, cancel, or see when it next renews.",
+                detail: "From here you can cancel, or see when it next renews.",
               },
             ],
           },
           {
             kind: "text",
-            text: "The shortcut inside the app is **Settings → Subscription → Manage Subscription**, which opens the same page.",
+            text: "The shortcut inside the app is **Settings → Videflo Plan → Manage Subscription**, which opens the same page.",
           },
           {
             kind: "note",
@@ -198,7 +220,7 @@ export const subscriptionArticles: readonly HelpArticle[] = [
             kind: "list",
             items: [
               "Cancelling stops the **next** renewal. You keep access until the end of the period you've already paid for.",
-              "Your Tapes are not deleted. They stay on your iPhone whether you're subscribed or not.",
+              "Your Tapes are not deleted. They stay on your iPhone and in Videflo Cloud whether you're subscribed or not.",
               "Subscribing again later restores access to everything, exactly as you left it.",
             ],
           },
@@ -207,22 +229,26 @@ export const subscriptionArticles: readonly HelpArticle[] = [
             title: "Deleting the app does not cancel a subscription",
             text: [
               "Removing Videflo from your iPhone leaves the subscription running and renewing. It has to be cancelled in your Apple Account.",
-              "Deleting the app *does* delete your Tapes — so cancel first, and export anything you want to keep before you remove it.",
+              "Neither does signing out or deleting your Videflo account. All three leave the subscription exactly where it was.",
             ],
           },
         ],
       },
       {
-        id: "switch",
-        heading: "Switching between monthly and yearly",
+        id: "capacity",
+        heading: "Changing storage capacity",
         blocks: [
           {
             kind: "text",
-            text: "Both plans are part of the same subscription, so switching is a change rather than a second purchase — you can never end up holding both.",
+            text: "This one is inside Videflo: **Settings → Videflo Cloud → Manage Storage → Storage Options**. Pick the size you want and confirm with Apple.",
           },
           {
-            kind: "text",
-            text: "Go to **Settings → your name → Subscriptions → Videflo** and pick the other option. Apple handles the timing and any proration according to its own rules: moving up usually takes effect straight away, and moving down usually takes effect at the next renewal.",
+            kind: "list",
+            items: [
+              "**Moving up** takes effect straight away. Apple prorates the difference for the rest of the current month.",
+              "**Moving down** takes effect at your next renewal. Until then you keep the allowance you've paid for, and Videflo shows the change as scheduled.",
+              "If you'll be using more than the smaller capacity holds, Videflo keeps everything and gives you 30 days after the change to free space or move back up. Nothing is deleted on its own.",
+            ],
           },
         ],
       },
@@ -261,12 +287,12 @@ export const subscriptionArticles: readonly HelpArticle[] = [
     tips: [
       "Cancel a day or two before the renewal date rather than on it. Apple charges for the next period slightly in advance.",
       "Check when it renews in that same Subscriptions screen — it's shown right under the plan.",
-      "Export your Tapes before cancelling if you're planning to remove the app. Cancelling alone doesn't touch them, but deleting the app does.",
+      "If you're cancelling for good and want your memories outside Videflo, export the Tapes you care about to Photos first. Nothing is deleted when you cancel, but you won't be able to open the app to export later.",
     ],
     pitfalls: [
       {
         mistake: "Deleting the app and assuming the billing stopped.",
-        fix: "It doesn't. Cancel in **Settings → your name → Subscriptions** — and note that deleting the app also removes your Tapes.",
+        fix: "It doesn't. Cancel in **Settings → your name → Subscriptions**.",
       },
       {
         mistake: "Looking for a cancel button inside Videflo.",
@@ -287,12 +313,19 @@ export const subscriptionArticles: readonly HelpArticle[] = [
           "That's correct. Access runs to the end of the period you've paid for, then stops.",
         ],
       },
+      {
+        problem:
+          "I chose a smaller capacity but Videflo still shows the bigger one.",
+        solutions: [
+          "That's expected. Apple keeps the larger capacity in force until the renewal date, and Videflo shows the smaller one as scheduled.",
+        ],
+      },
     ],
     faqs: [
       {
         question: "Will I lose my Tapes if I cancel?",
         answer: [
-          "No. Your recordings stay on your iPhone. You'll need a subscription to use the app, but nothing is deleted, and resubscribing brings everything back exactly as it was.",
+          "No. Your recordings stay on your iPhone and in Videflo Cloud. You'll need a subscription to use the app, but nothing is deleted, and resubscribing brings everything back exactly as it was.",
         ],
       },
       {
@@ -331,7 +364,7 @@ export const subscriptionArticles: readonly HelpArticle[] = [
       "paywall again",
     ],
     overview: [
-      "Your subscription belongs to your Apple Account rather than to the app, so it can always be brought back. Reinstall Videflo, tap **Restore Purchases**, and you're in.",
+      "Your subscription belongs to your Apple Account rather than to the app, so it can always be brought back. Reinstall Videflo, sign in, tap **Restore Purchases** on the subscription screen, and you're in.",
     ],
     sections: [
       {
@@ -348,12 +381,12 @@ export const subscriptionArticles: readonly HelpArticle[] = [
                   "Check in the **Settings** app — your name is at the very top.",
               },
               {
-                title: "Open Videflo.",
+                title: "Open Videflo and sign in with Apple.",
               },
               {
-                title: "Tap **Restore Purchases**.",
+                title: "On the subscription screen, tap **Restore Purchases**.",
                 detail:
-                  "It's on the subscription screen if you're seeing that, and in **Settings → Subscription** inside the app if you're already past it.",
+                  "It's on that screen, where you need it. Once you're past it there's nothing to restore.",
               },
               {
                 title:
@@ -382,15 +415,15 @@ export const subscriptionArticles: readonly HelpArticle[] = [
         ],
       },
       {
-        id: "what-it-doesnt",
-        heading: "What restoring doesn't do",
+        id: "what-it-does",
+        heading: "What restoring does, and what brings your Tapes back",
         blocks: [
           {
-            kind: "warning",
-            title: "It brings back access, not recordings",
+            kind: "note",
+            title: "Two things, two routes",
             text: [
-              "Restoring a purchase restores your subscription. It does not restore Tapes — those were saved on the iPhone where you filmed them, and they come back only from an iPhone backup.",
-              "If your subscription restored but your library is empty, that's the expected result of setting a phone up as new. See **Backups and moving to a new iPhone**.",
+              "**Restore Purchases** brings back access — the subscription. It checks with Apple and re-applies your Videflo Cloud capacity.",
+              "**Signing in** brings back your Tapes — from Videflo Cloud, as soon as you're in the same Videflo account. They appear marked **In Videflo Cloud** and play by streaming; **Download to This iPhone** puts the files back. See **Moving to a new iPhone**.",
             ],
           },
         ],
@@ -438,7 +471,7 @@ export const subscriptionArticles: readonly HelpArticle[] = [
       {
         question: "How many devices can I restore onto?",
         answer: [
-          "Any iPhone signed in to the Apple Account that holds the subscription. Note that each device has its own separate Tapes, since nothing syncs between them.",
+          "Any iPhone signed in to the Apple Account that holds the subscription. Sign in to Videflo with the same account and your Tapes come with you too.",
         ],
       },
       {

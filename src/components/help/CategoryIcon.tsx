@@ -52,6 +52,14 @@ const paths: Record<HelpCategoryId, React.ReactNode> = {
       <path d="M4.5 13v5.5a1.5 1.5 0 0 0 1.5 1.5h12a1.5 1.5 0 0 0 1.5-1.5V13" />
     </>
   ),
+  sharing: (
+    <>
+      <circle cx="9" cy="8.5" r="3" />
+      <path d="M3.5 19.5c0-3.3 2.5-5.5 5.5-5.5s5.5 2.2 5.5 5.5" />
+      <circle cx="17" cy="9.5" r="2.4" />
+      <path d="M15.8 14.3c2.7.2 4.7 2.2 4.7 5.2" />
+    </>
+  ),
   storage: (
     <>
       <rect x="3" y="4.5" width="18" height="5" rx="1.8" />

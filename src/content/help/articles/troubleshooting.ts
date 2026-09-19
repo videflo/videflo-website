@@ -30,8 +30,8 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
             kind: "warning",
             title: "Don't delete and reinstall the app",
             text: [
-              "It's the standard advice for most apps, and here it's the worst possible move: deleting Videflo deletes your Tapes. There's no cloud copy to bring them back.",
-              "Work through everything below first. If nothing helps, email us before removing anything.",
+              "It's the standard advice for most apps, and here it's the wrong first move: deleting Videflo removes the recordings on this iPhone, and any that hadn't finished uploading to Videflo Cloud are gone with them.",
+              "Work through everything below first. If nothing helps, check every Tape says **Backed Up** and email us before removing anything.",
             ],
           },
         ],
@@ -61,7 +61,7 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
               {
                 title: "Turn off Low Power Mode.",
                 detail:
-                  "It limits performance, which shows up most in recording, preparing, and 4K playback.",
+                  "It limits performance, which shows up most in recording, exporting, and 4K playback — and Videflo pauses backups while it's on.",
               },
               {
                 title: "Update iOS and update Videflo.",
@@ -93,7 +93,7 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
       },
     ],
     tips: [
-      "Note what you were doing when it happened. “It crashes when I tap Prepare on a long Tape” is something we can act on; “it crashes sometimes” isn't.",
+      "Note what you were doing when it happened. “It crashes when I tap Export Tape on a long Tape” is something we can act on; “it crashes sometimes” isn't.",
       "A screen recording of the problem is worth a hundred words — as long as it doesn't show anything private.",
     ],
     faqs: [
@@ -106,15 +106,11 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
       {
         question: "Does reinstalling fix things?",
         answer: [
-          "It would also delete every Tape you have. Please treat it as a last resort, and talk to us before you try it.",
+          "Rarely, and it removes every recording on this iPhone. Everything already in Videflo Cloud comes back when you sign in, but a recording that hadn't uploaded doesn't. Please treat it as a last resort, and talk to us before you try it.",
         ],
       },
     ],
-    related: [
-      "troubleshooting-recording",
-      "contact-support",
-      "backups-and-new-iphone",
-    ],
+    related: ["troubleshooting-recording", "contact-support", "videflo-cloud"],
   },
 
   {
@@ -302,6 +298,7 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
           {
             kind: "list",
             items: [
+              "If the Tape is marked **In Videflo Cloud**, it's streaming — a weak connection is the usual cause. Move to Wi-Fi, or **Download to This iPhone**.",
               "Close other apps. 4K playback asks a lot, especially alongside anything else demanding.",
               "Switch off Low Power Mode, which caps performance.",
               "Let the phone cool if it's warm — iOS throttles hard when it's hot.",
@@ -355,12 +352,13 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
         blocks: [
           {
             kind: "text",
-            text: "This means the video file that recording points to isn't on the iPhone any more. It usually follows a restore that didn't bring everything back, or storage running out at exactly the wrong moment.",
+            text: "This means the video for that recording isn't on this iPhone and Videflo Cloud doesn't have a finished copy either. It usually means the recording never completed its upload before the phone that made it was replaced, or storage ran out at exactly the wrong moment.",
           },
           {
             kind: "list",
             items: [
               "The rest of the Tape still plays normally.",
+              "If the phone that made the recording still exists, open Videflo on it and let the upload finish.",
               "If you have an iPhone backup from before it happened, restoring may bring the file back.",
               "Otherwise, deleting the affected recording from **Manage Recordings** tidies the Tape up.",
             ],
@@ -396,7 +394,7 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
       {
         question: "Playback is fine but exporting fails.",
         answer: [
-          "That's usually storage, since preparing needs room for a whole new file. See **When exporting fails**.",
+          "That's usually storage, since exporting needs room for a whole new file. See **When exporting fails**.",
         ],
       },
     ],
@@ -411,25 +409,25 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
     slug: "troubleshooting-export",
     title: "When exporting fails",
     description:
-      "Preparation that stalls, exports that won't save to Photos, and videos you can't find afterwards.",
+      "Exports that stop part way, won't save to Photos, or produce videos you can't find afterwards.",
     category: "troubleshooting",
     keywords: [
       "export failed",
-      "prepare failed",
       "stuck at",
       "percent",
       "can't save",
       "photos denied",
       "missing video",
       "interrupted",
+      "cancelled",
     ],
     overview: [
-      "Exporting is the most demanding thing Videflo does, so it's the most sensitive to a full or busy iPhone. The good news is that a failed export never harms your recordings — the originals are untouched whatever happens.",
+      "Exporting is the most demanding thing Videflo does, so it's the most sensitive to a full or busy iPhone. The good news is that a failed export never harms your recordings — the originals are untouched whatever happens, and nothing is left behind.",
     ],
     sections: [
       {
-        id: "prepare-fails",
-        heading: "Preparation fails or stalls",
+        id: "export-fails",
+        heading: "The export fails or stops part way",
         blocks: [
           {
             kind: "steps",
@@ -437,7 +435,7 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
               {
                 title: "Free up storage. This is the usual culprit.",
                 detail:
-                  "Preparing needs room for a whole new file roughly the size of the Tape. Delete prepared copies of other Tapes first — that costs you nothing.",
+                  "Exporting needs room for a whole new file roughly the size of the Tape. Videflo checks before it starts, but iOS keeps some space in reserve — free a few gigabytes more than you think you need. **Remove from This iPhone** on other backed-up Tapes is the quickest way.",
               },
               {
                 title: "Turn off Low Power Mode.",
@@ -446,25 +444,26 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
                 title:
                   "Keep Videflo on screen while it works, with the phone plugged in.",
                 detail:
-                  "Preparation continues briefly in the background, but iOS eventually suspends it — and a Tape shown as interrupted needs a fresh **Prepare Again**.",
+                  "Exporting runs in the foreground only. Switching to another app for long can stop it, and a stopped export starts again from the beginning.",
               },
               {
-                title: "Try preparing **Without Timestamp**.",
+                title:
+                  "If the Tape is streaming from Videflo Cloud, check your connection.",
                 detail:
-                  "Burning the date in is more work than a plain copy, so it's the more fragile of the two on a busy phone.",
+                  "A Tape marked **In Videflo Cloud** streams while it exports, so a dropped connection stops the export. Wi-Fi is best — or **Download to This iPhone** first.",
               },
               {
                 title: "Check **Manage Recordings** for anything unavailable.",
                 detail:
-                  "A recording whose file is missing will stop the whole Tape preparing. Delete it and try again.",
+                  "A Tape exports whole or not at all, so a recording that's neither on this iPhone nor finished in Videflo Cloud stops the export. Delete it and try again.",
               },
             ],
           },
           {
             kind: "note",
-            title: "A failed preparation loses nothing",
+            title: "A failed export loses nothing",
             text: [
-              "Videflo builds the export as a separate file and only puts it in place once it's complete and checked. If it fails, your recordings and any previous prepared copy are both exactly as they were.",
+              "Videflo renders the export as a temporary file and hands it to Photos only once it's complete and checked. If it fails or you cancel, the temporary file is removed and your recordings are exactly as they were.",
             ],
           },
         ],
@@ -477,7 +476,7 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
             kind: "list",
             items: [
               "Turn on **Settings → Videflo → Photos** so Videflo can add to your library.",
-              "Make sure there's free space — the exported copy needs room of its own alongside the prepared file.",
+              "Make sure there's free space — the exported copy needs room of its own.",
               "If iCloud Photos is mid-sync and short of space, let it finish first.",
             ],
           },
@@ -498,12 +497,12 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
         ],
       },
       {
-        id: "changed",
-        heading: "It says “Tape Changed”",
+        id: "not-offered",
+        heading: "Export Tape isn't in the menu",
         blocks: [
           {
             kind: "text",
-            text: "You've added, trimmed, or deleted a recording since the Tape was prepared, so the prepared file no longer matches. Choose **Prepare Again** to build a fresh one that includes the change. Nothing is wrong.",
+            text: "On a Shared Tape, only the owner can export the whole Tape. Every member can still watch it, and can save individual recordings from **Manage Recordings**.",
           },
         ],
       },
@@ -511,19 +510,19 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
     tips: [
       "Start big exports plugged in, with the screen on, and leave the phone alone. It's dull advice and it works.",
       "Export a shorter Tape first to prove the whole path works before committing to a two-hour one.",
-      "Once you've exported and checked the file, delete the prepared copy to reclaim the space.",
+      "The export goes straight to Photos and leaves nothing behind in Videflo, so there's nothing to clean up afterwards.",
     ],
     faqs: [
       {
         question: "Can I export while doing something else in the app?",
         answer: [
-          "Yes — preparation runs in the background within the app, and you can browse, watch, and record while it works.",
+          "No — exporting needs Videflo on screen. Start it, leave the phone alone, and it tells you when the video is in Photos.",
         ],
       },
       {
-        question: "Why did preparation restart from the beginning?",
+        question: "Why did the export restart from the beginning?",
         answer: [
-          "An export can't be resumed part way through, so if iOS suspends it the only honest option is to start again. Keeping the app on screen avoids it.",
+          "An export can't be resumed part way through, so if it's stopped the only honest option is to start again. Keeping the app on screen avoids it.",
         ],
       },
       {
@@ -533,11 +532,7 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
         ],
       },
     ],
-    related: [
-      "prepare-and-export-a-tape",
-      "storage-space",
-      "troubleshooting-app",
-    ],
+    related: ["export-a-tape", "storage-space", "troubleshooting-app"],
   },
 
   {
@@ -647,7 +642,7 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
         blocks: [
           {
             kind: "text",
-            text: "Yes. Your subscription is confirmed on the device, so recording, playback, trimming, and exporting all work with no connection at all. You only need to be online to subscribe, to restore, or to open a web link from the app.",
+            text: "Yes. Your subscription is confirmed on the device, so recording, and watching or exporting any Tape that's on your iPhone, all work with no connection at all. Backup waits for a connection, a Tape marked In Videflo Cloud needs one to stream, and you need to be online to subscribe, to restore, or to sign in for the first time.",
           },
         ],
       },
@@ -666,7 +661,7 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
       {
         question: "Do I lose my Tapes if my subscription lapses?",
         answer: [
-          "No. Your recordings stay on your iPhone untouched. Subscribing again gives you access to them exactly as you left them.",
+          "No. Your recordings stay on your iPhone, and everything backed up stays in Videflo Cloud. Subscribing again gives you access to them exactly as you left them.",
         ],
       },
       {
@@ -677,5 +672,141 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
       },
     ],
     related: ["restore-purchases", "manage-subscription", "subscription-plans"],
+  },
+  {
+    slug: "troubleshooting-cloud",
+    title: "Sign-in, backup, and Shared Tape problems",
+    description:
+      "Can't sign in, a backup that won't finish, a Tape that won't stream, or an invitation that opens the wrong thing.",
+    category: "troubleshooting",
+    keywords: [
+      "sign in failed",
+      "apple id",
+      "backup stuck",
+      "not uploading",
+      "won't stream",
+      "invite link",
+      "safari",
+      "join",
+      "offline",
+    ],
+    overview: [
+      "Videflo Cloud problems are almost always one of three things: the phone isn't online in the way Videflo needs, the account isn't the one you think it is, or the allowance is full. Here's how to tell them apart.",
+    ],
+    sections: [
+      {
+        id: "sign-in",
+        heading: "Sign in with Apple isn't working",
+        blocks: [
+          {
+            kind: "list",
+            items: [
+              "**Nothing happens, or it fails straight away.** Check you're online — signing in needs a connection the first time. Then check **Settings → your name** on the iPhone is signed in to your Apple Account.",
+              "**Apple asks for a password.** That's your Apple Account password, not a Videflo one. Apple can reset it.",
+              "**“Sign in with Apple” isn't offered.** It needs two-factor authentication on your Apple Account, which Apple requires for all new accounts.",
+              "**You're signed in but it's the wrong account.** Sign out in **Settings → Profile → Account** and sign in again. Videflo follows the Apple Account you use, so two Apple Accounts are two Videflo accounts.",
+            ],
+          },
+        ],
+      },
+      {
+        id: "backup",
+        heading: "A backup that won't finish",
+        blocks: [
+          {
+            kind: "steps",
+            steps: [
+              {
+                title: "Check the switches.",
+                detail:
+                  "**Settings → Videflo Cloud → Backup Settings**. Back Up to Videflo Cloud must be on; with Use Cellular Data off, Videflo waits for Wi-Fi.",
+              },
+              {
+                title: "Check Low Power Mode is off.",
+                detail: "Videflo pauses backups while it's on.",
+              },
+              {
+                title: "Check your allowance.",
+                detail:
+                  "**Settings → Videflo Cloud** shows how full it is. When it's full, uploads pause until you free space or choose a larger capacity in **Manage Storage**.",
+              },
+              {
+                title: "Open Videflo and leave it on screen for a minute.",
+                detail:
+                  "Uploads continue in the background, but iOS gives them more room while the app is open — especially for a long 4K recording.",
+              },
+              {
+                title: "Tap the Tape's card if it says it needs attention.",
+                detail:
+                  "It will say why and offer to retry. Videflo retries on its own for anything temporary; the card only asks you when it genuinely can't continue.",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "streaming",
+        heading: "A Tape in Videflo Cloud won't play",
+        blocks: [
+          {
+            kind: "list",
+            items: [
+              "Check you're online. A Tape marked **In Videflo Cloud** has no files on this iPhone and streams every time.",
+              "Give it a moment — a Tape with many recordings takes a few seconds to start.",
+              "If it keeps stalling, **Download to This iPhone** and watch it from the phone.",
+              "If one recording is marked unavailable, the phone that made it never finished uploading it. See **Playback problems**.",
+            ],
+          },
+        ],
+      },
+      {
+        id: "invites",
+        heading: "An invitation link opens Safari instead of Videflo",
+        blocks: [
+          {
+            kind: "list",
+            items: [
+              "Videflo has to be installed first. Install it, sign in, then go back to the message and tap the link again.",
+              "If Videflo is installed and the link still opens a web page, press and hold the link in Messages and choose **Open in Videflo**.",
+              "Each link works once. If someone already used it, ask for a fresh one.",
+            ],
+          },
+        ],
+      },
+      {
+        id: "shared",
+        heading: "Shared Tape oddities",
+        blocks: [
+          {
+            kind: "list",
+            items: [
+              "**A Tape I was invited to isn't in my library.** Accept the invitation first — in the bell, or under **Settings → Profile → Tape Invitations** — then pull the Tapes tab down to refresh.",
+              "**Someone joined but the Tape still looks personal to me.** Open the Tape, or pull to refresh. Videflo updates the Tape's status when it next checks, not the instant they accept.",
+              "**I can't see their recording.** Their upload has to finish from their phone. Ask them to check their backup switches and connection.",
+              "**I can't add a recording.** The owner may have chosen **Stop Accepting Recordings**, or your own backup is off — a recording made with backup off stays on your phone.",
+            ],
+          },
+        ],
+      },
+    ],
+    tips: [
+      "When in doubt, pull to refresh. Most Shared Tape state arrives on the next refresh rather than instantly.",
+      "Keep an eye on the cloud mark on a Tape's card. **Backed Up** means the whole Tape is safe; anything else is still work in progress.",
+    ],
+    faqs: [
+      {
+        question: "Does Videflo need to be open for backups to run?",
+        answer: [
+          "No. Uploads are handed to iOS and continue in the background. Opening the app does help a large upload along, and it's the only way to see exactly where it's up to.",
+        ],
+      },
+      {
+        question: "Why does Videflo say it's offline when I have signal?",
+        answer: [
+          "Usually Use Cellular Data is off and you're not on Wi-Fi, or Low Power Mode is on. Both make Videflo wait rather than fail.",
+        ],
+      },
+    ],
+    related: ["videflo-cloud", "shared-tapes", "accounts-and-signing-in"],
   },
 ] as const;
