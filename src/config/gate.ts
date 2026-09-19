@@ -21,7 +21,7 @@
  * no content had to be deleted to gate it in the first place.
  */
 export const gate = {
-  enabled: true,
+  enabled: false,
   /** The single route every request is rewritten to while gated. */
   path: "/coming-soon",
 } as const;

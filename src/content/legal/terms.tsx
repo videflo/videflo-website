@@ -878,10 +878,7 @@ export const termsSections: readonly LegalSection[] = [
         <P>Questions about these Terms:</P>
         <UL>
           <LI>
-            Legal: <Mail address={contact.legalEmail} />
-          </LI>
-          <LI>
-            Support: <Mail address={contact.supportEmail} />
+            Email: <Mail address={contact.legalEmail} />
           </LI>
           {legal.entityAddress ? (
             <LI>Postal address: {legal.entityAddress}</LI>

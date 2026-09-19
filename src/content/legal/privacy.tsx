@@ -871,10 +871,7 @@ export const privacySections: readonly LegalSection[] = [
         <P>Questions about this policy, or about privacy in {site.name}:</P>
         <UL>
           <LI>
-            Privacy: <Mail address={contact.privacyEmail} />
-          </LI>
-          <LI>
-            Support: <Mail address={contact.supportEmail} />
+            Email: <Mail address={contact.privacyEmail} />
           </LI>
           {legal.entityAddress ? (
             <LI>Postal address: {legal.entityAddress}</LI>

@@ -43,18 +43,18 @@ export const ogImage = {
  *  Contact
  *  --------------------------------------------------------------------- */
 export const contact = {
-  /** Visible support address across the site. */
-  supportEmail: "support@videflo.com",
   /**
-   * OWNER DECISION — confirm this inbox exists and is monitored before the
-   * legal pages are published. The Terms direct disputes here.
+   * The one Videflo inbox confirmed to exist and be monitored (owner
+   * confirmation, 2026-09-19). Every public contact on the site — support,
+   * privacy requests and legal notices — resolves to it. `support@`, `legal@`
+   * and `privacy@` were never created; do not reintroduce them without the
+   * mailboxes existing first.
    */
-  legalEmail: "legal@videflo.com",
-  /**
-   * OWNER DECISION — confirm this inbox exists and is monitored. The Privacy
-   * Policy directs privacy requests here. May be the same as `legalEmail`.
-   */
-  privacyEmail: "privacy@videflo.com",
+  supportEmail: "admin@videflo.com",
+  /** Legal notices and the Terms' informal-resolution step. Same inbox. */
+  legalEmail: "admin@videflo.com",
+  /** Privacy and data-rights requests. Same inbox. */
+  privacyEmail: "admin@videflo.com",
 } as const;
 
 /** ------------------------------------------------------------------------
