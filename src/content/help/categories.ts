@@ -57,7 +57,7 @@ export const helpCategories: readonly HelpCategory[] = [
     id: "storage",
     title: "Videflo Cloud & Storage",
     description:
-      "How backup works, freeing space on your iPhone, and moving to a new one.",
+      "How backup works, freeing space on your phone, and moving to a new one.",
   },
   {
     id: "subscription",

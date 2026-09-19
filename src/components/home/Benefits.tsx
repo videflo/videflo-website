@@ -53,14 +53,14 @@ export function Benefits() {
             {/*
               Required caveat: Videflo Cloud is a protective copy, not a
               guarantee, and a recording made with backup switched off — or
-              interrupted before its upload finished — exists on one iPhone only.
+              interrupted before its upload finished — exists on one phone only.
               Do not remove or soften this without owner sign-off.
             */}
             <Reveal delay={120}>
               <p className="text-ink-faint mt-8 max-w-2xl text-sm leading-relaxed">
                 One honest note: Videflo Cloud protects a recording once its
                 upload has finished, and only while backup is switched on. Until
-                then a recording exists on your iPhone alone. Keep a device
+                then a recording exists on your phone alone. Keep a device
                 backup too, and export the Tapes you couldn&rsquo;t replace.{" "}
                 <Link
                   href="/support#storage"

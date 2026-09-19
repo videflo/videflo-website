@@ -58,8 +58,8 @@ export const termsSections: readonly LegalSection[] = [
         <P>
           These Terms of Service (the “Terms”) are an agreement between you and{" "}
           {legal.entityName} (“{site.name}”, “we”, “us”) covering your use of
-          the {site.name} iPhone app, {site.name} Cloud, and this website
-          (together, the “Service”).
+          the {site.name} app, {site.name} Cloud, and this website (together,
+          the “Service”).
         </P>
         <P>
           By downloading, installing, signing in to, or using {site.name}, you
@@ -100,16 +100,16 @@ export const termsSections: readonly LegalSection[] = [
     content: (
       <>
         <P>
-          {site.name} is an iPhone app for recording and keeping home videos. It
-          lets you create a “Tape” for an event or chapter of life, add
-          recordings to that Tape over time, watch a Tape as one continuous
-          video, organise Tapes into Collections, and export copies of your
-          Tapes to your photo library.
+          {site.name} is an app for recording and keeping home videos. It lets
+          you create a “Tape” for an event or chapter of life, add recordings to
+          that Tape over time, watch a Tape as one continuous video, organise
+          Tapes into Collections, and export copies of your Tapes to your photo
+          library.
         </P>
         <P>
           With a {site.name} account and an active subscription, {site.name}{" "}
           also protects your recordings in {site.name} Cloud, plays them back
-          from {site.name} Cloud on any iPhone you sign in to, and lets you
+          from {site.name} Cloud on any device you sign in to, and lets you
           share a Tape with people you invite so that they can add their own
           recordings to it.
         </P>
@@ -139,7 +139,7 @@ export const termsSections: readonly LegalSection[] = [
           {site.name} requires an account, created and accessed with Sign in
           with Apple. You may create one account for yourself. You are
           responsible for everything that happens under your account, for
-          keeping your Apple Account and your iPhone secure, and for telling us
+          keeping your Apple Account and your device secure, and for telling us
           promptly if you believe your account has been used without your
           permission.
         </P>
@@ -227,7 +227,7 @@ export const termsSections: readonly LegalSection[] = [
           While{" "}
           <strong className="text-ink">Back Up to {site.name} Cloud</strong> is
           on, each recording you make and its Tape details are copied to{" "}
-          {site.name} Cloud. The original file stays on your iPhone and is never
+          {site.name} Cloud. The original file stays on your device and is never
           modified by a backup. You can turn backup off, and you can choose
           whether it may use cellular data, in the app’s Settings.
         </P>
@@ -253,9 +253,9 @@ export const termsSections: readonly LegalSection[] = [
         <H3>Removing and downloading</H3>
         <P>
           Once a Tape is fully protected in {site.name} Cloud, you may remove
-          its files from your iPhone to free space; the Tape then plays by
-          streaming, and you may download it to your iPhone again at any time. A
-          copy on your iPhone and a copy in {site.name} Cloud are two different
+          its files from your device to free space; the Tape then plays by
+          streaming, and you may download it to your device again at any time. A
+          copy on your device and a copy in {site.name} Cloud are two different
           things: playing a Tape from {site.name} Cloud does not put its files
           back on your device.
         </P>
@@ -266,14 +266,14 @@ export const termsSections: readonly LegalSection[] = [
             on your device, your network, Apple, and our providers, and it can
             be interrupted. Keep your own device backup, and export the Tapes
             you could not bear to lose. We are not responsible for loss of
-            Content that was never uploaded, that was removed from your iPhone
+            Content that was never uploaded, that was removed from your device
             before its upload completed, or that you deleted.
           </p>
         </Callout>
         <H3>If your subscription ends</H3>
         <P>
           {site.name} requires an active subscription to open. If yours ends,
-          your recordings stay on your iPhone, and we do not currently delete
+          your recordings stay on your device, and we do not currently delete
           Content from {site.name} Cloud because a subscription has ended;
           subscribing again restores access to all of it. This is a description
           of current practice, not a promise to store Content indefinitely. We
@@ -355,7 +355,7 @@ export const termsSections: readonly LegalSection[] = [
     content: (
       <>
         <P>
-          Recordings are written to your iPhone first. Video files are large,
+          Recordings are written to your device first. Video files are large,
           and it is your responsibility to keep enough free storage for the
           recordings you make. {site.name} warns you while you record if space
           is running low, and it lets you free space by removing Tapes that are
@@ -363,7 +363,7 @@ export const termsSections: readonly LegalSection[] = [
         </P>
         <P>
           Deleting the {site.name} app removes the recordings stored on that
-          iPhone. It does not delete your account, your Content in {site.name}{" "}
+          device. It does not delete your account, your Content in {site.name}{" "}
           Cloud, or your subscription.
         </P>
       </>
@@ -473,7 +473,7 @@ export const termsSections: readonly LegalSection[] = [
       <>
         <P>
           Your subscription belongs to your Apple Account. If you reinstall{" "}
-          {site.name} or set up a new iPhone, sign in with Apple and, if the
+          {site.name} or set up a new phone, sign in with Apple and, if the
           subscription screen appears, use{" "}
           <strong className="text-ink">Restore Purchases</strong> to restore an
           eligible active subscription bought with the same Apple Account.
@@ -481,7 +481,7 @@ export const termsSections: readonly LegalSection[] = [
         <P>
           Restoring a purchase restores access. Your Tapes come back separately,
           from {site.name} Cloud, when you sign in to the same {site.name}{" "}
-          account; recordings that were never backed up exist only on the iPhone
+          account; recordings that were never backed up exist only on the phone
           that made them.
         </P>
       </>
@@ -648,12 +648,12 @@ export const termsSections: readonly LegalSection[] = [
           supporting older versions of iOS. {site.name} Cloud may occasionally
           be unavailable for maintenance or for reasons outside our control; the
           app is built so that recording and watching Tapes already on your
-          iPhone continue to work without a connection.
+          device continue to work without a connection.
         </P>
         <P>
           If we discontinue the Service or {site.name} Cloud, we will make
           reasonable efforts to give you notice and a reasonable period to
-          download your Tapes to your iPhone or export them to your photo
+          download your Tapes to your device or export them to your photo
           library before anything is removed.
         </P>
       </>
@@ -753,14 +753,14 @@ export const termsSections: readonly LegalSection[] = [
         <P>
           You may stop using {site.name} at any time. Signing out leaves your
           account and your Content in {site.name} Cloud as they are. Deleting
-          the app removes the recordings on that iPhone only.
+          the app removes the recordings on that device only.
         </P>
         <P>
           <strong className="text-ink">Delete Account</strong>, in the app’s
           Settings, permanently deletes your account and every Tape you own in{" "}
           {site.name} Cloud, including recordings other people added to your
           Shared Tapes. Recordings you added to somebody else’s Shared Tape
-          remain in that Tape without attribution. Videos already on your iPhone
+          remain in that Tape without attribution. Videos already on your device
           are not deleted by this, and your subscription is not cancelled —
           cancel it separately in your Apple Account settings. Deletion cannot
           be undone.

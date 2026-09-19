@@ -39,7 +39,7 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
               {
                 term: "Videflo Cloud",
                 description:
-                  "Where your recordings are protected. Backup is automatic, and it's what brings your Tapes to a new iPhone and lets other people add to a Shared Tape.",
+                  "Where your recordings are protected. Backup is automatic, and it's what brings your Tapes to a new phone and lets other people add to a Shared Tape.",
               },
               {
                 term: "Shared Tape",
@@ -73,7 +73,7 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
             items: [
               "**Not a video editor.** There are no filters, transitions, music tracks, timelines or trimming. A Tape is what happened, kept whole.",
               "**Not a social network.** There's no feed, no followers, no likes, and nothing is ever public. A Tape is seen only by the people you invite to it.",
-              "**Not a replacement for your originals.** Videflo Cloud is a copy. The recording on your iPhone is never edited, and you can export any Tape to Photos whenever you like.",
+              "**Not a replacement for your originals.** Videflo Cloud is a copy. The recording on your phone is never edited, and you can export any Tape to Photos whenever you like.",
             ],
           },
         ],
@@ -101,7 +101,7 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
         question: "How long can a Tape be?",
         answer: [
           "Videflo sets no limit on how many recordings a Tape holds, and a Tape can grow over months or years.",
-          "The practical limits are the free space on your iPhone and your Videflo Cloud allowance, since video is large. Longer Tapes also take longer to export.",
+          "The practical limits are the free space on your phone and your Videflo Cloud allowance, since video is large. Longer Tapes also take longer to export.",
         ],
       },
       {
@@ -175,7 +175,7 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
             kind: "steps",
             steps: [
               {
-                title: "Open the **App Store** on your iPhone.",
+                title: "Open the **App Store** on your phone.",
               },
               {
                 title: "Tap **Search** at the bottom, then type “Videflo”.",
@@ -237,14 +237,14 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
     ],
     tips: [
       "If the download stalls, check you're on Wi-Fi with a decent signal, then try pausing and resuming it by tapping the icon on your Home Screen.",
-      "Videflo needs iOS 18. If your iPhone can't be updated that far, unfortunately it won't run.",
+      "Videflo needs iOS 18. If your phone can't be updated that far, unfortunately it won't run.",
     ],
     troubleshooting: [
       {
         problem: "“This app requires iOS 18 or later.”",
         solutions: [
           "Open the Settings app and go to **General → Software Update** to see whether an update is waiting.",
-          "If your iPhone is on the newest version it supports and that's below iOS 18, Videflo can't be installed on it.",
+          "If your phone is on the newest version it supports and that's below iOS 18, Videflo can't be installed on it.",
         ],
       },
       {
@@ -303,7 +303,7 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
     ],
     overview: [
       "Videflo has an account, and it's created with **Sign in with Apple** — one tap and Face ID. There's no Videflo password to invent and nothing to remember.",
-      "Your account is what makes Videflo Cloud work: it's where your Tapes are protected, it's how they follow you to a new iPhone, and it's how the people you invite to a Shared Tape know who you are.",
+      "Your account is what makes Videflo Cloud work: it's where your Tapes are protected, it's how they follow you to a new phone, and it's how the people you invite to a Shared Tape know who you are.",
     ],
     sections: [
       {
@@ -333,7 +333,7 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
             kind: "note",
             title: "The account is separate from the subscription",
             text: [
-              "Your Videflo account is who you are. Your subscription, bought from Apple, is what unlocks the app. Both use your Apple Account, and both come back on a new iPhone — the account when you sign in, the subscription when you tap **Restore Purchases**.",
+              "Your Videflo account is who you are. Your subscription, bought from Apple, is what unlocks the app. Both use your Apple Account, and both come back on a new phone — the account when you sign in, the subscription when you tap **Restore Purchases**.",
             ],
           },
         ],
@@ -386,7 +386,7 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
           },
           {
             kind: "text",
-            text: "Signing out returns you to the sign-in screen. Everything in Videflo Cloud stays exactly as it is, and signing back in brings it all back. Recordings on this iPhone that hadn't finished uploading stay on the phone too — they're not deleted by signing out.",
+            text: "Signing out returns you to the sign-in screen. Everything in Videflo Cloud stays exactly as it is, and signing back in brings it all back. Recordings on this phone that hadn't finished uploading stay on the phone too — they're not deleted by signing out.",
           },
         ],
       },
@@ -404,15 +404,15 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
             text: [
               "It deletes your account and Profile, your Friends & Family connections, and every Tape you own from Videflo Cloud — including recordings other people added to your Shared Tapes.",
               "Recordings you added to somebody else's Shared Tape stay in that Tape, because it's their memory, but they're no longer attributed to you.",
-              "Videos already on this iPhone are not deleted by this. Your subscription is not cancelled either — that lives in your Apple Account.",
+              "Videos already on this phone are not deleted by this. Your subscription is not cancelled either — that lives in your Apple Account.",
             ],
           },
         ],
       },
     ],
     tips: [
-      "Use the same Apple Account on every iPhone you own. That's what makes your account and your subscription follow you.",
-      "If you're handing your iPhone to someone else, signing out is the right move — deleting the app would remove the recordings on that phone.",
+      "Use the same Apple Account on every phone you own. That's what makes your account and your subscription follow you.",
+      "If you're handing your phone to someone else, signing out is the right move — deleting the app would remove the recordings on that phone.",
     ],
     faqs: [
       {
@@ -565,7 +565,7 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
       {
         mistake:
           "Choosing High (4K) for a Tape you plan to grow all year, then running out of space in March.",
-        fix: "Standard looks lovely and uses roughly a quarter of the space — on your iPhone and in Videflo Cloud. Save High for the Tapes where the detail genuinely matters.",
+        fix: "Standard looks lovely and uses roughly a quarter of the space — on your phone and in Videflo Cloud. Save High for the Tapes where the detail genuinely matters.",
       },
       {
         mistake:
@@ -685,7 +685,7 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
         blocks: [
           {
             kind: "text",
-            text: "Only while you're on the recording screen with a recording running. Leave that screen and the camera and microphone are shut down completely — which is also why your iPhone goes back to locking normally after you've filmed.",
+            text: "Only while you're on the recording screen with a recording running. Leave that screen and the camera and microphone are shut down completely — which is also why your phone goes back to locking normally after you've filmed.",
           },
           {
             kind: "text",
@@ -705,7 +705,7 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
           "Check **Settings → Videflo → Camera** is on.",
           "Close any other app that might be using the camera, then reopen Videflo.",
           "Check **Settings → Screen Time → Content & Privacy Restrictions → Camera** isn't switched off.",
-          "Restart your iPhone if the preview stays black across app restarts.",
+          "Restart your phone if the preview stays black across app restarts.",
         ],
       },
       {
@@ -798,7 +798,7 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
         blocks: [
           {
             kind: "text",
-            text: "Everything you've recorded and everything shared with you, newest first. Tap a Tape to watch it. Press and hold one to bring up its menu — continue recording, manage recordings, invite people, add to a Collection, choose a cover photo, pin, rename, remove from or download to this iPhone, delete.",
+            text: "Everything you've recorded and everything shared with you, newest first. Tap a Tape to watch it. Press and hold one to bring up its menu — continue recording, manage recordings, invite people, add to a Collection, choose a cover photo, pin, rename, remove from or download to this phone, delete.",
           },
           {
             kind: "text",

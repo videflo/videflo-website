@@ -29,20 +29,20 @@ export const faq: readonly FaqItem[] = [
     question: "How do I continue recording an existing Tape?",
     answer: [
       "Open the Tape from Home or from your Tapes library and choose Continue Recording. The new recording joins the end of that Tape automatically — there is nothing to stitch together afterwards.",
-      "Videflo will ask you to hold your iPhone the same way the Tape was started, portrait or landscape, so the finished Tape plays back without flipping between the two.",
+      "Videflo will ask you to hold your phone the same way the Tape was started, portrait or landscape, so the finished Tape plays back without flipping between the two.",
     ],
   },
   {
     question: "Do I need an account?",
     answer: [
-      "Yes. Videflo uses Sign in with Apple — there is no Videflo password to create. Your account is what lets Videflo Cloud protect your Tapes, bring them to a new iPhone, and share a Tape with the people you invite.",
+      "Yes. Videflo uses Sign in with Apple — there is no Videflo password to create. Your account is what lets Videflo Cloud protect your Tapes, bring them to a new phone, and share a Tape with the people you invite.",
     ],
     link: { href: "/support#account", label: "Accounts and signing in" },
   },
   {
     question: "Where are my Tapes stored?",
     answer: [
-      "On your iPhone first, inside Videflo’s own storage. While Back Up to Videflo Cloud is on — it is on by default — every recording is also copied to Videflo Cloud, so a Tape survives a lost or replaced phone. Your original files on the iPhone are never changed.",
+      "On your phone first, inside Videflo’s own storage. While Back Up to Videflo Cloud is on — it is on by default — every recording is also copied to Videflo Cloud, so a Tape survives a lost or replaced phone. Your original files on the phone are never changed.",
     ],
     link: {
       href: "/support#storage",
@@ -52,8 +52,8 @@ export const faq: readonly FaqItem[] = [
   {
     question: "Does Videflo back up my videos to the cloud?",
     answer: [
-      "Yes. Videflo Cloud is included with your subscription, and backup is automatic. A recording is protected once its upload has finished; until then it exists only on your iPhone, so it is still worth keeping an iPhone backup switched on as well.",
-      "Once a Tape is fully protected you can remove its files from your iPhone to free space and it will play by streaming — and you can download it again whenever you like.",
+      "Yes. Videflo Cloud is included with your subscription, and backup is automatic. A recording is protected once its upload has finished; until then it exists only on your phone, so it is still worth keeping a phone backup switched on as well.",
+      "Once a Tape is fully protected you can remove its files from your phone to free space and it will play by streaming — and you can download it again whenever you like.",
     ],
     link: {
       href: "/support#storage",
@@ -78,7 +78,7 @@ export const faq: readonly FaqItem[] = [
   {
     question: "How do I restore my subscription?",
     answer: [
-      "If you reinstall Videflo or set up a new iPhone, sign in with Apple and, if the subscription screen appears, tap Restore Purchases while signed in to the same Apple Account you bought the subscription with.",
+      "If you reinstall Videflo or set up a new phone, sign in with Apple and, if the subscription screen appears, tap Restore Purchases while signed in to the same Apple Account you bought the subscription with.",
       "Restoring brings back access. Your Tapes come back separately, from Videflo Cloud, as soon as you sign in to the same Videflo account.",
     ],
   },
@@ -86,7 +86,7 @@ export const faq: readonly FaqItem[] = [
     question: "How do I cancel my subscription?",
     answer: [
       "Subscriptions are billed and managed by Apple, not inside Videflo. On your iPhone, open the Settings app, tap your name at the top, then Subscriptions, and select Videflo.",
-      "Cancelling stops the next renewal; you keep access until the end of the period you have already paid for. Nothing is deleted when you cancel — your Tapes stay on your iPhone, and Videflo does not currently remove content from Videflo Cloud because a subscription has ended. If the option is somewhere else on your version of iOS, Apple Support has the current steps.",
+      "Cancelling stops the next renewal; you keep access until the end of the period you have already paid for. Nothing is deleted when you cancel — your Tapes stay on your phone, and Videflo does not currently remove content from Videflo Cloud because a subscription has ended. If the option is somewhere else on your version of iOS, Apple Support has the current steps.",
     ],
     link: {
       href: "https://support.apple.com",
@@ -97,7 +97,7 @@ export const faq: readonly FaqItem[] = [
   {
     question: "What happens if I delete Videflo?",
     answer: [
-      "Deleting the app removes the recordings stored on that iPhone. Your account and everything already protected in Videflo Cloud stay exactly as they are, and come back when you reinstall and sign in. Recordings that were never backed up — because backup was off, or the upload had not finished — exist only on that iPhone and are lost with it.",
+      "Deleting the app removes the recordings stored on that phone. Your account and everything already protected in Videflo Cloud stay exactly as they are, and come back when you reinstall and sign in. Recordings that were never backed up — because backup was off, or the upload had not finished — exist only on that phone and are lost with it.",
       "Deleting the app also does not cancel a subscription — that lives in your Apple Account and has to be cancelled there.",
     ],
   },
@@ -111,7 +111,7 @@ export const faq: readonly FaqItem[] = [
   {
     question: "How can I contact support?",
     answer: [
-      "Email us and a person will read it. Telling us your iPhone model, your iOS version, and what you were doing when something went wrong helps us help you faster.",
+      "Email us and a person will read it. Telling us your phone model, your iOS version, and what you were doing when something went wrong helps us help you faster.",
     ],
   },
 ];

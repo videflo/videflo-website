@@ -21,7 +21,7 @@ export const tapeArticles: readonly HelpArticle[] = [
     ],
     overview: [
       "Everything you can do to a Tape lives in one menu. Press and hold a Tape — on Home, in the Tapes tab, or inside a Collection — and it appears.",
-      "One of those actions permanently deletes video, from your iPhone and from Videflo Cloud together. It's marked clearly here, and the app asks you to confirm it.",
+      "One of those actions permanently deletes video, from your phone and from Videflo Cloud together. It's marked clearly here, and the app asks you to confirm it.",
     ],
     sections: [
       {
@@ -73,7 +73,7 @@ export const tapeArticles: readonly HelpArticle[] = [
               {
                 term: "Delete Tape",
                 description:
-                  "Permanently removes the Tape and all its video — from your iPhone and from Videflo Cloud. On a Tape somebody shared with you, this row is **Leave Tape** instead.",
+                  "Permanently removes the Tape and all its video — from your phone and from Videflo Cloud. On a Tape somebody shared with you, this row is **Leave Tape** instead.",
               },
             ],
           },
@@ -105,7 +105,7 @@ export const tapeArticles: readonly HelpArticle[] = [
             kind: "warning",
             title: "This cannot be undone, anywhere",
             text: [
-              "Deleting a Tape deletes every recording inside it from your iPhone **and** from Videflo Cloud, in one step. There's no bin to fish it out of, and on a Shared Tape it disappears for every member — including recordings they added.",
+              "Deleting a Tape deletes every recording inside it from your phone **and** from Videflo Cloud, in one step. There's no bin to fish it out of, and on a Shared Tape it disappears for every member — including recordings they added.",
               "If there's any chance you'll want it, export it first — that leaves a copy in your Photos library that survives the deletion.",
             ],
           },
@@ -182,7 +182,7 @@ export const tapeArticles: readonly HelpArticle[] = [
       {
         question: "Can I undo deleting a Tape?",
         answer: [
-          "No. Deletion is permanent and removes the copy in Videflo Cloud as well. The only way back is a copy you exported to Photos, or an iPhone backup made before the deletion.",
+          "No. Deletion is permanent and removes the copy in Videflo Cloud as well. The only way back is a copy you exported to Photos, or a phone backup made before the deletion.",
         ],
       },
       {
@@ -260,7 +260,7 @@ export const tapeArticles: readonly HelpArticle[] = [
               {
                 term: "Rename Recording",
                 description:
-                  "Gives it a name of your own. Leave the box empty to go back to the plain default, like “Recording 3”. Names reach Videflo Cloud, so they're there on a new iPhone too.",
+                  "Gives it a name of your own. Leave the box empty to go back to the plain default, like “Recording 3”. Names reach Videflo Cloud, so they're there on a new phone too.",
               },
               {
                 term: "Export to Photos",
@@ -270,7 +270,7 @@ export const tapeArticles: readonly HelpArticle[] = [
               {
                 term: "Delete",
                 description:
-                  "Removes that recording from the Tape and deletes its video from your iPhone. Permanent. See the note below for what happens to the copy in Videflo Cloud.",
+                  "Removes that recording from the Tape and deletes its video from your phone. Permanent. See the note below for what happens to the copy in Videflo Cloud.",
               },
             ],
           },
@@ -278,7 +278,7 @@ export const tapeArticles: readonly HelpArticle[] = [
             kind: "note",
             title: "Deleting one recording, and Videflo Cloud",
             text: [
-              "On a **personal** Tape, deleting a recording removes it from this iPhone. Its copy in Videflo Cloud isn't removed today — it still counts toward your allowance, and it would be rebuilt if the Tape came back to a new iPhone. To remove a memory everywhere, delete the whole Tape.",
+              "On a **personal** Tape, deleting a recording removes it from this phone. Its copy in Videflo Cloud isn't removed today — it still counts toward your allowance, and it would be rebuilt if the Tape came back to a new phone. To remove a memory everywhere, delete the whole Tape.",
               "On a **Shared** Tape, only the owner can delete a recording, and doing so removes it from Videflo Cloud for everyone — including a recording somebody else added. Renaming stays with the person who filmed it.",
             ],
           },
@@ -340,7 +340,7 @@ export const tapeArticles: readonly HelpArticle[] = [
       {
         problem: "A recording shows as unavailable or won't play.",
         solutions: [
-          "Its file isn't on this iPhone and Videflo Cloud doesn't have a finished copy either — usually because storage ran out mid-save, or an upload never completed before the phone was replaced.",
+          "Its file isn't on this phone and Videflo Cloud doesn't have a finished copy either — usually because storage ran out mid-save, or an upload never completed before the phone was replaced.",
           "The rest of the Tape still plays. Deleting the broken entry tidies the list.",
         ],
       },
@@ -362,7 +362,7 @@ export const tapeArticles: readonly HelpArticle[] = [
       {
         question: "Does deleting a recording free up space straight away?",
         answer: [
-          "On your iPhone, yes — the video file is removed at that point. On a personal Tape the copy in Videflo Cloud stays until you delete the Tape, so your allowance doesn't change; on a Shared Tape an owner's delete frees the cloud copy too.",
+          "On your phone, yes — the video file is removed at that point. On a personal Tape the copy in Videflo Cloud stays until you delete the Tape, so your allowance doesn't change; on a Shared Tape an owner's delete frees the cloud copy too.",
         ],
       },
       {
@@ -422,7 +422,7 @@ export const tapeArticles: readonly HelpArticle[] = [
               {
                 title: "The cover updates everywhere that Tape appears.",
                 detail:
-                  "A Tape's cover is backed up with it, so it's there on a new iPhone and on every member's copy of a Shared Tape.",
+                  "A Tape's cover is backed up with it, so it's there on a new phone and on every member's copy of a Shared Tape.",
               },
             ],
           },
@@ -554,7 +554,7 @@ export const tapeArticles: readonly HelpArticle[] = [
               {
                 term: "Cloud",
                 description:
-                  "Tapes stored only in Videflo Cloud — removed from this iPhone, or not yet downloaded on a new one.",
+                  "Tapes stored only in Videflo Cloud — removed from this phone, or not yet downloaded on a new one.",
               },
               {
                 term: "Shared",

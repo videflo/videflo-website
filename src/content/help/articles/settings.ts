@@ -152,7 +152,7 @@ export const settingsArticles: readonly HelpArticle[] = [
         blocks: [
           {
             kind: "text",
-            text: "Whether lock-screen notifications are on for Videflo. If they're off, **Turn On Notifications** asks iOS, or — if you've said no before — **Open Settings** takes you to the iPhone's own switch. The bell in the app works regardless. See **Notifications**.",
+            text: "Whether lock-screen notifications are on for Videflo. If they're off, **Turn On Notifications** asks iOS, or — if you've said no before — **Open Settings** takes you to the phone's own switch. The bell in the app works regardless. See **Notifications**.",
           },
         ],
       },
@@ -255,7 +255,7 @@ export const settingsArticles: readonly HelpArticle[] = [
       "version",
     ],
     overview: [
-      "Videflo updates through the App Store like any other app. Updating never touches your Tapes — your recordings stay exactly where they are, on your iPhone and in Videflo Cloud.",
+      "Videflo updates through the App Store like any other app. Updating never touches your Tapes — your recordings stay exactly where they are, on your phone and in Videflo Cloud.",
     ],
     sections: [
       {
@@ -305,7 +305,7 @@ export const settingsArticles: readonly HelpArticle[] = [
             kind: "warning",
             title: "Updating is safe. Deleting is a different thing.",
             text: [
-              "An update keeps everything. **Deleting** the app removes the recordings on this iPhone — everything already in Videflo Cloud is safe, but a recording that hadn't finished uploading isn't. If an update is misbehaving, don't delete and reinstall as a first step: check the Tapes say **Backed Up**, and ask us first.",
+              "An update keeps everything. **Deleting** the app removes the recordings on this phone — everything already in Videflo Cloud is safe, but a recording that hadn't finished uploading isn't. If an update is misbehaving, don't delete and reinstall as a first step: check the Tapes say **Backed Up**, and ask us first.",
             ],
           },
         ],
@@ -321,15 +321,15 @@ export const settingsArticles: readonly HelpArticle[] = [
         solutions: [
           "Check your connection and free storage.",
           "Sign out of and back into the App Store in **Settings → your name → Media & Purchases**.",
-          "Restart your iPhone and try again.",
+          "Restart your phone and try again.",
         ],
       },
       {
         problem: "The app misbehaves after updating.",
         solutions: [
           "Force-close it — swipe up from the bottom of the screen and swipe Videflo away — then reopen it.",
-          "Restart your iPhone.",
-          "Tell us what's wrong, with your iPhone model, iOS version, and the Videflo version. Please check your Tapes say Backed Up before deleting the app.",
+          "Restart your phone.",
+          "Tell us what's wrong, with your phone model, iOS version, and the Videflo version. Please check your Tapes say Backed Up before deleting the app.",
         ],
       },
     ],
@@ -407,7 +407,7 @@ export const settingsArticles: readonly HelpArticle[] = [
           {
             kind: "list",
             items: [
-              "**Your iPhone model** — for example iPhone 15 Pro.",
+              "**Your phone model** — for example iPhone 15 Pro.",
               "**Your iOS version** — from **Settings → General → About**.",
               "**Your Videflo version** — from Videflo's **Settings → About Videflo → Version**.",
               "**What you were doing** when it happened, step by step if you can.",

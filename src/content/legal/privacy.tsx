@@ -12,7 +12,7 @@
  *
  *    - Sign in with Apple is required; identity comes from Apple's signed token.
  *    - A Profile (display name, username, photo or preset avatar) is required.
- *    - Recordings are made on the iPhone and, while "Back Up to Videflo Cloud"
+ *    - Recordings are made on the phone and, while "Back Up to Videflo Cloud"
  *      is on (the default), copied to Videflo Cloud with their Tape details.
  *    - Shared Tapes let invited people add recordings and watch the whole Tape.
  *    - Purchases go through Apple; subscription status is verified server-side
@@ -60,12 +60,12 @@ export const privacySections: readonly LegalSection[] = [
         <P>
           This Privacy Policy explains how {legal.entityName},{" "}
           {legal.entityDescription} (“{site.name}”, “we”, “us”), handles
-          information in connection with the {site.name} iPhone app, {site.name}{" "}
-          Cloud, and this website. It applies wherever you use {site.name}.
+          information in connection with the {site.name} app, {site.name} Cloud,
+          and this website. It applies wherever you use {site.name}.
         </P>
         <P>
           {site.name} is a camcorder and a private memory archive. The videos
-          you record are created on your iPhone and kept there. With a{" "}
+          you record are created on your device and kept there. With a{" "}
           {site.name} account and subscription, they are also protected in{" "}
           {site.name} Cloud, and a Tape can be shared with people you invite so
           that they can add their own recordings to it. This policy describes
@@ -103,7 +103,7 @@ export const privacySections: readonly LegalSection[] = [
           </LI>
           <LI>
             <strong className="text-ink">You record Tapes.</strong> Recordings
-            are saved on your iPhone first. While{" "}
+            are saved on your device first. While{" "}
             <strong className="text-ink">Back Up to {site.name} Cloud</strong>{" "}
             is on — it is on by default — each recording and its Tape details
             are also copied to {site.name} Cloud.
@@ -164,16 +164,16 @@ export const privacySections: readonly LegalSection[] = [
           never stores the same recording twice.
         </P>
         <P>
-          All of this is stored on your iPhone. While Back Up to {site.name}{" "}
+          All of this is stored on your device. While Back Up to {site.name}{" "}
           Cloud is on, it is also uploaded to and stored in {site.name} Cloud.
-          The original files on your iPhone are never modified, and they are
-          removed from your iPhone only if you choose{" "}
+          The original files on your device are never modified, and they are
+          removed from your device only if you choose{" "}
           <strong className="text-ink">Remove from This iPhone</strong> for a
           Tape that is already protected in {site.name} Cloud.
         </P>
         <P>
           Collections — the groups you organise Tapes into — and your app
-          preferences stay on your iPhone and are not uploaded.
+          preferences stay on your device and are not uploaded.
         </P>
 
         <H3>Shared Tapes, invitations and Friends &amp; Family</H3>
@@ -196,7 +196,7 @@ export const privacySections: readonly LegalSection[] = [
           reads correctly even when you are offline.
         </P>
         <P>
-          If you allow notifications on your iPhone, {site.name} registers the
+          If you allow notifications on your device, {site.name} registers the
           device token Apple assigns to your device, together with the app
           version and whether the app is a test or App Store build, so that it
           can deliver push notifications through Apple. The text of a push
@@ -257,7 +257,7 @@ export const privacySections: readonly LegalSection[] = [
           hardware it needs. Every permission is requested by iOS, granted by
           you, and can be changed or revoked at any time in{" "}
           <strong className="text-ink">Settings → {site.name}</strong> on your
-          iPhone.
+          device.
         </P>
         <UL>
           <LI>
@@ -302,8 +302,7 @@ export const privacySections: readonly LegalSection[] = [
           </LI>
           <LI>
             store your recordings and Tapes in {site.name} Cloud, play them back
-            to you — including on a new iPhone — and let you download them
-            again;
+            to you — including on a new phone — and let you download them again;
           </LI>
           <LI>
             operate Shared Tapes: deliver invitations, show members the Tape and
@@ -350,7 +349,7 @@ export const privacySections: readonly LegalSection[] = [
             <strong className="text-ink">No analysis of your footage.</strong>{" "}
             {site.name} does not analyse, transcribe, run recognition on, or use
             your recordings to train any model. Thumbnails you see in the app
-            are generated on your own iPhone.
+            are generated on your own device.
           </LI>
           <LI>
             <strong className="text-ink">
@@ -450,7 +449,7 @@ export const privacySections: readonly LegalSection[] = [
             <strong className="text-ink">RevenueCat</strong> — subscription
             infrastructure that records your App Store purchases against your{" "}
             {site.name} account, so that your subscription and {site.name} Cloud
-            allowance follow you to a new iPhone.
+            allowance follow you to a new phone.
           </LI>
           <LI>
             <strong className="text-ink">Vercel</strong> — hosting for this
@@ -472,19 +471,19 @@ export const privacySections: readonly LegalSection[] = [
   },
   {
     id: "videflo-cloud",
-    heading: "Videflo Cloud, your iPhone, and storage allowances",
+    heading: "Videflo Cloud, your device, and storage allowances",
     content: (
       <>
         <P>
           {site.name} Cloud is a copy, never a replacement. A recording is
-          written to your iPhone first, and the original file there is never
+          written to your device first, and the original file there is never
           modified by a backup, a download, or playback.
         </P>
         <UL>
           <LI>
             <strong className="text-ink">Back Up to {site.name} Cloud</strong>{" "}
             can be switched off in Settings → {site.name} Cloud → Backup
-            Settings. While it is off, new recordings stay on your iPhone only.
+            Settings. While it is off, new recordings stay on your device only.
             Anything already in {site.name} Cloud stays there — see{" "}
             <A href="/privacy#retention">How long information is kept</A>.
           </LI>
@@ -512,7 +511,7 @@ export const privacySections: readonly LegalSection[] = [
         <Callout title="If your subscription ends">
           <p>
             {site.name} cannot be opened until you subscribe again, but your
-            recordings stay on your iPhone, and {site.name} does not currently
+            recordings stay on your device, and {site.name} does not currently
             delete content from {site.name} Cloud because a subscription has
             ended. Subscribing again restores access to all of it. We may
             establish retention rules for accounts that stay lapsed; if we do,
@@ -535,11 +534,11 @@ export const privacySections: readonly LegalSection[] = [
             does not currently delete them because a subscription has lapsed,
             though we may establish retention rules for lapsed accounts with
             notice, as the Terms describe. Deleting a Tape removes it from your
-            iPhone and from {site.name} Cloud, including from every member’s
+            device and from {site.name} Cloud, including from every member’s
             view of a Shared Tape. On a Shared Tape, the owner can delete a
             single recording from {site.name} Cloud for everyone. On a personal
             Tape, deleting a single recording currently removes it from your
-            iPhone only; its copy in {site.name} Cloud remains until you delete
+            device only; its copy in {site.name} Cloud remains until you delete
             the Tape.
           </LI>
           <LI>
@@ -609,7 +608,7 @@ export const privacySections: readonly LegalSection[] = [
             longer attributed to you;
           </LI>
           <LI>
-            videos already on your iPhone are not deleted by this — deleting the
+            videos already on your device are not deleted by this — deleting the
             app, or the Tapes inside it, is a separate step; and
           </LI>
           <LI>
@@ -634,7 +633,7 @@ export const privacySections: readonly LegalSection[] = [
           <LI>
             <strong className="text-ink">Your content.</strong> Delete a
             recording, a Tape or a Collection in the app; remove a Tape from
-            your iPhone or download it again; and export a copy to Photos
+            your device or download it again; and export a copy to Photos
             whenever you want one.
           </LI>
           <LI>

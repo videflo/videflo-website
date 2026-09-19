@@ -100,7 +100,7 @@ export const sharingArticles: readonly HelpArticle[] = [
             kind: "warning",
             title: "Your backup setting applies to what you contribute",
             text: [
-              "If you've switched off **Back Up to Videflo Cloud**, a recording you add to a Shared Tape stays on your iPhone and never reaches the other members. Turn backup on for contributions to be seen.",
+              "If you've switched off **Back Up to Videflo Cloud**, a recording you add to a Shared Tape stays on your phone and never reaches the other members. Turn backup on for contributions to be seen.",
             ],
           },
         ],
@@ -151,7 +151,7 @@ export const sharingArticles: readonly HelpArticle[] = [
         blocks: [
           {
             kind: "text",
-            text: "On a Tape somebody shared with you, the menu offers **Leave Tape** where Delete Tape would be. You'll stop seeing the Tape. Recordings you added stay in it — it's the owner's memory — and the copies on your own iPhone stay yours.",
+            text: "On a Tape somebody shared with you, the menu offers **Leave Tape** where Delete Tape would be. You'll stop seeing the Tape. Recordings you added stay in it — it's the owner's memory — and the copies on your own phone stay yours.",
           },
           {
             kind: "text",
@@ -187,7 +187,7 @@ export const sharingArticles: readonly HelpArticle[] = [
       {
         problem: "Someone joined but I can't see their recording.",
         solutions: [
-          "Their recording has to finish uploading from their iPhone first. Ask them whether Back Up to Videflo Cloud is on and whether they're online.",
+          "Their recording has to finish uploading from their phone first. Ask them whether Back Up to Videflo Cloud is on and whether they're online.",
           "Open the Tape again, or pull to refresh — new recordings arrive on the next refresh.",
         ],
       },
@@ -355,7 +355,7 @@ export const sharingArticles: readonly HelpArticle[] = [
     ],
     overview: [
       "The bell on Home is Videflo's notification centre. It shows the things that deserve a look: invitations to Tapes, Friends & Family requests, a request being accepted, somebody adding a new memory to a Shared Tape, and notices about your storage or account.",
-      "The bell always works, whether or not you allow notifications on your iPhone. Allowing them additionally lets Videflo tap you on the shoulder when the app is closed.",
+      "The bell always works, whether or not you allow notifications on your phone. Allowing them additionally lets Videflo tap you on the shoulder when the app is closed.",
     ],
     sections: [
       {
@@ -397,7 +397,7 @@ export const sharingArticles: readonly HelpArticle[] = [
         blocks: [
           {
             kind: "text",
-            text: "**Settings → Notifications** in Videflo shows whether lock-screen notifications are on. If you said no the first time, it offers **Open Settings**, which takes you to the iPhone's own switch for Videflo — the app can't turn iOS permission on or off itself.",
+            text: "**Settings → Notifications** in Videflo shows whether lock-screen notifications are on. If you said no the first time, it offers **Open Settings**, which takes you to the phone's own switch for Videflo — the app can't turn iOS permission on or off itself.",
           },
           {
             kind: "text",
@@ -414,9 +414,9 @@ export const sharingArticles: readonly HelpArticle[] = [
       {
         problem: "I'm not getting lock-screen notifications.",
         solutions: [
-          "Check **Settings → Videflo → Notifications** on your iPhone is on.",
+          "Check **Settings → Videflo → Notifications** on your phone is on.",
           "Check Focus or Do Not Disturb isn't silencing Videflo.",
-          "Sign out and back in on this iPhone; that re-registers the phone for notifications.",
+          "Sign out and back in on this phone; that re-registers the phone for notifications.",
           "Lock-screen delivery is best-effort — iOS decides when to deliver. The bell in the app is always complete.",
         ],
       },
@@ -443,7 +443,7 @@ export const sharingArticles: readonly HelpArticle[] = [
       {
         question: "Can I mute one Tape?",
         answer: [
-          "Not today. Notifications are on or off for Videflo as a whole, using the iPhone's own setting.",
+          "Not today. Notifications are on or off for Videflo as a whole, using the phone's own setting.",
         ],
       },
     ],

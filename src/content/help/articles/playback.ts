@@ -70,11 +70,11 @@ export const playbackArticles: readonly HelpArticle[] = [
         blocks: [
           {
             kind: "text",
-            text: "Turn your iPhone sideways while watching a landscape Tape and the picture fills the screen. Portrait Tapes fill the screen held upright. The controls rearrange themselves to suit, and there's nothing to switch on.",
+            text: "Turn your phone sideways while watching a landscape Tape and the picture fills the screen. Portrait Tapes fill the screen held upright. The controls rearrange themselves to suit, and there's nothing to switch on.",
           },
           {
             kind: "text",
-            text: "If turning the phone does nothing, your iPhone's Rotation Lock is on — swipe down from the top-right corner to switch it off.",
+            text: "If turning the phone does nothing, your phone's Rotation Lock is on — swipe down from the top-right corner to switch it off.",
           },
         ],
       },
@@ -103,7 +103,7 @@ export const playbackArticles: readonly HelpArticle[] = [
       {
         problem: "There's no sound.",
         solutions: [
-          "Check the iPhone's silent switch and the volume buttons.",
+          "Check the phone's silent switch and the volume buttons.",
           "If it was filmed while microphone access was off, the footage is genuinely silent and can't be fixed afterwards.",
           "Check nothing is connected by Bluetooth that's taking the audio, like headphones in another room.",
         ],
@@ -122,7 +122,7 @@ export const playbackArticles: readonly HelpArticle[] = [
           "Close other apps and try again — 4K playback asks a lot of the phone.",
           "Switch off Low Power Mode, which limits performance.",
           "If the Tape is streaming from Videflo Cloud, a weak connection shows up as stutter. Move to Wi-Fi, or download the Tape.",
-          "Restart your iPhone if it persists.",
+          "Restart your phone if it persists.",
         ],
       },
     ],
@@ -420,7 +420,7 @@ export const playbackArticles: readonly HelpArticle[] = [
       {
         problem: "The date on a recording looks wrong.",
         solutions: [
-          "It's taken from your iPhone's clock and time zone at the moment of filming. If the clock was wrong then, the stamp reflects that.",
+          "It's taken from your phone's clock and time zone at the moment of filming. If the clock was wrong then, the stamp reflects that.",
           "There's no way to change a recording's date after the fact.",
         ],
       },

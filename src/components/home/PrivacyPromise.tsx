@@ -23,7 +23,7 @@ export function PrivacyPromise() {
             </Reveal>
             <Reveal delay={120}>
               <p className="text-lead text-ink-muted mt-7">
-                Your Tapes are recorded on your iPhone and protected in Videflo
+                Your Tapes are recorded on your phone and protected in Videflo
                 Cloud. Nobody sees a Tape unless you invite them to it, and
                 Videflo has no ads, no trackers, and no interest in what you
                 film.
@@ -65,7 +65,7 @@ export function PrivacyPromise() {
                 },
                 {
                   title: "Your originals stay yours",
-                  body: "Videflo Cloud is a protective copy, never a replacement. The files on your iPhone are never edited, and you can delete a Tape everywhere in one step.",
+                  body: "Videflo Cloud is a protective copy, never a replacement. The files on your phone are never edited, and you can delete a Tape everywhere in one step.",
                 },
               ].map((item) => (
                 <li key={item.title}>

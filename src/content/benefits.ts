@@ -19,7 +19,7 @@ export const benefits: readonly Benefit[] = [
   },
   {
     title: "Protected in Videflo Cloud",
-    body: "Every recording is backed up automatically, so a Tape survives a lost phone and follows you to a new iPhone. Your originals stay on your device, untouched.",
+    body: "Every recording is backed up automatically, so a Tape survives a lost phone and follows you to a new phone. Your originals stay on your device, untouched.",
   },
   {
     title: "Shared Tapes",

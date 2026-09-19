@@ -302,7 +302,7 @@ export default async function HelpArticlePage({
                 </h2>
                 <p className="text-ink-muted mt-2 text-[1rem] leading-relaxed">
                   If not, write to us — a person reads every message. Please
-                  include your iPhone model, your iOS version, and what you were
+                  include your phone model, your iOS version, and what you were
                   doing when the problem happened.
                 </p>
                 <div className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-3">

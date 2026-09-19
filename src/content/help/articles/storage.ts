@@ -21,8 +21,8 @@ export const storageArticles: readonly HelpArticle[] = [
       "download",
     ],
     overview: [
-      "Videflo Cloud is included with your subscription, and backup is automatic. Every recording you finish is copied to Videflo Cloud in the background, so a Tape survives a lost, broken or replaced phone and follows you to a new iPhone the moment you sign in.",
-      "It's a copy, never a replacement. The original file on your iPhone is never edited by a backup, and it stays there until you decide to remove it.",
+      "Videflo Cloud is included with your subscription, and backup is automatic. Every recording you finish is copied to Videflo Cloud in the background, so a Tape survives a lost, broken or replaced phone and follows you to a new phone the moment you sign in.",
+      "It's a copy, never a replacement. The original file on your phone is never edited by a backup, and it stays there until you decide to remove it.",
     ],
     sections: [
       {
@@ -55,7 +55,7 @@ export const storageArticles: readonly HelpArticle[] = [
             kind: "note",
             title: "Protection starts when the upload finishes",
             text: [
-              "Until a recording's upload completes, it exists on your iPhone alone. A long 4K recording on a slow connection takes a while — the cloud mark on the Tape's card tells you where it's up to.",
+              "Until a recording's upload completes, it exists on your phone alone. A long 4K recording on a slow connection takes a while — the cloud mark on the Tape's card tells you where it's up to.",
             ],
           },
         ],
@@ -75,12 +75,12 @@ export const storageArticles: readonly HelpArticle[] = [
               {
                 term: "Backed Up",
                 description:
-                  "Every recording in the Tape is safely in Videflo Cloud, and the files are on this iPhone too.",
+                  "Every recording in the Tape is safely in Videflo Cloud, and the files are on this phone too.",
               },
               {
                 term: "In Videflo Cloud",
                 description:
-                  "The Tape's files aren't on this iPhone — you removed them, or the Tape arrived from another phone. It plays by streaming.",
+                  "The Tape's files aren't on this phone — you removed them, or the Tape arrived from another phone. It plays by streaming.",
               },
               {
                 term: "Waiting",
@@ -110,7 +110,7 @@ export const storageArticles: readonly HelpArticle[] = [
               {
                 term: "Back Up to Videflo Cloud",
                 description:
-                  "The master switch. Off means new recordings stay on your iPhone only — nothing is queued, retried or uploaded later. Anything already in Videflo Cloud stays there.",
+                  "The master switch. Off means new recordings stay on your phone only — nothing is queued, retried or uploaded later. Anything already in Videflo Cloud stays there.",
               },
               {
                 term: "Use Cellular Data",
@@ -153,7 +153,7 @@ export const storageArticles: readonly HelpArticle[] = [
     tips: [
       "Leave both switches on. Backups on cellular are the difference between a memory being protected the same evening and it waiting a week for Wi-Fi.",
       "Filming somewhere with no signal? Nothing is lost — recordings queue on the phone and upload when you're back in range.",
-      "Keep an iPhone backup switched on as well. Videflo Cloud protects what has uploaded; an iCloud or computer backup covers the phone itself.",
+      "Keep a phone backup switched on as well. Videflo Cloud protects what has uploaded; an iCloud or computer backup covers the phone itself.",
     ],
     pitfalls: [
       {
@@ -196,7 +196,7 @@ export const storageArticles: readonly HelpArticle[] = [
       {
         question: "Does Videflo Cloud change my recordings?",
         answer: [
-          "No. It stores an exact copy of each file. Nothing is re-encoded, and the original on your iPhone is never touched.",
+          "No. It stores an exact copy of each file. Nothing is re-encoded, and the original on your phone is never touched.",
         ],
       },
       {
@@ -208,7 +208,7 @@ export const storageArticles: readonly HelpArticle[] = [
       {
         question: "Can I back up to iCloud instead?",
         answer: [
-          "Videflo Cloud is Videflo's own service and is part of the subscription. Separately, your iPhone's own iCloud or computer backup includes Videflo's data like any other app's, and that's worth keeping on too.",
+          "Videflo Cloud is Videflo's own service and is part of the subscription. Separately, your phone's own iCloud or computer backup includes Videflo's data like any other app's, and that's worth keeping on too.",
         ],
       },
     ],
@@ -219,7 +219,7 @@ export const storageArticles: readonly HelpArticle[] = [
     slug: "storage-space",
     title: "How much space Tapes use, and how to free some up",
     description:
-      "Where the gigabytes go — on your iPhone and in Videflo Cloud — what's safe to remove, and what the warnings mean.",
+      "Where the gigabytes go — on your phone and in Videflo Cloud — what's safe to remove, and what the warnings mean.",
     category: "storage",
     keywords: [
       "storage full",
@@ -235,7 +235,7 @@ export const storageArticles: readonly HelpArticle[] = [
     ],
     overview: [
       "Video is large. That's the whole story — a phone full of photographs will fill up far faster once it's also full of Tapes.",
-      "The good news is that Videflo can free up a lot of space on your iPhone without losing a single second of footage, because a backed-up Tape doesn't need to live on the phone.",
+      "The good news is that Videflo can free up a lot of space on your phone without losing a single second of footage, because a backed-up Tape doesn't need to live on the phone.",
     ],
     sections: [
       {
@@ -246,7 +246,7 @@ export const storageArticles: readonly HelpArticle[] = [
             kind: "definitions",
             items: [
               {
-                term: "Your iPhone",
+                term: "Your phone",
                 description:
                   "Where recordings are made and kept for offline watching. The limit is the phone's free space, which you can see in **Settings → General → iPhone Storage**.",
               },
@@ -265,7 +265,7 @@ export const storageArticles: readonly HelpArticle[] = [
       },
       {
         id: "free-iphone",
-        heading: "Freeing space on your iPhone, safest first",
+        heading: "Freeing space on your phone, safest first",
         blocks: [
           {
             kind: "steps",
@@ -291,7 +291,7 @@ export const storageArticles: readonly HelpArticle[] = [
             kind: "warning",
             title: "Deleting a Tape is permanent — everywhere",
             text: [
-              "Delete Tape removes it from your iPhone and from Videflo Cloud together. To free space, remove it from the phone instead.",
+              "Delete Tape removes it from your phone and from Videflo Cloud together. To free space, remove it from the phone instead.",
             ],
           },
         ],
@@ -327,7 +327,7 @@ export const storageArticles: readonly HelpArticle[] = [
         blocks: [
           {
             kind: "text",
-            text: "While you're recording, Videflo watches the free space on your iPhone and shows a warning in the corner when it's getting short. The warning appears while there's still comfortable room to finish what you're filming — it's a nudge, not an emergency.",
+            text: "While you're recording, Videflo watches the free space on your phone and shows a warning in the corner when it's getting short. The warning appears while there's still comfortable room to finish what you're filming — it's a nudge, not an emergency.",
           },
           {
             kind: "text",
@@ -372,13 +372,13 @@ export const storageArticles: readonly HelpArticle[] = [
       {
         question: "Do my Tapes count against my iCloud storage?",
         answer: [
-          "Not directly. Videflo Cloud is separate from iCloud and comes with your subscription. Your iPhone's own iCloud backup, if you have one, includes Videflo's data like any other app's.",
+          "Not directly. Videflo Cloud is separate from iCloud and comes with your subscription. Your phone's own iCloud backup, if you have one, includes Videflo's data like any other app's.",
         ],
       },
       {
         question: "Can I move Tapes to an SD card or external drive?",
         answer: [
-          "No. Videflo keeps its recordings in its own storage on the iPhone and in Videflo Cloud. To get footage onto a drive, export it and copy it across from Photos using a computer.",
+          "No. Videflo keeps its recordings in its own storage on the phone and in Videflo Cloud. To get footage onto a drive, export it and copy it across from Photos using a computer.",
         ],
       },
       {
@@ -397,9 +397,9 @@ export const storageArticles: readonly HelpArticle[] = [
 
   {
     slug: "backups-and-new-iphone",
-    title: "Moving to a new iPhone, reinstalling, and a lost phone",
+    title: "Moving to a new phone, reinstalling, and a lost phone",
     description:
-      "How your Tapes come back — from Videflo Cloud, and from your iPhone backup — and what to check before you wipe the old phone.",
+      "How your Tapes come back — from Videflo Cloud, and from your phone's backup — and what to check before you wipe the old phone.",
     category: "storage",
     keywords: [
       "backup",
@@ -413,25 +413,24 @@ export const storageArticles: readonly HelpArticle[] = [
       "reinstall",
     ],
     overview: [
-      "Your Tapes live in two places: on your iPhone, and in Videflo Cloud. That's what makes a new phone undramatic — sign in, and every backed-up Tape is there.",
+      "Your Tapes live in two places: on your phone, and in Videflo Cloud. That's what makes a new phone undramatic — sign in, and every backed-up Tape is there.",
       "The one thing worth checking before you wipe an old phone is that everything actually finished uploading. This article is that check.",
     ],
     sections: [
       {
         id: "new-iphone",
-        heading: "Moving to a new iPhone",
+        heading: "Moving to a new phone",
         blocks: [
           {
             kind: "steps",
             steps: [
               {
-                title:
-                  "On the old iPhone, check every Tape says **Backed Up**.",
+                title: "On the old phone, check every Tape says **Backed Up**.",
                 detail:
                   "Anything still **Backing Up** exists only on that phone. Leave it on Wi-Fi and plugged in until it's done.",
               },
               {
-                title: "Set the new iPhone up however you like.",
+                title: "Set the new phone up however you like.",
                 detail:
                   "Restoring from an iCloud or computer backup, Apple's direct transfer, or setting it up as new — all work. A restore or transfer also brings the recordings across directly, which saves downloading them.",
               },
@@ -474,11 +473,11 @@ export const storageArticles: readonly HelpArticle[] = [
         blocks: [
           {
             kind: "text",
-            text: "Sign in on the replacement and your backed-up Tapes are there. Recordings that hadn't uploaded when the phone was lost are gone with it — which is why the two switches in **Backup Settings** are worth leaving on, and why an iPhone backup is worth keeping as well.",
+            text: "Sign in on the replacement and your backed-up Tapes are there. Recordings that hadn't uploaded when the phone was lost are gone with it — which is why the two switches in **Backup Settings** are worth leaving on, and why a phone backup is worth keeping as well.",
           },
           {
             kind: "note",
-            title: "Keep an iPhone backup too",
+            title: "Keep a phone backup too",
             text: [
               "Videflo Cloud protects what has uploaded. An iCloud or computer backup of the whole phone covers the gap between filming and upload finishing, and brings your Collections and settings across. Check it's actually completing in **Settings → your name → iCloud → iCloud Backup**.",
             ],
@@ -487,11 +486,11 @@ export const storageArticles: readonly HelpArticle[] = [
       },
       {
         id: "two-phones",
-        heading: "Using two iPhones",
+        heading: "Using two phones",
         blocks: [
           {
             kind: "text",
-            text: "Sign in to the same Videflo account on both, and every backed-up Tape appears in the library on each. Videflo is designed around one iPhone at a time, though: Shared Tapes stay in step on both phones, but a personal Tape you keep adding to from both isn't kept in step — treat one phone as the one you record into. Collections and settings are per phone.",
+            text: "Sign in to the same Videflo account on both, and every backed-up Tape appears in the library on each. Videflo is designed around one phone at a time, though: Shared Tapes stay in step on both phones, but a personal Tape you keep adding to from both isn't kept in step — treat one phone as the one you record into. Collections and settings are per phone.",
           },
         ],
       },
@@ -503,7 +502,7 @@ export const storageArticles: readonly HelpArticle[] = [
     ],
     pitfalls: [
       {
-        mistake: "Wiping the old iPhone while a Tape still says Backing Up.",
+        mistake: "Wiping the old phone while a Tape still says Backing Up.",
         fix: "Wait for **Backed Up**. Once the phone is wiped, an unfinished upload can't be completed.",
       },
       {
@@ -513,11 +512,11 @@ export const storageArticles: readonly HelpArticle[] = [
     ],
     troubleshooting: [
       {
-        problem: "A Tape is missing on the new iPhone.",
+        problem: "A Tape is missing on the new phone.",
         solutions: [
           "Check you signed in with the same Apple Account. A different account is a different Videflo library.",
           "Pull the Tapes tab down to refresh.",
-          "If the old iPhone still exists, open Videflo on it — the Tape may still be uploading, or backup may have been off.",
+          "If the old phone still exists, open Videflo on it — the Tape may still be uploading, or backup may have been off.",
         ],
       },
       {
@@ -543,7 +542,7 @@ export const storageArticles: readonly HelpArticle[] = [
       {
         question: "Can I get my Tapes back if I deleted the app?",
         answer: [
-          "Yes, for everything that was backed up — reinstall and sign in. A recording that hadn't uploaded is recoverable only from an iPhone backup made before you deleted the app.",
+          "Yes, for everything that was backed up — reinstall and sign in. A recording that hadn't uploaded is recoverable only from a phone backup made before you deleted the app.",
         ],
       },
       {

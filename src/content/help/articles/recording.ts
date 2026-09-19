@@ -52,7 +52,7 @@ export const recordingArticles: readonly HelpArticle[] = [
               {
                 term: "The zoom slider and lens buttons",
                 description:
-                  "A slider above the main controls, and — on iPhones with more than one rear lens — small buttons like 0.5×, 1× and 3×.",
+                  "A slider above the main controls, and — on phones with more than one rear lens — small buttons like 0.5×, 1× and 3×.",
               },
             ],
           },
@@ -71,7 +71,7 @@ export const recordingArticles: readonly HelpArticle[] = [
                   "Either by making a new Tape, or by choosing **Continue Recording** on one you already have.",
               },
               {
-                title: "Hold your iPhone the way the Tape was started.",
+                title: "Hold your phone the way the Tape was started.",
                 detail:
                   "If it's the wrong way round, Videflo shows a card asking you to turn it. It disappears the moment you do.",
               },
@@ -123,7 +123,7 @@ export const recordingArticles: readonly HelpArticle[] = [
       },
     ],
     tips: [
-      "Your iPhone won't dim or lock while you're recording, so you can put it on a table and let it run.",
+      "Your phone won't dim or lock while you're recording, so you can put it on a table and let it run.",
       "Pause rather than finish between shots. One recording made of six pauses plays back better than six recordings — and it's less to manage later.",
       "Keep an eye on the low-storage warning in the corner. It appears while there's still room to finish what you're doing, not once it's too late.",
     ],
@@ -283,7 +283,7 @@ export const recordingArticles: readonly HelpArticle[] = [
         problem: "Videflo keeps asking me to rotate the phone.",
         solutions: [
           "The Tape was created in the other orientation, and every recording in it has to match.",
-          "If your iPhone's Rotation Lock is on, turning the phone won't be enough — swipe down from the top-right corner and switch Rotation Lock off, then turn the phone.",
+          "If your phone's Rotation Lock is on, turning the phone won't be enough — swipe down from the top-right corner and switch Rotation Lock off, then turn the phone.",
         ],
       },
       {
@@ -298,14 +298,14 @@ export const recordingArticles: readonly HelpArticle[] = [
       {
         question: "How many recordings can one Tape hold?",
         answer: [
-          "There's no limit in the app. Storage on your iPhone is the practical ceiling.",
+          "There's no limit in the app. Storage on your phone is the practical ceiling.",
         ],
       },
       {
-        question: "Can I add to a Tape from a different iPhone?",
+        question: "Can I add to a Tape from a different phone?",
         answer: [
-          "Yes. Sign in to the same Videflo account on the other iPhone and your Tapes appear from Videflo Cloud; Continue Recording works exactly as it does on the first phone, and the new recording is protected the same way.",
-          "Somebody else can add to your Tape from their own iPhone too, once you've invited them — see **Shared Tapes**.",
+          "Yes. Sign in to the same Videflo account on the other phone and your Tapes appear from Videflo Cloud; Continue Recording works exactly as it does on the first phone, and the new recording is protected the same way.",
+          "Somebody else can add to your Tape from their own phone too, once you've invited them — see **Shared Tapes**.",
         ],
       },
       {
@@ -384,7 +384,7 @@ export const recordingArticles: readonly HelpArticle[] = [
             kind: "warning",
             title: "Rotation Lock will stop this working",
             text: [
-              "If your iPhone's Rotation Lock is on, the phone won't register that you've turned it. Swipe down from the top-right corner of the screen, tap the padlock-with-an-arrow icon to switch Rotation Lock off, and try again.",
+              "If your phone's Rotation Lock is on, the phone won't register that you've turned it. Swipe down from the top-right corner of the screen, tap the padlock-with-an-arrow icon to switch Rotation Lock off, and try again.",
             ],
           },
         ],
@@ -395,7 +395,7 @@ export const recordingArticles: readonly HelpArticle[] = [
         blocks: [
           {
             kind: "text",
-            text: "Both play beautifully. Turn your iPhone sideways while watching a landscape Tape and the player fills the screen. Portrait Tapes fill the screen held upright. Nothing needs to be set.",
+            text: "Both play beautifully. Turn your phone sideways while watching a landscape Tape and the player fills the screen. Portrait Tapes fill the screen held upright. Nothing needs to be set.",
           },
         ],
       },
@@ -518,7 +518,7 @@ export const recordingArticles: readonly HelpArticle[] = [
       {
         mistake:
           "Picking High for everything on the theory that better is better.",
-        fix: "You'll fill your iPhone far faster, and on a phone screen you'd struggle to tell the difference. Save it for the Tapes that deserve it.",
+        fix: "You'll fill your phone far faster, and on a phone screen you'd struggle to tell the difference. Save it for the Tapes that deserve it.",
       },
       {
         mistake: "Expecting Smooth to make the picture sharper.",
@@ -593,7 +593,7 @@ export const recordingArticles: readonly HelpArticle[] = [
         blocks: [
           {
             kind: "text",
-            text: "If your iPhone has more than one rear lens, small buttons appear — typically **0.5×**, **1×**, and **3×**, depending on the model. Tapping one jumps straight to that lens, which is faster and steadier than sliding.",
+            text: "If your phone has more than one rear lens, small buttons appear — typically **0.5×**, **1×**, and **3×**, depending on the model. Tapping one jumps straight to that lens, which is faster and steadier than sliding.",
           },
           {
             kind: "text",
@@ -657,7 +657,7 @@ export const recordingArticles: readonly HelpArticle[] = [
       {
         question: "Can I lock the focus or exposure?",
         answer: [
-          "There are no manual focus or exposure controls today. Videflo uses your iPhone's automatic camera behaviour.",
+          "There are no manual focus or exposure controls today. Videflo uses your phone's automatic camera behaviour.",
         ],
       },
       {
@@ -711,7 +711,7 @@ export const recordingArticles: readonly HelpArticle[] = [
           },
           {
             kind: "text",
-            text: "In every one of these cases, the footage captured up to that moment is already written to your iPhone. It isn't held in memory waiting to be saved.",
+            text: "In every one of these cases, the footage captured up to that moment is already written to your phone. It isn't held in memory waiting to be saved.",
           },
         ],
       },
@@ -806,7 +806,7 @@ export const recordingArticles: readonly HelpArticle[] = [
       {
         question: "Can Videflo recover a Tape I deleted on purpose?",
         answer: [
-          "No. Deleting a Tape removes it from your iPhone and from Videflo Cloud in one step, permanently. Export a Tape to Photos first if you might want it back.",
+          "No. Deleting a Tape removes it from your phone and from Videflo Cloud in one step, permanently. Export a Tape to Photos first if you might want it back.",
         ],
       },
       {

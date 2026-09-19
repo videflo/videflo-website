@@ -20,7 +20,7 @@ export const privacyArticles: readonly HelpArticle[] = [
       "email",
     ],
     overview: [
-      "Videflo is a private memory archive. Your recordings are made on your iPhone and protected in Videflo Cloud, and a Tape is seen by nobody but you unless you invite them to it.",
+      "Videflo is a private memory archive. Your recordings are made on your phone and protected in Videflo Cloud, and a Tape is seen by nobody but you unless you invite them to it.",
       "There's no advertising, no tracking, no analytics, and nobody at Videflo looking at your footage. This article says plainly what the app does with your information; the **Privacy Policy** is the full version.",
     ],
     sections: [
@@ -31,14 +31,14 @@ export const privacyArticles: readonly HelpArticle[] = [
           {
             kind: "list",
             items: [
-              "**On your iPhone**, in Videflo's own storage, protected by your passcode and the phone's built-in encryption like any other app's data.",
+              "**On your phone**, in Videflo's own storage, protected by your passcode and the phone's built-in encryption like any other app's data.",
               "**In Videflo Cloud**, once each recording's upload finishes — the copy that survives a lost phone and follows you to a new one. Uploads are encrypted in transit.",
               "**In Photos**, only if you export one. From there it's an ordinary video and Videflo has nothing more to do with it.",
             ],
           },
           {
             kind: "text",
-            text: "Your Tape and recording names, cover photos, and the date, time and time zone each recording was made go to Videflo Cloud with the video, so a Tape comes back complete on a new iPhone. Collections and your settings stay on the phone.",
+            text: "Your Tape and recording names, cover photos, and the date, time and time zone each recording was made go to Videflo Cloud with the video, so a Tape comes back complete on a new phone. Collections and your settings stay on the phone.",
           },
         ],
       },
@@ -79,7 +79,7 @@ export const privacyArticles: readonly HelpArticle[] = [
       },
       {
         id: "what-leaves",
-        heading: "What leaves your iPhone, and to whom",
+        heading: "What leaves your phone, and to whom",
         blocks: [
           {
             kind: "definitions",
@@ -92,7 +92,7 @@ export const privacyArticles: readonly HelpArticle[] = [
               {
                 term: "Subscription checks — to Apple, and to RevenueCat",
                 description:
-                  "Videflo confirms your subscription with the App Store, and our subscription infrastructure provider, RevenueCat, records your App Store purchases against your Videflo account so your Videflo Cloud capacity follows you to a new iPhone. Neither sees your card details; Apple takes the payment.",
+                  "Videflo confirms your subscription with the App Store, and our subscription infrastructure provider, RevenueCat, records your App Store purchases against your Videflo account so your Videflo Cloud capacity follows you to a new phone. Neither sees your card details; Apple takes the payment.",
               },
               {
                 term: "A device token — to Apple, if you allow notifications",
@@ -135,7 +135,7 @@ export const privacyArticles: readonly HelpArticle[] = [
           },
           {
             kind: "text",
-            text: "You can review or change all of these at any time in **Settings → Videflo** on your iPhone.",
+            text: "You can review or change all of these at any time in **Settings → Videflo** on your phone.",
           },
         ],
       },
@@ -146,8 +146,8 @@ export const privacyArticles: readonly HelpArticle[] = [
           {
             kind: "list",
             items: [
-              "**Turn backup off** in Settings → Videflo Cloud → Backup Settings. New recordings then stay on your iPhone only.",
-              "**Delete a Tape**, and it's gone from your iPhone and Videflo Cloud together.",
+              "**Turn backup off** in Settings → Videflo Cloud → Backup Settings. New recordings then stay on your phone only.",
+              "**Delete a Tape**, and it's gone from your phone and Videflo Cloud together.",
               "**Remove people from a Tape you own, or leave one** you were invited to.",
               "**Change your name and picture** in Settings → Profile → Edit Profile.",
               "**Delete your account** from the bottom of Settings. It removes your account, your Profile, your connections and every Tape you own from Videflo Cloud. Recordings you added to somebody else's Shared Tape stay in that Tape without your name.",
@@ -158,7 +158,7 @@ export const privacyArticles: readonly HelpArticle[] = [
     ],
     tips: [
       "The green dot in the corner of the screen is iOS telling you the camera is active. It's a system indicator, so it's true of every app, and it's worth trusting.",
-      "Videflo works offline. Recording, and watching any Tape that's on your iPhone, need no connection at all — backup simply waits.",
+      "Videflo works offline. Recording, and watching any Tape that's on your phone, need no connection at all — backup simply waits.",
       "If you're handing your phone to someone, remember the Tapes are in the app rather than in Photos — so anyone with your unlocked phone can open them. Sign out first if that matters.",
     ],
     faqs: [
@@ -183,13 +183,13 @@ export const privacyArticles: readonly HelpArticle[] = [
       {
         question: "Is my footage encrypted?",
         answer: [
-          "On your iPhone it's protected by the device's encryption, which is active whenever your phone is locked with a passcode. On its way to and from Videflo Cloud it's encrypted in transit. A strong passcode is the single best thing you can do.",
+          "On your phone it's protected by the device's encryption, which is active whenever your phone is locked with a passcode. On its way to and from Videflo Cloud it's encrypted in transit. A strong passcode is the single best thing you can do.",
         ],
       },
       {
         question: "How do I delete everything Videflo holds about me?",
         answer: [
-          "Export anything you want to keep to Photos, then use **Delete Account** at the bottom of Settings. That removes your account and every Tape you own from Videflo Cloud. Then delete the app to remove the recordings on your iPhone, and cancel the subscription in your Apple Account.",
+          "Export anything you want to keep to Photos, then use **Delete Account** at the bottom of Settings. That removes your account and every Tape you own from Videflo Cloud. Then delete the app to remove the recordings on your phone, and cancel the subscription in your Apple Account.",
         ],
       },
     ],

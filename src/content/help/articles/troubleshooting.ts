@@ -30,7 +30,7 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
             kind: "warning",
             title: "Don't delete and reinstall the app",
             text: [
-              "It's the standard advice for most apps, and here it's the wrong first move: deleting Videflo removes the recordings on this iPhone, and any that hadn't finished uploading to Videflo Cloud are gone with them.",
+              "It's the standard advice for most apps, and here it's the wrong first move: deleting Videflo removes the recordings on this phone, and any that hadn't finished uploading to Videflo Cloud are gone with them.",
               "Work through everything below first. If nothing helps, check every Tape says **Backed Up** and email us before removing anything.",
             ],
           },
@@ -49,14 +49,14 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
                   "Swipe up slowly from the bottom of the screen, then swipe the Videflo card away. Open it again from the Home Screen.",
               },
               {
-                title: "Restart your iPhone.",
+                title: "Restart your phone.",
                 detail:
                   "Hold the side button and a volume button until the slider appears. This clears a surprising number of camera problems in particular.",
               },
               {
                 title: "Check for free storage.",
                 detail:
-                  "**Settings → General → iPhone Storage**. A nearly-full iPhone causes crashes that look like anything but a storage problem.",
+                  "**Settings → General → iPhone Storage**. A nearly full phone causes crashes that look like anything but a storage problem.",
               },
               {
                 title: "Turn off Low Power Mode.",
@@ -71,7 +71,7 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
               {
                 title: "Let the phone cool down.",
                 detail:
-                  "Filming in direct sun overheats iPhones, and iOS throttles the camera hard when that happens. Move into the shade and give it a few minutes.",
+                  "Filming in direct sun overheats phones, and iOS throttles the camera hard when that happens. Move into the shade and give it a few minutes.",
               },
             ],
           },
@@ -100,13 +100,13 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
       {
         question: "Will I lose footage if the app crashes?",
         answer: [
-          "Almost never. Recordings are written to your iPhone as you film rather than being held in memory, and anything caught mid-save is offered back to you the next time you open the app.",
+          "Almost never. Recordings are written to your phone as you film rather than being held in memory, and anything caught mid-save is offered back to you the next time you open the app.",
         ],
       },
       {
         question: "Does reinstalling fix things?",
         answer: [
-          "Rarely, and it removes every recording on this iPhone. Everything already in Videflo Cloud comes back when you sign in, but a recording that hadn't uploaded doesn't. Please treat it as a last resort, and talk to us before you try it.",
+          "Rarely, and it removes every recording on this phone. Everything already in Videflo Cloud comes back when you sign in, but a recording that hadn't uploaded doesn't. Please treat it as a last resort, and talk to us before you try it.",
         ],
       },
     ],
@@ -174,7 +174,7 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
               "Another app has the camera. Close it and reopen Videflo.",
               "Screen Time restrictions can disable the camera entirely: **Settings → Screen Time → Content & Privacy Restrictions → Allowed Apps**.",
               "Something is covering the lens — worth checking before anything else, and more common than you'd think.",
-              "Restart the iPhone if the preview stays black across restarts of the app.",
+              "Restart the phone if the preview stays black across restarts of the app.",
             ],
           },
         ],
@@ -302,7 +302,7 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
               "Close other apps. 4K playback asks a lot, especially alongside anything else demanding.",
               "Switch off Low Power Mode, which caps performance.",
               "Let the phone cool if it's warm — iOS throttles hard when it's hot.",
-              "Restart the iPhone if it persists.",
+              "Restart the phone if it persists.",
             ],
           },
         ],
@@ -352,14 +352,14 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
         blocks: [
           {
             kind: "text",
-            text: "This means the video for that recording isn't on this iPhone and Videflo Cloud doesn't have a finished copy either. It usually means the recording never completed its upload before the phone that made it was replaced, or storage ran out at exactly the wrong moment.",
+            text: "This means the video for that recording isn't on this phone and Videflo Cloud doesn't have a finished copy either. It usually means the recording never completed its upload before the phone that made it was replaced, or storage ran out at exactly the wrong moment.",
           },
           {
             kind: "list",
             items: [
               "The rest of the Tape still plays normally.",
               "If the phone that made the recording still exists, open Videflo on it and let the upload finish.",
-              "If you have an iPhone backup from before it happened, restoring may bring the file back.",
+              "If you have a phone backup from before it happened, restoring may bring the file back.",
               "Otherwise, deleting the affected recording from **Manage Recordings** tidies the Tape up.",
             ],
           },
@@ -422,7 +422,7 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
       "cancelled",
     ],
     overview: [
-      "Exporting is the most demanding thing Videflo does, so it's the most sensitive to a full or busy iPhone. The good news is that a failed export never harms your recordings — the originals are untouched whatever happens, and nothing is left behind.",
+      "Exporting is the most demanding thing Videflo does, so it's the most sensitive to a full or busy phone. The good news is that a failed export never harms your recordings — the originals are untouched whatever happens, and nothing is left behind.",
     ],
     sections: [
       {
@@ -455,7 +455,7 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
               {
                 title: "Check **Manage Recordings** for anything unavailable.",
                 detail:
-                  "A Tape exports whole or not at all, so a recording that's neither on this iPhone nor finished in Videflo Cloud stops the export. Delete it and try again.",
+                  "A Tape exports whole or not at all, so a recording that's neither on this phone nor finished in Videflo Cloud stops the export. Delete it and try again.",
               },
             ],
           },
@@ -567,7 +567,7 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
                 detail: "Once — repeated taps don't help.",
               },
               {
-                title: "Check which Apple Account the iPhone is signed in to.",
+                title: "Check which Apple Account the phone is signed in to.",
                 detail:
                   "Open the **Settings** app; your name is at the top. The subscription belongs to the account that bought it.",
               },
@@ -583,7 +583,7 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
               {
                 title: "If it's active and restoring still fails, email us.",
                 detail:
-                  "Include your iPhone model, iOS version, and Videflo version.",
+                  "Include your phone model, iOS version, and Videflo version.",
               },
             ],
           },
@@ -642,7 +642,7 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
         blocks: [
           {
             kind: "text",
-            text: "Yes. Your subscription is confirmed on the device, so recording, and watching or exporting any Tape that's on your iPhone, all work with no connection at all. Backup waits for a connection, a Tape marked In Videflo Cloud needs one to stream, and you need to be online to subscribe, to restore, or to sign in for the first time.",
+            text: "Yes. Your subscription is confirmed on the device, so recording, and watching or exporting any Tape that's on your phone, all work with no connection at all. Backup waits for a connection, a Tape marked In Videflo Cloud needs one to stream, and you need to be online to subscribe, to restore, or to sign in for the first time.",
           },
         ],
       },
@@ -661,7 +661,7 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
       {
         question: "Do I lose my Tapes if my subscription lapses?",
         answer: [
-          "No. Your recordings stay on your iPhone, and Videflo doesn't currently remove content from Videflo Cloud because a subscription has lapsed. Subscribing again gives you access to them exactly as you left them.",
+          "No. Your recordings stay on your phone, and Videflo doesn't currently remove content from Videflo Cloud because a subscription has lapsed. Subscribing again gives you access to them exactly as you left them.",
         ],
       },
       {
@@ -701,7 +701,7 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
           {
             kind: "list",
             items: [
-              "**Nothing happens, or it fails straight away.** Check you're online — signing in needs a connection the first time. Then check **Settings → your name** on the iPhone is signed in to your Apple Account.",
+              "**Nothing happens, or it fails straight away.** Check you're online — signing in needs a connection the first time. Then check **Settings → your name** on the phone is signed in to your Apple Account.",
               "**Apple asks for a password.** That's your Apple Account password, not a Videflo one. Apple can reset it.",
               "**“Sign in with Apple” isn't offered.** It needs two-factor authentication on your Apple Account, which Apple requires for all new accounts.",
               "**You're signed in but it's the wrong account.** Sign out in **Settings → Profile → Account** and sign in again. Videflo follows the Apple Account you use, so two Apple Accounts are two Videflo accounts.",
@@ -751,7 +751,7 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
           {
             kind: "list",
             items: [
-              "Check you're online. A Tape marked **In Videflo Cloud** has no files on this iPhone and streams every time.",
+              "Check you're online. A Tape marked **In Videflo Cloud** has no files on this phone and streams every time.",
               "Give it a moment — a Tape with many recordings takes a few seconds to start.",
               "If it keeps stalling, **Download to This iPhone** and watch it from the phone.",
               "If one recording is marked unavailable, the phone that made it never finished uploading it. See **Playback problems**.",

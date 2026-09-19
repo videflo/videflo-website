@@ -87,7 +87,7 @@ export default function SupportPage() {
                 Email {contact.supportEmail}
               </a>
               <p className="text-ink-faint text-sm">
-                Please include your iPhone model, your iOS version, and what you
+                Please include your phone model, your iOS version, and what you
                 were doing when the problem happened.
               </p>
             </div>
@@ -260,13 +260,13 @@ export default function SupportPage() {
                   Restoring a purchase
                 </h2>
                 <P>
-                  If you reinstall {site.name}, or set up a new iPhone, your
+                  If you reinstall {site.name}, or set up a new phone, your
                   subscription can be restored — it belongs to your Apple
                   Account rather than to the app.
                 </P>
                 <UL>
                   <LI>
-                    Make sure the iPhone is signed in to the same Apple Account
+                    Make sure the phone is signed in to the same Apple Account
                     you used to buy the subscription.
                   </LI>
                   <LI>
@@ -418,7 +418,7 @@ export default function SupportPage() {
                   Videflo Cloud, storage and backups
                 </h2>
                 <P>
-                  Recordings are saved on your iPhone first. While{" "}
+                  Recordings are saved on your phone first. While{" "}
                   <strong className="text-ink">
                     Back Up to {site.name} Cloud
                   </strong>{" "}
@@ -461,10 +461,10 @@ export default function SupportPage() {
                   <p>
                     A recording is protected once its upload has completed. With
                     backup switched off, or before an upload finishes, it exists
-                    on your iPhone alone — so keep an iPhone backup switched on
-                    as well, and export the Tapes you could not replace. And if
-                    your subscription lapses, your Tapes stay on your iPhone,
-                    and {site.name} does not currently remove content from{" "}
+                    on your phone alone — so keep a phone backup switched on as
+                    well, and export the Tapes you could not replace. And if
+                    your subscription lapses, your Tapes stay on your phone, and{" "}
+                    {site.name} does not currently remove content from{" "}
                     {site.name} Cloud because a subscription has ended —
                     subscribe again and everything is there.
                   </p>
@@ -518,8 +518,8 @@ export default function SupportPage() {
                 <H3>Recording won&rsquo;t start</H3>
                 <P>
                   Check that Camera and Microphone are enabled for {site.name},
-                  that no other app is using the camera, and that your iPhone
-                  has free storage. If the Tape was started in a different
+                  that no other app is using the camera, and that your phone has
+                  free storage. If the Tape was started in a different
                   orientation, {site.name} asks you to hold the phone the same
                   way before it will record.
                 </P>
@@ -534,7 +534,7 @@ export default function SupportPage() {
                 </P>
                 <H3>Exporting fails or stalls</H3>
                 <P>
-                  Free up storage, make sure your iPhone is not in Low Power
+                  Free up storage, make sure your phone is not in Low Power
                   Mode, and try again with {site.name} on screen. A Tape stored
                   only in {site.name} Cloud needs a connection while it exports.
                   If it keeps failing, tell us the Tape&rsquo;s length and
@@ -550,7 +550,7 @@ export default function SupportPage() {
                 </P>
                 <H3>Still stuck?</H3>
                 <P>
-                  Email <Mail address={contact.supportEmail} /> with your iPhone
+                  Email <Mail address={contact.supportEmail} /> with your phone
                   model, your iOS version, the {site.name} version, and what you
                   were doing. Screenshots or a screen recording help a great
                   deal.

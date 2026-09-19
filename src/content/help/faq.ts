@@ -29,21 +29,21 @@ export const helpFaq: readonly HelpFaqItem[] = [
   {
     question: "Do I need to create an account?",
     answer: [
-      "Yes, and it takes one tap: Videflo uses Sign in with Apple. There's no Videflo password. Your account is what protects your Tapes in Videflo Cloud, brings them to a new iPhone, and lets you share a Tape with family.",
+      "Yes, and it takes one tap: Videflo uses Sign in with Apple. There's no Videflo password. Your account is what protects your Tapes in Videflo Cloud, brings them to a new phone, and lets you share a Tape with family.",
     ],
     article: "accounts-and-signing-in",
   },
   {
     question: "Where are my recordings stored?",
     answer: [
-      "On your iPhone first, inside Videflo's own library — and, once each upload finishes, in Videflo Cloud as well. Your original files on the phone are never changed, and a Tape is seen by nobody but you unless you invite them to it.",
+      "On your phone first, inside Videflo's own library — and, once each upload finishes, in Videflo Cloud as well. Your original files on the phone are never changed, and a Tape is seen by nobody but you unless you invite them to it.",
     ],
     article: "videflo-cloud",
   },
   {
     question: "Does Videflo back up my videos to the cloud?",
     answer: [
-      "Yes, automatically. Every recording is copied to Videflo Cloud in the background, so a Tape survives a lost or replaced phone. A recording is protected once its upload has finished; until then it exists only on your iPhone.",
+      "Yes, automatically. Every recording is copied to Videflo Cloud in the background, so a Tape survives a lost or replaced phone. A recording is protected once its upload has finished; until then it exists only on your phone.",
     ],
     article: "videflo-cloud",
   },
@@ -87,7 +87,7 @@ export const helpFaq: readonly HelpFaqItem[] = [
   {
     question: "What happens if I delete the app?",
     answer: [
-      "Deleting Videflo removes the recordings on that iPhone. Everything already in Videflo Cloud stays safe and comes back when you reinstall and sign in; a recording that hadn't finished uploading is lost with the phone.",
+      "Deleting Videflo removes the recordings on that phone. Everything already in Videflo Cloud stays safe and comes back when you reinstall and sign in; a recording that hadn't finished uploading is lost with the phone.",
       "Deleting the app also doesn't cancel a subscription — that lives in your Apple Account and has to be cancelled there.",
     ],
     article: "backups-and-new-iphone",
@@ -110,7 +110,7 @@ export const helpFaq: readonly HelpFaqItem[] = [
   {
     question: "I've paid but Videflo is asking me to subscribe again.",
     answer: [
-      "Tap Restore Purchases on the subscription screen and let it finish, making sure the iPhone is signed in to the Apple Account that bought the subscription.",
+      "Tap Restore Purchases on the subscription screen and let it finish, making sure the phone is signed in to the Apple Account that bought the subscription.",
       "If nothing is found, check the subscription is still active in Settings → your name → Subscriptions.",
     ],
     article: "restore-purchases",
@@ -140,7 +140,7 @@ export const helpFaq: readonly HelpFaqItem[] = [
   {
     question: "Something isn't working. What should I try first?",
     answer: [
-      "Force-close Videflo and reopen it, then restart your iPhone. Check free storage and turn off Low Power Mode.",
+      "Force-close Videflo and reopen it, then restart your phone. Check free storage and turn off Low Power Mode.",
       "Please don't delete and reinstall the app as a first step — a recording that hadn't finished uploading would go with it. Check your Tapes say Backed Up, and email us before doing anything drastic.",
     ],
     article: "troubleshooting-app",

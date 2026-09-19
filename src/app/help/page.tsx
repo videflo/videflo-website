@@ -188,7 +188,7 @@ export default function HelpCenterPage() {
               <p className="text-ink-muted mt-5 text-[1.0625rem] leading-relaxed">
                 {helpCategoryIndex.length} topics covering every part of{" "}
                 {site.name} — from your very first Tape to what happens when you
-                move to a new iPhone.
+                move to a new phone.
               </p>
             </div>
           </Reveal>
@@ -288,7 +288,7 @@ export default function HelpCenterPage() {
               </h2>
               <p className="text-cream-muted mt-4 text-[1.0625rem] leading-relaxed">
                 {site.name} is made by a very small team, and every message is
-                answered by someone who works on the app. Tell us your iPhone
+                answered by someone who works on the app. Tell us your phone
                 model, your iOS version, and what you were doing — it helps more
                 than you&rsquo;d think.
               </p>

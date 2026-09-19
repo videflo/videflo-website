@@ -108,7 +108,7 @@ export const subscriptionArticles: readonly HelpArticle[] = [
     tips: [
       "Standard quality goes a long way: a 4K Tape uses roughly four times the room of a 1080p one, on the phone and in Videflo Cloud.",
       "Cancelling doesn't take effect immediately. You keep access until the end of the period you've already paid for.",
-      "The subscription belongs to your Apple Account, so it comes with you to a new iPhone. So do your Tapes — from Videflo Cloud, when you sign in.",
+      "The subscription belongs to your Apple Account, so it comes with you to a new phone. So do your Tapes — from Videflo Cloud, when you sign in.",
     ],
     faqs: [
       {
@@ -124,7 +124,7 @@ export const subscriptionArticles: readonly HelpArticle[] = [
       {
         question: "What happens to my Tapes if my subscription ends?",
         answer: [
-          "Nothing is deleted when it ends. Your recordings stay on your iPhone, and Videflo doesn't currently remove content from Videflo Cloud because a subscription has lapsed.",
+          "Nothing is deleted when it ends. Your recordings stay on your phone, and Videflo doesn't currently remove content from Videflo Cloud because a subscription has lapsed.",
           "You'll need an active subscription to open the app, and subscribing again restores access to everything exactly as it was. If Videflo ever sets retention rules for accounts that stay lapsed, we'll give notice first, as the Terms describe.",
         ],
       },
@@ -220,7 +220,7 @@ export const subscriptionArticles: readonly HelpArticle[] = [
             kind: "list",
             items: [
               "Cancelling stops the **next** renewal. You keep access until the end of the period you've already paid for.",
-              "Your Tapes are not deleted. They stay on your iPhone, and Videflo doesn't currently remove content from Videflo Cloud because a subscription has ended.",
+              "Your Tapes are not deleted. They stay on your phone, and Videflo doesn't currently remove content from Videflo Cloud because a subscription has ended.",
               "Subscribing again later restores access to everything, exactly as you left it.",
             ],
           },
@@ -228,7 +228,7 @@ export const subscriptionArticles: readonly HelpArticle[] = [
             kind: "warning",
             title: "Deleting the app does not cancel a subscription",
             text: [
-              "Removing Videflo from your iPhone leaves the subscription running and renewing. It has to be cancelled in your Apple Account.",
+              "Removing Videflo from your phone leaves the subscription running and renewing. It has to be cancelled in your Apple Account.",
               "Neither does signing out or deleting your Videflo account. All three leave the subscription exactly where it was.",
             ],
           },
@@ -325,7 +325,7 @@ export const subscriptionArticles: readonly HelpArticle[] = [
       {
         question: "Will I lose my Tapes if I cancel?",
         answer: [
-          "No. Your recordings stay on your iPhone, and Videflo doesn't currently remove content from Videflo Cloud because a subscription has ended. You'll need a subscription to use the app, and resubscribing brings everything back exactly as it was.",
+          "No. Your recordings stay on your phone, and Videflo doesn't currently remove content from Videflo Cloud because a subscription has ended. You'll need a subscription to use the app, and resubscribing brings everything back exactly as it was.",
         ],
       },
       {
@@ -352,7 +352,7 @@ export const subscriptionArticles: readonly HelpArticle[] = [
     slug: "restore-purchases",
     title: "Restoring a purchase",
     description:
-      "Getting your subscription back after reinstalling or setting up a new iPhone.",
+      "Getting your subscription back after reinstalling or setting up a new phone.",
     category: "subscription",
     keywords: [
       "restore",
@@ -376,7 +376,7 @@ export const subscriptionArticles: readonly HelpArticle[] = [
             steps: [
               {
                 title:
-                  "Make sure the iPhone is signed in to the Apple Account you bought the subscription with.",
+                  "Make sure the phone is signed in to the Apple Account you bought the subscription with.",
                 detail:
                   "Check in the **Settings** app — your name is at the very top.",
               },
@@ -407,7 +407,7 @@ export const subscriptionArticles: readonly HelpArticle[] = [
             kind: "list",
             items: [
               "You deleted and reinstalled Videflo.",
-              "You set up a new iPhone.",
+              "You set up a new phone.",
               "You signed out of the App Store and back in.",
               "You're being shown the subscription screen even though you're sure you've paid.",
             ],
@@ -423,7 +423,7 @@ export const subscriptionArticles: readonly HelpArticle[] = [
             title: "Two things, two routes",
             text: [
               "**Restore Purchases** brings back access — the subscription. It checks with Apple and re-applies your Videflo Cloud capacity.",
-              "**Signing in** brings back your Tapes — from Videflo Cloud, as soon as you're in the same Videflo account. They appear marked **In Videflo Cloud** and play by streaming; **Download to This iPhone** puts the files back. See **Moving to a new iPhone**.",
+              "**Signing in** brings back your Tapes — from Videflo Cloud, as soon as you're in the same Videflo account. They appear marked **In Videflo Cloud** and play by streaming; **Download to This iPhone** puts the files back. See **Moving to a new phone**.",
             ],
           },
         ],
@@ -457,7 +457,7 @@ export const subscriptionArticles: readonly HelpArticle[] = [
           "Restore once and let it finish rather than tapping repeatedly.",
           "Close Videflo completely and reopen it.",
           "Confirm the subscription is genuinely active in your Apple Account.",
-          "If it's active and restoring still doesn't work, email us with your iPhone model and iOS version.",
+          "If it's active and restoring still doesn't work, email us with your phone model and iOS version.",
         ],
       },
     ],
@@ -471,7 +471,7 @@ export const subscriptionArticles: readonly HelpArticle[] = [
       {
         question: "How many devices can I restore onto?",
         answer: [
-          "Any iPhone signed in to the Apple Account that holds the subscription. Sign in to Videflo with the same account and your Tapes come with you too.",
+          "Any phone signed in to the Apple Account that holds the subscription. Sign in to Videflo with the same account and your Tapes come with you too.",
         ],
       },
       {

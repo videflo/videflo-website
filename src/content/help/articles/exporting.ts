@@ -72,7 +72,7 @@ export const exportingArticles: readonly HelpArticle[] = [
             kind: "note",
             title: "A Tape that lives only in Videflo Cloud exports too",
             text: [
-              "If you've removed a Tape from this iPhone, Export Tape streams it from Videflo Cloud while it renders. It doesn't download the Tape first, and it doesn't leave a copy on the phone afterwards — you'll need a connection, and a long Tape takes longer than one that's already here.",
+              "If you've removed a Tape from this phone, Export Tape streams it from Videflo Cloud while it renders. It doesn't download the Tape first, and it doesn't leave a copy on the phone afterwards — you'll need a connection, and a long Tape takes longer than one that's already here.",
             ],
           },
         ],
@@ -110,7 +110,7 @@ export const exportingArticles: readonly HelpArticle[] = [
     tips: [
       "Check your free space first. The exported file is roughly as large as all the recordings in the Tape put together.",
       "Exporting a long 4K Tape can take a good while. Plug in and start it before you make a cup of tea.",
-      "Exporting is a fine way to keep a copy outside Videflo altogether — the video in Photos is included in your normal iPhone backup and iCloud Photos.",
+      "Exporting is a fine way to keep a copy outside Videflo altogether — the video in Photos is included in your normal phone backup and iCloud Photos.",
     ],
     pitfalls: [
       {
@@ -176,7 +176,7 @@ export const exportingArticles: readonly HelpArticle[] = [
       {
         question: "Does exporting use my Videflo Cloud allowance?",
         answer: [
-          "No. The exported video goes into Photos on your iPhone. Nothing is uploaded, and nothing changes in Videflo Cloud.",
+          "No. The exported video goes into Photos on your phone. Nothing is uploaded, and nothing changes in Videflo Cloud.",
         ],
       },
     ],
@@ -267,7 +267,7 @@ export const exportingArticles: readonly HelpArticle[] = [
       {
         problem: "Export to Photos is greyed out or missing.",
         solutions: [
-          "Check the recording isn't marked unavailable — a recording with no file on this iPhone and no finished copy in Videflo Cloud can't be exported.",
+          "Check the recording isn't marked unavailable — a recording with no file on this phone and no finished copy in Videflo Cloud can't be exported.",
         ],
       },
       {
