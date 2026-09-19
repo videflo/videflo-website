@@ -124,8 +124,8 @@ export const subscriptionArticles: readonly HelpArticle[] = [
       {
         question: "What happens to my Tapes if my subscription ends?",
         answer: [
-          "Nothing is deleted. Your recordings stay on your iPhone, and everything already backed up stays in Videflo Cloud.",
-          "You'll need an active subscription to open the app, and subscribing again restores access to everything exactly as it was.",
+          "Nothing is deleted when it ends. Your recordings stay on your iPhone, and Videflo doesn't currently remove content from Videflo Cloud because a subscription has lapsed.",
+          "You'll need an active subscription to open the app, and subscribing again restores access to everything exactly as it was. If Videflo ever sets retention rules for accounts that stay lapsed, we'll give notice first, as the Terms describe.",
         ],
       },
       {
@@ -220,7 +220,7 @@ export const subscriptionArticles: readonly HelpArticle[] = [
             kind: "list",
             items: [
               "Cancelling stops the **next** renewal. You keep access until the end of the period you've already paid for.",
-              "Your Tapes are not deleted. They stay on your iPhone and in Videflo Cloud whether you're subscribed or not.",
+              "Your Tapes are not deleted. They stay on your iPhone, and Videflo doesn't currently remove content from Videflo Cloud because a subscription has ended.",
               "Subscribing again later restores access to everything, exactly as you left it.",
             ],
           },
@@ -325,7 +325,7 @@ export const subscriptionArticles: readonly HelpArticle[] = [
       {
         question: "Will I lose my Tapes if I cancel?",
         answer: [
-          "No. Your recordings stay on your iPhone and in Videflo Cloud. You'll need a subscription to use the app, but nothing is deleted, and resubscribing brings everything back exactly as it was.",
+          "No. Your recordings stay on your iPhone, and Videflo doesn't currently remove content from Videflo Cloud because a subscription has ended. You'll need a subscription to use the app, and resubscribing brings everything back exactly as it was.",
         ],
       },
       {

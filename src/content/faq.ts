@@ -86,7 +86,7 @@ export const faq: readonly FaqItem[] = [
     question: "How do I cancel my subscription?",
     answer: [
       "Subscriptions are billed and managed by Apple, not inside Videflo. On your iPhone, open the Settings app, tap your name at the top, then Subscriptions, and select Videflo.",
-      "Cancelling stops the next renewal; you keep access until the end of the period you have already paid for. Nothing is deleted — your Tapes stay on your iPhone and in Videflo Cloud. If the option is somewhere else on your version of iOS, Apple Support has the current steps.",
+      "Cancelling stops the next renewal; you keep access until the end of the period you have already paid for. Nothing is deleted when you cancel — your Tapes stay on your iPhone, and Videflo does not currently remove content from Videflo Cloud because a subscription has ended. If the option is somewhere else on your version of iOS, Apple Support has the current steps.",
     ],
     link: {
       href: "https://support.apple.com",

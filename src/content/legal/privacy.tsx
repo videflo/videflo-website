@@ -485,8 +485,8 @@ export const privacySections: readonly LegalSection[] = [
             <strong className="text-ink">Back Up to {site.name} Cloud</strong>{" "}
             can be switched off in Settings → {site.name} Cloud → Backup
             Settings. While it is off, new recordings stay on your iPhone only.
-            Anything already in {site.name} Cloud stays there until you delete
-            it.
+            Anything already in {site.name} Cloud stays there — see{" "}
+            <A href="/privacy#retention">How long information is kept</A>.
           </LI>
           <LI>
             <strong className="text-ink">Remove from This iPhone</strong> frees
@@ -509,12 +509,15 @@ export const privacySections: readonly LegalSection[] = [
             not delete your content automatically.
           </LI>
         </UL>
-        <Callout title="A lapsed subscription does not delete anything">
+        <Callout title="If your subscription ends">
           <p>
-            If your subscription ends, {site.name} cannot be opened until you
-            subscribe again, but your recordings stay on your iPhone and your
-            content stays in {site.name} Cloud. Subscribing again restores
-            access to all of it.
+            {site.name} cannot be opened until you subscribe again, but your
+            recordings stay on your iPhone, and {site.name} does not currently
+            delete content from {site.name} Cloud because a subscription has
+            ended. Subscribing again restores access to all of it. We may
+            establish retention rules for accounts that stay lapsed; if we do,
+            we will give notice as described in the{" "}
+            <A href="/terms#videflo-cloud">Terms of Service</A>.
           </p>
         </Callout>
       </>
@@ -528,13 +531,16 @@ export const privacySections: readonly LegalSection[] = [
         <UL>
           <LI>
             <strong className="text-ink">Recordings and Tapes</strong> are kept
-            until you delete them. Deleting a Tape removes it from your iPhone
-            and from {site.name} Cloud, including from every member’s view of a
-            Shared Tape. On a Shared Tape, the owner can delete a single
-            recording from {site.name} Cloud for everyone. On a personal Tape,
-            deleting a single recording currently removes it from your iPhone
-            only; its copy in {site.name} Cloud remains until you delete the
-            Tape.
+            while your account exists and until you delete them; {site.name}{" "}
+            does not currently delete them because a subscription has lapsed,
+            though we may establish retention rules for lapsed accounts with
+            notice, as the Terms describe. Deleting a Tape removes it from your
+            iPhone and from {site.name} Cloud, including from every member’s
+            view of a Shared Tape. On a Shared Tape, the owner can delete a
+            single recording from {site.name} Cloud for everyone. On a personal
+            Tape, deleting a single recording currently removes it from your
+            iPhone only; its copy in {site.name} Cloud remains until you delete
+            the Tape.
           </LI>
           <LI>
             <strong className="text-ink">
@@ -746,11 +752,13 @@ export const privacySections: readonly LegalSection[] = [
           more countries over time, and will update this policy when we do.
         </P>
         <P>
-          Our service providers are based in the {legal.governingCountry}.
-          Information described in this policy — including recordings you back
-          up to {site.name} Cloud — may therefore be stored and processed in the{" "}
-          {legal.governingCountry} and in other countries where those providers
-          operate, which may have data protection laws that differ from your
+          {site.name} Cloud — your account, your Tape details and the recordings
+          you back up — is hosted for us by Supabase in the{" "}
+          {legal.governingCountry}. Our other providers, named under{" "}
+          <A href="/privacy#service-providers">Service providers</A>, may
+          process the information they handle for us in the{" "}
+          {legal.governingCountry} and in other countries where they operate.
+          Those countries may have data protection laws that differ from your
           own. Where the law of your country requires it, we take reasonable
           steps to see that the information stays protected to a comparable
           standard — including under Australian Privacy Principle 8 and

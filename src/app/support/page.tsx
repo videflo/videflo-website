@@ -463,9 +463,10 @@ export default function SupportPage() {
                     backup switched off, or before an upload finishes, it exists
                     on your iPhone alone — so keep an iPhone backup switched on
                     as well, and export the Tapes you could not replace. And if
-                    your subscription lapses, nothing is deleted: your Tapes
-                    stay on your iPhone and in {site.name} Cloud until you
-                    subscribe again.
+                    your subscription lapses, your Tapes stay on your iPhone,
+                    and {site.name} does not currently remove content from{" "}
+                    {site.name} Cloud because a subscription has ended —
+                    subscribe again and everything is there.
                   </p>
                 </Callout>
               </article>

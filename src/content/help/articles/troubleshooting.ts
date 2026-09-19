@@ -661,7 +661,7 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
       {
         question: "Do I lose my Tapes if my subscription lapses?",
         answer: [
-          "No. Your recordings stay on your iPhone, and everything backed up stays in Videflo Cloud. Subscribing again gives you access to them exactly as you left them.",
+          "No. Your recordings stay on your iPhone, and Videflo doesn't currently remove content from Videflo Cloud because a subscription has lapsed. Subscribing again gives you access to them exactly as you left them.",
         ],
       },
       {

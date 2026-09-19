@@ -103,7 +103,7 @@ export const helpFaq: readonly HelpFaqItem[] = [
     question: "How do I cancel my subscription?",
     answer: [
       "Subscriptions are billed and managed by Apple. On your iPhone, open the Settings app, tap your name at the top, then Subscriptions, and select Videflo.",
-      "Cancelling stops the next renewal; you keep access until the end of the period you've already paid for, and nothing is deleted.",
+      "Cancelling stops the next renewal; you keep access until the end of the period you've already paid for. Nothing is deleted when you cancel, and Videflo doesn't currently remove content from Videflo Cloud because a subscription has ended.",
     ],
     article: "manage-subscription",
   },

@@ -273,13 +273,14 @@ export const termsSections: readonly LegalSection[] = [
         <H3>If your subscription ends</H3>
         <P>
           {site.name} requires an active subscription to open. If yours ends,
-          your recordings stay on your iPhone and your Content stays in{" "}
-          {site.name} Cloud, and subscribing again restores access to all of it.
-          We do not currently delete the Content of a lapsed account
-          automatically. We may in future adopt a policy for accounts that stay
-          lapsed for an extended period; if we do, we will give you notice and a
-          reasonable opportunity to subscribe again or to recover your Content
-          before anything is removed.
+          your recordings stay on your iPhone, and we do not currently delete
+          Content from {site.name} Cloud because a subscription has ended;
+          subscribing again restores access to all of it. This is a description
+          of current practice, not a promise to store Content indefinitely. We
+          may establish retention or deletion rules for accounts that remain
+          lapsed, subject to applicable law and these Terms; if we do, we will
+          give you notice and a reasonable opportunity to subscribe again or to
+          recover your Content before anything is removed.
         </P>
       </>
     ),
