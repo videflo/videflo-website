@@ -40,7 +40,7 @@ export async function generateMetadata({
   if (!category) return { title: "Topic not found", robots: { index: false } };
 
   return pageMetadata({
-    title: `${category.title} — Help`,
+    title: `${category.title} Help`,
     description: category.description,
     path: `/help/topics/${category.id}`,
   });
@@ -62,7 +62,7 @@ function TopicStructuredData({
         "@type": "CollectionPage",
         "@id": `${url}#page`,
         url,
-        name: `${category.title} — ${site.name} Help`,
+        name: `${category.title} | ${site.name} Help`,
         description: category.description,
         isPartOf: { "@id": `${site.url}/#website` },
         inLanguage: "en-US",

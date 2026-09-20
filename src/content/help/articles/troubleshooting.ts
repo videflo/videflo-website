@@ -5,7 +5,7 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
     slug: "troubleshooting-app",
     title: "The app crashes, freezes, or won't open",
     description:
-      "The general fixes, in the order worth trying them — and the one thing not to do.",
+      "The general fixes, in the order worth trying them, and the one thing not to do.",
     category: "troubleshooting",
     keywords: [
       "crash",
@@ -61,7 +61,7 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
               {
                 title: "Turn off Low Power Mode.",
                 detail:
-                  "It limits performance, which shows up most in recording, exporting, and 4K playback — and Videflo pauses backups while it's on.",
+                  "It limits performance, which shows up most in recording, exporting, and 4K playback, and Videflo pauses backups while it's on.",
               },
               {
                 title: "Update iOS and update Videflo.",
@@ -83,7 +83,7 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
         blocks: [
           {
             kind: "text",
-            text: "Videflo shows its branded screen while it loads your library and checks for any footage that needs rescuing. On a very large library that takes a moment longer than usual, but it always finishes — the app will show itself even if something goes wrong behind the scenes.",
+            text: "Videflo shows its branded screen while it loads your library and checks for any footage that needs rescuing. On a very large library that takes a moment longer than usual, but it always finishes. The app will show itself even if something goes wrong behind the scenes.",
           },
           {
             kind: "text",
@@ -94,7 +94,7 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
     ],
     tips: [
       "Note what you were doing when it happened. “It crashes when I tap Export Tape on a long Tape” is something we can act on; “it crashes sometimes” isn't.",
-      "A screen recording of the problem is worth a hundred words — as long as it doesn't show anything private.",
+      "A screen recording of the problem is worth a hundred words, as long as it doesn't show anything private.",
     ],
     faqs: [
       {
@@ -170,10 +170,10 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
           {
             kind: "list",
             items: [
-              "Camera access is off — check **Settings → Videflo → Camera**.",
+              "Camera access is off. Check **Settings → Videflo → Camera**.",
               "Another app has the camera. Close it and reopen Videflo.",
               "Screen Time restrictions can disable the camera entirely: **Settings → Screen Time → Content & Privacy Restrictions → Allowed Apps**.",
-              "Something is covering the lens — worth checking before anything else, and more common than you'd think.",
+              "Something is covering the lens. It's worth checking before anything else, and more common than you'd think.",
               "Restart the phone if the preview stays black across restarts of the app.",
             ],
           },
@@ -186,7 +186,7 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
           {
             kind: "list",
             items: [
-              "Microphone access is off — check **Settings → Videflo → Microphone**, then record a short test.",
+              "Microphone access is off. Check **Settings → Videflo → Microphone**, then record a short test.",
               "Something is covering the microphone at the bottom edge of the phone. A thick case or a finger will muffle it badly.",
               "Bluetooth headphones somewhere nearby may be taking the audio input.",
             ],
@@ -195,7 +195,7 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
             kind: "warning",
             title: "Sound can't be added afterwards",
             text: [
-              "Footage recorded without microphone access is genuinely silent. There's no way to recover audio that was never captured — which is why it's worth a ten-second test recording before an occasion that matters.",
+              "Footage recorded without microphone access is genuinely silent. There's no way to recover audio that was never captured, which is why it's worth a ten-second test recording before an occasion that matters.",
             ],
           },
         ],
@@ -212,7 +212,7 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
             kind: "list",
             items: [
               "Turn on Do Not Disturb before anything you can't repeat.",
-              "Plug in for long sessions — recording is one of the most demanding things a phone does.",
+              "Plug in for long sessions. Recording is one of the most demanding things a phone does.",
               "Overheating in direct sun will also stop the camera. Move into the shade.",
             ],
           },
@@ -298,10 +298,10 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
           {
             kind: "list",
             items: [
-              "If the Tape is marked **In Videflo Cloud**, it's streaming — a weak connection is the usual cause. Move to Wi-Fi, or **Download to This iPhone**.",
+              "If the Tape is marked **In Videflo Cloud**, it's streaming, and a weak connection is the usual cause. Move to Wi-Fi, or **Download to This iPhone**.",
               "Close other apps. 4K playback asks a lot, especially alongside anything else demanding.",
               "Switch off Low Power Mode, which caps performance.",
-              "Let the phone cool if it's warm — iOS throttles hard when it's hot.",
+              "Let the phone cool if it's warm. iOS throttles hard when it's hot.",
               "Restart the phone if it persists.",
             ],
           },
@@ -372,7 +372,7 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
           {
             kind: "list",
             items: [
-              "Tap the picture once to bring the controls back — they hide themselves after a few seconds.",
+              "Tap the picture once to bring the controls back. They hide themselves after a few seconds.",
               "Lift all fingers off the filmstrip and try again with one.",
               "Close the player and reopen the Tape if it stays unresponsive.",
               "Blank thumbnails usually just need a moment to load on a long Tape.",
@@ -382,7 +382,7 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
       },
     ],
     tips: [
-      "If one particular Tape misbehaves and the others are fine, tell us its length and quality — that's exactly what we need to reproduce it.",
+      "If one particular Tape misbehaves and the others are fine, tell us its length and quality. That's exactly what we need to reproduce it.",
     ],
     faqs: [
       {
@@ -422,7 +422,7 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
       "cancelled",
     ],
     overview: [
-      "Exporting is the most demanding thing Videflo does, so it's the most sensitive to a full or busy phone. The good news is that a failed export never harms your recordings — the originals are untouched whatever happens, and nothing is left behind.",
+      "Exporting is the most demanding thing Videflo does, so it's the most sensitive to a full or busy phone. The good news is that a failed export never harms your recordings. The originals are untouched whatever happens, and nothing is left behind.",
     ],
     sections: [
       {
@@ -435,7 +435,7 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
               {
                 title: "Free up storage. This is the usual culprit.",
                 detail:
-                  "Exporting needs room for a whole new file roughly the size of the Tape. Videflo checks before it starts, but iOS keeps some space in reserve — free a few gigabytes more than you think you need. **Remove from This iPhone** on other backed-up Tapes is the quickest way.",
+                  "Exporting needs room for a whole new file roughly the size of the Tape. Videflo checks before it starts, but iOS keeps some space in reserve, so free a few gigabytes more than you think you need. **Remove from This iPhone** on other backed-up Tapes is the quickest way.",
               },
               {
                 title: "Turn off Low Power Mode.",
@@ -450,7 +450,7 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
                 title:
                   "If the Tape is streaming from Videflo Cloud, check your connection.",
                 detail:
-                  "A Tape marked **In Videflo Cloud** streams while it exports, so a dropped connection stops the export. Wi-Fi is best — or **Download to This iPhone** first.",
+                  "A Tape marked **In Videflo Cloud** streams while it exports, so a dropped connection stops the export. Wi-Fi is best, or **Download to This iPhone** first.",
               },
               {
                 title: "Check **Manage Recordings** for anything unavailable.",
@@ -476,7 +476,7 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
             kind: "list",
             items: [
               "Turn on **Settings → Videflo → Photos** so Videflo can add to your library.",
-              "Make sure there's free space — the exported copy needs room of its own.",
+              "Make sure there's free space. The exported copy needs room of its own.",
               "If iCloud Photos is mid-sync and short of space, let it finish first.",
             ],
           },
@@ -489,7 +489,7 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
           {
             kind: "list",
             items: [
-              "Open the Photos app and look in **Recents** — it arrives with today's date, not the date it was filmed.",
+              "Open the Photos app and look in **Recents**. It arrives with today's date, not the date it was filmed.",
               "Check **Albums → Videos**.",
               "On a very large library, sort Recents so newest is first.",
             ],
@@ -516,7 +516,7 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
       {
         question: "Can I export while doing something else in the app?",
         answer: [
-          "No — exporting needs Videflo on screen. Start it, leave the phone alone, and it tells you when the video is in Photos.",
+          "No. Exporting needs Videflo on screen. Start it, leave the phone alone, and it tells you when the video is in Photos.",
         ],
       },
       {
@@ -564,7 +564,7 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
             steps: [
               {
                 title: "Tap **Restore Purchases** and let it finish.",
-                detail: "Once — repeated taps don't help.",
+                detail: "Once. Repeated taps don't help.",
               },
               {
                 title: "Check which Apple Account the phone is signed in to.",
@@ -600,7 +600,7 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
           {
             kind: "list",
             items: [
-              "Check your connection — this screen needs one.",
+              "Check your connection. This screen needs one.",
               "Apple's own System Status page will say if the App Store is having trouble.",
               "Sign out of and back into **Settings → your name → Media & Purchases** if it persists.",
             ],
@@ -614,10 +614,10 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
           {
             kind: "list",
             items: [
-              "Check the payment method on your Apple Account is current — an expired card is the most common cause by a distance.",
+              "Check the payment method on your Apple Account is current. An expired card is the most common cause by a distance.",
               "Cancelling the password or Face ID prompt stops the purchase. Try again and let it complete.",
               "If your Apple Account has purchases restricted, that will block it too.",
-              "Apple sends any billing failure notice by email — worth a look.",
+              "Apple sends any billing failure notice by email, so it's worth a look.",
             ],
           },
         ],
@@ -632,7 +632,7 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
           },
           {
             kind: "text",
-            text: "Refunds are Apple's decision under Apple's policies — we're not able to issue one. If a charge was our mistake in some way, please tell us anyway so we can put the cause right.",
+            text: "Refunds are Apple's decision under Apple's policies, and we're not able to issue one. If a charge was our mistake in some way, please tell us anyway so we can put the cause right.",
           },
         ],
       },
@@ -655,7 +655,7 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
       {
         question: "I lost access mid-month. Why?",
         answer: [
-          "Usually a failed renewal — an expired card is the common cause. Apple will have emailed about it, and updating the payment method in your Apple Account restores things.",
+          "Usually a failed renewal. An expired card is the common cause. Apple will have emailed about it, and updating the payment method in your Apple Account restores things.",
         ],
       },
       {
@@ -667,7 +667,7 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
       {
         question: "Can you look up my purchase for me?",
         answer: [
-          "We can't — Apple handles the billing and we have no access to your purchase history. Your Apple Account holds the full record.",
+          "We can't. Apple handles the billing and we have no access to your purchase history. Your Apple Account holds the full record.",
         ],
       },
     ],
@@ -701,7 +701,7 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
           {
             kind: "list",
             items: [
-              "**Nothing happens, or it fails straight away.** Check you're online — signing in needs a connection the first time. Then check **Settings → your name** on the phone is signed in to your Apple Account.",
+              "**Nothing happens, or it fails straight away.** Check you're online, because signing in needs a connection the first time. Then check **Settings → your name** on the phone is signed in to your Apple Account.",
               "**Apple asks for a password.** That's your Apple Account password, not a Videflo one. Apple can reset it.",
               "**“Sign in with Apple” isn't offered.** It needs two-factor authentication on your Apple Account, which Apple requires for all new accounts.",
               "**You're signed in but it's the wrong account.** Sign out in **Settings → Profile → Account** and sign in again. Videflo follows the Apple Account you use, so two Apple Accounts are two Videflo accounts.",
@@ -733,7 +733,7 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
               {
                 title: "Open Videflo and leave it on screen for a minute.",
                 detail:
-                  "Uploads continue in the background, but iOS gives them more room while the app is open — especially for a long 4K recording.",
+                  "Uploads continue in the background, but iOS gives them more room while the app is open, especially for a long 4K recording.",
               },
               {
                 title: "Tap the Tape's card if it says it needs attention.",
@@ -752,7 +752,7 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
             kind: "list",
             items: [
               "Check you're online. A Tape marked **In Videflo Cloud** has no files on this phone and streams every time.",
-              "Give it a moment — a Tape with many recordings takes a few seconds to start.",
+              "Give it a moment. A Tape with many recordings takes a few seconds to start.",
               "If it keeps stalling, **Download to This iPhone** and watch it from the phone.",
               "If one recording is marked unavailable, the phone that made it never finished uploading it. See **Playback problems**.",
             ],
@@ -780,10 +780,10 @@ export const troubleshootingArticles: readonly HelpArticle[] = [
           {
             kind: "list",
             items: [
-              "**A Tape I was invited to isn't in my library.** Accept the invitation first — in the bell, or under **Settings → Profile → Tape Invitations** — then pull the Tapes tab down to refresh.",
+              "**A Tape I was invited to isn't in my library.** Accept the invitation first, in the bell or under **Settings → Profile → Tape Invitations**, then pull the Tapes tab down to refresh.",
               "**Someone joined but the Tape still looks personal to me.** Open the Tape, or pull to refresh. Videflo updates the Tape's status when it next checks, not the instant they accept.",
               "**I can't see their recording.** Their upload has to finish from their phone. Ask them to check their backup switches and connection.",
-              "**I can't add a recording.** The owner may have chosen **Stop Accepting Recordings**, or your own backup is off — a recording made with backup off stays on your phone.",
+              "**I can't add a recording.** The owner may have chosen **Stop Accepting Recordings**, or your own backup is off, and a recording made with backup off stays on your phone.",
             ],
           },
         ],

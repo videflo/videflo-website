@@ -5,7 +5,7 @@ export const collectionArticles: readonly HelpArticle[] = [
     slug: "collections",
     title: "Collections: grouping Tapes that belong together",
     description:
-      "Optional folders for your Tapes — how to make one, fill it, order it, and remove it.",
+      "Optional folders for your Tapes: how to make one, fill it, order it, and remove it.",
     category: "collections",
     keywords: [
       "folder",
@@ -18,7 +18,7 @@ export const collectionArticles: readonly HelpArticle[] = [
       "move",
     ],
     overview: [
-      "A Collection is a group of Tapes that belong together — “2026”, “The Grandchildren”, “Every Holiday We've Ever Taken”. It's the one organising tool in Videflo, and it's entirely optional.",
+      "A Collection is a group of Tapes that belong together, like “2026”, “The Grandchildren”, “Every Holiday We've Ever Taken”. It's the one organising tool in Videflo, and it's entirely optional.",
       "Collections never move or copy anything. Every Tape stays exactly where it was in your main library; a Collection is simply another way of looking at some of them.",
     ],
     sections: [
@@ -52,7 +52,7 @@ export const collectionArticles: readonly HelpArticle[] = [
         blocks: [
           {
             kind: "text",
-            text: "This is the rule worth knowing. Adding a Tape that's already in another Collection **moves** it — the menu says **Move to Collection** rather than **Add** when that's what would happen, so it's never a surprise.",
+            text: "This is the rule worth knowing. Adding a Tape that's already in another Collection **moves** it. The menu says **Move to Collection** rather than **Add** when that's what would happen, so it's never a surprise.",
           },
           {
             kind: "text",
@@ -73,7 +73,7 @@ export const collectionArticles: readonly HelpArticle[] = [
         blocks: [
           {
             kind: "text",
-            text: "Tapes inside a Collection can be arranged by hand, which is unusual in Videflo and deliberately so — a Collection is *your* arrangement rather than a record of what happened.",
+            text: "Tapes inside a Collection can be arranged by hand, which is unusual in Videflo and deliberately so. A Collection is *your* arrangement rather than a record of what happened.",
           },
           {
             kind: "steps",
@@ -113,32 +113,32 @@ export const collectionArticles: readonly HelpArticle[] = [
     tips: [
       "Years make excellent Collections. “2026” gathers a whole family's worth of Tapes with no thought required.",
       "So do people. A Collection per grandchild, filled over a decade, is a lovely thing to hand over one day.",
-      "A Collection with no cover of its own borrows the first Tape's picture — so reordering also changes how the Collection looks.",
+      "A Collection with no cover of its own borrows the first Tape's picture, so reordering also changes how the Collection looks.",
       "You can give a Collection its own cover photo, exactly as you would a Tape.",
     ],
     pitfalls: [
       {
         mistake:
           "Adding a Tape to a second Collection and wondering why it left the first.",
-        fix: "That's the rule — one Collection per Tape. If you need it in two places, the Tape has to pick one.",
+        fix: "That's the rule: one Collection per Tape. If you need it in two places, the Tape has to pick one.",
       },
       {
         mistake:
           "Deleting a Collection because you're worried it's duplicating storage.",
-        fix: "It isn't. A Collection holds no video at all — it's a list of which Tapes belong together.",
+        fix: "It isn't. A Collection holds no video at all. It's a list of which Tapes belong together.",
       },
     ],
     troubleshooting: [
       {
         problem: "Reorder isn't in the menu.",
         solutions: [
-          "There need to be at least two Tapes in the Collection — one Tape has nothing to reorder.",
+          "There need to be at least two Tapes in the Collection. One Tape has nothing to reorder.",
         ],
       },
       {
         problem: "A Tape I added isn't showing in the Collection.",
         solutions: [
-          "Check you added it rather than opening it — tapping a Tape in the add list is what adds it.",
+          "Check you added it rather than opening it. Tapping a Tape in the add list is what adds it.",
           "Search the Collections tab for the Collection name to be sure you're looking at the right one.",
         ],
       },

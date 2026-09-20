@@ -20,7 +20,7 @@ export const tapeArticles: readonly HelpArticle[] = [
       "pin",
     ],
     overview: [
-      "Everything you can do to a Tape lives in one menu. Press and hold a Tape — on Home, in the Tapes tab, or inside a Collection — and it appears.",
+      "Everything you can do to a Tape lives in one menu. Press and hold a Tape, on Home, in the Tapes tab, or inside a Collection, and it appears.",
       "One of those actions permanently deletes video, from your phone and from Videflo Cloud together. It's marked clearly here, and the app asks you to confirm it.",
     ],
     sections: [
@@ -49,7 +49,7 @@ export const tapeArticles: readonly HelpArticle[] = [
               {
                 term: "Invite to Tape / Manage Invites / Manage Shared Tape",
                 description:
-                  "The same row, named for where the Tape is: personal, invitations out, or shared. It opens the people screen — see **Shared Tapes**.",
+                  "The same row, named for where the Tape is: personal, invitations out, or shared. It opens the people screen. See **Shared Tapes**.",
               },
               {
                 term: "Add to Collection / Move to Collection / Remove from Collection",
@@ -73,7 +73,7 @@ export const tapeArticles: readonly HelpArticle[] = [
               {
                 term: "Delete Tape",
                 description:
-                  "Permanently removes the Tape and all its video — from your phone and from Videflo Cloud. On a Tape somebody shared with you, this row is **Leave Tape** instead.",
+                  "Permanently removes the Tape and all its video, from your phone and from Videflo Cloud. On a Tape somebody shared with you, this row is **Leave Tape** instead.",
               },
             ],
           },
@@ -93,7 +93,7 @@ export const tapeArticles: readonly HelpArticle[] = [
           },
           {
             kind: "text",
-            text: "Rename as often as you like — it only changes the label. The recordings, the order, the quality and the cover are all untouched, and the new name reaches Videflo Cloud and every member of a Shared Tape. You can also rename from the three-dot menu while watching a Tape.",
+            text: "Rename as often as you like. It only changes the label. The recordings, the order, the quality and the cover are all untouched, and the new name reaches Videflo Cloud and every member of a Shared Tape. You can also rename from the three-dot menu while watching a Tape.",
           },
         ],
       },
@@ -105,8 +105,8 @@ export const tapeArticles: readonly HelpArticle[] = [
             kind: "warning",
             title: "This cannot be undone, anywhere",
             text: [
-              "Deleting a Tape deletes every recording inside it from your phone **and** from Videflo Cloud, in one step. There's no bin to fish it out of, and on a Shared Tape it disappears for every member — including recordings they added.",
-              "If there's any chance you'll want it, export it first — that leaves a copy in your Photos library that survives the deletion.",
+              "Deleting a Tape deletes every recording inside it from your phone **and** from Videflo Cloud, in one step. There's no bin to fish it out of, and on a Shared Tape it disappears for every member, including recordings they added.",
+              "If there's any chance you'll want it, export it first. That leaves a copy in your Photos library that survives the deletion.",
             ],
           },
           {
@@ -126,7 +126,7 @@ export const tapeArticles: readonly HelpArticle[] = [
             kind: "note",
             title: "Videflo needs to reach Videflo Cloud to delete",
             text: [
-              "Because deletion removes the cloud copy too, a Tape that has ever been backed up can't be deleted while you're offline or signed out. Videflo refuses rather than leaving a copy you can't see — try again once you're connected.",
+              "Because deletion removes the cloud copy too, a Tape that has ever been backed up can't be deleted while you're offline or signed out. Videflo refuses rather than leaving a copy you can't see. Try again once you're connected.",
             ],
           },
         ],
@@ -148,7 +148,7 @@ export const tapeArticles: readonly HelpArticle[] = [
     ],
     tips: [
       "Tapes are listed with whatever you filmed into most recently at the top, so the Tape you're actively growing is always easy to find.",
-      "Short of space on the phone? Don't delete — use **Remove from This iPhone** on a Tape that's already backed up. It stays in your library and plays by streaming.",
+      "Short of space on the phone? Don't delete. Use **Remove from This iPhone** on a Tape that's already backed up. It stays in your library and plays by streaming.",
       "Renaming a Tape doesn't rename anything you've already exported to Photos.",
     ],
     pitfalls: [
@@ -160,7 +160,7 @@ export const tapeArticles: readonly HelpArticle[] = [
       {
         mistake:
           "Assuming a deleted Tape is in the Photos app's Recently Deleted.",
-        fix: "It isn't — Videflo's recordings never lived in Photos unless you exported them. Recently Deleted only holds things that were in your photo library.",
+        fix: "It isn't. Videflo's recordings never lived in Photos unless you exported them. Recently Deleted only holds things that were in your photo library.",
       },
     ],
     troubleshooting: [
@@ -173,7 +173,7 @@ export const tapeArticles: readonly HelpArticle[] = [
       {
         problem: "Delete Tape is greyed out or says it can't delete right now.",
         solutions: [
-          "Check you're online and signed in — a Tape that has a copy in Videflo Cloud can only be deleted while Videflo can reach it.",
+          "Check you're online and signed in. A Tape that has a copy in Videflo Cloud can only be deleted while Videflo can reach it.",
           "Wait for any upload of that Tape to finish, then try again.",
         ],
       },
@@ -195,7 +195,7 @@ export const tapeArticles: readonly HelpArticle[] = [
       {
         question: "Can I sort my Tapes alphabetically?",
         answer: [
-          "Not today — the library is ordered by recent activity. Search is the quickest way to find a specific one, the filters narrow it to Shared or cloud-only Tapes, and Collections are the way to group them.",
+          "Not today. The library is ordered by recent activity. Search is the quickest way to find a specific one, the filters narrow it to Shared or cloud-only Tapes, and Collections are the way to group them.",
         ],
       },
     ],
@@ -278,8 +278,8 @@ export const tapeArticles: readonly HelpArticle[] = [
             kind: "note",
             title: "Deleting one recording, and Videflo Cloud",
             text: [
-              "On a **personal** Tape, deleting a recording removes it from this phone. Its copy in Videflo Cloud isn't removed today — it still counts toward your allowance, and it would be rebuilt if the Tape came back to a new phone. To remove a memory everywhere, delete the whole Tape.",
-              "On a **Shared** Tape, only the owner can delete a recording, and doing so removes it from Videflo Cloud for everyone — including a recording somebody else added. Renaming stays with the person who filmed it.",
+              "On a **personal** Tape, deleting a recording removes it from this phone. Its copy in Videflo Cloud isn't removed today. It still counts toward your allowance, and it would be rebuilt if the Tape came back to a new phone. To remove a memory everywhere, delete the whole Tape.",
+              "On a **Shared** Tape, only the owner can delete a recording, and doing so removes it from Videflo Cloud for everyone, including a recording somebody else added. Renaming stays with the person who filmed it.",
             ],
           },
         ],
@@ -301,7 +301,7 @@ export const tapeArticles: readonly HelpArticle[] = [
               {
                 title: "The Tape closes the gap by itself.",
                 detail:
-                  "The remaining recordings still play as one continuous piece — there's nothing to fix afterwards.",
+                  "The remaining recordings still play as one continuous piece. There's nothing to fix afterwards.",
               },
             ],
           },
@@ -314,40 +314,40 @@ export const tapeArticles: readonly HelpArticle[] = [
           },
           {
             kind: "text",
-            text: "To remove only the most recent recording — the classic “that last bit was pointless” — open this list, scroll to the bottom, and delete the final entry. Everything before it is untouched.",
+            text: "To remove only the most recent recording (the classic “that last bit was pointless”), open this list, scroll to the bottom, and delete the final entry. Everything before it is untouched.",
           },
         ],
       },
     ],
     tips: [
       "Play a recording before deleting it. Row four of a long list is rarely what you remember it being.",
-      "Naming recordings is optional and most people never do it — but on a Tape that's grown over a year, “Christmas morning” beats “Recording 11”.",
-      "Want a recording without the slow start? Videflo doesn't trim, but you can export it to Photos and trim the copy there — the original in the Tape stays whole.",
+      "Naming recordings is optional and most people never do it. But on a Tape that's grown over a year, “Christmas morning” beats “Recording 11”.",
+      "Want a recording without the slow start? Videflo doesn't trim, but you can export it to Photos and trim the copy there. The original in the Tape stays whole.",
     ],
     pitfalls: [
       {
         mistake:
           "Deleting several recordings to free up space without checking what they were.",
-        fix: "Play each one first. Deleted footage is gone for good — and if space is the problem, **Remove from This iPhone** on the whole Tape frees far more without deleting anything.",
+        fix: "Play each one first. Deleted footage is gone for good. If space is the problem, **Remove from This iPhone** on the whole Tape frees far more without deleting anything.",
       },
       {
         mistake:
           "Expecting to be able to drag recordings into a different order.",
-        fix: "A Tape keeps the order things happened in, on purpose. If a recording is in the wrong Tape, there's no way to move it — the order and the membership are both fixed at recording time.",
+        fix: "A Tape keeps the order things happened in, on purpose. If a recording is in the wrong Tape, there's no way to move it. The order and the membership are both fixed at recording time.",
       },
     ],
     troubleshooting: [
       {
         problem: "A recording shows as unavailable or won't play.",
         solutions: [
-          "Its file isn't on this phone and Videflo Cloud doesn't have a finished copy either — usually because storage ran out mid-save, or an upload never completed before the phone was replaced.",
+          "Its file isn't on this phone and Videflo Cloud doesn't have a finished copy either, usually because storage ran out mid-save, or an upload never completed before the phone was replaced.",
           "The rest of the Tape still plays. Deleting the broken entry tidies the list.",
         ],
       },
       {
         problem: "The Tape's total length looks wrong after deleting.",
         solutions: [
-          "That's expected — the total is the sum of what's left. Reopen the Tape and it will be recalculated.",
+          "That's expected. The total is the sum of what's left. Reopen the Tape and it will be recalculated.",
         ],
       },
     ],
@@ -362,13 +362,13 @@ export const tapeArticles: readonly HelpArticle[] = [
       {
         question: "Does deleting a recording free up space straight away?",
         answer: [
-          "On your phone, yes — the video file is removed at that point. On a personal Tape the copy in Videflo Cloud stays until you delete the Tape, so your allowance doesn't change; on a Shared Tape an owner's delete frees the cloud copy too.",
+          "On your phone, yes. The video file is removed at that point. On a personal Tape the copy in Videflo Cloud stays until you delete the Tape, so your allowance doesn't change; on a Shared Tape an owner's delete frees the cloud copy too.",
         ],
       },
       {
         question: "Can I hide or trim a recording instead of deleting it?",
         answer: [
-          "No. A Tape plays everything it contains exactly as it was recorded — Videflo has no trimming or editing. The only way to leave something out is to delete it.",
+          "No. A Tape plays everything it contains exactly as it was recorded. Videflo has no trimming or editing. The only way to leave something out is to delete it.",
         ],
       },
     ],
@@ -395,7 +395,7 @@ export const tapeArticles: readonly HelpArticle[] = [
       "remove cover",
     ],
     overview: [
-      "By default, a Tape shows a frame from its own footage. That's usually fine — but sometimes there's a photograph that captures the day far better, and you can use that instead.",
+      "By default, a Tape shows a frame from its own footage. That's usually fine, but sometimes there's a photograph that captures the day far better, and you can use that instead.",
       "It works the same way for Collections, and it changes nothing about the video.",
     ],
     sections: [
@@ -417,7 +417,7 @@ export const tapeArticles: readonly HelpArticle[] = [
               {
                 title: "Pick a picture in the Photos picker that appears.",
                 detail:
-                  "This is Apple's own picker. Videflo is handed only the image you tap and never sees the rest of your library — which is why it doesn't ask for photo access.",
+                  "This is Apple's own picker. Videflo is handed only the image you tap and never sees the rest of your library, which is why it doesn't ask for photo access.",
               },
               {
                 title: "The cover updates everywhere that Tape appears.",
@@ -438,7 +438,7 @@ export const tapeArticles: readonly HelpArticle[] = [
           },
           {
             kind: "text",
-            text: "Your original photograph in the Photos app is never touched — Videflo only ever reads it, and only once.",
+            text: "Your original photograph in the Photos app is never touched. Videflo only ever reads it, and only once.",
           },
         ],
       },
@@ -455,7 +455,7 @@ export const tapeArticles: readonly HelpArticle[] = [
     ],
     tips: [
       "Covers are shown as a wide rectangle, so a photograph with the subject in the middle works best. Very tall or very wide pictures are cropped to the centre.",
-      "Videflo stores a resized copy — usually well under a hundred kilobytes — rather than the full-resolution original, so covers cost almost nothing in storage.",
+      "Videflo stores a resized copy, usually well under a hundred kilobytes, rather than the full-resolution original, so covers cost almost nothing in storage.",
       "Deleting the photograph from your Photos app later won't affect the cover, because Videflo has its own copy.",
     ],
     pitfalls: [
@@ -526,7 +526,7 @@ export const tapeArticles: readonly HelpArticle[] = [
               {
                 title: "Start typing.",
                 detail:
-                  "Results narrow with every letter — there's no button to press.",
+                  "Results narrow with every letter. There's no button to press.",
               },
               {
                 title: "Tap the **✕** to clear, or **Cancel** to close search.",
@@ -554,7 +554,7 @@ export const tapeArticles: readonly HelpArticle[] = [
               {
                 term: "Cloud",
                 description:
-                  "Tapes stored only in Videflo Cloud — removed from this phone, or not yet downloaded on a new one.",
+                  "Tapes stored only in Videflo Cloud, either removed from this phone or not yet downloaded on a new one.",
               },
               {
                 term: "Shared",
@@ -575,21 +575,21 @@ export const tapeArticles: readonly HelpArticle[] = [
           },
           {
             kind: "text",
-            text: "Videflo can't search inside the video — it doesn't listen to your recordings or analyse what's in the picture, and that's very much by design.",
+            text: "Videflo can't search inside the video. It doesn't listen to your recordings or analyse what's in the picture, and that's very much by design.",
           },
         ],
       },
     ],
     tips: [
       "Search matches anywhere in a name, so typing “birth” finds “Emma's Birthday”.",
-      "Include the year in the name of anything annual — “Christmas 2026” is far easier to find in five years than “Christmas”.",
+      "Include the year in the name of anything annual. “Christmas 2026” is far easier to find in five years than “Christmas”.",
       "Nothing found? Check whether you're searching the Tapes tab when the thing you want is a Collection.",
     ],
     faqs: [
       {
         question: "Can I search by date?",
         answer: [
-          "Not directly. Tapes are listed with the most recently filmed at the top, so recent things are always near the front — and putting a date in the name makes it searchable.",
+          "Not directly. Tapes are listed with the most recently filmed at the top, so recent things are always near the front, and putting a date in the name makes it searchable.",
         ],
       },
       {

@@ -57,7 +57,7 @@ export function PrivacyPromise() {
               {[
                 {
                   title: "Private unless you share",
-                  body: "A Tape is yours alone until you invite someone. Sharing is by name or by a link you send — there’s no feed, no followers, and nothing is ever public.",
+                  body: "A Tape is yours alone until you invite someone. Sharing is by name or by a link you send. There’s no feed, no followers, and nothing is ever public.",
                 },
                 {
                   title: "Sign in with Apple, nothing else",

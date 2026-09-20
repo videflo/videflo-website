@@ -10,7 +10,7 @@ import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata({
   title: "Support",
-  description: `Help with ${site.name} — your account, subscriptions, Videflo Cloud, Shared Tapes, exporting, permissions, and how to reach a person.`,
+  description: `Help with ${site.name}: your account, subscriptions, Videflo Cloud, Shared Tapes, exporting, permissions, and how to reach a person.`,
   path: "/support",
 });
 
@@ -157,7 +157,7 @@ export default function SupportPage() {
                   for your Apple Account password, and Apple can reset it.
                 </P>
                 <P>
-                  On first sign-in {site.name} asks for a Profile — a display
+                  On first sign-in {site.name} asks for a Profile: a display
                   name, a username, and a photo or one of the built-in avatars.
                   The username can&rsquo;t be changed once it&rsquo;s claimed;
                   everything else can be edited in{" "}
@@ -175,7 +175,7 @@ export default function SupportPage() {
                     and every Tape you own in {site.name} Cloud, and it cannot
                     be undone. Recordings you added to someone else&rsquo;s
                     Shared Tape stay in that Tape. It does not cancel your
-                    subscription — do that in your Apple Account.
+                    subscription; do that in your Apple Account.
                   </LI>
                 </UL>
               </article>
@@ -193,7 +193,7 @@ export default function SupportPage() {
                   Larger capacities are available from Settings → {site.name}{" "}
                   Cloud → Manage Storage. It is purchased through the Apple App
                   Store and billed to your Apple Account. Apple handles the
-                  payment, the receipts, and the renewals — we never see your
+                  payment, the receipts, and the renewals. We never see your
                   card details.
                 </P>
                 <H3>Where to manage or cancel it</H3>
@@ -211,7 +211,7 @@ export default function SupportPage() {
                     end of the period you have already paid for.
                   </LI>
                   <LI>
-                    Deleting the app does not cancel a subscription — it has to
+                    Deleting the app does not cancel a subscription. It has to
                     be cancelled in your Apple Account.
                   </LI>
                   <LI>
@@ -243,7 +243,7 @@ export default function SupportPage() {
                 <H3>Refunds</H3>
                 <P>
                   Because Apple bills for App Store purchases, refunds are
-                  handled by Apple under Apple&rsquo;s policies — we
+                  handled by Apple under Apple&rsquo;s policies, so we
                   aren&rsquo;t able to issue one ourselves. Use Apple&rsquo;s
                   &ldquo;Report a Problem&rdquo; process or contact Apple
                   Support. If something in {site.name} is broken, please tell us
@@ -261,8 +261,8 @@ export default function SupportPage() {
                 </h2>
                 <P>
                   If you reinstall {site.name}, or set up a new phone, your
-                  subscription can be restored — it belongs to your Apple
-                  Account rather than to the app.
+                  subscription can be restored. It belongs to your Apple Account
+                  rather than to the app.
                 </P>
                 <UL>
                   <LI>
@@ -288,7 +288,7 @@ export default function SupportPage() {
                   <p>
                     Restoring a purchase brings back access. Your Tapes come
                     back separately, from {site.name} Cloud, as soon as you sign
-                    in to the same {site.name} account — they appear in your
+                    in to the same {site.name} account. They appear in your
                     library and play by streaming, and{" "}
                     <strong className="text-ink">
                       Download to This iPhone
@@ -322,8 +322,8 @@ export default function SupportPage() {
                 <UL>
                   <LI>
                     <strong className="text-ink">A black preview.</strong>{" "}
-                    Camera access is off, or another app is using the camera —
-                    close it and reopen {site.name}.
+                    Camera access is off, or another app is using the camera.
+                    Close it and reopen {site.name}.
                   </LI>
                   <LI>
                     <strong className="text-ink">Silent recordings.</strong>{" "}
@@ -356,7 +356,7 @@ export default function SupportPage() {
                 <P>
                   When you pick a cover photo or choose videos to add, iOS shows
                   you its own picker and hands {site.name} only the items you
-                  chose — the app does not browse your library, which is why no
+                  chose. The app does not browse your library, which is why no
                   permission prompt appears. Saving a video to Photos asks for
                   permission to <em>add</em> to your library, which you can
                   review in{" "}
@@ -390,12 +390,12 @@ export default function SupportPage() {
                     at any time.
                   </LI>
                   <LI>
-                    A Tape stored only in {site.name} Cloud exports too — it
+                    A Tape stored only in {site.name} Cloud exports too. It
                     streams while it renders, without downloading first.
                   </LI>
                   <LI>
                     Exporting never alters your original recordings and leaves
-                    nothing behind in {site.name} — it makes one new copy in
+                    nothing behind in {site.name}. It makes one new copy in
                     Photos.
                   </LI>
                   <LI>
@@ -422,7 +422,7 @@ export default function SupportPage() {
                   <strong className="text-ink">
                     Back Up to {site.name} Cloud
                   </strong>{" "}
-                  is on — it is on by default — each recording is also copied to{" "}
+                  is on (it is on by default), each recording is also copied to{" "}
                   {site.name} Cloud, where it survives a lost or replaced phone.
                   Your original files are never changed. Both switches live in
                   Settings → {site.name} Cloud → Backup Settings, and the second
@@ -461,12 +461,12 @@ export default function SupportPage() {
                   <p>
                     A recording is protected once its upload has completed. With
                     backup switched off, or before an upload finishes, it exists
-                    on your phone alone — so keep a phone backup switched on as
+                    on your phone alone, so keep a phone backup switched on as
                     well, and export the Tapes you could not replace. And if
                     your subscription lapses, your Tapes stay on your phone, and{" "}
                     {site.name} does not currently remove content from{" "}
-                    {site.name} Cloud because a subscription has ended —
-                    subscribe again and everything is there.
+                    {site.name} Cloud because a subscription has ended.
+                    Subscribe again and everything is there.
                   </p>
                 </Callout>
               </article>
@@ -503,7 +503,7 @@ export default function SupportPage() {
                   </LI>
                   <LI>
                     A Friends &amp; Family connection on its own gives nobody
-                    access to your Tapes — it only makes inviting quicker.
+                    access to your Tapes. It only makes inviting quicker.
                   </LI>
                 </UL>
               </article>
@@ -527,8 +527,8 @@ export default function SupportPage() {
                 <P>
                   A Tape plays every recording it holds, in order. If one seems
                   to be missing, open the Tape&rsquo;s recordings list to see
-                  what it contains. If a recording was interrupted — a call, a
-                  crash, or the battery running out — {site.name} tries to
+                  what it contains. If a recording was interrupted by a call, a
+                  crash, or the battery running out, {site.name} tries to
                   salvage the footage it had already captured the next time you
                   open the app.
                 </P>
@@ -577,7 +577,7 @@ export default function SupportPage() {
           </div>
           <p className="text-ink-muted mt-12 text-[1.0625rem] leading-relaxed">
             Didn&rsquo;t find it? Email <Mail address={contact.supportEmail} />{" "}
-            — or read the{" "}
+            or read the{" "}
             <Link
               href="/privacy"
               className="text-ink hover:text-gold-deep font-semibold underline decoration-1 underline-offset-4"

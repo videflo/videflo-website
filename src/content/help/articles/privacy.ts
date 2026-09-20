@@ -32,7 +32,7 @@ export const privacyArticles: readonly HelpArticle[] = [
             kind: "list",
             items: [
               "**On your phone**, in Videflo's own storage, protected by your passcode and the phone's built-in encryption like any other app's data.",
-              "**In Videflo Cloud**, once each recording's upload finishes — the copy that survives a lost phone and follows you to a new one. Uploads are encrypted in transit.",
+              "**In Videflo Cloud**, once each recording's upload finishes. This is the copy that survives a lost phone and follows you to a new one. Uploads are encrypted in transit.",
               "**In Photos**, only if you export one. From there it's an ordinary video and Videflo has nothing more to do with it.",
             ],
           },
@@ -59,7 +59,7 @@ export const privacyArticles: readonly HelpArticle[] = [
                   "The owner and every member who accepted an invitation. They can watch every recording in it and see who filmed each one.",
               },
               {
-                term: "Your Profile — name, username, picture",
+                term: "Your Profile: name, username, picture",
                 description:
                   "People who search for your exact username, your Friends & Family, the members of Tapes you share or join, and anyone you exchange a request or invitation with. There's no public directory.",
               },
@@ -85,22 +85,22 @@ export const privacyArticles: readonly HelpArticle[] = [
             kind: "definitions",
             items: [
               {
-                term: "Recordings and Tape details — to Videflo Cloud",
+                term: "Recordings and Tape details, to Videflo Cloud",
                 description:
                   "While Back Up to Videflo Cloud is on. Videflo Cloud runs on Supabase, the infrastructure provider behind your account, your Tape details and your recordings.",
               },
               {
-                term: "Subscription checks — to Apple, and to RevenueCat",
+                term: "Subscription checks, to Apple and to RevenueCat",
                 description:
                   "Videflo confirms your subscription with the App Store, and our subscription infrastructure provider, RevenueCat, records your App Store purchases against your Videflo account so your Videflo Cloud capacity follows you to a new phone. Neither sees your card details; Apple takes the payment.",
               },
               {
-                term: "A device token — to Apple, if you allow notifications",
+                term: "A device token, to Apple, if you allow notifications",
                 description:
                   "So that Videflo can send lock-screen notifications through Apple. The text of a notification never names a person or a Tape.",
               },
               {
-                term: "Exports — where you send them",
+                term: "Exports, to wherever you send them",
                 description:
                   "An exported video goes into your own Photos library. Anything after that is your choice.",
               },
@@ -128,7 +128,7 @@ export const privacyArticles: readonly HelpArticle[] = [
             kind: "list",
             items: [
               "**Camera and microphone** are used only while you're recording, on the recording screen. Leave the screen and both are shut down.",
-              "**Photos** is requested as *add only* — permission to save a video into your library, not to look through it.",
+              "**Photos** is requested as *add only*: permission to save a video into your library, not to look through it.",
               "**Choosing a cover photo or videos to add asks for nothing.** iOS shows its own picker and hands the app only what you tapped. It never sees the rest.",
               "**Notifications** are asked once, after you sign in, and are optional. The bell in the app works either way.",
             ],
@@ -158,14 +158,14 @@ export const privacyArticles: readonly HelpArticle[] = [
     ],
     tips: [
       "The green dot in the corner of the screen is iOS telling you the camera is active. It's a system indicator, so it's true of every app, and it's worth trusting.",
-      "Videflo works offline. Recording, and watching any Tape that's on your phone, need no connection at all — backup simply waits.",
-      "If you're handing your phone to someone, remember the Tapes are in the app rather than in Photos — so anyone with your unlocked phone can open them. Sign out first if that matters.",
+      "Videflo works offline. Recording, and watching any Tape that's on your phone, need no connection at all. Backup simply waits.",
+      "If you're handing your phone to someone, remember the Tapes are in the app rather than in Photos, so anyone with your unlocked phone can open them. Sign out first if that matters.",
     ],
     faqs: [
       {
         question: "Can Videflo see my videos?",
         answer: [
-          "Your recordings are stored in Videflo Cloud so they can be protected and played back to you and the people you share with. Nobody browses them, nothing analyses them, and access is enforced per account on the server — a personal Tape is reachable only by your account, a Shared Tape only by its members.",
+          "Your recordings are stored in Videflo Cloud so they can be protected and played back to you and the people you share with. Nobody browses them, nothing analyses them, and access is enforced per account on the server: a personal Tape is reachable only by your account, a Shared Tape only by its members.",
         ],
       },
       {

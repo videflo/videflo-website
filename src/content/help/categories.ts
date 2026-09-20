@@ -63,7 +63,7 @@ export const helpCategories: readonly HelpCategory[] = [
     id: "subscription",
     title: "Subscription",
     description:
-      "The plan, storage capacities, restoring a purchase, and cancelling — all through Apple.",
+      "The plan, storage capacities, restoring a purchase, and cancelling, all through Apple.",
   },
   {
     id: "privacy",

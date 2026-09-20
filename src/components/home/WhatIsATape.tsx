@@ -8,7 +8,7 @@ import { TapeFlow, type FlowStep } from "@/components/visuals/TapeFlow";
 const steps: readonly FlowStep[] = [
   {
     title: "Create a Tape",
-    body: "Name it for a person, a season, a trip, a celebration — whatever this memory is.",
+    body: "Name it for a person, a season, a trip, a celebration, or whatever this memory is.",
   },
   {
     title: "Record a moment",
@@ -66,7 +66,7 @@ export function WhatIsATape() {
             </div>
             <figcaption className="text-ink-muted mt-5 max-w-2xl text-[0.9375rem] leading-relaxed">
               And you&rsquo;re never limited to one. Keep a Tape for each child,
-              each holiday, each season — as many as you have memories worth
+              each holiday, each season, as many as you have memories worth
               keeping.
             </figcaption>
           </figure>

@@ -144,7 +144,7 @@ export const termsSections: readonly LegalSection[] = [
           permission.
         </P>
         <P>
-          Your Profile — your display name, username and photo or avatar — is
+          Your Profile (your display name, username and photo or avatar) is
           shown to other {site.name} users you interact with. You must not use a
           name, username or picture that impersonates somebody else, that you do
           not have the right to use, or that is offensive or unlawful. Usernames
@@ -152,7 +152,7 @@ export const termsSections: readonly LegalSection[] = [
         </P>
         <P>
           You can sign out at any time, and you can permanently delete your
-          account from within the app — see{" "}
+          account from within the app; see{" "}
           <A href="/terms#termination">Ending your account</A>.
         </P>
       </>
@@ -180,7 +180,7 @@ export const termsSections: readonly LegalSection[] = [
           </LI>
           <LI>
             keeping your own copies of anything you cannot afford to lose.{" "}
-            {site.name} Cloud is a protective copy, not a guarantee — see{" "}
+            {site.name} Cloud is a protective copy, not a guarantee; see{" "}
             <A href="/terms#videflo-cloud">{site.name} Cloud</A>.
           </LI>
         </UL>
@@ -202,7 +202,7 @@ export const termsSections: readonly LegalSection[] = [
           Content. You grant {legal.entityName} a worldwide, non-exclusive,
           royalty-free licence to store, copy, transmit, stream, display and
           otherwise process your Content solely as necessary to operate the
-          Service for you and for the people you choose to share with — for
+          Service for you and for the people you choose to share with, for
           example to keep a copy in {site.name} Cloud, to play a Tape back to
           you, to render an export you request, and to show a Shared Tape to its
           members. This licence exists only for that purpose, does not let us
@@ -241,8 +241,8 @@ export const termsSections: readonly LegalSection[] = [
           else’s Shared Tape count against their allowance, not yours.
         </P>
         <P>
-          If your account is over its allowance — for example after moving to a
-          smaller capacity — {site.name} keeps everything already stored and
+          If your account is over its allowance, for example after moving to a
+          smaller capacity, {site.name} keeps everything already stored and
           declines new uploads until you are within your allowance again. You
           will have at least {subscription.overAllowanceGraceDays} days to free
           up space or choose a larger capacity. {site.name} does not currently
@@ -326,8 +326,8 @@ export const termsSections: readonly LegalSection[] = [
           </LI>
           <LI>
             If you leave the Tape or delete your account, recordings you added
-            stay in the Tape — they are part of that person’s memory — but are
-            no longer attributed to you. Only the Tape’s owner can remove a
+            stay in the Tape, because they are part of that person’s memory, but
+            are no longer attributed to you. Only the Tape’s owner can remove a
             recording from a Shared Tape, so if you do not want a recording of
             yours to remain, ask the owner to delete it.
           </LI>
@@ -440,7 +440,7 @@ export const termsSections: readonly LegalSection[] = [
         </P>
         <P>
           Deleting the {site.name} app, signing out, or deleting your{" "}
-          {site.name} account does not cancel a subscription — the subscription
+          {site.name} account does not cancel a subscription. The subscription
           is held in your Apple Account, so it must be cancelled there. The{" "}
           <A href="/support">Support</A> page explains where to find it.
         </P>
@@ -526,7 +526,7 @@ export const termsSections: readonly LegalSection[] = [
         </UL>
         <P>
           Recording laws differ sharply between countries and, in the United
-          States, between states — some require the consent of everyone being
+          States, between states. Some require the consent of everyone being
           recorded, particularly for audio. You are responsible for knowing and
           following the rules that apply where you are recording.
         </P>
@@ -573,7 +573,7 @@ export const termsSections: readonly LegalSection[] = [
       <P>
         These Terms are written in English. If we provide a translation, it is
         offered for convenience only, and the English version governs to the
-        extent the two conflict — except where the law of your country requires
+        extent the two conflict, except where the law of your country requires
         otherwise, in which case the version in your language governs.
       </P>
     ),
@@ -722,8 +722,8 @@ export const termsSections: readonly LegalSection[] = [
           of this section may not apply to you.
         </P>
         <P>
-          Nothing in this section limits liability that cannot be limited by law
-          — including liability for death or personal injury caused by
+          Nothing in this section limits liability that cannot be limited by
+          law, including liability for death or personal injury caused by
           negligence, for fraud, and for any consumer guarantee that applicable
           law says cannot be excluded, such as those under the Australian
           Consumer Law and New Zealand’s Consumer Guarantees Act 1993.
@@ -740,7 +740,7 @@ export const termsSections: readonly LegalSection[] = [
         officers, employees, and agents from any claims, damages, liabilities,
         costs, and expenses (including reasonable legal fees) arising out of
         your use of the Service, your Content, the Content you share or add to
-        somebody else’s Tape, or your breach of these Terms — including a claim
+        somebody else’s Tape, or your breach of these Terms, including a claim
         brought by someone who appears in a recording you made or shared.
       </P>
     ),
@@ -761,7 +761,7 @@ export const termsSections: readonly LegalSection[] = [
           {site.name} Cloud, including recordings other people added to your
           Shared Tapes. Recordings you added to somebody else’s Shared Tape
           remain in that Tape without attribution. Videos already on your device
-          are not deleted by this, and your subscription is not cancelled —
+          are not deleted by this, and your subscription is not cancelled;
           cancel it separately in your Apple Account settings. Deletion cannot
           be undone.
         </P>
@@ -769,10 +769,10 @@ export const termsSections: readonly LegalSection[] = [
           We may suspend or terminate your access to the Service if you
           materially breach these Terms, if we are required to do so by law, or
           if we discontinue the Service as described above. Sections that by
-          their nature should survive termination — including your content
-          licence to the extent Content remains in other people’s Shared Tapes,
-          intellectual property, disclaimers, limitation of liability, and
-          indemnification — continue to apply.
+          their nature should survive termination continue to apply, including
+          your content licence to the extent Content remains in other people’s
+          Shared Tapes, intellectual property, disclaimers, limitation of
+          liability, and indemnification.
         </P>
       </>
     ),
@@ -825,7 +825,7 @@ export const termsSections: readonly LegalSection[] = [
         <P>
           Any dispute that is not resolved informally will be brought
           exclusively in {legal.venue}, and you and {legal.entityName} each
-          consent to the personal jurisdiction of those courts —{" "}
+          consent to the personal jurisdiction of those courts,{" "}
           <strong className="text-ink">
             except where the paragraph below gives you a different right.
           </strong>
@@ -836,7 +836,7 @@ export const termsSections: readonly LegalSection[] = [
             If you are a consumer, nothing above prevents you from bringing
             proceedings in the courts of the country where you live, or from
             relying on any mandatory consumer-protection law of that country.
-            You may also complain to your local consumer-protection regulator —
+            You may also complain to your local consumer-protection regulator,
             for example the ACCC in Australia, the Commerce Commission in New
             Zealand, or your provincial consumer affairs office in Canada. We do
             not require you to arbitrate, and these Terms contain no

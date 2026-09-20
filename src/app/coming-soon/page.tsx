@@ -13,7 +13,7 @@ import { ComingSoon } from "@/components/gate/ComingSoon";
  * fields would let the convention back in.
  */
 export const metadata: Metadata = {
-  title: "Videflo — Coming Soon",
+  title: "Videflo | Coming Soon",
   description: "Videflo is coming soon.",
   robots: {
     index: false,

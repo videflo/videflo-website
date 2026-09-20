@@ -17,7 +17,7 @@ import { pageMetadata } from "@/lib/metadata";
 export const metadata = pageMetadata({
   title: "Help Center",
   description:
-    "Everything you need to capture, organize, and relive life’s memories with Videflo — guides for recording, Tapes, Shared Tapes, Videflo Cloud, playback, exporting, and subscriptions.",
+    "Everything you need to capture, organize, and relive life’s memories with Videflo: guides for recording, Tapes, Shared Tapes, Videflo Cloud, playback, exporting, and subscriptions.",
   path: "/help",
 });
 
@@ -36,7 +36,7 @@ function HubStructuredData() {
         "@type": "CollectionPage",
         "@id": `${site.url}/help#page`,
         url: `${site.url}/help`,
-        name: `Help Center — ${site.name}`,
+        name: `Help Center | ${site.name}`,
         description:
           "Guides and answers for recording, sharing, protecting, watching, and exporting your Tapes.",
         isPartOf: { "@id": `${site.url}/#website` },
@@ -187,7 +187,7 @@ export default function HelpCenterPage() {
               </h2>
               <p className="text-ink-muted mt-5 text-[1.0625rem] leading-relaxed">
                 {helpCategoryIndex.length} topics covering every part of{" "}
-                {site.name} — from your very first Tape to what happens when you
+                {site.name}, from your very first Tape to what happens when you
                 move to a new phone.
               </p>
             </div>
@@ -289,7 +289,7 @@ export default function HelpCenterPage() {
               <p className="text-cream-muted mt-4 text-[1.0625rem] leading-relaxed">
                 {site.name} is made by a very small team, and every message is
                 answered by someone who works on the app. Tell us your phone
-                model, your iOS version, and what you were doing — it helps more
+                model, your iOS version, and what you were doing. It helps more
                 than you&rsquo;d think.
               </p>
             </div>

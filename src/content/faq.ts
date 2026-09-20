@@ -21,28 +21,28 @@ export const faq: readonly FaqItem[] = [
   {
     question: "What is a Tape?",
     answer: [
-      "A Tape is one memory that can keep growing. Instead of ending up with dozens of separate clips, you create a Tape for an event or a chapter of life — a holiday, a birthday, a football season, a child’s first year — and add recordings to it whenever the moment happens.",
+      "A Tape is one memory that can keep growing. Instead of ending up with dozens of separate clips, you create a Tape for an event or a chapter of life, such as a holiday, a birthday, a football season, or a child’s first year, and add recordings to it whenever the moment happens.",
       "When you press play, the whole Tape plays through as one continuous video, in the order the moments happened. You can keep as many Tapes as you like.",
     ],
   },
   {
     question: "How do I continue recording an existing Tape?",
     answer: [
-      "Open the Tape from Home or from your Tapes library and choose Continue Recording. The new recording joins the end of that Tape automatically — there is nothing to stitch together afterwards.",
+      "Open the Tape from Home or from your Tapes library and choose Continue Recording. The new recording joins the end of that Tape automatically. There is nothing to stitch together afterwards.",
       "Videflo will ask you to hold your phone the same way the Tape was started, portrait or landscape, so the finished Tape plays back without flipping between the two.",
     ],
   },
   {
     question: "Do I need an account?",
     answer: [
-      "Yes. Videflo uses Sign in with Apple — there is no Videflo password to create. Your account is what lets Videflo Cloud protect your Tapes, bring them to a new phone, and share a Tape with the people you invite.",
+      "Yes. Videflo uses Sign in with Apple, so there is no Videflo password to create. Your account is what lets Videflo Cloud protect your Tapes, bring them to a new phone, and share a Tape with the people you invite.",
     ],
     link: { href: "/support#account", label: "Accounts and signing in" },
   },
   {
     question: "Where are my Tapes stored?",
     answer: [
-      "On your phone first, inside Videflo’s own storage. While Back Up to Videflo Cloud is on — it is on by default — every recording is also copied to Videflo Cloud, so a Tape survives a lost or replaced phone. Your original files on the phone are never changed.",
+      "On your phone first, inside Videflo’s own storage. While Back Up to Videflo Cloud is on (it is on by default), every recording is also copied to Videflo Cloud, so a Tape survives a lost or replaced phone. Your original files on the phone are never changed.",
     ],
     link: {
       href: "/support#storage",
@@ -53,7 +53,7 @@ export const faq: readonly FaqItem[] = [
     question: "Does Videflo back up my videos to the cloud?",
     answer: [
       "Yes. Videflo Cloud is included with your subscription, and backup is automatic. A recording is protected once its upload has finished; until then it exists only on your phone, so it is still worth keeping a phone backup switched on as well.",
-      "Once a Tape is fully protected you can remove its files from your phone to free space and it will play by streaming — and you can download it again whenever you like.",
+      "Once a Tape is fully protected you can remove its files from your phone to free space and it will play by streaming. You can download it again whenever you like.",
     ],
     link: {
       href: "/support#storage",
@@ -71,7 +71,7 @@ export const faq: readonly FaqItem[] = [
   {
     question: "How do I export a Tape?",
     answer: [
-      "Open the Tape, tap the ⋯ menu in the player and choose Export Tape. Videflo turns the whole Tape into one video and saves it straight to your Photos library — no preparing step, and nothing left behind in Videflo.",
+      "Open the Tape, tap the ⋯ menu in the player and choose Export Tape. Videflo turns the whole Tape into one video and saves it straight to your Photos library. There is no preparing step, and nothing is left behind in Videflo.",
       "Keep the app on screen while it exports. A long Tape or a higher recording quality takes longer, and you can cancel at any time.",
     ],
   },
@@ -86,7 +86,7 @@ export const faq: readonly FaqItem[] = [
     question: "How do I cancel my subscription?",
     answer: [
       "Subscriptions are billed and managed by Apple, not inside Videflo. On your iPhone, open the Settings app, tap your name at the top, then Subscriptions, and select Videflo.",
-      "Cancelling stops the next renewal; you keep access until the end of the period you have already paid for. Nothing is deleted when you cancel — your Tapes stay on your phone, and Videflo does not currently remove content from Videflo Cloud because a subscription has ended. If the option is somewhere else on your version of iOS, Apple Support has the current steps.",
+      "Cancelling stops the next renewal; you keep access until the end of the period you have already paid for. Nothing is deleted when you cancel. Your Tapes stay on your phone, and Videflo does not currently remove content from Videflo Cloud because a subscription has ended. If the option is somewhere else on your version of iOS, Apple Support has the current steps.",
     ],
     link: {
       href: "https://support.apple.com",
@@ -97,8 +97,8 @@ export const faq: readonly FaqItem[] = [
   {
     question: "What happens if I delete Videflo?",
     answer: [
-      "Deleting the app removes the recordings stored on that phone. Your account and everything already protected in Videflo Cloud stay exactly as they are, and come back when you reinstall and sign in. Recordings that were never backed up — because backup was off, or the upload had not finished — exist only on that phone and are lost with it.",
-      "Deleting the app also does not cancel a subscription — that lives in your Apple Account and has to be cancelled there.",
+      "Deleting the app removes the recordings stored on that phone. Your account and everything already protected in Videflo Cloud stay exactly as they are, and come back when you reinstall and sign in. Recordings that were never backed up, because backup was off or the upload had not finished, exist only on that phone and are lost with it.",
+      "Deleting the app also does not cancel a subscription. That lives in your Apple Account and has to be cancelled there.",
     ],
   },
   {

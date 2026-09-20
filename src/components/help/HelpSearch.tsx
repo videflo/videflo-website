@@ -368,7 +368,8 @@ export function HelpSearch({
                 Nothing matched “{deferred.trim()}”.
               </p>
               <p className="text-ink-muted mt-2 text-[0.875rem] leading-relaxed">
-                Try a simpler word — “export”, “storage”, “subscription” — or{" "}
+                Try a simpler word, such as “export”, “storage” or
+                “subscription”, or{" "}
                 <Link
                   href="/support"
                   className="text-ink hover:text-gold-deep font-semibold underline decoration-1 underline-offset-4"

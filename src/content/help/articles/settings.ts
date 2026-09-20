@@ -20,7 +20,7 @@ export const settingsArticles: readonly HelpArticle[] = [
       "open videflo to",
     ],
     overview: [
-      "Videflo's Settings screen is short on purpose. Most of what shapes a Tape — its orientation, its quality — is decided when you create it, so there's very little left to configure globally.",
+      "Videflo's Settings screen is short on purpose. Most of what shapes a Tape, its orientation and its quality, is decided when you create it, so there's very little left to configure globally.",
       "Open it from the gear icon on the **Home** tab. It's one list of cards; anything that needs more than a row lives one tap away on a screen of its own. Here's every card in order.",
     ],
     sections: [
@@ -74,7 +74,7 @@ export const settingsArticles: readonly HelpArticle[] = [
               {
                 term: "Playback Settings → Show Timestamp",
                 description:
-                  "Shows the date and time a piece of footage was filmed in the corner of the picture while you watch. On by default. It's an overlay only — your recordings are never altered.",
+                  "Shows the date and time a piece of footage was filmed in the corner of the picture while you watch. On by default. It's an overlay only. Your recordings are never altered.",
               },
               {
                 term: "Playback Settings → Timestamp Position",
@@ -84,7 +84,7 @@ export const settingsArticles: readonly HelpArticle[] = [
               {
                 term: "Export Settings → Export with Timestamp",
                 description:
-                  "Whether the date and time are drawn permanently into a Tape you export to Photos. Separate from the playback setting — one is about watching, the other about the file you hand out. See **Timestamps**.",
+                  "Whether the date and time are drawn permanently into a Tape you export to Photos. Separate from the playback setting: one is about watching, the other about the file you hand out. See **Timestamps**.",
               },
             ],
           },
@@ -105,7 +105,7 @@ export const settingsArticles: readonly HelpArticle[] = [
               {
                 term: "Storage",
                 description:
-                  "How much of your allowance is used — for example **12.4 GB of 50 GB**.",
+                  "How much of your allowance is used, for example **12.4 GB of 50 GB**.",
               },
               {
                 term: "Last Backup",
@@ -135,7 +135,7 @@ export const settingsArticles: readonly HelpArticle[] = [
               {
                 term: "Videflo Plan",
                 description:
-                  "Shows whether your subscription is active. It only says so when the App Store has actually confirmed it — Videflo never guesses.",
+                  "Shows whether your subscription is active. It only says so when the App Store has actually confirmed it. Videflo never guesses.",
               },
               {
                 term: "Manage Subscription",
@@ -152,7 +152,7 @@ export const settingsArticles: readonly HelpArticle[] = [
         blocks: [
           {
             kind: "text",
-            text: "Whether lock-screen notifications are on for Videflo. If they're off, **Turn On Notifications** asks iOS, or — if you've said no before — **Open Settings** takes you to the phone's own switch. The bell in the app works regardless. See **Notifications**.",
+            text: "Whether lock-screen notifications are on for Videflo. If they're off, **Turn On Notifications** asks iOS, or, if you've said no before, **Open Settings** takes you to the phone's own switch. The bell in the app works regardless. See **Notifications**.",
           },
         ],
       },
@@ -166,7 +166,7 @@ export const settingsArticles: readonly HelpArticle[] = [
               {
                 term: "Help Center",
                 description:
-                  "Opens this website — the same articles you're reading now.",
+                  "Opens this website, the same articles you're reading now.",
               },
               {
                 term: "Share Feedback",
@@ -176,7 +176,7 @@ export const settingsArticles: readonly HelpArticle[] = [
               {
                 term: "About Videflo",
                 description:
-                  "Links to the website, the Privacy Policy and the Terms of Service — the live pages, so they're always current — plus **Replay Introduction** and the **Version** row, which is worth quoting if you write to support.",
+                  "Links to the website, the Privacy Policy and the Terms of Service (the live pages, so they're always current), plus **Replay Introduction** and the **Version** row, which is worth quoting if you write to support.",
               },
             ],
           },
@@ -203,17 +203,17 @@ export const settingsArticles: readonly HelpArticle[] = [
           {
             kind: "list",
             items: [
-              "**Recording quality** — chosen per Tape when you create it, so a single Tape can never end up half in one quality and half in another.",
-              "**Orientation** — likewise chosen per Tape.",
-              "**A cancel button** — subscriptions are cancelled in your Apple Account; Manage Subscription takes you there.",
-              "**A dark mode switch** — Videflo uses its own warm design in both appearances.",
+              "**Recording quality**: chosen per Tape when you create it, so a single Tape can never end up half in one quality and half in another.",
+              "**Orientation**: likewise chosen per Tape.",
+              "**A cancel button**: subscriptions are cancelled in your Apple Account; Manage Subscription takes you there.",
+              "**A dark mode switch**: Videflo uses its own warm design in both appearances.",
             ],
           },
         ],
       },
     ],
     tips: [
-      "Settings is reached from the Home tab only. It isn't buried in the iPhone's own Settings app — that page is for permissions.",
+      "Settings is reached from the Home tab only. It isn't buried in the iPhone's own Settings app. That page is for permissions.",
       "If a link in the Support section doesn't open, check your connection: those rows go out to the web.",
     ],
     faqs: [
@@ -232,7 +232,7 @@ export const settingsArticles: readonly HelpArticle[] = [
       {
         question: "Can I turn off the timestamp for one Tape only?",
         answer: [
-          "Not during playback — the setting applies across the app. Export with Timestamp is also one setting, so switch it before exporting the Tape you want clean.",
+          "Not during playback. The setting applies across the app. Export with Timestamp is also one setting, so switch it before exporting the Tape you want clean.",
         ],
       },
     ],
@@ -255,7 +255,7 @@ export const settingsArticles: readonly HelpArticle[] = [
       "version",
     ],
     overview: [
-      "Videflo updates through the App Store like any other app. Updating never touches your Tapes — your recordings stay exactly where they are, on your phone and in Videflo Cloud.",
+      "Videflo updates through the App Store like any other app. Updating never touches your Tapes. Your recordings stay exactly where they are, on your phone and in Videflo Cloud.",
     ],
     sections: [
       {
@@ -305,7 +305,7 @@ export const settingsArticles: readonly HelpArticle[] = [
             kind: "warning",
             title: "Updating is safe. Deleting is a different thing.",
             text: [
-              "An update keeps everything. **Deleting** the app removes the recordings on this phone — everything already in Videflo Cloud is safe, but a recording that hadn't finished uploading isn't. If an update is misbehaving, don't delete and reinstall as a first step: check the Tapes say **Backed Up**, and ask us first.",
+              "An update keeps everything. **Deleting** the app removes the recordings on this phone. Everything already in Videflo Cloud is safe, but a recording that hadn't finished uploading isn't. If an update is misbehaving, don't delete and reinstall as a first step: check the Tapes say **Backed Up**, and ask us first.",
             ],
           },
         ],
@@ -313,7 +313,7 @@ export const settingsArticles: readonly HelpArticle[] = [
     ],
     tips: [
       "Updates are worth taking. Small fixes to recording and saving are exactly the sort of thing you want on the phone before an occasion, not after it.",
-      "If an update is waiting and you're about to film something important, either update first or leave it until afterwards — not halfway through the afternoon.",
+      "If an update is waiting and you're about to film something important, either update first or leave it until afterwards, not halfway through the afternoon.",
     ],
     troubleshooting: [
       {
@@ -327,7 +327,7 @@ export const settingsArticles: readonly HelpArticle[] = [
       {
         problem: "The app misbehaves after updating.",
         solutions: [
-          "Force-close it — swipe up from the bottom of the screen and swipe Videflo away — then reopen it.",
+          "Force-close it by swiping up from the bottom of the screen and swiping Videflo away, then reopen it.",
           "Restart your phone.",
           "Tell us what's wrong, with your phone model, iOS version, and the Videflo version. Please check your Tapes say Backed Up before deleting the app.",
         ],
@@ -347,7 +347,7 @@ export const settingsArticles: readonly HelpArticle[] = [
       {
         question: "Can I go back to an older version?",
         answer: [
-          "The App Store doesn't allow that. If a new version has broken something for you, please tell us — that's the fastest route to a fix.",
+          "The App Store doesn't allow that. If a new version has broken something for you, please tell us. That's the fastest route to a fix.",
         ],
       },
     ],
@@ -383,12 +383,12 @@ export const settingsArticles: readonly HelpArticle[] = [
             kind: "definitions",
             items: [
               {
-                term: "Email — for anything that's gone wrong",
+                term: "Email, for anything that's gone wrong",
                 description:
                   "Best when something isn't working, or when you'd rather not post publicly. The address is on the support page and at the bottom of every page on this site.",
               },
               {
-                term: "Share Feedback — for ideas",
+                term: "Share Feedback, for ideas",
                 description:
                   "Open Videflo's **Settings → Share Feedback**. It's the place for feature suggestions, and you can see and support what other people have asked for.",
               },
@@ -402,14 +402,14 @@ export const settingsArticles: readonly HelpArticle[] = [
         blocks: [
           {
             kind: "text",
-            text: "The more of this you can tell us, the faster we can help — and often the difference between fixing something today and guessing at it for a week.",
+            text: "The more of this you can tell us, the faster we can help. It's often the difference between fixing something today and guessing at it for a week.",
           },
           {
             kind: "list",
             items: [
-              "**Your phone model** — for example iPhone 15 Pro.",
-              "**Your iOS version** — from **Settings → General → About**.",
-              "**Your Videflo version** — from Videflo's **Settings → About Videflo → Version**.",
+              "**Your phone model**, for example iPhone 15 Pro.",
+              "**Your iOS version**, from **Settings → General → About**.",
+              "**Your Videflo version**, from Videflo's **Settings → About Videflo → Version**.",
               "**What you were doing** when it happened, step by step if you can.",
               "**What you expected**, and what happened instead.",
               "**A screenshot or screen recording** if there's anything to see. These help enormously.",
@@ -432,7 +432,7 @@ export const settingsArticles: readonly HelpArticle[] = [
             kind: "list",
             items: [
               "**Recover a recording that never reached Videflo Cloud.** If a recording was made with backup off, or the phone was lost before its upload finished, there's no copy anywhere for us to restore from. Everything that did upload comes back when you sign in.",
-              "**Issue refunds or cancel subscriptions.** Apple bills for App Store purchases, so both live in your Apple Account. Do tell us if something's broken, though — we can't refund, but we can fix.",
+              "**Issue refunds or cancel subscriptions.** Apple bills for App Store purchases, so both live in your Apple Account. Do tell us if something's broken, though. We can't refund, but we can fix.",
               "**Look at your Tapes.** We can see that an account exists and how much storage it uses; we don't browse anybody's memories, and we won't open yours to diagnose a problem.",
             ],
           },
@@ -440,7 +440,7 @@ export const settingsArticles: readonly HelpArticle[] = [
       },
     ],
     tips: [
-      "Have a look through the Help Center first — a great many questions are answered here, and it's faster than waiting on a reply.",
+      "Have a look through the Help Center first. A great many questions are answered here, and it's faster than waiting on a reply.",
       "One email per problem is easier to follow than one long one covering several.",
       "If it's a feature you'd like rather than something broken, the feedback portal is the better home for it: other people can add their voice.",
     ],
@@ -448,7 +448,7 @@ export const settingsArticles: readonly HelpArticle[] = [
       {
         question: "How quickly will I get a reply?",
         answer: [
-          "As soon as we reasonably can. We're a small team, so it's hours to a couple of days rather than instant — but a real person will answer.",
+          "As soon as we reasonably can. We're a small team, so it's hours to a couple of days rather than instant, but a real person will answer.",
         ],
       },
       {
@@ -460,7 +460,7 @@ export const settingsArticles: readonly HelpArticle[] = [
       {
         question: "Can I suggest a feature?",
         answer: [
-          "Please do. **Settings → Share Feedback** in the app is the best place — suggestions there are visible to other people, who can add their support.",
+          "Please do. **Settings → Share Feedback** in the app is the best place. Suggestions there are visible to other people, who can add their support.",
         ],
       },
     ],

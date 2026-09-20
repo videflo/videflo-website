@@ -301,7 +301,7 @@ export default async function HelpArticlePage({
                   Did this answer your question?
                 </h2>
                 <p className="text-ink-muted mt-2 text-[1rem] leading-relaxed">
-                  If not, write to us — a person reads every message. Please
+                  If not, write to us. A person reads every message. Please
                   include your phone model, your iOS version, and what you were
                   doing when the problem happened.
                 </p>

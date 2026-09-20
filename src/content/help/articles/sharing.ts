@@ -21,7 +21,7 @@ export const sharingArticles: readonly HelpArticle[] = [
     ],
     overview: [
       "A Shared Tape is a Tape with more than one person on it. You invite the people who were there; they can watch the whole Tape and add their own recordings to it, and so can you. Everyone sees one continuous memory, with each recording marked by who filmed it.",
-      "Sharing is by invitation only. There's no feed, no followers, and nothing public — a Tape is seen by exactly the people its owner invited.",
+      "Sharing is by invitation only. There's no feed, no followers, and nothing public. A Tape is seen by exactly the people its owner invited.",
     ],
     sections: [
       {
@@ -69,8 +69,8 @@ export const sharingArticles: readonly HelpArticle[] = [
           {
             kind: "list",
             items: [
-              "**Invited by username** — a notification arrives in the bell on Home, and the invitation is listed under **Settings → Profile → Tape Invitations**. Tap **Accept** to join, or decline.",
-              "**Invited by text** — tap the link in the message. With Videflo installed, it opens straight in the app and offers **Join Tape**. Without it, the link opens a page telling you to get Videflo; install it, sign in, then tap the link again.",
+              "**Invited by username**: a notification arrives in the bell on Home, and the invitation is listed under **Settings → Profile → Tape Invitations**. Tap **Accept** to join, or decline.",
+              "**Invited by text**: tap the link in the message. With Videflo installed, it opens straight in the app and offers **Join Tape**. Without it, the link opens a page telling you to get Videflo; install it, sign in, then tap the link again.",
             ],
           },
           {
@@ -92,7 +92,7 @@ export const sharingArticles: readonly HelpArticle[] = [
             items: [
               "**Each recording shows who filmed it.** Your name and picture sit beside yours; theirs beside theirs.",
               "**Renaming a recording is for the person who filmed it.** Nobody else can retitle your recording.",
-              "**Deleting a recording is for the Tape's owner.** Only the owner can remove a recording from a Shared Tape — including their own and everyone else's — and doing so removes it for everyone.",
+              "**Deleting a recording is for the Tape's owner.** Only the owner can remove a recording from a Shared Tape, including their own and everyone else's, and doing so removes it for everyone.",
               "**A card lights up** at the edge when somebody else has added to a Tape since you last opened it.",
             ],
           },
@@ -124,7 +124,7 @@ export const sharingArticles: readonly HelpArticle[] = [
               {
                 term: "Stop Accepting Recordings / Start Accepting Recordings Again",
                 description:
-                  "Close the Tape to new recordings — from everyone, including you — while leaving it watchable. Reopen it whenever you like.",
+                  "Close the Tape to new recordings, from everyone including you, while leaving it watchable. Reopen it whenever you like.",
               },
               {
                 term: "Export Tape",
@@ -151,7 +151,7 @@ export const sharingArticles: readonly HelpArticle[] = [
         blocks: [
           {
             kind: "text",
-            text: "On a Tape somebody shared with you, the menu offers **Leave Tape** where Delete Tape would be. You'll stop seeing the Tape. Recordings you added stay in it — it's the owner's memory — and the copies on your own phone stay yours.",
+            text: "On a Tape somebody shared with you, the menu offers **Leave Tape** where Delete Tape would be. You'll stop seeing the Tape. Recordings you added stay in it, because it's the owner's memory, and the copies on your own phone stay yours.",
           },
           {
             kind: "text",
@@ -162,7 +162,7 @@ export const sharingArticles: readonly HelpArticle[] = [
     ],
     tips: [
       "Invite people at the start of an occasion, not the end. Grandma filming the candles from the other side of the table is exactly what Shared Tapes are for.",
-      "A Friends & Family connection makes inviting quicker, but it isn't required — you can invite anyone by @username or by text.",
+      "A Friends & Family connection makes inviting quicker, but it isn't required. You can invite anyone by @username or by text.",
       "If you're the owner and space is tight, remember every member's recording counts against your allowance. **Manage Storage** shows the largest Tapes.",
     ],
     pitfalls: [
@@ -173,14 +173,14 @@ export const sharingArticles: readonly HelpArticle[] = [
       },
       {
         mistake: "Deleting a Shared Tape to tidy your own library.",
-        fix: "That deletes it for everyone. If you don't want to see it any more and you're not the owner, **Leave Tape** instead. If you are the owner, export it first — or just leave it be.",
+        fix: "That deletes it for everyone. If you don't want to see it any more and you're not the owner, **Leave Tape** instead. If you are the owner, export it first, or just leave it be.",
       },
     ],
     troubleshooting: [
       {
         problem: "The Tape still says Invite to Tape after I invited someone.",
         solutions: [
-          "Look again — with invitations out and nobody accepted, the row reads **Manage Invites**, and the Tape stays personal until someone joins.",
+          "Look again. With invitations out and nobody accepted, the row reads **Manage Invites**, and the Tape stays personal until someone joins.",
           "Once they accept, the Tape becomes Shared the next time your library refreshes: open the Tape, or pull the Tapes tab down. It isn't instant.",
         ],
       },
@@ -188,7 +188,7 @@ export const sharingArticles: readonly HelpArticle[] = [
         problem: "Someone joined but I can't see their recording.",
         solutions: [
           "Their recording has to finish uploading from their phone first. Ask them whether Back Up to Videflo Cloud is on and whether they're online.",
-          "Open the Tape again, or pull to refresh — new recordings arrive on the next refresh.",
+          "Open the Tape again, or pull to refresh. New recordings arrive on the next refresh.",
         ],
       },
       {
@@ -209,7 +209,7 @@ export const sharingArticles: readonly HelpArticle[] = [
       {
         question: "Can I share a Tape with someone who doesn't have Videflo?",
         answer: [
-          "Yes — **Invite by Text** sends them a link. To join and add recordings they'll need Videflo, an account, and a subscription of their own. If you'd only like them to watch, export the Tape to Photos and send them the video instead.",
+          "Yes. **Invite by Text** sends them a link. To join and add recordings they'll need Videflo, an account, and a subscription of their own. If you'd only like them to watch, export the Tape to Photos and send them the video instead.",
         ],
       },
       {
@@ -227,7 +227,7 @@ export const sharingArticles: readonly HelpArticle[] = [
       {
         question: "Can two people be the owner?",
         answer: [
-          "No. A Tape has one owner — the person who created it — and everyone else is a member.",
+          "No. A Tape has one owner, the person who created it, and everyone else is a member.",
         ],
       },
     ],
@@ -238,7 +238,7 @@ export const sharingArticles: readonly HelpArticle[] = [
     slug: "friends-and-family",
     title: "Friends & Family and the Together row",
     description:
-      "Connecting with the people you share memories with, finding someone by username, and what a connection does — and doesn't — do.",
+      "Connecting with the people you share memories with, finding someone by username, and what a connection does and doesn't do.",
     category: "sharing",
     keywords: [
       "connect",
@@ -252,7 +252,7 @@ export const sharingArticles: readonly HelpArticle[] = [
     ],
     overview: [
       "Friends & Family is your list of the people you share memories with. Once you're connected, inviting them to a Tape is a tap rather than a search, and they appear in the **Together** row on Home.",
-      "A connection is a relationship, not a permission. Being connected to someone gives them no access to any of your Tapes — every Tape is still shared one invitation at a time.",
+      "A connection is a relationship, not a permission. Being connected to someone gives them no access to any of your Tapes. Every Tape is still shared one invitation at a time.",
     ],
     sections: [
       {
@@ -261,7 +261,7 @@ export const sharingArticles: readonly HelpArticle[] = [
         blocks: [
           {
             kind: "text",
-            text: "Below **Start a New Tape** on Home is a row of the people you share memories with. Tap a person to see the Tapes you have together. Tap the **+** circle — **Add someone** — to find a person on Videflo or invite somebody new.",
+            text: "Below **Start a New Tape** on Home is a row of the people you share memories with. Tap a person to see the Tapes you have together. Tap the **+** circle, labelled **Add someone**, to find a person on Videflo or invite somebody new.",
           },
         ],
       },
@@ -284,12 +284,12 @@ export const sharingArticles: readonly HelpArticle[] = [
               {
                 title: "Send a request.",
                 detail:
-                  "They get a notification. Nothing happens until they accept — if you both sent each other a request, Videflo simply offers **Accept**.",
+                  "They get a notification. Nothing happens until they accept. If you both sent each other a request, Videflo simply offers **Accept**.",
               },
               {
                 title: "Or invite someone who isn't on Videflo yet.",
                 detail:
-                  "**Invite someone new** hands a link to the share sheet. When they install Videflo, sign in and open it, they're offered a connection with you — and again, only their explicit **Accept** connects you.",
+                  "**Invite someone new** hands a link to the share sheet. When they install Videflo, sign in and open it, they're offered a connection with you, and again only their explicit **Accept** connects you.",
               },
             ],
           },
@@ -304,14 +304,14 @@ export const sharingArticles: readonly HelpArticle[] = [
             items: [
               "**A request to you** arrives in the bell on Home and under **Friends & Family**. Accept or decline; the person who asked isn't told you declined.",
               "**A request you sent** shows as pending until they answer. You can cancel it.",
-              "**Removing a connection** takes them off your list and you off theirs. It doesn't touch any Tape you're both on — leave or remove people from Tapes separately.",
+              "**Removing a connection** takes them off your list and you off theirs. It doesn't touch any Tape you're both on. Leave or remove people from Tapes separately.",
             ],
           },
         ],
       },
     ],
     tips: [
-      "Connect with the handful of people you actually share life with. Videflo has no followers, no counts, and no suggestions — the list is only ever people you chose.",
+      "Connect with the handful of people you actually share life with. Videflo has no followers, no counts, and no suggestions. The list is only ever people you chose.",
       "Tell family your @username. It's the one thing they need to find you.",
     ],
     faqs: [
@@ -330,7 +330,7 @@ export const sharingArticles: readonly HelpArticle[] = [
       {
         question: "What does the other person see?",
         answer: [
-          "Your Profile — display name, username and picture. Never your email address.",
+          "Your Profile: display name, username and picture. Never your email address.",
         ],
       },
     ],
@@ -366,7 +366,7 @@ export const sharingArticles: readonly HelpArticle[] = [
             kind: "list",
             items: [
               "**A dot on the bell** means something unread.",
-              "**An invitation or request** offers its answer right there — Accept, or decline. Reading it doesn't answer it; it waits until you do.",
+              "**An invitation or request** offers its answer right there: Accept, or decline. Reading it doesn't answer it; it waits until you do.",
               "**A new memory** on a Shared Tape opens that Tape when tapped. Several recordings from the same person arrive as one notification with a count.",
               "**Answered and read** items leave the list on their own. There's nothing to clear, and nothing to delete.",
             ],
@@ -384,9 +384,9 @@ export const sharingArticles: readonly HelpArticle[] = [
           {
             kind: "list",
             items: [
-              "**The lock-screen text is deliberately plain** — “You're invited to a Shared Tape.” or “Someone added a new memory to a Tape you share.”, never who or which Tape. A lock screen is read by whoever is standing nearby; the detail is inside the app, behind your passcode.",
+              "**The lock-screen text is deliberately plain**: “You're invited to a Shared Tape.” or “Someone added a new memory to a Tape you share.”, never who or which Tape. A lock screen is read by whoever is standing nearby; the detail is inside the app, behind your passcode.",
               "**Tapping one** opens the bell at that notification.",
-              "**While Videflo is open**, nothing pops up — the bell simply updates.",
+              "**While Videflo is open**, nothing pops up. The bell simply updates.",
             ],
           },
         ],
@@ -397,7 +397,7 @@ export const sharingArticles: readonly HelpArticle[] = [
         blocks: [
           {
             kind: "text",
-            text: "**Settings → Notifications** in Videflo shows whether lock-screen notifications are on. If you said no the first time, it offers **Open Settings**, which takes you to the phone's own switch for Videflo — the app can't turn iOS permission on or off itself.",
+            text: "**Settings → Notifications** in Videflo shows whether lock-screen notifications are on. If you said no the first time, it offers **Open Settings**, which takes you to the phone's own switch for Videflo. The app can't turn iOS permission on or off itself.",
           },
           {
             kind: "text",
@@ -407,7 +407,7 @@ export const sharingArticles: readonly HelpArticle[] = [
       },
     ],
     tips: [
-      "If you share Tapes with family, leave notifications on — a new memory appearing while you're on the sofa is one of the nicest things about a Shared Tape.",
+      "If you share Tapes with family, leave notifications on. A new memory appearing while you're on the sofa is one of the nicest things about a Shared Tape.",
       "Notifications aren't a history. Once you've acted on something, the Tape or the person is where the record lives.",
     ],
     troubleshooting: [
@@ -417,7 +417,7 @@ export const sharingArticles: readonly HelpArticle[] = [
           "Check **Settings → Videflo → Notifications** on your phone is on.",
           "Check Focus or Do Not Disturb isn't silencing Videflo.",
           "Sign out and back in on this phone; that re-registers the phone for notifications.",
-          "Lock-screen delivery is best-effort — iOS decides when to deliver. The bell in the app is always complete.",
+          "Lock-screen delivery is best-effort, and iOS decides when to deliver. The bell in the app is always complete.",
         ],
       },
       {

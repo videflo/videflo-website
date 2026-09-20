@@ -36,7 +36,7 @@ const inter = Inter({
 */
 const gatedMetadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: `${site.name} — Coming Soon`,
+  title: `${site.name} | Coming Soon`,
   description: `${site.name} is coming soon.`,
   robots: {
     index: false,
@@ -50,8 +50,8 @@ const gatedMetadata: Metadata = {
 const siteMetadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — ${site.tagline}`,
-    template: `%s — ${site.name}`,
+    default: `${site.name} | ${site.tagline}`,
+    template: `%s | ${site.name}`,
   },
   description: site.description,
   applicationName: site.name,
@@ -71,13 +71,13 @@ const siteMetadata: Metadata = {
     siteName: site.name,
     locale: site.locale,
     url: site.url,
-    title: `${site.name} — ${site.tagline}`,
+    title: `${site.name} | ${site.tagline}`,
     description: site.socialDescription,
     images: [ogImage],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — ${site.tagline}`,
+    title: `${site.name} | ${site.tagline}`,
     description: site.socialDescription,
     images: [ogImage.url],
   },

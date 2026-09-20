@@ -23,7 +23,7 @@ export const subscriptionArticles: readonly HelpArticle[] = [
       "250 gb",
     ],
     overview: [
-      "Videflo is a subscription app. Downloading it is free, and one subscription unlocks everything — the camcorder, the library, Shared Tapes, exporting, and Videflo Cloud with **50 GB** of storage included.",
+      "Videflo is a subscription app. Downloading it is free, and one subscription unlocks everything: the camcorder, the library, Shared Tapes, exporting, and Videflo Cloud with **50 GB** of storage included.",
       "There is one plan, billed monthly. The only choice you make is how much Videflo Cloud you'd like: 50 GB comes with the subscription, and 100 GB or 250 GB are available as an upgrade to it. Everything about the payment itself is handled by Apple, through the same Apple Account you use for any other App Store purchase.",
     ],
     sections: [
@@ -33,7 +33,7 @@ export const subscriptionArticles: readonly HelpArticle[] = [
         blocks: [
           {
             kind: "text",
-            text: "All of it. There's no free tier and no locked features. Unlimited Tapes, recordings and Collections at every quality, playback, cover photos, Shared Tapes, exporting to Photos, and automatic backup to Videflo Cloud — one subscription, the whole app.",
+            text: "All of it. There's no free tier and no locked features. Unlimited Tapes, recordings and Collections at every quality, playback, cover photos, Shared Tapes, exporting to Photos, and automatic backup to Videflo Cloud. One subscription, the whole app.",
           },
           {
             kind: "text",
@@ -67,14 +67,14 @@ export const subscriptionArticles: readonly HelpArticle[] = [
           },
           {
             kind: "text",
-            text: "Change capacity in **Settings → Videflo Cloud → Manage Storage → Storage Options**. Moving up takes effect straight away, and Apple prorates what you've already paid. Moving down takes effect at your next renewal — until then you keep the room you paid for.",
+            text: "Change capacity in **Settings → Videflo Cloud → Manage Storage → Storage Options**. Moving up takes effect straight away, and Apple prorates what you've already paid. Moving down takes effect at your next renewal, and until then you keep the room you paid for.",
           },
           {
             kind: "note",
             title: "Prices are always shown before you buy",
             text: [
               "In the United States the subscription is $9.99 a month; the App Store shows every price in your own currency, and the larger capacities are priced on the subscription screen. Apple sets the local price, so it varies by country.",
-              "Videflo never shows an estimated or placeholder price — if the subscription can't be loaded from the App Store, it tells you so rather than guessing.",
+              "Videflo never shows an estimated or placeholder price. If the subscription can't be loaded from the App Store, it tells you so rather than guessing.",
             ],
           },
         ],
@@ -89,7 +89,7 @@ export const subscriptionArticles: readonly HelpArticle[] = [
               "**Apple takes the payment**, using whatever payment method your Apple Account uses. We never see your card details.",
               "**It renews automatically** every month until you cancel, which you do in your Apple Account rather than in Videflo.",
               "**Receipts come from Apple**, by email and in your Apple Account purchase history.",
-              "**Changing capacity is a change, not a second subscription** — you can never end up paying for two.",
+              "**Changing capacity is a change, not a second subscription**, so you can never end up paying for two.",
             ],
           },
         ],
@@ -108,7 +108,7 @@ export const subscriptionArticles: readonly HelpArticle[] = [
     tips: [
       "Standard quality goes a long way: a 4K Tape uses roughly four times the room of a 1080p one, on the phone and in Videflo Cloud.",
       "Cancelling doesn't take effect immediately. You keep access until the end of the period you've already paid for.",
-      "The subscription belongs to your Apple Account, so it comes with you to a new phone. So do your Tapes — from Videflo Cloud, when you sign in.",
+      "The subscription belongs to your Apple Account, so it comes with you to a new phone. So do your Tapes, from Videflo Cloud, when you sign in.",
     ],
     faqs: [
       {
@@ -131,7 +131,7 @@ export const subscriptionArticles: readonly HelpArticle[] = [
       {
         question: "Can I buy Videflo outright instead of subscribing?",
         answer: [
-          "There's no one-off purchase option today — the subscription is how Videflo is offered.",
+          "There's no one-off purchase option today. The subscription is how Videflo is offered.",
         ],
       },
       {
@@ -154,7 +154,7 @@ export const subscriptionArticles: readonly HelpArticle[] = [
     slug: "manage-subscription",
     title: "Changing, cancelling, or refunding a subscription",
     description:
-      "All of it happens in your Apple Account — here's exactly where to look.",
+      "All of it happens in your Apple Account. Here's exactly where to look.",
     category: "subscription",
     keywords: [
       "cancel",
@@ -169,7 +169,7 @@ export const subscriptionArticles: readonly HelpArticle[] = [
       "downgrade",
     ],
     overview: [
-      "Subscriptions are managed in your Apple Account, not inside Videflo. Apple takes the payment, so Apple holds the controls — including cancelling and refunds.",
+      "Subscriptions are managed in your Apple Account, not inside Videflo. Apple takes the payment, so Apple holds the controls, including cancelling and refunds.",
       "Videflo's Settings screen has a **Manage Subscription** link, under **Videflo Plan**, that takes you straight there. Changing storage capacity is the one thing you do inside Videflo, in **Manage Storage**.",
     ],
     sections: [
@@ -279,14 +279,14 @@ export const subscriptionArticles: readonly HelpArticle[] = [
           },
           {
             kind: "text",
-            text: "If something in Videflo is broken, please tell us as well as Apple. We can't refund you, but we can fix it — and we'd like to.",
+            text: "If something in Videflo is broken, please tell us as well as Apple. We can't refund you, but we can fix it, and we'd like to.",
           },
         ],
       },
     ],
     tips: [
       "Cancel a day or two before the renewal date rather than on it. Apple charges for the next period slightly in advance.",
-      "Check when it renews in that same Subscriptions screen — it's shown right under the plan.",
+      "Check when it renews in that same Subscriptions screen. It's shown right under the plan.",
       "If you're cancelling for good and want your memories outside Videflo, export the Tapes you care about to Photos first. Nothing is deleted when you cancel, but you won't be able to open the app to export later.",
     ],
     pitfalls: [
@@ -303,7 +303,7 @@ export const subscriptionArticles: readonly HelpArticle[] = [
       {
         problem: "Videflo isn't listed under Subscriptions.",
         solutions: [
-          "Check you're signed in with the Apple Account that bought it — a family member's account is a common surprise.",
+          "Check you're signed in with the Apple Account that bought it. A family member's account is a common surprise.",
           "If the subscription has already expired it may no longer be listed as active. Look under **Expired** on the same screen.",
         ],
       },
@@ -331,7 +331,7 @@ export const subscriptionArticles: readonly HelpArticle[] = [
       {
         question: "Can you cancel it for me?",
         answer: [
-          "We're not able to — only Apple can change an App Store subscription, and only from the account that holds it. The steps above take about thirty seconds.",
+          "We're not able to. Only Apple can change an App Store subscription, and only from the account that holds it. The steps above take about thirty seconds.",
         ],
       },
       {
@@ -378,7 +378,7 @@ export const subscriptionArticles: readonly HelpArticle[] = [
                 title:
                   "Make sure the phone is signed in to the Apple Account you bought the subscription with.",
                 detail:
-                  "Check in the **Settings** app — your name is at the very top.",
+                  "Check in the **Settings** app. Your name is at the very top.",
               },
               {
                 title: "Open Videflo and sign in with Apple.",
@@ -422,15 +422,15 @@ export const subscriptionArticles: readonly HelpArticle[] = [
             kind: "note",
             title: "Two things, two routes",
             text: [
-              "**Restore Purchases** brings back access — the subscription. It checks with Apple and re-applies your Videflo Cloud capacity.",
-              "**Signing in** brings back your Tapes — from Videflo Cloud, as soon as you're in the same Videflo account. They appear marked **In Videflo Cloud** and play by streaming; **Download to This iPhone** puts the files back. See **Moving to a new phone**.",
+              "**Restore Purchases** brings back access, meaning the subscription. It checks with Apple and re-applies your Videflo Cloud capacity.",
+              "**Signing in** brings back your Tapes, from Videflo Cloud, as soon as you're in the same Videflo account. They appear marked **In Videflo Cloud** and play by streaming; **Download to This iPhone** puts the files back. See **Moving to a new phone**.",
             ],
           },
         ],
       },
     ],
     tips: [
-      "You don't need to restore on a phone that's already working — it's only for a fresh install or a new device.",
+      "You don't need to restore on a phone that's already working. It's only for a fresh install or a new device.",
       "A cancelled password prompt looks exactly like a failure. Try once more and let it complete.",
       "Restoring needs a network connection, since it checks with the App Store.",
     ],
@@ -438,7 +438,7 @@ export const subscriptionArticles: readonly HelpArticle[] = [
       {
         problem: "Restore Purchases finds nothing.",
         solutions: [
-          "Check which Apple Account you're signed in with — the subscription follows the account that bought it.",
+          "Check which Apple Account you're signed in with. The subscription follows the account that bought it.",
           "Check the subscription is still active in **Settings → your name → Subscriptions**. An expired one has nothing to restore.",
           "Make sure you're online, then try once more.",
           "If it was bought by a family member on their own account, it can't be restored to yours.",
@@ -448,7 +448,7 @@ export const subscriptionArticles: readonly HelpArticle[] = [
         problem: "It says it can't reach the App Store.",
         solutions: [
           "Check your connection, then try again.",
-          "Occasionally the App Store itself is having a moment — Apple's System Status page will say so.",
+          "Occasionally the App Store itself is having a moment, and Apple's System Status page will say so.",
         ],
       },
       {

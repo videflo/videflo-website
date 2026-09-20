@@ -7,7 +7,7 @@ import { site } from "@/config/site";
  * this file and adding `public/brand/og-image.png` (1200×630), then pointing
  * `openGraph.images` in `src/app/layout.tsx` at it. See ASSETS.md.
  */
-export const alt = `${site.name} — ${site.tagline}`;
+export const alt = `${site.name} | ${site.tagline}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

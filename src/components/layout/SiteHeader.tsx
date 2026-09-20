@@ -64,7 +64,7 @@ export function SiteHeader() {
           <Link
             href="/"
             className="-m-2 rounded-md p-2"
-            aria-label="Videflo — home"
+            aria-label="Videflo home"
           >
             <Wordmark withIcon />
           </Link>

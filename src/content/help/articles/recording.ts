@@ -52,7 +52,7 @@ export const recordingArticles: readonly HelpArticle[] = [
               {
                 term: "The zoom slider and lens buttons",
                 description:
-                  "A slider above the main controls, and — on phones with more than one rear lens — small buttons like 0.5×, 1× and 3×.",
+                  "A slider above the main controls, plus small buttons like 0.5×, 1× and 3× on phones with more than one rear lens.",
               },
             ],
           },
@@ -82,7 +82,7 @@ export const recordingArticles: readonly HelpArticle[] = [
               {
                 title: "Tap it again to pause whenever you like.",
                 detail:
-                  "The dot turns gold. Nothing is lost — you're simply between takes.",
+                  "The dot turns gold. Nothing is lost. You're simply between takes.",
               },
               {
                 title: "Tap once more to carry on.",
@@ -99,7 +99,7 @@ export const recordingArticles: readonly HelpArticle[] = [
             kind: "note",
             title: "Saving takes a moment",
             text: [
-              "After **Finish**, Videflo joins the pieces together. Usually that's about a second. Long sessions filmed at High quality take a little longer — let the screen finish rather than force-closing the app.",
+              "After **Finish**, Videflo joins the pieces together. Usually that's about a second. Long sessions filmed at High quality take a little longer, so let the screen finish rather than force-closing the app.",
             ],
           },
         ],
@@ -116,7 +116,7 @@ export const recordingArticles: readonly HelpArticle[] = [
             kind: "warning",
             title: "Discarding can't be undone",
             text: [
-              "Footage you discard is deleted straight away. If you're not certain, tap **Finish** instead — you can always delete the recording from the Tape afterwards, and you'll have had a chance to watch it first.",
+              "Footage you discard is deleted straight away. If you're not certain, tap **Finish** instead. You can always delete the recording from the Tape afterwards, and you'll have had a chance to watch it first.",
             ],
           },
         ],
@@ -124,7 +124,7 @@ export const recordingArticles: readonly HelpArticle[] = [
     ],
     tips: [
       "Your phone won't dim or lock while you're recording, so you can put it on a table and let it run.",
-      "Pause rather than finish between shots. One recording made of six pauses plays back better than six recordings — and it's less to manage later.",
+      "Pause rather than finish between shots. One recording made of six pauses plays back better than six recordings, and it's less to manage later.",
       "Keep an eye on the low-storage warning in the corner. It appears while there's still room to finish what you're doing, not once it's too late.",
     ],
     pitfalls: [
@@ -142,7 +142,7 @@ export const recordingArticles: readonly HelpArticle[] = [
       {
         problem: "The record button doesn't respond.",
         solutions: [
-          "Look for the orientation card — Videflo won't start until the phone is held the way the Tape was created.",
+          "Look for the orientation card. Videflo won't start until the phone is held the way the Tape was created.",
           "Check the storage warning. With almost no free space, recording can't begin.",
           "Confirm camera and microphone access are on in **Settings → Videflo**.",
         ],
@@ -159,7 +159,7 @@ export const recordingArticles: readonly HelpArticle[] = [
       {
         question: "Does pausing create a separate video?",
         answer: [
-          "Not as far as you're concerned. Everything from one session — however many times you paused — is saved as a single recording, and it plays back seamlessly.",
+          "Not as far as you're concerned. Everything from one session, however many times you paused, is saved as a single recording, and it plays back seamlessly.",
         ],
       },
       {
@@ -171,7 +171,7 @@ export const recordingArticles: readonly HelpArticle[] = [
       {
         question: "Can I lock the screen while it records?",
         answer: [
-          "No — recording needs the app to be on screen. Videflo keeps the display awake for you, so it won't dim or lock on its own while you film.",
+          "No. Recording needs the app to be on screen. Videflo keeps the display awake for you, so it won't dim or lock on its own while you film.",
         ],
       },
       {
@@ -204,7 +204,7 @@ export const recordingArticles: readonly HelpArticle[] = [
       "grow",
     ],
     overview: [
-      "**Continue Recording** adds a new recording to the end of an existing Tape. Come back to it an hour later or a year later — the Tape simply gets longer, and still plays as one continuous memory.",
+      "**Continue Recording** adds a new recording to the end of an existing Tape. Come back to it an hour later or a year later. The Tape simply gets longer, and still plays as one continuous memory.",
       "This is what makes a Tape different from a folder of clips, and it's worth building the habit early.",
     ],
     sections: [
@@ -215,9 +215,9 @@ export const recordingArticles: readonly HelpArticle[] = [
           {
             kind: "list",
             items: [
-              "**Home** — the gold **Continue Recording** button on the large card at the top, for whichever Tape you filmed into last.",
-              "**Any Tape's menu** — press and hold a Tape anywhere it appears and choose **Continue Recording**.",
-              "**While watching** — the **Continue Recording** button on the playback screen.",
+              "**Home**: the gold **Continue Recording** button on the large card at the top, for whichever Tape you filmed into last.",
+              "**Any Tape's menu**: press and hold a Tape anywhere it appears and choose **Continue Recording**.",
+              "**While watching**: the **Continue Recording** button on the playback screen.",
             ],
           },
         ],
@@ -232,7 +232,7 @@ export const recordingArticles: readonly HelpArticle[] = [
               {
                 title: "It reopens the camera with that Tape's own settings.",
                 detail:
-                  "The same orientation and the same recording quality it was created with — you don't choose again, and you can't get it wrong.",
+                  "The same orientation and the same recording quality it was created with. You don't choose again, and you can't get it wrong.",
               },
               {
                 title:
@@ -255,7 +255,7 @@ export const recordingArticles: readonly HelpArticle[] = [
             kind: "note",
             title: "The order is the order things happened",
             text: [
-              "New recordings always go on the end. That's deliberate — a Tape is a record of how a memory unfolded, so it isn't rearranged after the fact.",
+              "New recordings always go on the end. That's deliberate. A Tape is a record of how a memory unfolded, so it isn't rearranged after the fact.",
             ],
           },
         ],
@@ -264,13 +264,13 @@ export const recordingArticles: readonly HelpArticle[] = [
     tips: [
       "It's worth making the Tape at the *start* of an occasion, even before anything interesting happens. Adding to it costs a tap; gathering scattered clips afterwards isn't possible.",
       "A Tape can grow for years. “Milo's First Year” filmed once a month is one of the nicest things Videflo does.",
-      "On a Shared Tape, everyone who's joined has their own **Continue Recording** — and each recording shows who filmed it.",
+      "On a Shared Tape, everyone who's joined has their own **Continue Recording**, and each recording shows who filmed it.",
     ],
     pitfalls: [
       {
         mistake:
           "Making a second Tape called “Emma's Birthday 2” because the first one was already saved.",
-        fix: "A saved Tape is never closed. Open its menu and choose **Continue Recording** — it takes new footage forever.",
+        fix: "A saved Tape is never closed. Open its menu and choose **Continue Recording**. It takes new footage forever.",
       },
       {
         mistake:
@@ -283,13 +283,13 @@ export const recordingArticles: readonly HelpArticle[] = [
         problem: "Videflo keeps asking me to rotate the phone.",
         solutions: [
           "The Tape was created in the other orientation, and every recording in it has to match.",
-          "If your phone's Rotation Lock is on, turning the phone won't be enough — swipe down from the top-right corner and switch Rotation Lock off, then turn the phone.",
+          "If your phone's Rotation Lock is on, turning the phone won't be enough. Swipe down from the top-right corner and switch Rotation Lock off, then turn the phone.",
         ],
       },
       {
         problem: "I can't find Continue Recording on a Tape.",
         solutions: [
-          "Press and hold the Tape's picture rather than tapping it — tapping opens playback, holding opens the menu.",
+          "Press and hold the Tape's picture rather than tapping it. Tapping opens playback, holding opens the menu.",
           "On a Shared Tape, the owner may have chosen **Stop Accepting Recordings**. The Tape can still be watched, but nobody can add to it until they start accepting again.",
         ],
       },
@@ -305,7 +305,7 @@ export const recordingArticles: readonly HelpArticle[] = [
         question: "Can I add to a Tape from a different phone?",
         answer: [
           "Yes. Sign in to the same Videflo account on the other phone and your Tapes appear from Videflo Cloud; Continue Recording works exactly as it does on the first phone, and the new recording is protected the same way.",
-          "Somebody else can add to your Tape from their own phone too, once you've invited them — see **Shared Tapes**.",
+          "Somebody else can add to your Tape from their own phone too, once you've invited them. See **Shared Tapes**.",
         ],
       },
       {
@@ -351,12 +351,12 @@ export const recordingArticles: readonly HelpArticle[] = [
             kind: "definitions",
             items: [
               {
-                term: "Portrait — hold the phone upright",
+                term: "Portrait: hold the phone upright",
                 description:
                   "Best for people, for anything tall, and for watching back on a phone. The natural choice for most everyday memories.",
               },
               {
-                term: "Landscape — hold the phone sideways",
+                term: "Landscape: hold the phone sideways",
                 description:
                   "Best for wide scenes, stages, sports, and anything you'll want to watch on a TV or a computer.",
               },
@@ -402,14 +402,14 @@ export const recordingArticles: readonly HelpArticle[] = [
     ],
     tips: [
       "Filming children, pets, or anyone talking to camera? Portrait, almost always.",
-      "Landscape footage is what looks right when it eventually ends up on a television — worth choosing for the big occasions.",
-      "You can film in both — just make two Tapes. There's no cost to having more.",
+      "Landscape footage is what looks right when it eventually ends up on a television, so it's worth choosing for the big occasions.",
+      "You can film in both. Just make two Tapes. There's no cost to having more.",
     ],
     pitfalls: [
       {
         mistake:
           "Assuming the app got it wrong when it refuses to record sideways.",
-        fix: "It's matching the Tape you're adding to. Check which Tape you opened — a portrait Tape will always ask for portrait.",
+        fix: "It's matching the Tape you're adding to. Check which Tape you opened. A portrait Tape will always ask for portrait.",
       },
     ],
     faqs: [
@@ -422,7 +422,7 @@ export const recordingArticles: readonly HelpArticle[] = [
       {
         question: "Which orientation looks better?",
         answer: [
-          "Neither is better — they suit different things. Portrait matches how phones are held and watched; landscape matches how televisions and cinema screens are shaped.",
+          "Neither is better. They suit different things. Portrait matches how phones are held and watched; landscape matches how televisions and cinema screens are shaped.",
         ],
       },
       {
@@ -443,7 +443,7 @@ export const recordingArticles: readonly HelpArticle[] = [
     slug: "choosing-recording-quality",
     title: "Choosing a recording quality",
     description:
-      "Standard, High, and Smooth — what each one means for how it looks and how much room it takes.",
+      "Standard, High, and Smooth: what each one means for how it looks and how much room it takes.",
     category: "recording",
     keywords: [
       "4k",
@@ -468,17 +468,17 @@ export const recordingArticles: readonly HelpArticle[] = [
             kind: "definitions",
             items: [
               {
-                term: "Standard — 1080p at 30 frames per second",
+                term: "Standard: 1080p at 30 frames per second",
                 description:
                   "Full HD. Looks lovely on a phone and perfectly good on a television, and uses the least space. Recommended.",
               },
               {
-                term: "High — 4K at 30 frames per second",
+                term: "High: 4K at 30 frames per second",
                 description:
                   "Four times the detail, and roughly four times the file size. Worth it for a big occasion you'll watch on a large screen.",
               },
               {
-                term: "Smooth — 1080p at 60 frames per second",
+                term: "Smooth: 1080p at 60 frames per second",
                 description:
                   "Twice as many frames a second, so movement looks fluid. Good for sport, running children, and anything fast.",
               },
@@ -489,7 +489,7 @@ export const recordingArticles: readonly HelpArticle[] = [
             title: "Rough guide to space",
             text: [
               "As a very approximate rule, an hour of Standard footage uses a few gigabytes; High uses several times that; Smooth sits in between.",
-              "The actual size depends on what you're filming — a still room compresses far smaller than a windy beach.",
+              "The actual size depends on what you're filming. A still room compresses far smaller than a windy beach.",
             ],
           },
         ],
@@ -593,7 +593,7 @@ export const recordingArticles: readonly HelpArticle[] = [
         blocks: [
           {
             kind: "text",
-            text: "If your phone has more than one rear lens, small buttons appear — typically **0.5×**, **1×**, and **3×**, depending on the model. Tapping one jumps straight to that lens, which is faster and steadier than sliding.",
+            text: "If your phone has more than one rear lens, small buttons appear, typically **0.5×**, **1×**, and **3×**, depending on the model. Tapping one jumps straight to that lens, which is faster and steadier than sliding.",
           },
           {
             kind: "text",
@@ -613,14 +613,14 @@ export const recordingArticles: readonly HelpArticle[] = [
             kind: "note",
             title: "The front camera records what others see",
             text: [
-              "The preview is mirrored, the way a mirror is, so it feels natural while you film. The saved recording is not mirrored — text and faces appear the right way round when you watch it back.",
+              "The preview is mirrored, the way a mirror is, so it feels natural while you film. The saved recording is not mirrored, so text and faces appear the right way round when you watch it back.",
             ],
           },
         ],
       },
     ],
     tips: [
-      "Zooming out to 0.5× makes small rooms look much larger — good for a house tour or a crowded kitchen.",
+      "Zooming out to 0.5× makes small rooms look much larger, which is good for a house tour or a crowded kitchen.",
       "For a steady shot, tap the lens button rather than dragging the slider. Fingers on a slider tend to wobble the phone.",
       "Big zoom on a phone is digital past a point, so the picture softens. Getting a step closer nearly always looks better.",
     ],
@@ -635,14 +635,14 @@ export const recordingArticles: readonly HelpArticle[] = [
         problem:
           "The zoom jumps or lands somewhere unexpected after I flip cameras.",
         solutions: [
-          "Give the flip a moment to settle, then set the zoom again — the two cameras have different ranges.",
+          "Give the flip a moment to settle, then set the zoom again. The two cameras have different ranges.",
           "If it still looks wrong, tap a lens button to jump to a known position.",
         ],
       },
       {
         problem: "The lens buttons aren't showing.",
         solutions: [
-          "You're on the front camera — it has one lens, so there's nothing to choose between.",
+          "You're on the front camera. It has one lens, so there's nothing to choose between.",
           "Some iPhone models have only one rear lens, in which case the buttons are correctly hidden.",
         ],
       },
@@ -663,7 +663,7 @@ export const recordingArticles: readonly HelpArticle[] = [
       {
         question: "Does zooming reduce the quality of the recording?",
         answer: [
-          "Switching to a real lens doesn't. Zooming beyond what the lenses provide is digital, which crops into the picture and softens it — the same as in the built-in Camera app.",
+          "Switching to a real lens doesn't. Zooming beyond what the lenses provide is digital, which crops into the picture and softens it, the same as in the built-in Camera app.",
         ],
       },
     ],
@@ -678,7 +678,7 @@ export const recordingArticles: readonly HelpArticle[] = [
     slug: "interruptions-and-recovery",
     title: "Calls, crashes, and rescuing an interrupted recording",
     description:
-      "What happens when something interrupts you mid-recording — and how Videflo gets your footage back.",
+      "What happens when something interrupts you mid-recording, and how Videflo gets your footage back.",
     category: "recording",
     keywords: [
       "phone call",
@@ -758,7 +758,7 @@ export const recordingArticles: readonly HelpArticle[] = [
         blocks: [
           {
             kind: "text",
-            text: "Take the call. When you come back, Videflo will have kept what it captured. Depending on how the interruption ended you may be able to carry straight on with the same session — otherwise, tap **Finish**, then **Continue Recording** to add the rest to the same Tape. Either way it stays one Tape.",
+            text: "Take the call. When you come back, Videflo will have kept what it captured. Depending on how the interruption ended you may be able to carry straight on with the same session. Otherwise, tap **Finish**, then **Continue Recording** to add the rest to the same Tape. Either way it stays one Tape.",
           },
         ],
       },
@@ -766,7 +766,7 @@ export const recordingArticles: readonly HelpArticle[] = [
     tips: [
       "Turn on Do Not Disturb before filming something you can't repeat. It's the single most effective thing you can do.",
       "Long sessions are much happier on a charger. Video recording is one of the hardest things a phone does.",
-      "If the app closes unexpectedly, open it again straight away rather than reinstalling — footage waiting to be recovered hasn't reached Videflo Cloud yet, so reinstalling would remove it.",
+      "If the app closes unexpectedly, open it again straight away rather than reinstalling. Footage waiting to be recovered hasn't reached Videflo Cloud yet, so reinstalling would remove it.",
     ],
     pitfalls: [
       {
@@ -776,7 +776,7 @@ export const recordingArticles: readonly HelpArticle[] = [
       {
         mistake:
           "Ignoring the recovery card for weeks, then tidying it away without looking.",
-        fix: "Open it and watch what's inside before discarding — it's real footage from a real day.",
+        fix: "Open it and watch what's inside before discarding. It's real footage from a real day.",
       },
     ],
     troubleshooting: [
@@ -784,7 +784,7 @@ export const recordingArticles: readonly HelpArticle[] = [
         problem:
           "My recording isn't in the Tape and no recovery card appeared.",
         solutions: [
-          "Open the Tape's **Manage Recordings** list — it may be there under a plain name like “Recording 3”.",
+          "Open the Tape's **Manage Recordings** list. It may be there under a plain name like “Recording 3”.",
           "Check whether the session was discarded rather than finished; discarded footage is deleted immediately.",
           "If footage was interrupted very early, there may not have been enough captured to keep.",
         ],
@@ -812,7 +812,7 @@ export const recordingArticles: readonly HelpArticle[] = [
       {
         question: "Does an interrupted recording end up lower quality?",
         answer: [
-          "No. What was captured is captured at the Tape's full quality — the recording is simply shorter than you intended.",
+          "No. What was captured is captured at the Tape's full quality. The recording is simply shorter than you intended.",
         ],
       },
     ],

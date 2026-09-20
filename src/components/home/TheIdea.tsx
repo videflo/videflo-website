@@ -44,9 +44,9 @@ export function TheIdea() {
                 />
               </div>
               <figcaption className="text-ink-faint mt-4 text-sm">
-                Without somewhere to keep them, the moments scatter — a hundred
-                short clips, out of order, in a camera roll nobody scrolls back
-                through.
+                Without somewhere to keep them, the moments scatter into a
+                hundred short clips, out of order, in a camera roll nobody
+                scrolls back through.
               </figcaption>
             </figure>
           </Reveal>

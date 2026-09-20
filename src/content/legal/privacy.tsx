@@ -105,8 +105,8 @@ export const privacySections: readonly LegalSection[] = [
             <strong className="text-ink">You record Tapes.</strong> Recordings
             are saved on your device first. While{" "}
             <strong className="text-ink">Back Up to {site.name} Cloud</strong>{" "}
-            is on — it is on by default — each recording and its Tape details
-            are also copied to {site.name} Cloud.
+            is on (it is on by default), each recording and its Tape details are
+            also copied to {site.name} Cloud.
           </LI>
           <LI>
             <strong className="text-ink">You can share a Tape.</strong> Inviting
@@ -172,7 +172,7 @@ export const privacySections: readonly LegalSection[] = [
           Tape that is already protected in {site.name} Cloud.
         </P>
         <P>
-          Collections — the groups you organise Tapes into — and your app
+          Collections, the groups you organise Tapes into, and your app
           preferences stay on your device and are not uploaded.
         </P>
 
@@ -189,7 +189,7 @@ export const privacySections: readonly LegalSection[] = [
         <H3>Notifications</H3>
         <P>
           {site.name} keeps a record of the notifications it shows you inside
-          the app — for example that somebody invited you to a Tape, accepted
+          the app, for example that somebody invited you to a Tape, accepted
           your request, or added a recording to a Shared Tape. Each notification
           stores the name and username of the person it is about and the title
           of the Tape it concerns, as they were at the time, so the notification
@@ -223,7 +223,7 @@ export const privacySections: readonly LegalSection[] = [
           account identifier and an identifier for your device so that a
           purchase can be matched to your account. Our backend provider
           processes standard technical information about each request the app
-          makes — such as your IP address and the time of the request — in order
+          makes, such as your IP address and the time of the request, in order
           to deliver the service and keep it secure. {site.name} does not use
           the advertising identifier, and it contains no advertising or
           analytics identifiers of any kind.
@@ -232,8 +232,8 @@ export const privacySections: readonly LegalSection[] = [
         <H3>Information you send us directly</H3>
         <P>
           If you email support, we receive your email address, your message, and
-          anything you choose to attach — which may include a description of
-          your device or a screenshot. We use it to answer you.
+          anything you choose to attach, which may include a description of your
+          device or a screenshot. We use it to answer you.
         </P>
 
         <H3>Website information</H3>
@@ -271,7 +271,7 @@ export const privacySections: readonly LegalSection[] = [
             audio.
           </LI>
           <LI>
-            <strong className="text-ink">Photos — add only.</strong> Requested
+            <strong className="text-ink">Photos, add only.</strong> Requested
             only when you save a video from {site.name} into your photo library.
             {site.name} never asks to read your library.
           </LI>
@@ -302,7 +302,7 @@ export const privacySections: readonly LegalSection[] = [
           </LI>
           <LI>
             store your recordings and Tapes in {site.name} Cloud, play them back
-            to you — including on a new phone — and let you download them again;
+            to you, including on a new phone, and let you download them again;
           </LI>
           <LI>
             operate Shared Tapes: deliver invitations, show members the Tape and
@@ -375,16 +375,16 @@ export const privacySections: readonly LegalSection[] = [
         <H3>Other Videflo users</H3>
         <UL>
           <LI>
-            <strong className="text-ink">Your Profile</strong> — display name,
-            username and avatar — can be seen by people who search for your
-            exact username, by your Friends &amp; Family connections, by the
-            members of any Tape you share or join, and by anyone you send or
-            receive a request or invitation from. There is no public directory,
-            no followers, and no way to search by real name or email address.
+            <strong className="text-ink">Your Profile</strong> (display name,
+            username and avatar) can be seen by people who search for your exact
+            username, by your Friends &amp; Family connections, by the members
+            of any Tape you share or join, and by anyone you send or receive a
+            request or invitation from. There is no public directory, no
+            followers, and no way to search by real name or email address.
           </LI>
           <LI>
-            <strong className="text-ink">A Shared Tape</strong> — its title,
-            cover, every recording in it, and who added each recording — can be
+            <strong className="text-ink">A Shared Tape</strong> (its title,
+            cover, every recording in it, and who added each recording) can be
             seen and watched by the Tape’s owner and every member who has
             accepted an invitation. Recordings you add to somebody else’s Shared
             Tape become part of that Tape.
@@ -432,32 +432,31 @@ export const privacySections: readonly LegalSection[] = [
         </P>
         <UL>
           <LI>
-            <strong className="text-ink">Apple</strong> — Sign in with Apple,
-            App Store distribution, in-app purchases and subscription billing,
-            and push notification delivery. Apple’s handling of your Apple
-            Account and payment information is governed by Apple’s own privacy
-            policy.
+            <strong className="text-ink">Apple:</strong> Sign in with Apple, App
+            Store distribution, in-app purchases and subscription billing, and
+            push notification delivery. Apple’s handling of your Apple Account
+            and payment information is governed by Apple’s own privacy policy.
           </LI>
           <LI>
-            <strong className="text-ink">Supabase</strong> — the infrastructure
+            <strong className="text-ink">Supabase:</strong> the infrastructure
             behind {site.name} Cloud: your account, the database that holds your
             Tape details, Profile, connections and notifications, the storage
             that holds your recordings and profile photo, and the server code
             that enforces who may access what.
           </LI>
           <LI>
-            <strong className="text-ink">RevenueCat</strong> — subscription
+            <strong className="text-ink">RevenueCat:</strong> subscription
             infrastructure that records your App Store purchases against your{" "}
             {site.name} account, so that your subscription and {site.name} Cloud
             allowance follow you to a new phone.
           </LI>
           <LI>
-            <strong className="text-ink">Vercel</strong> — hosting for this
+            <strong className="text-ink">Vercel:</strong> hosting for this
             website.
           </LI>
           <LI>
-            <strong className="text-ink">An email provider</strong> — for
-            support correspondence.
+            <strong className="text-ink">An email provider:</strong> for support
+            correspondence.
           </LI>
         </UL>
         <P>
@@ -484,7 +483,7 @@ export const privacySections: readonly LegalSection[] = [
             <strong className="text-ink">Back Up to {site.name} Cloud</strong>{" "}
             can be switched off in Settings → {site.name} Cloud → Backup
             Settings. While it is off, new recordings stay on your device only.
-            Anything already in {site.name} Cloud stays there — see{" "}
+            Anything already in {site.name} Cloud stays there; see{" "}
             <A href="/privacy#retention">How long information is kept</A>.
           </LI>
           <LI>
@@ -500,8 +499,8 @@ export const privacySections: readonly LegalSection[] = [
             subscription includes {subscription.includedStorageLabel} of{" "}
             {site.name} Cloud, and larger capacities are available. The owner of
             a Shared Tape pays for that Tape’s storage, including recordings
-            other members add. If your account goes over its allowance — for
-            example after moving to a smaller capacity — {site.name} keeps
+            other members add. If your account goes over its allowance, for
+            example after moving to a smaller capacity, {site.name} keeps
             everything already stored and stops accepting new uploads until you
             are back within it. You have {subscription.overAllowanceGraceDays}{" "}
             days to free up space or choose a larger capacity; {site.name} does
@@ -546,7 +545,7 @@ export const privacySections: readonly LegalSection[] = [
               Your account, Profile, connections, invitations and notification
               history
             </strong>{" "}
-            are kept while your account exists and removed when you delete it —
+            are kept while your account exists and removed when you delete it;
             see{" "}
             <A href="/privacy#deleting-your-account">Deleting your account</A>.
           </LI>
@@ -554,9 +553,9 @@ export const privacySections: readonly LegalSection[] = [
             <strong className="text-ink">Notifications</strong> expire on their
             own. Informational notifications are removed 72 hours after you read
             them, or 7 days after they arrive if you never do. Notifications
-            that ask you to act — an invitation or a request — stay until you
-            answer them, and are removed 7 days after that if you had read them
-            or 14 days after if you had not.
+            that ask you to act, such as an invitation or a request, stay until
+            you answer them, and are removed 7 days after that if you had read
+            them or 14 days after if you had not.
           </LI>
           <LI>
             <strong className="text-ink">Push registrations</strong> are
@@ -599,7 +598,7 @@ export const privacySections: readonly LegalSection[] = [
           </LI>
           <LI>
             every Tape you own is deleted from {site.name} Cloud, together with
-            all of its recordings — including recordings other people added to
+            all of its recordings, including recordings other people added to
             it;
           </LI>
           <LI>
@@ -608,7 +607,7 @@ export const privacySections: readonly LegalSection[] = [
             longer attributed to you;
           </LI>
           <LI>
-            videos already on your device are not deleted by this — deleting the
+            videos already on your device are not deleted by this; deleting the
             app, or the Tapes inside it, is a separate step; and
           </LI>
           <LI>
@@ -663,7 +662,7 @@ export const privacySections: readonly LegalSection[] = [
           </LI>
           <LI>
             <strong className="text-ink">Subscription.</strong> View, change or
-            cancel it in your Apple Account settings — see the{" "}
+            cancel it in your Apple Account settings; see the{" "}
             <A href="/support">Support</A> page.
           </LI>
           <LI>
@@ -689,9 +688,9 @@ export const privacySections: readonly LegalSection[] = [
     content: (
       <>
         <P>
-          {site.name} is intended for adults — in particular parents and family
-          members recording their own memories — and is not directed to
-          children. We do not knowingly create accounts for, or collect personal
+          {site.name} is intended for adults, in particular parents and family
+          members recording their own memories, and is not directed to children.
+          We do not knowingly create accounts for, or collect personal
           information from, children below the age at which they can agree to an
           online service in their country. Where a parent or guardian’s consent
           is required, they must be the one to accept our{" "}
@@ -751,8 +750,8 @@ export const privacySections: readonly LegalSection[] = [
           more countries over time, and will update this policy when we do.
         </P>
         <P>
-          {site.name} Cloud — your account, your Tape details and the recordings
-          you back up — is hosted for us by Supabase in the{" "}
+          {site.name} Cloud (your account, your Tape details and the recordings
+          you back up) is hosted for us by Supabase in the{" "}
           {legal.governingCountry}. Our other providers, named under{" "}
           <A href="/privacy#service-providers">Service providers</A>, may
           process the information they handle for us in the{" "}
@@ -760,7 +759,7 @@ export const privacySections: readonly LegalSection[] = [
           Those countries may have data protection laws that differ from your
           own. Where the law of your country requires it, we take reasonable
           steps to see that the information stays protected to a comparable
-          standard — including under Australian Privacy Principle 8 and
+          standard, including under Australian Privacy Principle 8 and
           Information Privacy Principle 12 of New Zealand’s Privacy Act 2020.
         </P>
         <H3>Europe and the United Kingdom</H3>
@@ -794,8 +793,8 @@ export const privacySections: readonly LegalSection[] = [
           those terms are defined by the CCPA as amended by the CPRA.
         </P>
         <P>
-          A growing number of other states — including {legal.governingState},
-          where {site.name} is registered — give residents comparable rights to
+          A growing number of other states, including {legal.governingState},
+          where {site.name} is registered, give residents comparable rights to
           access, correct, delete, and obtain a copy of their personal
           information. Write to us and we will honour them.
         </P>
@@ -836,7 +835,7 @@ export const privacySections: readonly LegalSection[] = [
         <Callout title="Most of it is in your hands">
           <p>
             You can see, change, export and delete most of what {site.name}{" "}
-            holds about you directly in the app — your Profile, your Tapes and
+            holds about you directly in the app: your Profile, your Tapes and
             recordings, your connections, and your account itself. We will help
             with anything the app does not let you do yourself.
           </p>
@@ -856,8 +855,8 @@ export const privacySections: readonly LegalSection[] = [
         </P>
         <P>
           If a change materially affects how information is handled, we will
-          make reasonable efforts to tell you — for example in the app or on
-          this website — before it takes effect.
+          make reasonable efforts to tell you, for example in the app or on this
+          website, before it takes effect.
         </P>
       </>
     ),

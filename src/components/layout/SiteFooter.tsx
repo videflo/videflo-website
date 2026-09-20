@@ -18,7 +18,7 @@ export function SiteFooter() {
               {site.tagline}
             </p>
             <p className="text-cream-muted mt-4 text-sm leading-relaxed">
-              Questions, feedback, or trouble with the app? Write to us — a
+              Questions, feedback, or trouble with the app? Write to us. A
               person reads every message.
             </p>
             <a

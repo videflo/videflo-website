@@ -21,7 +21,7 @@ export function pageMetadata({
   /** Route path beginning with a slash, e.g. "/privacy". */
   path: string;
 }): Metadata {
-  const socialTitle = `${title} — ${site.name}`;
+  const socialTitle = `${title} | ${site.name}`;
 
   return {
     title,

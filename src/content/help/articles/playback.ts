@@ -5,7 +5,7 @@ export const playbackArticles: readonly HelpArticle[] = [
     slug: "playback-basics",
     title: "Watching a Tape",
     description:
-      "Playing, pausing, skipping, and rotating — the controls on the playback screen.",
+      "Playing, pausing, skipping, and rotating: the controls on the playback screen.",
     category: "playback",
     keywords: [
       "play",
@@ -19,7 +19,7 @@ export const playbackArticles: readonly HelpArticle[] = [
       "speed",
     ],
     overview: [
-      "Tap any Tape to watch it. The whole thing plays from beginning to end as one continuous video, however many separate recordings went into it — no gaps, no black flashes, no interruption to the sound.",
+      "Tap any Tape to watch it. The whole thing plays from beginning to end as one continuous video, however many separate recordings went into it, with no gaps, no black flashes, no interruption to the sound.",
       "The controls fade away while you watch and come back when you tap the picture.",
     ],
     sections: [
@@ -43,7 +43,7 @@ export const playbackArticles: readonly HelpArticle[] = [
               {
                 term: "The filmstrip",
                 description:
-                  "The strip of thumbnails along the bottom. Drag it to move through the Tape — see **Scrubbing through a Tape**.",
+                  "The strip of thumbnails along the bottom. Drag it to move through the Tape. See **Scrubbing through a Tape**.",
               },
               {
                 term: "Recordings",
@@ -74,7 +74,7 @@ export const playbackArticles: readonly HelpArticle[] = [
           },
           {
             kind: "text",
-            text: "If turning the phone does nothing, your phone's Rotation Lock is on — swipe down from the top-right corner to switch it off.",
+            text: "If turning the phone does nothing, your phone's Rotation Lock is on. Swipe down from the top-right corner to switch it off.",
           },
         ],
       },
@@ -88,7 +88,7 @@ export const playbackArticles: readonly HelpArticle[] = [
           },
           {
             kind: "text",
-            text: "If you'd like any of these, export the Tape to your Photos library and watch it there — the Photos app and the TV app offer the full set of playback features.",
+            text: "If you'd like any of these, export the Tape to your Photos library and watch it there. The Photos app and the TV app offer the full set of playback features.",
           },
         ],
       },
@@ -97,7 +97,7 @@ export const playbackArticles: readonly HelpArticle[] = [
       "Tap the picture once to bring the controls back, and again to hide them. They also hide themselves after a few seconds.",
       "The controls won't disappear while your finger is on the filmstrip, so you can take your time.",
       "The date and time in the corner is the moment that footage was actually filmed, not the position in the Tape.",
-      "A Tape marked **In Videflo Cloud** plays by streaming. Give it a moment to start, and expect it to need a connection — **Download to This iPhone** if you'll be watching offline.",
+      "A Tape marked **In Videflo Cloud** plays by streaming. Give it a moment to start, and expect it to need a connection. **Download to This iPhone** if you'll be watching offline.",
     ],
     troubleshooting: [
       {
@@ -119,7 +119,7 @@ export const playbackArticles: readonly HelpArticle[] = [
       {
         problem: "Playback stutters or the picture freezes.",
         solutions: [
-          "Close other apps and try again — 4K playback asks a lot of the phone.",
+          "Close other apps and try again. 4K playback asks a lot of the phone.",
           "Switch off Low Power Mode, which limits performance.",
           "If the Tape is streaming from Videflo Cloud, a weak connection shows up as stutter. Move to Wi-Fi, or download the Tape.",
           "Restart your phone if it persists.",
@@ -142,7 +142,7 @@ export const playbackArticles: readonly HelpArticle[] = [
       {
         question: "Why does the whole Tape play instead of one recording?",
         answer: [
-          "Because that's what a Tape is — one continuous memory. To watch a single recording on its own, open **Manage Recordings** and play it from there.",
+          "Because that's what a Tape is: one continuous memory. To watch a single recording on its own, open **Manage Recordings** and play it from there.",
         ],
       },
     ],
@@ -189,7 +189,7 @@ export const playbackArticles: readonly HelpArticle[] = [
           },
           {
             kind: "text",
-            text: "The small dividers along the strip show where one recording ends and the next begins — handy for finding “the bit after we got back from the beach”.",
+            text: "The small dividers along the strip show where one recording ends and the next begins, which is handy for finding “the bit after we got back from the beach”.",
           },
         ],
       },
@@ -224,7 +224,7 @@ export const playbackArticles: readonly HelpArticle[] = [
             kind: "note",
             title: "The readout is meant to disappear",
             text: [
-              "It shows while you're touching the timeline and fades shortly after you let go. Your zoom level stays as you set it — only the label goes away. Touch the strip again to see it.",
+              "It shows while you're touching the timeline and fades shortly after you let go. Your zoom level stays as you set it. Only the label goes away. Touch the strip again to see it.",
             ],
           },
         ],
@@ -258,14 +258,14 @@ export const playbackArticles: readonly HelpArticle[] = [
     ],
     tips: [
       "Ten-second skips are quicker than scrubbing for small corrections. Use the filmstrip when you're hunting for something specific.",
-      "Zoom in *before* dragging when you're after an exact frame — dragging a fully zoomed-out strip moves minutes per millimetre.",
+      "Zoom in *before* dragging when you're after an exact frame. Dragging a fully zoomed-out strip moves minutes per millimetre.",
       "The thumbnails fill in as you go. On a long Tape, give them a second to catch up.",
     ],
     troubleshooting: [
       {
         problem: "The zoom readout stays on screen.",
         solutions: [
-          "It fades on its own shortly after you let go. If two fingers are resting still on the strip it may linger — lift them.",
+          "It fades on its own shortly after you let go. If two fingers are resting still on the strip it may linger. Lift them.",
         ],
       },
       {
@@ -278,8 +278,8 @@ export const playbackArticles: readonly HelpArticle[] = [
       {
         problem: "Thumbnails are blank or grey.",
         solutions: [
-          "They load in the background — give a long Tape a few seconds.",
-          "On a streaming Tape they arrive as the footage does. A permanently blank section suggests a recording that isn't available — check **Manage Recordings**.",
+          "They load in the background. Give a long Tape a few seconds.",
+          "On a streaming Tape they arrive as the footage does. A permanently blank section suggests a recording that isn't available. Check **Manage Recordings**.",
         ],
       },
     ],
@@ -324,7 +324,7 @@ export const playbackArticles: readonly HelpArticle[] = [
     ],
     overview: [
       "Videflo can show the date and time a piece of footage was filmed in the corner of the picture, the way a camcorder used to. It's on by default, because years later that little line is often the most valuable thing on screen.",
-      "It's an overlay, not part of the video — it's drawn on top while you watch, and your recordings are never altered. Whether it's stamped permanently into a Tape you export is a separate setting, **Export with Timestamp**.",
+      "It's an overlay, not part of the video. It's drawn on top while you watch, and your recordings are never altered. Whether it's stamped permanently into a Tape you export is a separate setting, **Export with Timestamp**.",
     ],
     sections: [
       {
@@ -341,7 +341,7 @@ export const playbackArticles: readonly HelpArticle[] = [
               },
               {
                 title:
-                  "Choose **Timestamp Position** — Bottom Left or Bottom Right.",
+                  "Choose **Timestamp Position**: Bottom Left or Bottom Right.",
                 detail:
                   "The position choice is greyed out while the timestamp is switched off.",
               },
@@ -359,7 +359,7 @@ export const playbackArticles: readonly HelpArticle[] = [
         blocks: [
           {
             kind: "text",
-            text: "The date and time that piece of footage was filmed — for example **JUL 10 2026** above **8:42 PM** — in the time zone it was filmed in, so a holiday recorded abroad keeps its local time even when you watch it at home. On a Tape built over months, the stamp changes as playback crosses from one recording into the next, which is rather lovely to watch.",
+            text: "The date and time that piece of footage was filmed, for example **JUL 10 2026** above **8:42 PM**, in the time zone it was filmed in, so a holiday recorded abroad keeps its local time even when you watch it at home. On a Tape built over months, the stamp changes as playback crosses from one recording into the next, which is rather lovely to watch.",
           },
           {
             kind: "text",
@@ -373,13 +373,13 @@ export const playbackArticles: readonly HelpArticle[] = [
         blocks: [
           {
             kind: "text",
-            text: "Whether an exported Tape carries the stamp is decided by one switch: **Settings → Export Settings → Export with Timestamp**. It's separate from Show Timestamp — you can watch with the stamp and export without it, or the other way round.",
+            text: "Whether an exported Tape carries the stamp is decided by one switch: **Settings → Export Settings → Export with Timestamp**. It's separate from Show Timestamp, so you can watch with the stamp and export without it, or the other way round.",
           },
           {
             kind: "list",
             items: [
-              "**On** — the Tape's name, the date and the time are drawn permanently into the exported video, so they'll be there wherever the file goes.",
-              "**Off** — a clean picture.",
+              "**On**: the Tape's name, the date and the time are drawn permanently into the exported video, so they'll be there wherever the file goes.",
+              "**Off**: a clean picture.",
             ],
           },
           {
@@ -396,13 +396,13 @@ export const playbackArticles: readonly HelpArticle[] = [
     tips: [
       "Leave it on. It costs nothing, and in ten years it turns “a nice video of the garden” into “the afternoon before we moved house”.",
       "Move the stamp to the other corner if it lands on someone's face in a Tape you watch often.",
-      "Leave **Export with Timestamp** on for anything you're handing to family — the date survives being copied around.",
+      "Leave **Export with Timestamp** on for anything you're handing to family. The date survives being copied around.",
     ],
     pitfalls: [
       {
         mistake:
           "Expecting the setting to change a video you've already exported.",
-        fix: "It can't — an exported file is finished. Change the switch and export again.",
+        fix: "It can't. An exported file is finished. Change the switch and export again.",
       },
       {
         mistake: "Assuming the timestamp is burned into your recordings.",
@@ -414,7 +414,7 @@ export const playbackArticles: readonly HelpArticle[] = [
         problem: "The timestamp isn't showing.",
         solutions: [
           "Check **Show Timestamp** is on in Settings → Playback Settings.",
-          "It sits in the corner of the *picture*, not the corner of the screen — on a portrait Tape watched sideways, look at the edge of the video itself.",
+          "It sits in the corner of the *picture*, not the corner of the screen, so on a portrait Tape watched sideways, look at the edge of the video itself.",
         ],
       },
       {
@@ -435,7 +435,7 @@ export const playbackArticles: readonly HelpArticle[] = [
       {
         question: "Can I show the timestamp on some Tapes and not others?",
         answer: [
-          "Not during playback — it's a single app-wide setting. Export with Timestamp is one switch too, so change it before exporting the Tape you want clean.",
+          "Not during playback. It's a single app-wide setting. Export with Timestamp is one switch too, so change it before exporting the Tape you want clean.",
         ],
       },
       {

@@ -32,8 +32,8 @@ export const storageArticles: readonly HelpArticle[] = [
           {
             kind: "list",
             items: [
-              "**Every recording** — the video itself, at the quality it was filmed, including videos you added from Photos.",
-              "**Everything that describes a Tape** — its name, orientation, cover photo, and each recording's name, date and time.",
+              "**Every recording**: the video itself, at the quality it was filmed, including videos you added from Photos.",
+              "**Everything that describes a Tape**: its name, orientation, cover photo, and each recording's name, date and time.",
               "**Not Collections or your settings.** Those stay on the phone, and take a minute to recreate.",
             ],
           },
@@ -55,7 +55,7 @@ export const storageArticles: readonly HelpArticle[] = [
             kind: "note",
             title: "Protection starts when the upload finishes",
             text: [
-              "Until a recording's upload completes, it exists on your phone alone. A long 4K recording on a slow connection takes a while — the cloud mark on the Tape's card tells you where it's up to.",
+              "Until a recording's upload completes, it exists on your phone alone. A long 4K recording on a slow connection takes a while, and the cloud mark on the Tape's card tells you where it's up to.",
             ],
           },
         ],
@@ -80,17 +80,17 @@ export const storageArticles: readonly HelpArticle[] = [
               {
                 term: "In Videflo Cloud",
                 description:
-                  "The Tape's files aren't on this phone — you removed them, or the Tape arrived from another phone. It plays by streaming.",
+                  "The Tape's files aren't on this phone. Either you removed them, or the Tape arrived from another phone. It plays by streaming.",
               },
               {
                 term: "Waiting",
                 description:
-                  "Videflo is holding off — usually for Wi-Fi when cellular is off, or for Low Power Mode to end. It carries on by itself.",
+                  "Videflo is holding off, usually for Wi-Fi when cellular is off, or for Low Power Mode to end. It carries on by itself.",
               },
               {
                 term: "Needs Attention",
                 description:
-                  "Something stopped it and it can't continue on its own — most often a full allowance. The card offers to retry once you've sorted it out.",
+                  "Something stopped it and it can't continue on its own, most often a full allowance. The card offers to retry once you've sorted it out.",
               },
             ],
           },
@@ -110,7 +110,7 @@ export const storageArticles: readonly HelpArticle[] = [
               {
                 term: "Back Up to Videflo Cloud",
                 description:
-                  "The master switch. Off means new recordings stay on your phone only — nothing is queued, retried or uploaded later. Anything already in Videflo Cloud stays there.",
+                  "The master switch. Off means new recordings stay on your phone only. Nothing is queued, retried or uploaded later. Anything already in Videflo Cloud stays there.",
               },
               {
                 term: "Use Cellular Data",
@@ -134,7 +134,7 @@ export const storageArticles: readonly HelpArticle[] = [
         blocks: [
           {
             kind: "text",
-            text: "Once a Tape is fully backed up, you can free the space it uses on your phone. Press and hold it and choose **Remove from This iPhone**. Videflo checks that every recording really is in Videflo Cloud — it compares the files themselves, not just a note that says they uploaded — and only then removes them.",
+            text: "Once a Tape is fully backed up, you can free the space it uses on your phone. Press and hold it and choose **Remove from This iPhone**. Videflo checks that every recording really is in Videflo Cloud (it compares the files themselves, not just a note that says they uploaded) and only then removes them.",
           },
           {
             kind: "text",
@@ -144,7 +144,7 @@ export const storageArticles: readonly HelpArticle[] = [
             kind: "note",
             title: "Playing isn't downloading",
             text: [
-              "Streaming a Tape doesn't quietly put its files back on your phone, and exporting it doesn't either. Only **Download to This iPhone** does — so a Tape you've removed stays removed until you say otherwise.",
+              "Streaming a Tape doesn't quietly put its files back on your phone, and exporting it doesn't either. Only **Download to This iPhone** does, so a Tape you've removed stays removed until you say otherwise.",
             ],
           },
         ],
@@ -152,7 +152,7 @@ export const storageArticles: readonly HelpArticle[] = [
     ],
     tips: [
       "Leave both switches on. Backups on cellular are the difference between a memory being protected the same evening and it waiting a week for Wi-Fi.",
-      "Filming somewhere with no signal? Nothing is lost — recordings queue on the phone and upload when you're back in range.",
+      "Filming somewhere with no signal? Nothing is lost. Recordings queue on the phone and upload when you're back in range.",
       "Keep a phone backup switched on as well. Videflo Cloud protects what has uploaded; an iCloud or computer backup covers the phone itself.",
     ],
     pitfalls: [
@@ -171,24 +171,24 @@ export const storageArticles: readonly HelpArticle[] = [
       {
         problem: "A Tape has said Backing Up for ages.",
         solutions: [
-          "Check you're online — and on Wi-Fi if Use Cellular Data is off.",
+          "Check you're online, and on Wi-Fi if Use Cellular Data is off.",
           "Switch off Low Power Mode; Videflo waits for it to end.",
           "Open Videflo and leave it on screen for a minute. Uploads continue in the background, but iOS gives them more room while the app is open.",
-          "If the card says it needs attention, tap it — it will say why, and offer to retry.",
+          "If the card says it needs attention, tap it. It will say why, and offer to retry.",
         ],
       },
       {
         problem: "Videflo Cloud says it's full.",
         solutions: [
           "Open **Settings → Videflo Cloud → Manage Storage**. **Free Up Space** lists your largest Tapes; **Storage Options** offers a larger capacity.",
-          "Nothing already backed up is at risk — Videflo pauses new uploads until there's room.",
+          "Nothing already backed up is at risk. Videflo pauses new uploads until there's room.",
         ],
       },
       {
         problem: "Remove from This iPhone isn't offered.",
         solutions: [
           "The Tape isn't fully backed up yet. Wait for **Backed Up**.",
-          "Check you're signed in — Videflo needs to confirm with Videflo Cloud before it removes anything.",
+          "Check you're signed in. Videflo needs to confirm with Videflo Cloud before it removes anything.",
         ],
       },
     ],
@@ -219,7 +219,7 @@ export const storageArticles: readonly HelpArticle[] = [
     slug: "storage-space",
     title: "How much space Tapes use, and how to free some up",
     description:
-      "Where the gigabytes go — on your phone and in Videflo Cloud — what's safe to remove, and what the warnings mean.",
+      "Where the gigabytes go, on your phone and in Videflo Cloud, what's safe to remove, and what the warnings mean.",
     category: "storage",
     keywords: [
       "storage full",
@@ -234,7 +234,7 @@ export const storageArticles: readonly HelpArticle[] = [
       "quota",
     ],
     overview: [
-      "Video is large. That's the whole story — a phone full of photographs will fill up far faster once it's also full of Tapes.",
+      "Video is large. That's the whole story. A phone full of photographs will fill up far faster once it's also full of Tapes.",
       "The good news is that Videflo can free up a lot of space on your phone without losing a single second of footage, because a backed-up Tape doesn't need to live on the phone.",
     ],
     sections: [
@@ -253,13 +253,13 @@ export const storageArticles: readonly HelpArticle[] = [
               {
                 term: "Videflo Cloud",
                 description:
-                  "Where recordings are protected. The limit is your allowance — **50 GB** with the subscription, with larger capacities available. You can see it in **Settings → Videflo Cloud**.",
+                  "Where recordings are protected. The limit is your allowance: **50 GB** with the subscription, with larger capacities available. You can see it in **Settings → Videflo Cloud**.",
               },
             ],
           },
           {
             kind: "text",
-            text: "Standard (1080p) is the smallest; High (4K) is roughly four times the size for the same length — on both counts.",
+            text: "Standard (1080p) is the smallest; High (4K) is roughly four times the size for the same length, on both counts.",
           },
         ],
       },
@@ -273,7 +273,7 @@ export const storageArticles: readonly HelpArticle[] = [
               {
                 title: "Remove backed-up Tapes from the phone.",
                 detail:
-                  "Press and hold a Tape that says **Backed Up** and choose **Remove from This iPhone** — or open **Settings → Videflo Cloud → Manage Storage → Free Up Space**, which lists your largest Tapes. The Tape stays in your library and plays by streaming. Start here — it's the biggest win with no risk at all.",
+                  "Press and hold a Tape that says **Backed Up** and choose **Remove from This iPhone**, or open **Settings → Videflo Cloud → Manage Storage → Free Up Space**, which lists your largest Tapes. The Tape stays in your library and plays by streaming. Start here. It's the biggest win with no risk at all.",
               },
               {
                 title: "Delete recordings you genuinely don't want.",
@@ -289,7 +289,7 @@ export const storageArticles: readonly HelpArticle[] = [
           },
           {
             kind: "warning",
-            title: "Deleting a Tape is permanent — everywhere",
+            title: "Deleting a Tape is permanent, everywhere",
             text: [
               "Delete Tape removes it from your phone and from Videflo Cloud together. To free space, remove it from the phone instead.",
             ],
@@ -302,14 +302,14 @@ export const storageArticles: readonly HelpArticle[] = [
         blocks: [
           {
             kind: "text",
-            text: "Videflo tells you as your allowance fills — a notice in the bell, and the Videflo Cloud card in Settings. When it's full, new uploads pause; nothing already stored is touched.",
+            text: "Videflo tells you as your allowance fills: a notice in the bell, and the Videflo Cloud card in Settings. When it's full, new uploads pause; nothing already stored is touched.",
           },
           {
             kind: "list",
             items: [
               "**Choose a larger capacity** in **Manage Storage → Storage Options**. It's an upgrade to your existing subscription, priced by the App Store, and takes effect straight away.",
               "**Delete Tapes you don't want**, which frees their space in Videflo Cloud as well as on the phone.",
-              "**On a Shared Tape you own**, every member's recording counts against your allowance — deleting a recording you don't want frees it for everyone.",
+              "**On a Shared Tape you own**, every member's recording counts against your allowance, so deleting a recording you don't want frees it for everyone.",
             ],
           },
           {
@@ -327,7 +327,7 @@ export const storageArticles: readonly HelpArticle[] = [
         blocks: [
           {
             kind: "text",
-            text: "While you're recording, Videflo watches the free space on your phone and shows a warning in the corner when it's getting short. The warning appears while there's still comfortable room to finish what you're filming — it's a nudge, not an emergency.",
+            text: "While you're recording, Videflo watches the free space on your phone and shows a warning in the corner when it's getting short. The warning appears while there's still comfortable room to finish what you're filming. It's a nudge, not an emergency.",
           },
           {
             kind: "text",
@@ -356,7 +356,7 @@ export const storageArticles: readonly HelpArticle[] = [
         problem:
           "Videflo says there's not enough space, but the phone says there is.",
         solutions: [
-          "Exporting a Tape needs room for the whole new file at once — several gigabytes for a long Tape.",
+          "Exporting a Tape needs room for the whole new file at once, several gigabytes for a long Tape.",
           "iOS also keeps some space in reserve, so the last stretch isn't really usable.",
           "Free a few more gigabytes than you think you need and try again.",
         ],
@@ -384,7 +384,7 @@ export const storageArticles: readonly HelpArticle[] = [
       {
         question: "Why is Videflo so large in iPhone Storage?",
         answer: [
-          "Because your recordings are counted as part of it. The app itself is small; the video is what takes the room — and removing backed-up Tapes from the phone is how you shrink it.",
+          "Because your recordings are counted as part of it. The app itself is small; the video is what takes the room, and removing backed-up Tapes from the phone is how you shrink it.",
         ],
       },
     ],
@@ -399,7 +399,7 @@ export const storageArticles: readonly HelpArticle[] = [
     slug: "backups-and-new-iphone",
     title: "Moving to a new phone, reinstalling, and a lost phone",
     description:
-      "How your Tapes come back — from Videflo Cloud, and from your phone's backup — and what to check before you wipe the old phone.",
+      "How your Tapes come back, from Videflo Cloud and from your phone's backup, and what to check before you wipe the old phone.",
     category: "storage",
     keywords: [
       "backup",
@@ -413,7 +413,7 @@ export const storageArticles: readonly HelpArticle[] = [
       "reinstall",
     ],
     overview: [
-      "Your Tapes live in two places: on your phone, and in Videflo Cloud. That's what makes a new phone undramatic — sign in, and every backed-up Tape is there.",
+      "Your Tapes live in two places: on your phone, and in Videflo Cloud. That's what makes a new phone undramatic: sign in, and every backed-up Tape is there.",
       "The one thing worth checking before you wipe an old phone is that everything actually finished uploading. This article is that check.",
     ],
     sections: [
@@ -432,7 +432,7 @@ export const storageArticles: readonly HelpArticle[] = [
               {
                 title: "Set the new phone up however you like.",
                 detail:
-                  "Restoring from an iCloud or computer backup, Apple's direct transfer, or setting it up as new — all work. A restore or transfer also brings the recordings across directly, which saves downloading them.",
+                  "Restoring from an iCloud or computer backup, Apple's direct transfer, or setting it up as new all work. A restore or transfer also brings the recordings across directly, which saves downloading them.",
               },
               {
                 title: "Install Videflo and sign in with Apple.",
@@ -463,7 +463,7 @@ export const storageArticles: readonly HelpArticle[] = [
         blocks: [
           {
             kind: "text",
-            text: "Deleting Videflo removes the recordings on that phone. Everything already in Videflo Cloud is untouched, and reinstalling and signing in brings it back. The risk is only ever a recording that hadn't finished uploading — so check the cards say **Backed Up** before you delete the app, and don't reinstall as a first troubleshooting step.",
+            text: "Deleting Videflo removes the recordings on that phone. Everything already in Videflo Cloud is untouched, and reinstalling and signing in brings it back. The risk is only ever a recording that hadn't finished uploading, so check the cards say **Backed Up** before you delete the app, and don't reinstall as a first troubleshooting step.",
           },
         ],
       },
@@ -473,7 +473,7 @@ export const storageArticles: readonly HelpArticle[] = [
         blocks: [
           {
             kind: "text",
-            text: "Sign in on the replacement and your backed-up Tapes are there. Recordings that hadn't uploaded when the phone was lost are gone with it — which is why the two switches in **Backup Settings** are worth leaving on, and why a phone backup is worth keeping as well.",
+            text: "Sign in on the replacement and your backed-up Tapes are there. Recordings that hadn't uploaded when the phone was lost are gone with it, which is why the two switches in **Backup Settings** are worth leaving on, and why a phone backup is worth keeping as well.",
           },
           {
             kind: "note",
@@ -490,7 +490,7 @@ export const storageArticles: readonly HelpArticle[] = [
         blocks: [
           {
             kind: "text",
-            text: "Sign in to the same Videflo account on both, and every backed-up Tape appears in the library on each. Videflo is designed around one phone at a time, though: Shared Tapes stay in step on both phones, but a personal Tape you keep adding to from both isn't kept in step — treat one phone as the one you record into. Collections and settings are per phone.",
+            text: "Sign in to the same Videflo account on both, and every backed-up Tape appears in the library on each. Videflo is designed around one phone at a time, though: Shared Tapes stay in step on both phones, but a personal Tape you keep adding to from both isn't kept in step, so treat one phone as the one you record into. Collections and settings are per phone.",
           },
         ],
       },
@@ -507,7 +507,7 @@ export const storageArticles: readonly HelpArticle[] = [
       },
       {
         mistake: "Expecting Collections to appear on the new phone.",
-        fix: "Collections and settings stay on the phone they were made on. Recreate them — it's a minute's work, and every Tape is there to put in them.",
+        fix: "Collections and settings stay on the phone they were made on. Recreate them. It's a minute's work, and every Tape is there to put in them.",
       },
     ],
     troubleshooting: [
@@ -516,7 +516,7 @@ export const storageArticles: readonly HelpArticle[] = [
         solutions: [
           "Check you signed in with the same Apple Account. A different account is a different Videflo library.",
           "Pull the Tapes tab down to refresh.",
-          "If the old phone still exists, open Videflo on it — the Tape may still be uploading, or backup may have been off.",
+          "If the old phone still exists, open Videflo on it. The Tape may still be uploading, or backup may have been off.",
         ],
       },
       {
@@ -536,13 +536,13 @@ export const storageArticles: readonly HelpArticle[] = [
       {
         question: "Does iCloud Photos back up my Tapes?",
         answer: [
-          "Only the copies you've exported into your photo library. Tapes inside Videflo aren't part of your photo library — they're protected by Videflo Cloud instead.",
+          "Only the copies you've exported into your photo library. Tapes inside Videflo aren't part of your photo library. They're protected by Videflo Cloud instead.",
         ],
       },
       {
         question: "Can I get my Tapes back if I deleted the app?",
         answer: [
-          "Yes, for everything that was backed up — reinstall and sign in. A recording that hadn't uploaded is recoverable only from a phone backup made before you deleted the app.",
+          "Yes, for everything that was backed up. Reinstall and sign in. A recording that hadn't uploaded is recoverable only from a phone backup made before you deleted the app.",
         ],
       },
       {

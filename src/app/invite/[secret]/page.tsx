@@ -35,7 +35,7 @@ import { site } from "@/config/site";
  * segment for the route to exist at all; nothing reads it, which is the point.
  */
 export const metadata: Metadata = {
-  title: `You're invited — ${site.name}`,
+  title: `You're invited`,
   description: `Someone invited you on ${site.name}.`,
   /*
     Never indexed. These URLs are private one-time links; a crawler following one
@@ -62,7 +62,7 @@ export default function InvitePage() {
         </h1>
 
         <p className="text-ink-soft mt-5 text-lg">
-          Someone wants to share memories with you on {site.name} — a private
+          Someone wants to share memories with you on {site.name}, a private
           video archive kept by the few people who were actually there. Get the
           app, sign in with Apple, and the invitation is waiting.
         </p>
@@ -92,7 +92,7 @@ export default function InvitePage() {
             it.
           </p>
           <p className="text-ink-faint mt-4 text-sm">
-            Just installed {site.name}? Do the same thing — finish setting up
+            Just installed {site.name}? Do the same thing: finish setting up
             your account first, then tap the link in your message once more.
           </p>
         </div>

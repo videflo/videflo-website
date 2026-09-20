@@ -20,7 +20,7 @@ export const exportingArticles: readonly HelpArticle[] = [
     ],
     overview: [
       "Exporting makes an ordinary video file out of a whole Tape and saves it into your Photos library. From there it behaves like any other video: you can share it, AirDrop it, copy it to a computer, or back it up with everything else.",
-      "It's one step. Choose **Export Tape**, watch the percentage, and the video is in Photos. Nothing is left behind in Videflo — there's no prepared copy to manage or delete afterwards.",
+      "It's one step. Choose **Export Tape**, watch the percentage, and the video is in Photos. Nothing is left behind in Videflo. There's no prepared copy to manage or delete afterwards.",
     ],
     sections: [
       {
@@ -45,7 +45,7 @@ export const exportingArticles: readonly HelpArticle[] = [
               {
                 title: "Wait while it exports.",
                 detail:
-                  "**Exporting 42%** counts up as it works. It's real progress, not an estimate. Keep Videflo on screen — you can cancel at any time, and nothing is kept from a cancelled export.",
+                  "**Exporting 42%** counts up as it works. It's real progress, not an estimate. Keep Videflo on screen. You can cancel at any time, and nothing is kept from a cancelled export.",
               },
               {
                 title: "**Export Complete · Saved to Photos.** Tap **Done**.",
@@ -72,7 +72,7 @@ export const exportingArticles: readonly HelpArticle[] = [
             kind: "note",
             title: "A Tape that lives only in Videflo Cloud exports too",
             text: [
-              "If you've removed a Tape from this phone, Export Tape streams it from Videflo Cloud while it renders. It doesn't download the Tape first, and it doesn't leave a copy on the phone afterwards — you'll need a connection, and a long Tape takes longer than one that's already here.",
+              "If you've removed a Tape from this phone, Export Tape streams it from Videflo Cloud while it renders. It doesn't download the Tape first, and it doesn't leave a copy on the phone afterwards. You'll need a connection, and a long Tape takes longer than one that's already here.",
             ],
           },
         ],
@@ -88,10 +88,10 @@ export const exportingArticles: readonly HelpArticle[] = [
           {
             kind: "list",
             items: [
-              "**A Tape built over a holiday can be several gigabytes** — past what Messages, Mail or WhatsApp will carry, and some services quietly squash the video to fit.",
-              "**AirDrop** is best for someone in the same room — full quality, no size limit, nothing uploaded anywhere.",
-              "**A single recording** is often the friendlier thing to send — see **Saving one recording to Photos**.",
-              "**Want them to have the memory itself, not a copy?** Invite them to the Tape instead — see **Shared Tapes**. They can watch it in Videflo and add their own recordings.",
+              "**A Tape built over a holiday can be several gigabytes**, past what Messages, Mail or WhatsApp will carry, and some services quietly squash the video to fit.",
+              "**AirDrop** is best for someone in the same room: full quality, no size limit, nothing uploaded anywhere.",
+              "**A single recording** is often the friendlier thing to send. See **Saving one recording to Photos**.",
+              "**Want them to have the memory itself, not a copy?** Invite them to the Tape instead. See **Shared Tapes**. They can watch it in Videflo and add their own recordings.",
             ],
           },
         ],
@@ -102,7 +102,7 @@ export const exportingArticles: readonly HelpArticle[] = [
         blocks: [
           {
             kind: "text",
-            text: "Only the Tape's owner. Every member can watch the whole Tape in Videflo, but **Export Tape** appears in the owner's menu alone — access to watch a memory isn't the same as permission to hand out copies of it.",
+            text: "Only the Tape's owner. Every member can watch the whole Tape in Videflo, but **Export Tape** appears in the owner's menu alone. Access to watch a memory isn't the same as permission to hand out copies of it.",
           },
         ],
       },
@@ -110,7 +110,7 @@ export const exportingArticles: readonly HelpArticle[] = [
     tips: [
       "Check your free space first. The exported file is roughly as large as all the recordings in the Tape put together.",
       "Exporting a long 4K Tape can take a good while. Plug in and start it before you make a cup of tea.",
-      "Exporting is a fine way to keep a copy outside Videflo altogether — the video in Photos is included in your normal phone backup and iCloud Photos.",
+      "Exporting is a fine way to keep a copy outside Videflo altogether. The video in Photos is included in your normal phone backup and iCloud Photos.",
     ],
     pitfalls: [
       {
@@ -131,24 +131,24 @@ export const exportingArticles: readonly HelpArticle[] = [
       {
         problem: "Export fails or stops part way.",
         solutions: [
-          "Free up storage — this is by far the most common cause.",
+          "Free up storage. This is by far the most common cause.",
           "Switch off Low Power Mode.",
           "Keep Videflo on screen with the phone plugged in and try again.",
           "If the Tape lives in Videflo Cloud, check your connection.",
-          "If one particular Tape always fails, check **Manage Recordings** for a recording marked unavailable — a Tape exports whole or not at all.",
+          "If one particular Tape always fails, check **Manage Recordings** for a recording marked unavailable. A Tape exports whole or not at all.",
         ],
       },
       {
         problem: "It says Videflo can't save to Photos.",
         solutions: [
           "Check **Settings → Videflo → Photos** allows adding to your library.",
-          "Make sure there's room in your photo library — the exported video needs space of its own.",
+          "Make sure there's room in your photo library. The exported video needs space of its own.",
         ],
       },
       {
         problem: "The export finished but I can't find the video.",
         solutions: [
-          "Open Photos and look in **Recents** — it's added with today's date.",
+          "Open Photos and look in **Recents**. It's added with today's date.",
           "Check **Albums → Videos**.",
           "If your library is very large, sort Recents by newest first.",
         ],
@@ -198,7 +198,7 @@ export const exportingArticles: readonly HelpArticle[] = [
       "quick export",
     ],
     overview: [
-      "Sometimes you only want one bit — the twenty seconds where the dog does the thing. You don't have to export the whole Tape for that.",
+      "Sometimes you only want one bit, like the twenty seconds where the dog does the thing. You don't have to export the whole Tape for that.",
       "Individual recordings can be saved straight to your Photos library, and because there's nothing to build first, it's quick.",
     ],
     sections: [
@@ -260,14 +260,14 @@ export const exportingArticles: readonly HelpArticle[] = [
       },
     ],
     tips: [
-      "Want it shorter? Export it, then trim the copy in the Photos app. Videflo never trims — the recording in the Tape stays whole.",
+      "Want it shorter? Export it, then trim the copy in the Photos app. Videflo never trims, so the recording in the Tape stays whole.",
       "Saving a recording to Photos doesn't remove it from the Tape. You end up with two copies, which is rather the point.",
     ],
     troubleshooting: [
       {
         problem: "Export to Photos is greyed out or missing.",
         solutions: [
-          "Check the recording isn't marked unavailable — a recording with no file on this phone and no finished copy in Videflo Cloud can't be exported.",
+          "Check the recording isn't marked unavailable. A recording with no file on this phone and no finished copy in Videflo Cloud can't be exported.",
         ],
       },
       {
@@ -283,14 +283,14 @@ export const exportingArticles: readonly HelpArticle[] = [
       {
         question: "Can I export several recordings at once?",
         answer: [
-          "Not in one go — they're exported one at a time. To get everything together, export the whole Tape instead.",
+          "Not in one go. They're exported one at a time. To get everything together, export the whole Tape instead.",
         ],
       },
       {
         question:
           "Can I export a recording somebody else added to a Shared Tape?",
         answer: [
-          "Export to Photos is offered for every recording you can play, so yes — it's part of the Tape you're on. Exporting the whole Tape in one go is for the owner only.",
+          "Export to Photos is offered for every recording you can play, so yes. It's part of the Tape you're on. Exporting the whole Tape in one go is for the owner only.",
         ],
       },
     ],

@@ -8,14 +8,13 @@ import { primaryNav } from "@/config/site";
 
 export const metadata: Metadata = gate.enabled
   ? {
-      title: "Videflo — Coming Soon",
+      title: "Videflo | Coming Soon",
       description: "Videflo is coming soon.",
       robots: { index: false, follow: false },
     }
   : {
       title: "Page not found",
-      description:
-        "That page doesn’t exist — but your memories are still here.",
+      description: "That page doesn’t exist, but your memories are still here.",
       robots: { index: false, follow: true },
     };
 

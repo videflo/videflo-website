@@ -36,7 +36,7 @@ export const ogImage = {
   url: "/opengraph-image",
   width: 1200,
   height: 630,
-  alt: "Videflo — Capture Today. Cherish Forever.",
+  alt: "Videflo | Capture Today. Cherish Forever.",
 } as const;
 
 /** ------------------------------------------------------------------------
