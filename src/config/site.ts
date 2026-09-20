@@ -75,8 +75,12 @@ export const appStore = {
   /** Shown when a visitor activates a download button while `url` is null. */
   comingSoonNotice:
     "Videflo isn’t on the App Store yet. Email us and we’ll let you know the day it arrives:",
-  /** Platform statement — keep accurate. Videflo is iPhone-only today. */
-  platformNote: "Made for iPhone",
+  /**
+   * Brand line beneath every download button. Deliberately not a platform
+   * statement: Videflo ships on iPhone first and is planned for Android, so
+   * the brand positioning is not tied to a device.
+   */
+  platformNote: "Made for your memories.",
 } as const;
 
 /** ------------------------------------------------------------------------
