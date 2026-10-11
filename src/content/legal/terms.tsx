@@ -209,7 +209,12 @@ export const termsSections: readonly LegalSection[] = [
           use your Content for advertising, promotion or training any model, and
           ends when you delete the Content or your account, except to the extent
           it has been shared with others as described below or we are required
-          by law to retain it.
+          by law to retain it. It also lets us review Content that has been
+          reported and act on it as described in{" "}
+          <A href="/terms#reporting-and-enforcement">
+            Reporting, blocking and enforcement
+          </A>
+          .
         </P>
         <P>
           If you choose to send us content as part of a support request, you
@@ -342,9 +347,13 @@ export const termsSections: readonly LegalSection[] = [
           </LI>
         </UL>
         <P>
-          You must only add recordings you have the right to share, and you must
-          not use a Shared Tape to harass, deceive or harm anybody. We may
-          remove content or suspend accounts that breach these Terms.
+          You are responsible for every recording you add to a Shared Tape and
+          for the people you invite. You must only add recordings you have the
+          right to share and that follow{" "}
+          <A href="/terms#acceptable-use">Acceptable use</A>, and you must not
+          use a Shared Tape to harass, deceive or harm anybody. We may remove
+          content, restrict an account’s use of {site.name} Cloud, or terminate
+          an account that breaches these Terms.
         </P>
       </>
     ),
@@ -492,8 +501,33 @@ export const termsSections: readonly LegalSection[] = [
     heading: "Acceptable use",
     content: (
       <>
+        <P>
+          {site.name} has zero tolerance for objectionable content and abusive
+          users. Objectionable content includes material that is sexually
+          explicit, pornographic, violent or gory, hateful, harassing,
+          threatening, defamatory or illegal, or that exploits or endangers a
+          child. Abusive behavior includes harassing, bullying, threatening,
+          intimidating, stalking or impersonating anybody, and contacting
+          somebody again after they have made clear they do not want to hear
+          from you.
+        </P>
         <P>You agree not to:</P>
         <UL>
+          <LI>
+            create, add, share or invite people to view objectionable content,
+            including in a Shared Tape, a recording you add to somebody else’s
+            Shared Tape, a Tape title, a display name, a username or a profile
+            photo;
+          </LI>
+          <LI>
+            harass, bully, threaten, intimidate, stalk or otherwise abuse
+            anybody, or encourage others to do so;
+          </LI>
+          <LI>
+            post or share content that promotes hatred or violence against
+            people based on race, ethnicity, national origin, religion,
+            disability, sex, gender identity, sexual orientation or age;
+          </LI>
           <LI>
             use {site.name} to record or share anyone unlawfully or without
             required consent;
@@ -525,10 +559,84 @@ export const termsSections: readonly LegalSection[] = [
           </LI>
         </UL>
         <P>
+          Breaking these rules may lead to the action described in{" "}
+          <A href="/terms#reporting-and-enforcement">
+            Reporting, blocking and enforcement
+          </A>
+          .
+        </P>
+        <P>
           Recording laws differ sharply between countries and, in the United
           States, between states. Some require the consent of everyone being
           recorded, particularly for audio. You are responsible for knowing and
           following the rules that apply where you are recording.
+        </P>
+      </>
+    ),
+  },
+  {
+    id: "reporting-and-enforcement",
+    heading: "Reporting, blocking and enforcement",
+    content: (
+      <>
+        <H3>Reporting</H3>
+        <P>
+          If you see content or behavior that breaks these Terms, report it in
+          the app. You can report a person, a Shared Tape, or a recording that
+          somebody else added to a Shared Tape you belong to. When you report,
+          you choose a reason and can add details. Reports go to {site.name},
+          not to the person you report, and we do not tell that person who
+          reported them. You can also contact us using the details in{" "}
+          <A href="/terms#contact">Contact information</A>. If somebody is in
+          immediate danger, contact your local emergency services first.
+        </P>
+        <H3>Blocking</H3>
+        <P>
+          You can block another {site.name} user from the menu beside their name
+          in Friends &amp; Family and its search results, in Together, among a
+          Shared Tape’s members, or on an invitation they sent you, and when you
+          report them. Once you block somebody, neither of you can find the
+          other in search, send the other a Friends &amp; Family request, invite
+          the other to a Tape, or join a Tape the other owns, and neither of you
+          receives notifications about the other. Blocking also ends any Friends
+          &amp; Family connection between you and cancels pending Tape
+          invitations between you. The person you block is not told. Tapes you
+          already share stay as they are: you both keep access to them and
+          everything in them. You can leave a Shared Tape at any time, and you
+          can remove somebody from a Shared Tape you own. You can unblock
+          somebody from Blocked People in your Profile; unblocking does not
+          restore a connection or invitation that ended when you blocked them.
+        </P>
+        <H3>How we review reports and enforce these Terms</H3>
+        <P>
+          We review reports and decide what action to take. {site.name} does not
+          monitor or automatically scan your recordings or Tapes. When a report
+          cannot be decided otherwise, an authorized member of the {site.name}{" "}
+          team may view the Profile, Tape or recording that was reported, and
+          only what is needed to decide the report. To keep {site.name} safe, we
+          may also prevent certain words from being used in display names,
+          usernames and Shared Tape titles.
+        </P>
+        <P>
+          If we decide that content or behavior breaks these Terms, we may,
+          without notice and at our discretion:
+        </P>
+        <UL>
+          <LI>
+            remove the content, which can mean deleting the entire Shared Tape
+            that contains it, including other people’s recordings in it;
+          </LI>
+          <LI>restrict an account’s use of {site.name} Cloud;</LI>
+          <LI>terminate an account permanently; and</LI>
+          <LI>
+            preserve information and report it to the appropriate authorities
+            where the law requires it or where we believe somebody is at risk.
+          </LI>
+        </UL>
+        <P>
+          We review user reports promptly and take appropriate action when
+          content or behavior violates our Terms. Not every report leads to
+          action.
         </P>
       </>
     ),
@@ -766,13 +874,15 @@ export const termsSections: readonly LegalSection[] = [
           be undone.
         </P>
         <P>
-          We may suspend or terminate your access to the Service if you
-          materially breach these Terms, if we are required to do so by law, or
-          if we discontinue the Service as described above. Sections that by
-          their nature should survive termination continue to apply, including
-          your content licence to the extent Content remains in other people’s
-          Shared Tapes, intellectual property, disclaimers, limitation of
-          liability, and indemnification.
+          We may restrict your use of {site.name} Cloud or terminate your
+          account if you materially breach these Terms, including the
+          zero-tolerance rules in{" "}
+          <A href="/terms#acceptable-use">Acceptable use</A>, if we are required
+          to do so by law, or if we discontinue the Service as described above.
+          Sections that by their nature should survive termination continue to
+          apply, including your content licence to the extent Content remains in
+          other people’s Shared Tapes, intellectual property, disclaimers,
+          limitation of liability, and indemnification.
         </P>
       </>
     ),

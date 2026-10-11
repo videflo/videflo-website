@@ -186,6 +186,23 @@ export const privacySections: readonly LegalSection[] = [
           page it opens on this website names no Tape and no person.
         </P>
 
+        <H3>Reports and blocks</H3>
+        <P>
+          When you report a person, a Shared Tape or a recording, {site.name}{" "}
+          Cloud records your account, what you reported, the reason you chose,
+          any details you add, and when you reported it. It also stores the
+          reported person’s display name and username and the Tape’s title as
+          they were at that moment, so that a later change of name cannot hide
+          what was reported. As a report is reviewed, {site.name} records its
+          status, any notes the reviewer makes, who reviewed it and when.
+        </P>
+        <P>
+          When you block somebody, {site.name} Cloud records that you blocked
+          them and when. Display names, usernames and Shared Tape titles are
+          checked against a list of words that are not allowed; this check looks
+          only at that text.
+        </P>
+
         <H3>Notifications</H3>
         <P>
           {site.name} keeps a record of the notifications it shows you inside
@@ -317,7 +334,11 @@ export const privacySections: readonly LegalSection[] = [
           <LI>respond to your support requests;</LI>
           <LI>
             keep the service secure and working, and detect, prevent and address
-            abuse; and
+            abuse;
+          </LI>
+          <LI>
+            review reports, apply blocks, and enforce our Terms of Service to
+            protect the people who use {site.name}; and
           </LI>
           <LI>comply with legal obligations.</LI>
         </UL>
@@ -348,8 +369,10 @@ export const privacySections: readonly LegalSection[] = [
           <LI>
             <strong className="text-ink">No analysis of your footage.</strong>{" "}
             {site.name} does not analyse, transcribe, run recognition on, or use
-            your recordings to train any model. Thumbnails you see in the app
-            are generated on your own device.
+            your recordings to train any model, and it does not monitor or scan
+            them. Thumbnails you see in the app are generated on your own
+            device. A person at {site.name} looks at a recording only when it
+            has been reported and the report cannot be decided without it.
           </LI>
           <LI>
             <strong className="text-ink">
@@ -397,7 +420,21 @@ export const privacySections: readonly LegalSection[] = [
             A Friends &amp; Family connection on its own gives nobody access to
             any of your Tapes.
           </LI>
+          <LI>
+            <strong className="text-ink">Reports and blocks</strong> are not
+            visible to other {site.name} users. A person you report or block is
+            not told, and nobody is told who reported them. You cannot read a
+            report back after sending it.
+          </LI>
         </UL>
+
+        <H3>The {site.name} team</H3>
+        <P>
+          Reports are reviewed only by authorized members of the {site.name}{" "}
+          team, through access restricted to that purpose. When reviewing a
+          report, they look at the report and, only where needed to decide it,
+          the reported Profile, Tape or recording.
+        </P>
         <H3>Service providers</H3>
         <P>
           The providers listed under{" "}
@@ -563,6 +600,13 @@ export const privacySections: readonly LegalSection[] = [
             can no longer be reached, and deleted with your account.
           </LI>
           <LI>
+            <strong className="text-ink">Reports</strong> and their review
+            history are kept for as long as we need them to review and act on
+            reports and to protect the people who use {site.name}. We have not
+            set a fixed period; if we do, this policy will say so. Blocks are
+            kept until you unblock the person.
+          </LI>
+          <LI>
             <strong className="text-ink">Subscription records</strong> are kept
             while your account exists, so that your access and allowance can be
             confirmed.
@@ -595,6 +639,14 @@ export const privacySections: readonly LegalSection[] = [
             your account, Profile, profile photo, Friends &amp; Family
             connections, invitations, notifications and push registrations are
             deleted;
+          </LI>
+          <LI>
+            blocks you made, and blocks other people made of you, are deleted;
+            reports you made are kept but are no longer linked to your account,
+            although they still contain what you reported and any details you
+            wrote; reports about you are kept and are no longer linked to your
+            account, but they still contain the display name, username and any
+            Tape title recorded when they were made, so they are not anonymous;
           </LI>
           <LI>
             every Tape you own is deleted from {site.name} Cloud, together with
