@@ -44,17 +44,20 @@ export const ogImage = {
  *  --------------------------------------------------------------------- */
 export const contact = {
   /**
-   * The one Videflo inbox confirmed to exist and be monitored (owner
-   * confirmation, 2026-09-19). Every public contact on the site — support,
-   * privacy requests and legal notices — resolves to it. `support@`, `legal@`
-   * and `privacy@` were never created; do not reintroduce them without the
-   * mailboxes existing first.
+   * Videflo's official public contact (owner decision, 2026-10-12). The
+   * mailbox is confirmed to exist and be monitored, with one authorized user
+   * and multi-factor authentication. Every public contact on the site
+   * (support, privacy requests and legal notices) resolves to it. It also
+   * receives automated safety-report and operational-alert emails.
+   * `admin@videflo.com` remains active for internal business correspondence
+   * only and is not shown publicly. `legal@` and `privacy@` were never
+   * created; do not reintroduce them without the mailboxes existing first.
    */
-  supportEmail: "admin@videflo.com",
+  supportEmail: "support@videflo.com",
   /** Legal notices and the Terms' informal-resolution step. Same inbox. */
-  legalEmail: "admin@videflo.com",
+  legalEmail: "support@videflo.com",
   /** Privacy and data-rights requests. Same inbox. */
-  privacyEmail: "admin@videflo.com",
+  privacyEmail: "support@videflo.com",
 } as const;
 
 /** ------------------------------------------------------------------------
@@ -182,8 +185,8 @@ export const legal = {
    * Dates shown on the legal pages. Update whenever the documents change.
    * `display` is what visitors read; `iso` feeds <time dateTime>.
    */
-  privacy: { display: "October 11, 2026", iso: "2026-10-11" },
-  terms: { display: "October 11, 2026", iso: "2026-10-11" },
+  privacy: { display: "October 12, 2026", iso: "2026-10-12" },
+  terms: { display: "October 12, 2026", iso: "2026-10-12" },
 } as const;
 
 /** ------------------------------------------------------------------------

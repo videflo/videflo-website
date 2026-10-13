@@ -197,6 +197,20 @@ export const privacySections: readonly LegalSection[] = [
           status, any notes the reviewer makes, who reviewed it and when.
         </P>
         <P>
+          When a report is submitted, {site.name} automatically sends an email
+          about it to the {site.name} support mailbox so that it can be
+          reviewed. The email contains the details of the report: the account
+          identifiers, display names and usernames of the person who made the
+          report and the person reported, the reason chosen, any details
+          written, when the report was made and its status, and how many other
+          reports concern the same account. Where a Shared Tape or a recording
+          was reported, it also includes the Tape’s title and identifier and
+          information that identifies the recording, such as its title, its
+          length, when it was recorded and who added it. Report emails never
+          include a recording, a link to one, or the location where any file is
+          stored.
+        </P>
+        <P>
           When you block somebody, {site.name} Cloud records that you blocked
           them and when. Display names, usernames and Shared Tape titles are
           checked against a list of words that are not allowed; this check looks
@@ -431,9 +445,11 @@ export const privacySections: readonly LegalSection[] = [
         <H3>The {site.name} team</H3>
         <P>
           Reports are reviewed only by authorized members of the {site.name}{" "}
-          team, through access restricted to that purpose. When reviewing a
-          report, they look at the report and, only where needed to decide it,
-          the reported Profile, Tape or recording.
+          team, through access restricted to that purpose, including the support
+          mailbox that receives report notifications. When reviewing a report,
+          they look at the report and, only where needed to decide it, the
+          reported Profile, Tape or recording. A reported recording is viewed
+          only in {site.name} Cloud, never by email.
         </P>
         <H3>Service providers</H3>
         <P>
@@ -492,8 +508,16 @@ export const privacySections: readonly LegalSection[] = [
             website.
           </LI>
           <LI>
-            <strong className="text-ink">An email provider:</strong> for support
-            correspondence.
+            <strong className="text-ink">Resend:</strong> delivers the automated
+            emails {site.name} sends to our support mailbox: notifications of
+            new reports, and operational alerts about the service. Operational
+            alerts contain counts and status information about {site.name}’s
+            systems, not information about you.
+          </LI>
+          <LI>
+            <strong className="text-ink">Microsoft:</strong> Microsoft 365 hosts
+            our support mailbox, which receives your support emails, report
+            notifications and operational alerts.
           </LI>
         </UL>
         <P>
@@ -604,7 +628,11 @@ export const privacySections: readonly LegalSection[] = [
             history are kept for as long as we need them to review and act on
             reports and to protect the people who use {site.name}. We have not
             set a fixed period; if we do, this policy will say so. Blocks are
-            kept until you unblock the person.
+            kept until you unblock the person. Report notification emails in our
+            support mailbox are kept for as long as they are needed for these
+            same purposes. Our email delivery provider may also keep a record of
+            each message it delivers, for a limited period set by its own
+            retention settings.
           </LI>
           <LI>
             <strong className="text-ink">Subscription records</strong> are kept
@@ -774,6 +802,15 @@ export const privacySections: readonly LegalSection[] = [
           server for every request, so that your personal Tapes are reachable
           only by your account and a Shared Tape only by its members. We hold no
           password for you, and we never see your payment details.
+        </P>
+        <P>
+          Report notifications and operational alerts are sent by email. Email
+          is not end-to-end encrypted, so our email delivery provider and our
+          mailbox provider can process the contents of these messages in order
+          to deliver and store them. For that reason, report emails carry only
+          the details of the report and never your recordings. Access to the
+          support mailbox is restricted to authorized {site.name} personnel and
+          protected with multi-factor authentication.
         </P>
         <P>
           On your iPhone, {site.name}’s data benefits from the protections iOS
