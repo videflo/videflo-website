@@ -300,6 +300,8 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
       "sign out",
       "logout",
       "delete account",
+      "stop using apple",
+      "apple sign in settings",
     ],
     overview: [
       "Videflo has an account, and it's created with **Sign in with Apple**: one tap and Face ID. There's no Videflo password to invent and nothing to remember.",
@@ -405,6 +407,35 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
               "It deletes your account and Profile, your Friends & Family connections, and every Tape you own from Videflo Cloud, including recordings other people added to your Shared Tapes.",
               "Recordings you added to somebody else's Shared Tape stay in that Tape, because it's their memory, but they're no longer attributed to you.",
               "Videos already on this phone are not deleted by this. Your subscription is not cancelled either. That lives in your Apple Account.",
+            ],
+          },
+          {
+            kind: "text",
+            text: "Deleting your Videflo account doesn't remove Videflo from your **Sign in with Apple** settings. That's a separate list Apple keeps in your Apple Account, and Videflo doesn't remove itself from it. You can remove it yourself:",
+          },
+          {
+            kind: "steps",
+            steps: [
+              { title: "Open the **Settings** app on your iPhone." },
+              { title: "Tap your name at the top." },
+              {
+                title: "Tap **Sign in with Apple**.",
+                detail:
+                  "On some versions of iOS it's inside **Sign-In & Security**.",
+              },
+              { title: "Choose **Videflo**." },
+              {
+                title: "Tap **Delete**, then confirm.",
+                detail:
+                  "On some versions of iOS this button is called **Stop Using**.",
+              },
+            ],
+          },
+          {
+            kind: "note",
+            text: [
+              "Neither step cancels your subscription. That lives in your Apple Account, and you cancel it there.",
+              "Apple's own guide is at support.apple.com/en-us/102571, and our Privacy Policy links to it.",
             ],
           },
         ],

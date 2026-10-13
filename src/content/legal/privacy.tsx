@@ -695,6 +695,26 @@ export const privacySections: readonly LegalSection[] = [
             Cancel it in your Apple Account settings.
           </LI>
         </UL>
+        <P>
+          Deleting your {site.name} account and removing {site.name} from Sign
+          in with Apple are separate steps.{" "}
+          <strong className="text-ink">Delete Account</strong> deletes your
+          account and data as described above. It does not remove {site.name}{" "}
+          from the list of apps you use with Sign in with Apple, which Apple
+          keeps in your Apple Account, and {site.name} does not remove it for
+          you. To remove it, open the Settings app on your iPhone, tap your
+          name, then tap Sign in with Apple (on some versions of iOS this is
+          inside Sign-In &amp; Security). Choose {site.name}, then tap Delete
+          (called Stop Using on some versions of iOS). Apple explains this in{" "}
+          <A href="https://support.apple.com/en-us/102571">
+            Manage your apps with Sign in with Apple
+          </A>
+          .
+        </P>
+        <P>
+          Neither step cancels an App Store subscription. Cancel it separately
+          in your Apple Account settings.
+        </P>
       </>
     ),
   },
