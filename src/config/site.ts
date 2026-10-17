@@ -185,8 +185,8 @@ export const legal = {
    * Dates shown on the legal pages. Update whenever the documents change.
    * `display` is what visitors read; `iso` feeds <time dateTime>.
    */
-  privacy: { display: "October 12, 2026", iso: "2026-10-12" },
-  terms: { display: "October 12, 2026", iso: "2026-10-12" },
+  privacy: { display: "October 17, 2026", iso: "2026-10-17" },
+  terms: { display: "October 17, 2026", iso: "2026-10-17" },
 } as const;
 
 /** ------------------------------------------------------------------------

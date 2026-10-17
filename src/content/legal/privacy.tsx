@@ -20,6 +20,11 @@
  *    - Third-party code in the app is limited to the Supabase and RevenueCat
  *      SDKs. There is no analytics, advertising or crash-reporting SDK.
  *
+ *  DRAFT REVISION (October 2026): the 30-day cloud retention period after a
+ *  subscription ends, subscription service emails, Shared Tape deletion and
+ *  device removal, the per-member full-Tape download permission, deletion
+ *  records, and short-lived playback links. Not yet approved or published.
+ *
  *  This document is a carefully written statement of that behaviour. It is not
  *  legal advice and has not been reviewed by counsel. Before publication:
  *
@@ -111,7 +116,7 @@ export const privacySections: readonly LegalSection[] = [
           <LI>
             <strong className="text-ink">You can share a Tape.</strong> Inviting
             someone lets them see the Tape, watch it, and add their own
-            recordings to it.
+            recordings to it. The Tape’s owner controls it.
           </LI>
         </UL>
       </>
@@ -166,10 +171,20 @@ export const privacySections: readonly LegalSection[] = [
         <P>
           All of this is stored on your device. While Back Up to {site.name}{" "}
           Cloud is on, it is also uploaded to and stored in {site.name} Cloud.
-          The original files on your device are never modified, and they are
-          removed from your device only if you choose{" "}
+          The original files on your device are never modified. They are
+          removed from your device when you choose{" "}
           <strong className="text-ink">Remove from This iPhone</strong> for a
-          Tape that is already protected in {site.name} Cloud.
+          Tape that is already protected in {site.name} Cloud, and in two cases
+          involving Shared Tapes: a recording you add to a Shared Tape is
+          removed from your device automatically once its upload to{" "}
+          {site.name} Cloud is confirmed complete (a recording whose upload is
+          unfinished, failed or unconfirmed stays, and copies you download with
+          Download to This iPhone are not removed this way), after which you can
+          reach it only through {site.name} Cloud while you have access to the
+          Tape; and when the owner of a Shared Tape uses Delete for Everyone,
+          its recordings are removed from {site.name} on every member’s device.
+          Videos you have exported to Apple Photos are never removed by{" "}
+          {site.name}.
         </P>
         <P>
           Collections, the groups you organise Tapes into, and your app
@@ -179,8 +194,9 @@ export const privacySections: readonly LegalSection[] = [
         <H3>Shared Tapes, invitations and Friends &amp; Family</H3>
         <P>
           When you share a Tape, {site.name} Cloud records who owns it, who has
-          been invited, who accepted, and which recordings each person added.
-          When you send or accept a Friends &amp; Family request, it records
+          been invited, who accepted, which recordings each person added, and,
+          for each member, whether the owner has allowed them to download and
+          export the whole Tape. When you send or accept a Friends &amp; Family request, it records
           that connection. An invitation sent by text message contains a
           single-use link; the link identifies the invitation, not you, and the
           page it opens on this website names no Tape and no person.
@@ -344,6 +360,17 @@ export const privacySections: readonly LegalSection[] = [
             confirm your subscription, apply the {site.name} Cloud allowance it
             includes, and tell you when that allowance is nearly or fully used;
           </LI>
+          <LI>
+            send you service emails about your account at the email address
+            associated with it, for example when your subscription is scheduled
+            to end or has ended, and before content in {site.name} Cloud is
+            deleted. These are not marketing;
+          </LI>
+          <LI>
+            make sure a Tape or recording that has been deleted stays deleted
+            on every device, including one that was offline when it was
+            deleted;
+          </LI>
           <LI>deliver the notifications you have chosen to receive;</LI>
           <LI>respond to your support requests;</LI>
           <LI>
@@ -424,7 +451,11 @@ export const privacySections: readonly LegalSection[] = [
             cover, every recording in it, and who added each recording) can be
             seen and watched by the Tape’s owner and every member who has
             accepted an invitation. Recordings you add to somebody else’s Shared
-            Tape become part of that Tape.
+            Tape become part of that Tape. Members can download and export the
+            recordings they made, and the whole Tape only if the owner allows
+            it. That permission is not copy protection: anyone who can watch a
+            recording could capture it by other means, so share Tapes only with
+            people you trust.
           </LI>
           <LI>
             <strong className="text-ink">A personal Tape</strong> is visible to
@@ -509,10 +540,11 @@ export const privacySections: readonly LegalSection[] = [
           </LI>
           <LI>
             <strong className="text-ink">Resend:</strong> delivers the automated
-            emails {site.name} sends to our support mailbox: notifications of
-            new reports, and operational alerts about the service. Operational
-            alerts contain counts and status information about {site.name}’s
-            systems, not information about you.
+            emails {site.name} sends: service emails to you about your
+            subscription and {site.name} Cloud, and, to our support mailbox,
+            notifications of new reports and operational alerts about the
+            service. Operational alerts contain counts and status information
+            about {site.name}’s systems, not information about you.
           </LI>
           <LI>
             <strong className="text-ink">Microsoft:</strong> Microsoft 365 hosts
@@ -535,9 +567,14 @@ export const privacySections: readonly LegalSection[] = [
     content: (
       <>
         <P>
-          {site.name} Cloud is a copy, never a replacement. A recording is
-          written to your device first, and the original file there is never
-          modified by a backup, a download, or playback.
+          For your personal Tapes, {site.name} Cloud is a copy, never a
+          replacement. A recording is written to your device first, and the
+          original file there is never modified by a backup, a download, or
+          playback. Recordings in a Shared Tape are the exception: once their
+          upload is confirmed, the copy in {site.name} Cloud is the one{" "}
+          {site.name} keeps, and the copy on your device is removed, as
+          described in{" "}
+          <A href="/privacy#information-we-process">Information Videflo processes</A>.
         </P>
         <UL>
           <LI>
@@ -565,17 +602,21 @@ export const privacySections: readonly LegalSection[] = [
             everything already stored and stops accepting new uploads until you
             are back within it. You have {subscription.overAllowanceGraceDays}{" "}
             days to free up space or choose a larger capacity; {site.name} does
-            not delete your content automatically.
+            not delete your content automatically because you are over your
+            allowance.
           </LI>
         </UL>
         <Callout title="If your subscription ends">
           <p>
-            {site.name} cannot be opened until you subscribe again, but your
-            recordings stay on your device, and {site.name} does not currently
-            delete content from {site.name} Cloud because a subscription has
-            ended. Subscribing again restores access to all of it. We may
-            establish retention rules for accounts that stay lapsed; if we do,
-            we will give notice as described in the{" "}
+            {site.name} cannot be used until you subscribe again. Your
+            recordings stay on your device, and we keep your content in{" "}
+            {site.name} Cloud, locked, for 30 days from the end of your paid
+            access. Subscribing again within those 30 days restores access to
+            all of it. After that, content in {site.name} Cloud may be
+            permanently deleted. {site.name} does not currently delete it
+            automatically, and we will tell you before we begin doing so. While
+            a Shared Tape’s owner’s subscription has lapsed, that Tape is
+            unavailable to its members. See the{" "}
             <A href="/terms#videflo-cloud">Terms of Service</A>.
           </p>
         </Callout>
@@ -589,17 +630,26 @@ export const privacySections: readonly LegalSection[] = [
       <>
         <UL>
           <LI>
-            <strong className="text-ink">Recordings and Tapes</strong> are kept
-            while your account exists and until you delete them; {site.name}{" "}
-            does not currently delete them because a subscription has lapsed,
-            though we may establish retention rules for lapsed accounts with
-            notice, as the Terms describe. Deleting a Tape removes it from your
-            device and from {site.name} Cloud, including from every member’s
-            view of a Shared Tape. On a Shared Tape, the owner can delete a
-            single recording from {site.name} Cloud for everyone. On a personal
-            Tape, deleting a single recording currently removes it from your
-            device only; its copy in {site.name} Cloud remains until you delete
-            the Tape.
+            <strong className="text-ink">Recordings and Tapes</strong> in{" "}
+            {site.name} Cloud are kept while your account exists and your
+            subscription is active, until you delete them. If your subscription
+            ends, we keep them for 30 days from the end of your paid access,
+            during which you can subscribe again and regain access. After that
+            they may be permanently deleted; {site.name} does not currently do
+            this automatically, and we will tell you before we begin. Deleting
+            a Tape removes it from your device and from {site.name} Cloud,
+            including from every member’s view of a Shared Tape. When the owner
+            deletes a Shared Tape with Delete for Everyone, it is removed
+            immediately, including
+            recordings other members added and copies on members’ devices inside{" "}
+            {site.name}. On a Shared Tape, the owner can delete any single
+            recording, and a member can delete a recording they added, from{" "}
+            {site.name} Cloud for everyone. On a personal Tape, deleting a
+            single recording removes it from your device and from {site.name}{" "}
+            Cloud. If you are offline, the recording disappears from the Tape
+            immediately, and cloud deletion completes when your iPhone
+            reconnects. {site.name} may temporarily retain the local file until
+            the deletion is confirmed, then removes it.
           </LI>
           <LI>
             <strong className="text-ink">
@@ -617,6 +667,17 @@ export const privacySections: readonly LegalSection[] = [
             that ask you to act, such as an invitation or a request, stay until
             you answer them, and are removed 7 days after that if you had read
             them or 14 days after if you had not.
+          </LI>
+          <LI>
+            <strong className="text-ink">Deletion records.</strong> When a Tape
+            is deleted, {site.name} Cloud keeps a minimal record of the
+            deletion: the Tape’s identifier, its owner’s account identifier, the
+            reason, when it was deleted, and when its stored files were
+            cleared. It
+            contains no recording, title or other content, and it is used only
+            to stop a deleted Tape from coming back from a device that missed
+            the deletion. These records are kept for as long as they are needed
+            for that purpose, including after the account is deleted.
           </LI>
           <LI>
             <strong className="text-ink">Push registrations</strong> are
@@ -678,8 +739,9 @@ export const privacySections: readonly LegalSection[] = [
           </LI>
           <LI>
             every Tape you own is deleted from {site.name} Cloud, together with
-            all of its recordings, including recordings other people added to
-            it;
+            all of its recordings, including every Shared Tape you own and the
+            recordings other people contributed to it. This happens immediately,
+            with no recovery period. Recordings from those Tapes already stored on members’ iPhones are preserved when their devices synchronize. Members can save them to Photos, keep them as personal Tapes, or delete them. Recordings that were kept only in {site.name} Cloud cannot be recovered;
           </LI>
           <LI>
             recordings you added to somebody else’s Shared Tape stay in that
@@ -696,16 +758,16 @@ export const privacySections: readonly LegalSection[] = [
           </LI>
         </UL>
         <P>
-          Deleting your {site.name} account and removing {site.name} from Sign
-          in with Apple are separate steps.{" "}
-          <strong className="text-ink">Delete Account</strong> deletes your
-          account and data as described above. It does not remove {site.name}{" "}
-          from the list of apps you use with Sign in with Apple, which Apple
-          keeps in your Apple Account, and {site.name} does not remove it for
-          you. To remove it, open the Settings app on your iPhone, tap your
-          name, then tap Sign in with Apple (on some versions of iOS this is
-          inside Sign-In &amp; Security). Choose {site.name}, then tap Delete
-          (called Stop Using on some versions of iOS). Apple explains this in{" "}
+          When you use <strong className="text-ink">Delete Account</strong>,{" "}
+          {site.name} first asks Apple to revoke {site.name}’s access to
+          your Sign in with Apple account. Once Apple confirms revocation,{" "}
+          {site.name}’s access is revoked. If Apple cannot confirm it,
+          nothing is deleted and the app asks you to try again. Only then does{" "}
+          {site.name} delete your account and data as described above. If you
+          sign in with Apple again later, it starts a new account. You can also
+          check or remove {site.name} yourself: open the Settings app on your
+          iPhone, tap your name, then tap Sign in with Apple (on some versions
+          of iOS this is inside Sign-In &amp; Security). Apple explains this in{" "}
           <A href="https://support.apple.com/en-us/102571">
             Manage your apps with Sign in with Apple
           </A>
@@ -738,6 +800,7 @@ export const privacySections: readonly LegalSection[] = [
           <LI>
             <strong className="text-ink">Sharing.</strong> Choose whom to
             invite, cancel an invitation, remove a member from a Tape you own,
+            choose whether each member may download and export the whole Tape,
             stop a Tape you own from accepting new recordings, or leave a Tape
             somebody else shared with you.
           </LI>
@@ -820,8 +883,10 @@ export const privacySections: readonly LegalSection[] = [
           Information travelling between the app and {site.name} Cloud is
           encrypted in transit. Access to {site.name} Cloud is enforced on the
           server for every request, so that your personal Tapes are reachable
-          only by your account and a Shared Tape only by its members. We hold no
-          password for you, and we never see your payment details.
+          only by your account and a Shared Tape only by its members. Recordings
+          stream from {site.name} Cloud through links that are issued to your
+          account and expire after two minutes. We hold no password for you,
+          and we never see your payment details.
         </P>
         <P>
           Report notifications and operational alerts are sent by email. Email

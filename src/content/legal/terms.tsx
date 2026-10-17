@@ -9,6 +9,11 @@
  *  cloud protection of recordings, Shared Tapes with invited members, Delete
  *  Tape that removes a Tape everywhere, and Delete Account.
  *
+ *  DRAFT REVISION (October 2026): subscription expiry and the 30-day cloud
+ *  retention period, Shared Tape owner control and immediate deletion, the
+ *  per-member "Allow Full Tape Download and Export" permission, and member
+ *  deletion of their own recordings. Not yet approved or published.
+ *
  *  This is a drafting starting point, not legal advice, and it has not been
  *  reviewed by a lawyer. Before publication:
  *
@@ -234,7 +239,9 @@ export const termsSections: readonly LegalSection[] = [
           on, each recording you make and its Tape details are copied to{" "}
           {site.name} Cloud. The original file stays on your device and is never
           modified by a backup. You can turn backup off, and you can choose
-          whether it may use cellular data, in the app’s Settings.
+          whether it may use cellular data, in the app’s Settings. Recordings
+          you add to a Shared Tape work differently; see{" "}
+          <A href="/terms#shared-tapes">Shared Tapes</A>.
         </P>
         <H3>Storage allowance</H3>
         <P>
@@ -251,9 +258,9 @@ export const termsSections: readonly LegalSection[] = [
           declines new uploads until you are within your allowance again. You
           will have at least {subscription.overAllowanceGraceDays} days to free
           up space or choose a larger capacity. {site.name} does not currently
-          delete stored content automatically; if that ever changes, we will
-          give you notice and a reasonable opportunity to download or export
-          your Content first.
+          delete stored content automatically because an account is over its
+          allowance; if that ever changes, we will give you notice and a
+          reasonable opportunity to download or export your Content first.
         </P>
         <H3>Removing and downloading</H3>
         <P>
@@ -277,15 +284,46 @@ export const termsSections: readonly LegalSection[] = [
         </Callout>
         <H3>If your subscription ends</H3>
         <P>
-          {site.name} requires an active subscription to open. If yours ends,
-          your recordings stay on your device, and we do not currently delete
-          Content from {site.name} Cloud because a subscription has ended;
-          subscribing again restores access to all of it. This is a description
-          of current practice, not a promise to store Content indefinitely. We
-          may establish retention or deletion rules for accounts that remain
-          lapsed, subject to applicable law and these Terms; if we do, we will
-          give you notice and a reasonable opportunity to subscribe again or to
-          recover your Content before anything is removed.
+          {site.name} is a paid service with no free version. You need an
+          active subscription to use it, including to view, play, download or
+          export your Tapes. If you turn off automatic renewal, your
+          subscription stays active, with full access, until the end of the
+          period you have paid for.
+        </P>
+        <P>
+          When your paid access ends, whether because your subscription expired
+          or was cancelled or refunded, {site.name} locks. You can still sign
+          in, subscribe again, restore a purchase, manage your subscription and
+          contact support, but you cannot otherwise use {site.name} until you
+          subscribe again.
+        </P>
+        <P>
+          <strong className="text-ink">Retention period.</strong> We keep the
+          Content you stored in {site.name} Cloud, locked, for 30 days from the
+          end of your verified paid access, including any billing grace period
+          Apple provides. The 30 days do not start when you turn off automatic
+          renewal. If you subscribe again within those 30 days, access to all
+          of it is restored.
+        </P>
+        <P>
+          <strong className="text-ink">After the retention period.</strong> We
+          may permanently delete your Content from {site.name} Cloud once the
+          retention period has passed, and Content deleted this way cannot be
+          recovered. {site.name} does not currently delete Content automatically
+          when the retention period ends. We will tell you before we begin
+          doing so. We do not promise to keep Content after the retention
+          period.
+        </P>
+        <P>
+          <strong className="text-ink">Your iPhone.</strong> {site.name} does
+          not delete the recordings stored on your iPhone because your
+          subscription ended. They become available in {site.name} again when
+          you subscribe again. Deleting the app deletes them; see{" "}
+          <A href="/terms#device-storage">Device storage</A>.
+        </P>
+        <P>
+          Shared Tapes follow their owner’s subscription; see{" "}
+          <A href="/terms#shared-tapes">Shared Tapes</A>.
         </P>
       </>
     ),
@@ -299,20 +337,32 @@ export const termsSections: readonly LegalSection[] = [
           You may invite other {site.name} users to a Tape you own, by username
           or by a single-use link sent as a text message. A person who accepts
           becomes a member of that Tape: they can watch the whole Tape and add
-          their own recordings to it. Being connected to somebody in Friends
-          &amp; Family does not, on its own, give them access to any of your
-          Tapes.
+          their own recordings to it. Each person who owns or adds to a Shared
+          Tape needs their own {site.name} subscription. Being connected to
+          somebody in Friends &amp; Family does not, on its own, give them
+          access to any of your Tapes.
         </P>
         <H3>If you own a Shared Tape</H3>
         <UL>
           <LI>
             You control it. You may cancel invitations, remove members, stop the
-            Tape from accepting new recordings, and delete the Tape.
+            Tape from accepting new recordings, choose whether each member may
+            download and export the whole Tape, and delete the Tape.
           </LI>
           <LI>
-            Deleting a Shared Tape deletes it for everyone, including recordings
-            that other members added. Do not delete a Tape that holds somebody
-            else’s recordings without considering them.
+            You may permanently delete a Shared Tape at any time with{" "}
+            <strong className="text-ink">Delete for Everyone</strong>. Deletion takes
+            effect immediately, members are not given advance notice, and it
+            cannot be undone. It removes the Tape and every recording in it from{" "}
+            {site.name}, including recordings other members added, copies
+            downloaded to or stored on members’ devices inside {site.name}, and
+            recordings that had not finished uploading. Do not delete a Tape
+            that holds somebody else’s recordings without considering them.
+          </LI>
+          <LI>
+            Recordings you make on your iPhone in your Shared Tape are kept in{" "}
+            {site.name} Cloud rather than on your iPhone once their upload is
+            confirmed, as described below.
           </LI>
           <LI>
             The Tape’s storage, including members’ recordings, counts against
@@ -326,19 +376,46 @@ export const termsSections: readonly LegalSection[] = [
         <H3>If you add a recording to somebody else’s Tape</H3>
         <UL>
           <LI>
-            Your recording becomes part of that person’s Tape. Every member can
-            watch it, and the owner can delete the Tape or remove you from it.
+            The Tape’s owner controls it. Your recording becomes part of that
+            person’s Tape. Every member can watch it, and the owner can remove
+            you from the Tape or delete the Tape, including your recordings, at
+            any time and without notice to you.
+          </LI>
+          <LI>
+            While you have access, you can watch the whole Shared Tape, and you
+            can export the recordings you made yourself to Apple Photos. You can
+            download or export the whole Tape only if its owner turns on{" "}
+            <strong className="text-ink">
+              Allow Full Tape Download and Export
+            </strong>{" "}
+            for you, and the owner can turn it off at any time.
+          </LI>
+          <LI>
+            You may delete recordings you added. You cannot delete the Shared
+            Tape or recordings other people added.
           </LI>
           <LI>
             If you leave the Tape or delete your account, recordings you added
             stay in the Tape, because they are part of that person’s memory, but
-            are no longer attributed to you. Only the Tape’s owner can remove a
-            recording from a Shared Tape, so if you do not want a recording of
-            yours to remain, ask the owner to delete it.
+            are no longer attributed to you. If you do not want a recording of
+            yours to remain, delete it before you leave.
           </LI>
           <LI>
-            Only the owner of a Shared Tape can export the whole Tape to their
-            photo library. Every member can watch it in the app.
+            Recordings you add to a Shared Tape are uploaded to {site.name}{" "}
+            Cloud and then played from there. Once {site.name} confirms that the
+            upload is complete and matches the recording, the copy on your
+            iPhone is removed automatically. A recording whose upload has not
+            finished, has failed or cannot be confirmed stays on your iPhone.
+            Copies you download with Download to This iPhone, and videos in your
+            photo library, are not removed this way.
+          </LI>
+          <LI>
+            If the owner deletes the Shared Tape with Delete for Everyone, your
+            recordings in it, and any
+            copies of the Tape on your devices inside {site.name}, are removed
+            too. Videos you have already exported to Apple Photos are not
+            affected. If you want to keep a copy of a recording, export it to
+            Apple Photos while you still have access.
           </LI>
           <LI>
             You grant the Tape’s owner and its members permission to watch the
@@ -346,6 +423,71 @@ export const termsSections: readonly LegalSection[] = [
             the Tape, on the terms described here.
           </LI>
         </UL>
+        <H3>Recordings kept only in {site.name} Cloud</H3>
+        <P>
+          Recordings in a Shared Tape are kept in {site.name} Cloud rather than
+          on your iPhone once their upload is confirmed, so you can watch or
+          export them only while you have access to the Tape. {site.name} does
+          not keep a separate copy for you. What happens to them depends on
+          what happens to the Tape:
+        </P>
+        <UL>
+          <LI>
+            <strong className="text-ink">Loss of access.</strong> If you leave
+            the Tape or the owner removes you, you can no longer watch or export
+            its recordings, including the ones you added, but they stay in the
+            Tape. While the owner’s subscription has lapsed, nobody can watch,
+            download or export the Tape, and it returns as it was if the owner
+            subscribes again.
+          </LI>
+          <LI>
+            <strong className="text-ink">The owner uses Delete for Everyone.</strong>{" "}
+            The Tape and every recording in it are permanently deleted from{" "}
+            {site.name}, including copies on members’ iPhones inside{" "}
+            {site.name}.
+          </LI>
+          <LI>
+            <strong className="text-ink">The owner deletes their account.</strong>{" "}
+            The Tape and every recording in it are permanently deleted from{" "}
+            {site.name} Cloud, and members lose access at once. Recordings from
+            the Tape already stored on members’ iPhones are preserved when their
+            devices synchronize; recordings that were kept only in {site.name}{" "}
+            Cloud cannot be recovered.
+          </LI>
+          <LI>
+            <strong className="text-ink">The owner’s subscription is not renewed.</strong>{" "}
+            After the retention period described in{" "}
+            <A href="/terms#videflo-cloud">{site.name} Cloud</A>, the Tape may be
+            permanently deleted. {site.name} does not currently do this
+            automatically, and we will tell you before we begin.
+          </LI>
+        </UL>
+        <P>
+          Export any recording that matters to you to Apple Photos while you
+          still have access. Videos in Apple Photos are not affected by any of
+          these events.
+        </P>
+        <Callout title="A permission, not copy protection">
+          <p>
+            Allow Full Tape Download and Export controls what {site.name} lets a
+            member do. It is not copy protection. Anyone who can watch a
+            recording can capture it by other means, for example by recording
+            their screen or filming it with another device. Share Tapes only
+            with people you trust.
+          </p>
+        </Callout>
+        <H3>If the owner’s subscription ends</H3>
+        <P>
+          While the owner’s subscription has lapsed, the Shared Tape is
+          unavailable to its members: nobody can play, download or export it.
+          If the owner subscribes again within the retention period described
+          in <A href="/terms#videflo-cloud">{site.name} Cloud</A>, the Shared
+          Tape returns as it was. After that period, it may be permanently
+          deleted from {site.name} Cloud, including recordings other members
+          added, on the same terms as the owner’s other Content. If a member’s
+          own subscription ends, the Tape is unaffected for everyone else, and
+          the recordings that member added stay in it.
+        </P>
         <P>
           You are responsible for every recording you add to a Shared Tape and
           for the people you invite. You must only add recordings you have the
@@ -375,6 +517,14 @@ export const termsSections: readonly LegalSection[] = [
           device. It does not delete your account, your Content in {site.name}{" "}
           Cloud, or your subscription.
         </P>
+        <P>
+          {site.name} also removes recordings from your device in the cases
+          described in <A href="/terms#shared-tapes">Shared Tapes</A>: once the
+          upload of a recording you added to a Shared Tape is confirmed
+          complete, and when the owner of a Shared Tape uses Delete for
+          Everyone. Copies you download with Download to This iPhone are not
+          removed after an upload.
+        </P>
       </>
     ),
   },
@@ -384,7 +534,8 @@ export const termsSections: readonly LegalSection[] = [
     content: (
       <>
         <P>
-          {site.name} requires a paid subscription. It is sold as one
+          {site.name} requires a paid subscription; there is no free version
+          and no free tier. It is sold as one
           auto-renewable monthly subscription through the Apple App Store, and
           includes {site.name} Cloud storage. The same subscription is offered
           at more than one storage capacity; moving between capacities is a
@@ -446,6 +597,9 @@ export const termsSections: readonly LegalSection[] = [
           You can cancel at any time in your Apple Account subscription settings
           on your iPhone. Cancelling stops future renewals; your subscription
           remains active until the end of the period you have already paid for.
+          After that, {site.name} locks and your Content is kept for the
+          retention period described in{" "}
+          <A href="/terms#videflo-cloud">{site.name} Cloud</A>.
         </P>
         <P>
           Deleting the {site.name} app, signing out, or deleting your{" "}
@@ -471,6 +625,11 @@ export const termsSections: readonly LegalSection[] = [
           Apple Support. If you believe something in {site.name} is not working
           as it should, please also write to{" "}
           <Mail address={contact.supportEmail} /> so we can try to fix it.
+        </P>
+        <P>
+          A refund ends your paid access. When it does, {site.name} locks and
+          your Content is kept for the retention period described in{" "}
+          <A href="/terms#videflo-cloud">{site.name} Cloud</A>.
         </P>
       </>
     ),
@@ -866,8 +1025,11 @@ export const termsSections: readonly LegalSection[] = [
         <P>
           <strong className="text-ink">Delete Account</strong>, in the app’s
           Settings, permanently deletes your account and every Tape you own in{" "}
-          {site.name} Cloud, including recordings other people added to your
-          Shared Tapes. Recordings you added to somebody else’s Shared Tape
+          {site.name} Cloud, including every Shared Tape you own and the
+          recordings other people contributed to it. This happens immediately,
+          there is no recovery period, and the members of those Shared Tapes
+          lose access to them at once. Recordings from those Tapes already stored on members’ iPhones are preserved when their devices synchronize. Members can save them to Photos, keep them as personal Tapes, or delete them. Recordings that were kept only in {site.name} Cloud cannot be recovered. Recordings you added to somebody else’s
+          Shared Tape
           remain in that Tape without attribution. Videos already on your device
           are not deleted by this, and your subscription is not cancelled;
           cancel it separately in your Apple Account settings. Deletion cannot
