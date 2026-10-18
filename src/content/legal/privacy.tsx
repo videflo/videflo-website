@@ -765,7 +765,7 @@ export const privacySections: readonly LegalSection[] = [
           nothing is deleted and the app asks you to try again. Only then does{" "}
           {site.name} delete your account and data as described above. If you
           sign in with Apple again later, it starts a new account. You can also
-          check or remove {site.name} yourself: open the Settings app on your
+          check or remove {site.name}{" "}yourself: open the Settings app on your
           iPhone, tap your name, then tap Sign in with Apple (on some versions
           of iOS this is inside Sign-In &amp; Security). Apple explains this in{" "}
           <A href="https://support.apple.com/en-us/102571">

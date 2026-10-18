@@ -338,7 +338,7 @@ export const termsSections: readonly LegalSection[] = [
           or by a single-use link sent as a text message. A person who accepts
           becomes a member of that Tape: they can watch the whole Tape and add
           their own recordings to it. Each person who owns or adds to a Shared
-          Tape needs their own {site.name} subscription. Being connected to
+          Tape needs their own {site.name}{" "}subscription. Being connected to
           somebody in Friends &amp; Family does not, on its own, give them
           access to any of your Tapes.
         </P>
