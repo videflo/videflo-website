@@ -751,7 +751,7 @@ export const termsSections: readonly LegalSection[] = [
         </P>
         <H3>Blocking</H3>
         <P>
-          You can block another {site.name} user from the menu beside their name
+          You can block another {site.name}{" "}user from the menu beside their name
           in Friends &amp; Family and its search results, in Together, among a
           Shared Tape’s members, or on an invitation they sent you, and when you
           report them. Once you block somebody, neither of you can find the

@@ -319,7 +319,7 @@ export const privacySections: readonly LegalSection[] = [
           </LI>
           <LI>
             <strong className="text-ink">Photos, add only.</strong> Requested
-            only when you save a video from {site.name} into your photo library.
+            only when you save a video from {site.name} into your photo library.{" "}
             {site.name} never asks to read your library.
           </LI>
         </UL>
