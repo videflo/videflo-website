@@ -152,9 +152,7 @@ export const availability = {
  *  download button and as a link in the footer. Leave the array empty and both
  *  disappear entirely — no dead icons. `icon` picks the glyph in
  *  `src/components/ui/SocialIcons.tsx`. Destinations verified 2026-10-20.
- *
- *  Facebook (https://www.facebook.com/videflo, icon "facebook") is left out
- *  until the owner confirms that page belongs to Videflo.
+
  *  --------------------------------------------------------------------- */
 export type SocialNetwork =
   "instagram" | "tiktok" | "facebook" | "youtube" | "threads";
@@ -178,6 +176,12 @@ export const socials: readonly SocialLink[] = [
     handle: "@videflo",
     href: "https://www.tiktok.com/@videflo",
     icon: "tiktok",
+  },
+  {
+    label: "Facebook",
+    handle: "@videflo",
+    href: "https://www.facebook.com/videflo",
+    icon: "facebook",
   },
   {
     label: "YouTube",
