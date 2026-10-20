@@ -5,6 +5,7 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { gate } from "@/config/gate";
 import { primaryNav } from "@/config/site";
+import { buttonStyles } from "@/components/ui/buttonStyles";
 
 export const metadata: Metadata = gate.enabled
   ? {
@@ -35,7 +36,7 @@ export default function NotFound() {
         <div className="flex min-h-[68vh] flex-col justify-center py-24">
           <div className="max-w-2xl">
             <Eyebrow>Error 404</Eyebrow>
-            <h1 className="font-display text-display-lg text-ink mt-6 font-semibold">
+            <h1 className="font-display text-display-lg text-ink mt-6 font-bold">
               This part of the Tape is missing.
             </h1>
             <p className="text-lead text-ink-muted mt-6">
@@ -46,7 +47,7 @@ export default function NotFound() {
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <Link
                 href="/"
-                className="bg-ink text-paper hover:bg-ink-soft inline-flex items-center gap-2.5 rounded-full px-6 py-3.5 text-[0.9375rem] font-semibold transition-colors"
+                className={`${buttonStyles.primary} inline-flex items-center gap-2.5 px-6 py-3.5 text-[0.9375rem]`}
               >
                 <svg
                   aria-hidden="true"
@@ -65,7 +66,7 @@ export default function NotFound() {
               </Link>
               <Link
                 href="/support"
-                className="text-ink hover:text-gold-deep text-[0.9375rem] font-semibold underline decoration-1 underline-offset-[6px] transition-colors"
+                className="text-ink hover:text-ink-muted text-[0.9375rem] font-semibold underline decoration-1 underline-offset-[6px] transition-colors"
               >
                 Get support
               </Link>

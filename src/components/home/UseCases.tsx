@@ -11,49 +11,59 @@ import { useCases } from "@/content/use-cases";
  * One column on phones; paired at `sm`; an asymmetric twelve-column composition
  * at `lg` so the grid never reads as a row of identical cards. Tiles in the same
  * `lg` row share a fixed height (rather than an aspect ratio) so their edges
- * always line up even though their widths differ.
+ * always line up even though their widths differ. Below `lg` the *cover* holds
+ * the aspect ratio, as the app's Tape card holds a 4:3 thumbnail, and the
+ * caption sits beneath it at its natural height.
  */
-type Tile = { span: string; frame: string; sizes: string };
+type Tile = { span: string; frame: string; cover: string; sizes: string };
 
 const tiles: readonly Tile[] = [
   {
     span: "sm:col-span-2 lg:col-span-7",
-    frame: "aspect-[4/3] sm:aspect-[2/1] lg:aspect-auto lg:h-[26rem]",
+    frame: "lg:h-[26rem]",
+    cover: "aspect-[4/3] sm:aspect-[2/1] lg:aspect-auto",
     sizes: "(min-width: 1024px) 56vw, 100vw",
   },
   {
     span: "lg:col-span-5",
-    frame: "aspect-[4/3] lg:aspect-auto lg:h-[26rem]",
+    frame: "lg:h-[26rem]",
+    cover: "aspect-[4/3] lg:aspect-auto",
     sizes: "(min-width: 1024px) 40vw, (min-width: 640px) 46vw, 100vw",
   },
   {
     span: "lg:col-span-4",
-    frame: "aspect-[4/3] lg:aspect-auto lg:h-[30rem]",
+    frame: "lg:h-[30rem]",
+    cover: "aspect-[4/3] lg:aspect-auto",
     sizes: "(min-width: 1024px) 31vw, (min-width: 640px) 46vw, 100vw",
   },
   {
     span: "lg:col-span-4",
-    frame: "aspect-[4/3] lg:aspect-auto lg:h-[30rem]",
+    frame: "lg:h-[30rem]",
+    cover: "aspect-[4/3] lg:aspect-auto",
     sizes: "(min-width: 1024px) 31vw, (min-width: 640px) 46vw, 100vw",
   },
   {
     span: "lg:col-span-4",
-    frame: "aspect-[4/3] lg:aspect-auto lg:h-[30rem]",
+    frame: "lg:h-[30rem]",
+    cover: "aspect-[4/3] lg:aspect-auto",
     sizes: "(min-width: 1024px) 31vw, (min-width: 640px) 46vw, 100vw",
   },
   {
     span: "lg:col-span-5",
-    frame: "aspect-[4/3] lg:aspect-auto lg:h-[26rem]",
+    frame: "lg:h-[26rem]",
+    cover: "aspect-[4/3] lg:aspect-auto",
     sizes: "(min-width: 1024px) 40vw, (min-width: 640px) 46vw, 100vw",
   },
   {
     span: "lg:col-span-7",
-    frame: "aspect-[4/3] lg:aspect-auto lg:h-[26rem]",
+    frame: "lg:h-[26rem]",
+    cover: "aspect-[4/3] lg:aspect-auto",
     sizes: "(min-width: 1024px) 56vw, (min-width: 640px) 46vw, 100vw",
   },
   {
     span: "sm:col-span-2 lg:col-span-12",
-    frame: "aspect-[4/3] sm:aspect-[2/1] lg:aspect-auto lg:h-[20rem]",
+    frame: "lg:h-[20rem]",
+    cover: "aspect-[4/3] sm:aspect-[2/1] lg:aspect-auto",
     sizes: "100vw",
   },
 ];
@@ -69,7 +79,7 @@ export function UseCases() {
           <Reveal delay={60}>
             <h2
               id="tapes-heading"
-              className="font-display text-display-lg text-ink mt-6 font-semibold"
+              className="font-display text-display-lg text-ink mt-6 font-bold"
             >
               A Tape for every chapter.
             </h2>
@@ -96,6 +106,7 @@ export function UseCases() {
                   tape={tape}
                   sizes={tile.sizes}
                   className={`w-full ${tile.frame}`}
+                  coverClassName={tile.cover}
                 />
               </Reveal>
             );

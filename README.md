@@ -35,15 +35,15 @@ launch-critical value lives in one config file.
 
 ## Tech stack
 
-| Piece      | Choice                                                           |
-| ---------- | ---------------------------------------------------------------- |
-| Framework  | Next.js 16 (App Router, React 19, Turbopack)                     |
-| Language   | TypeScript, `strict` mode                                        |
-| Styling    | Tailwind CSS v4 (CSS-first `@theme`, no `tailwind.config.js`)    |
-| Fonts      | Fraunces + Inter, self-hosted at build time via `next/font`      |
-| Icons      | Inline SVG written by hand — no icon library                     |
-| Animation  | CSS transitions + one `IntersectionObserver` — no motion library |
-| Deployment | Vercel (zero config)                                             |
+| Piece      | Choice                                                            |
+| ---------- | ----------------------------------------------------------------- |
+| Framework  | Next.js 16 (App Router, React 19, Turbopack)                      |
+| Language   | TypeScript, `strict` mode                                         |
+| Styling    | Tailwind CSS v4 (CSS-first `@theme`, no `tailwind.config.js`)     |
+| Fonts      | System font (SF on Apple devices), Inter fallback via `next/font` |
+| Icons      | Inline SVG written by hand — no icon library                      |
+| Animation  | CSS transitions + one `IntersectionObserver` — no motion library  |
+| Deployment | Vercel (zero config)                                              |
 
 There is **no** database, CMS, auth, backend API, payment integration, or
 analytics. Three dependencies ship to the browser: `next`, `react`, `react-dom`.
@@ -542,24 +542,44 @@ All of it is in **`src/app/globals.css`**, in the Tailwind v4 `@theme` block.
 There is no `tailwind.config.js`. Change a token there and it propagates
 everywhere — no component hard-codes a hex value.
 
-**Surfaces:** `paper` `#fcfaf6` · `cream` `#f7f2e8` · `shell` `#f1e9d8` ·
-`ink` `#1b1a18`
+The values are the iOS app's own, from `VidefloTheme.Colors` (the warm cream
+album) in `Videflo/Design/VidefloTheme.swift`, so the site and the app read as
+one product. Change them there first.
 
-**Text:** `ink` · `ink-soft` · `ink-muted` · `ink-faint` on light;
-`paper` · `cream-muted` · `cream-faint` on charcoal
+**Surfaces:** `paper` `#f4efe6` (app `background`) · `cream` `#faf6ef`
+(`elevated`) · `card` `#fbf8f2` (`card`) · `shell` `#efe8dc` (`cardRaised`) ·
+`ink` `#191714` (`textPrimary`)
 
-**Accents:** `gold` `#e6b85c` (on charcoal only) · `gold-deep` `#8a5f18`
-(the accessible gold for text on light) · `rec` `#c0563c` (the recording red,
-used sparingly)
+**Text:** `ink` · `ink-soft` · `ink-muted` (`#6b635a`, app `textSecondary`) ·
+`ink-faint` (a site-only AA caption value; the app's `textTertiary` is too light
+for sentences). `cream-muted` / `cream-faint` survive only for the dark Coming
+Soon gate page.
 
-Yellow is deliberately restrained: it appears as small accents, the wordmark's
-“flo”, and the closing brand line — never as a background or a button fill.
-Primary buttons are charcoal on light and paper on charcoal.
+**Accents:** `gold` `#e6b85c` (app `accent`) · `on-gold` `#201a0e` (`onAccent`)
+· `gold-mark` `#c9974a` (`accentDeep`) · `rec` `#e5484d` (`recording`).
+Gold is used the way the app uses it: on cream it is a **fill** carrying
+`on-gold` ink (the primary button, step numbers, dots) or the wordmark — never
+thin text, which measures 1.6:1. Readable words and link hovers on cream are ink.
 
-**Type:** Fraunces for display, Inter for everything else. The fluid display
-scale (`text-display-xl` → `text-display-sm`, plus `text-lead`) uses `clamp()`
-with lower bounds tuned for a 320px viewport, so headings never overflow on small
-phones and never become absurd on a 27-inch monitor.
+**Buttons** (`src/components/ui/buttonStyles.ts`): `primary` is the app's
+`VidefloPrimaryButton` — the gold gradient with `on-gold` ink — and `secondary`
+is `VidefloSecondaryButton`, a recessed cream fill with a hairline. Both use the
+app's 12pt `control` radius rather than a pill, and press with a small scale and
+dim.
+
+**Radii:** `rounded-xl` 12px (`control`), `rounded-2xl` 18px (`card`),
+`rounded-3xl` 24px (`feature`) — overridden in the theme to the app's values.
+
+**Type:** the system font everywhere, as in the app — SF on Apple devices, with
+Inter as the fallback elsewhere (`preload: false`, so Apple devices never
+download it). Display headings are bold, smaller titles semibold. The fluid
+display scale (`text-display-xl` → `text-display-sm`, plus `text-lead`) uses
+`clamp()` with lower bounds tuned for a 320px viewport, so headings never
+overflow on small phones and never become absurd on a 27-inch monitor.
+
+**Surfaces, not theaters:** every band of the site is cream. The one dark object
+is the phone mockup, because in the app the camera is the dark theater
+(`VidefloTheme.Media`) inside the cream album.
 
 **Rhythm:** `<Section>` owns background tone and vertical spacing; `<Container>`
 owns page width and gutters. Use them rather than adding one-off padding.
@@ -569,7 +589,7 @@ owns page width and gutters. Use them rather than adding one-off padding.
 ## Accessibility and motion
 
 - Every text pairing in the palette meets **WCAG AA for normal-size text** —
-  the weakest is 4.62:1.
+  the weakest is 4.58:1 (`ink-faint` on `shell`).
 - Skip-to-content link, one `<h1>` per page, and a logical heading order.
 - The mobile menu is a labelled disclosure: `aria-expanded`, `aria-controls`,
   Escape to close, focus returned to the toggle, and body scroll locked while

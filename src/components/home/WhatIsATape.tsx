@@ -26,7 +26,7 @@ const steps: readonly FlowStep[] = [
 
 export function WhatIsATape() {
   return (
-    <Section id="how-it-works" tone="cream" labelledBy="how-it-works-heading">
+    <Section id="how-it-works" tone="paper" labelledBy="how-it-works-heading">
       <Container>
         <div className="max-w-3xl">
           <Reveal>
@@ -35,7 +35,7 @@ export function WhatIsATape() {
           <Reveal delay={60}>
             <h2
               id="how-it-works-heading"
-              className="font-display text-display-lg text-ink mt-6 font-semibold"
+              className="font-display text-display-lg text-ink mt-6 font-bold"
             >
               One memory. One growing Tape.
             </h2>
@@ -55,13 +55,21 @@ export function WhatIsATape() {
 
         <Reveal className="mt-16 sm:mt-20">
           <figure>
-            <div className="bg-ink shadow-soft relative aspect-[3/2] w-full overflow-hidden rounded-3xl sm:aspect-[21/9]">
+            {/*
+              The app's own player-and-filmstrip composition, which it draws on
+              its background cream. Framed as a card in that exact cream
+              (sampled from the artwork) so the frame, not a near-miss seam, is
+              what the eye sees. 2:1 keeps the player, filmstrip and timestamps
+              (the artwork's top 70%) whole at every width; anything wider clips
+              the timestamps.
+            */}
+            <div className="ring-line bg-artwork relative aspect-[2/1] w-full overflow-hidden rounded-3xl ring-1">
               <Image
-                src="/images/tape-filmstrip.jpg"
-                alt="A strip of film frames from one family holiday, laid out in order along a single timeline."
+                src="/images/onboarding/tape-event.jpg"
+                alt="A video of a family walking through the surf on a beach, above a timeline of moments from the same day in order, from 0:00 to 6:30."
                 fill
                 sizes="(min-width: 1280px) 1152px, (min-width: 640px) 92vw, 100vw"
-                className="object-cover"
+                className="object-cover object-[50%_8%]"
               />
             </div>
             <figcaption className="text-ink-muted mt-5 max-w-2xl text-[0.9375rem] leading-relaxed">

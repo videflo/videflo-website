@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useId, useState } from "react";
 import { appStore, contact } from "@/config/site";
 import { cn } from "@/lib/cn";
+import { buttonStyles } from "./buttonStyles";
 
 /**
  * The single download call to action used everywhere on the site.
@@ -23,17 +24,12 @@ import { cn } from "@/lib/cn";
  */
 
 type Size = "lg" | "md" | "sm";
-type Variant = "ink" | "cream";
+type Variant = "primary" | "secondary";
 
 const sizes: Record<Size, string> = {
   lg: "px-7 py-4 text-[0.9375rem] gap-3",
   md: "px-6 py-3.5 text-[0.9375rem] gap-2.5",
   sm: "px-4 py-2.5 text-[0.8125rem] gap-2",
-};
-
-const variants: Record<Variant, string> = {
-  ink: "bg-ink text-paper hover:bg-ink-soft",
-  cream: "bg-paper text-ink hover:bg-cream",
 };
 
 function DownloadGlyph() {
@@ -59,7 +55,7 @@ function DownloadGlyph() {
 
 export function AppStoreButton({
   size = "md",
-  variant = "ink",
+  variant = "primary",
   label = "Download on the App Store",
   fallback = "notice",
   className,
@@ -74,10 +70,9 @@ export function AppStoreButton({
   const [noticeShown, setNoticeShown] = useState(false);
 
   const shared = cn(
-    "inline-flex items-center justify-center rounded-full font-semibold",
-    "transition-colors duration-200 ease-out",
+    "inline-flex items-center justify-center",
     sizes[size],
-    variants[variant],
+    buttonStyles[variant],
     className,
   );
 
@@ -118,20 +113,14 @@ export function AppStoreButton({
       <span
         id={noticeId}
         role="status"
-        className={cn(
-          "max-w-[26rem] text-sm leading-relaxed",
-          variant === "cream" ? "text-cream-muted" : "text-ink-muted",
-        )}
+        className="text-ink-muted max-w-[26rem] text-sm leading-relaxed"
       >
         {noticeShown ? (
           <>
             {appStore.comingSoonNotice}{" "}
             <a
               href={`mailto:${contact.supportEmail}?subject=Videflo%20launch%20updates`}
-              className={cn(
-                "font-semibold underline decoration-1 underline-offset-4",
-                variant === "cream" ? "text-paper" : "text-ink",
-              )}
+              className="text-ink font-semibold underline decoration-1 underline-offset-4"
             >
               {contact.supportEmail}
             </a>

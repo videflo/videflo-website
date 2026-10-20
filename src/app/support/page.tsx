@@ -7,6 +7,7 @@ import { Section } from "@/components/ui/Section";
 import { contact, site, subscription } from "@/config/site";
 import { faq } from "@/content/faq";
 import { pageMetadata } from "@/lib/metadata";
+import { buttonStyles } from "@/components/ui/buttonStyles";
 
 export const metadata = pageMetadata({
   title: "Support",
@@ -58,7 +59,7 @@ export default function SupportPage() {
         <Container>
           <div className="max-w-3xl">
             <Eyebrow>Support</Eyebrow>
-            <h1 className="font-display text-display-lg text-ink mt-6 font-semibold">
+            <h1 className="font-display text-display-lg text-ink mt-6 font-bold">
               We&rsquo;re here to help.
             </h1>
             <p className="text-lead text-ink-muted mt-6">
@@ -69,7 +70,7 @@ export default function SupportPage() {
             <div className="mt-9 flex flex-col items-start gap-3">
               <a
                 href={`mailto:${contact.supportEmail}`}
-                className="bg-ink text-paper hover:bg-ink-soft inline-flex items-center gap-3 rounded-full px-6 py-3.5 text-[0.9375rem] font-semibold transition-colors"
+                className={`${buttonStyles.primary} inline-flex items-center gap-3 px-6 py-3.5 text-[0.9375rem]`}
               >
                 <svg
                   aria-hidden="true"
@@ -102,7 +103,7 @@ export default function SupportPage() {
               Looking for how something works?{" "}
               <Link
                 href="/help"
-                className="text-ink hover:text-gold-deep font-semibold underline decoration-1 underline-offset-4"
+                className="text-ink hover:text-ink-muted font-semibold underline decoration-1 underline-offset-4"
               >
                 The Help Center
               </Link>{" "}
@@ -159,8 +160,8 @@ export default function SupportPage() {
                 <P>
                   On first sign-in {site.name} asks for a Profile: a display
                   name, a username, and a photo or one of the built-in avatars.
-                  The username can&rsquo;t be changed once it&rsquo;s claimed;
-                  everything else can be edited in{" "}
+                  The username can’t be changed once it’s claimed; everything
+                  else can be edited in{" "}
                   <strong className="text-ink">Settings → Profile</strong>.
                 </P>
                 <UL>
@@ -173,8 +174,8 @@ export default function SupportPage() {
                     <strong className="text-ink">Delete Account</strong> is at
                     the bottom of Settings. It permanently deletes your account
                     and every Tape you own in {site.name} Cloud, and it cannot
-                    be undone. Recordings you added to someone else&rsquo;s
-                    Shared Tape stay in that Tape. It does not cancel your
+                    be undone. Recordings you added to someone else’s Shared
+                    Tape stay in that Tape. It does not cancel your
                     subscription; do that in your Apple Account.
                   </LI>
                 </UL>
@@ -234,7 +235,7 @@ export default function SupportPage() {
                     href="https://support.apple.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-ink hover:text-gold-deep font-semibold underline decoration-1 underline-offset-4"
+                    className="text-ink hover:text-ink-muted font-semibold underline decoration-1 underline-offset-4"
                   >
                     Apple Support
                   </a>{" "}
@@ -378,7 +379,7 @@ export default function SupportPage() {
                   Exporting turns a whole Tape into one ordinary video and saves
                   it to your Photos library. Open the Tape, tap the{" "}
                   <strong className="text-ink">⋯</strong> menu in the player,
-                  and choose <strong className="text-ink">Export Tape</strong>.
+                  and choose <strong className="text-ink">Export Tape</strong>.{" "}
                   {site.name} shows the progress and tells you when the video is
                   in Photos, where you can share it, AirDrop it, or save it to
                   Files like any other video.
@@ -537,16 +538,16 @@ export default function SupportPage() {
                   Free up storage, make sure your phone is not in Low Power
                   Mode, and try again with {site.name} on screen. A Tape stored
                   only in {site.name} Cloud needs a connection while it exports.
-                  If it keeps failing, tell us the Tape&rsquo;s length and
-                  recording quality so we can reproduce it.
+                  If it keeps failing, tell us the Tape’s length and recording
+                  quality so we can reproduce it.
                 </P>
                 <H3>A Tape says it needs attention, or backup seems stuck</H3>
                 <P>
                   Check that Back Up to {site.name} Cloud is on, that the phone
                   is online (or on Wi-Fi if Use Cellular Data is off), and that
-                  your storage allowance isn&rsquo;t full. {site.name} retries
-                  on its own; a Tape that has stopped will say so on its card
-                  and offer to retry.
+                  your storage allowance isn’t full. {site.name} retries on its
+                  own; a Tape that has stopped will say so on its card and offer
+                  to retry.
                 </P>
                 <H3>Still stuck?</H3>
                 <P>
@@ -567,7 +568,7 @@ export default function SupportPage() {
             <Eyebrow>Questions</Eyebrow>
             <h2
               id="faq-heading"
-              className="font-display text-display-md text-ink mt-6 font-semibold"
+              className="font-display text-display-md text-ink mt-6 font-bold"
             >
               Frequently asked
             </h2>
@@ -580,14 +581,14 @@ export default function SupportPage() {
             or read the{" "}
             <Link
               href="/privacy"
-              className="text-ink hover:text-gold-deep font-semibold underline decoration-1 underline-offset-4"
+              className="text-ink hover:text-ink-muted font-semibold underline decoration-1 underline-offset-4"
             >
               Privacy Policy
             </Link>{" "}
             and{" "}
             <Link
               href="/terms"
-              className="text-ink hover:text-gold-deep font-semibold underline decoration-1 underline-offset-4"
+              className="text-ink hover:text-ink-muted font-semibold underline decoration-1 underline-offset-4"
             >
               Terms of Service
             </Link>

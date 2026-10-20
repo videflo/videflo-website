@@ -25,20 +25,33 @@ src/app/
 
 ## 1. Photography (in place)
 
-Four photographs are shipped with the site. They came from the Videflo iOS app's
-own onboarding image sets, so they are already on-brand: warm, golden-hour,
-family-centred, and consistent with each other.
+Four photographs are shipped with the site. They are the Videflo iOS app's
+**current** onboarding photographs, copied byte-for-byte from
+`Videflo/Assets.xcassets/onboarding_*.imageset/` (the bright, warm set from the
+app's Oct 7, 2026 "Brighten onboarding" change), so the site and the app share
+one photographic identity. Filenames follow the app's asset names.
 
-| File                            | Size      | Used by                                      |
-| ------------------------------- | --------- | -------------------------------------------- |
-| `images/hero-family-sunset.jpg` | 1536×1024 | Homepage hero, and inside the phone mockup   |
-| `images/scattered-moments.jpg`  | 1536×1024 | “Life doesn’t happen in highlight reels”     |
-| `images/tape-filmstrip.jpg`     | 1536×1024 | Closing figure of the “How it works” section |
-| `images/watching-together.jpg`  | 1536×1024 | Background of the closing download section   |
+| File                                    | Size      | App asset                    | Used by                                                   |
+| --------------------------------------- | --------- | ---------------------------- | --------------------------------------------------------- |
+| `images/onboarding/event-memory.jpg`    | 1536×1024 | `onboarding_event_memory`    | Homepage hero, and inside the phone mockup                |
+| `images/onboarding/scattered-clips.jpg` | 1536×1024 | `onboarding_scattered_clips` | “Life doesn’t happen in highlight reels”                  |
+| `images/onboarding/tape-event.jpg`      | 1536×1024 | `onboarding_tape_event`      | Closing figure of the “How it works” section              |
+| `images/onboarding/reliving-memory.jpg` | 1536×1024 | `onboarding_reliving_memory` | Top of the closing download section, fading into the page |
 
-**To replace one:** drop a new file at the same path and keep the filename. Then
-update the `alt` text in the component that uses it — alt text describes the new
-photograph, so it must change with the image.
+`tape-event.jpg` is the app's own player-and-filmstrip composition, drawn on
+cream with its content in the top 70%. It is shown at 2:1 with
+`object-[50%_8%]`, which keeps the timestamps; any wider crop clips them. Its
+frame uses the `artwork` token, sampled from the image's background.
+
+**When the app's onboarding photos change,** copy the new files over these
+(keep the names), re-check each `object-*` position against the new subject,
+and update the `alt` text in the component that uses it. Because a filename that
+is reused can be served from an image cache for a while, prefer a new filename
+when a photo changes substantially.
+
+**To replace one with something else:** update the `src` and the `alt` text in
+the component that uses it — alt text describes the photograph, so it must
+change with the image.
 
 Recommended for replacements:
 
@@ -57,11 +70,13 @@ Recommended for replacements:
 
 ## 2. Tape tiles (placeholder — designed, not missing)
 
-The eight example Tapes in the “A Tape for every chapter” section render as
-**CSS film frames**: a warm duotone field taken from each Tape's own palette,
-a distant light source, a vignette, film grain, and a sprocket band along the
-top edge. They are meant to read as a strip of film waiting for its photograph —
-deliberate, not broken.
+The eight example Tapes in the “A Tape for every chapter” section render as the
+app renders a Tape card (`TapeCard.swift`): a cover on top, the Tape's details in
+ink beneath it on the `card` surface. Until photographs exist, each cover is a
+**bright CSS film frame**: the Tape's `accent` colour washed toward cream, a low
+warm sun, soft grain and a sprocket band along the top edge. They are meant to
+read as frames of film waiting for their photographs, in the same light as the
+onboarding photography — deliberate, not broken.
 
 **To use real photographs instead**, add an `image` to the entry in
 `src/content/use-cases.ts`:
@@ -161,9 +176,12 @@ component so every usage updates at once.
 ## 5. Social sharing image (generated)
 
 `src/app/opengraph-image.tsx` renders a 1200×630 PNG at build time using
-`next/og` — the tagline over Videflo's charcoal field. It needs no asset file and
-cannot drift out of sync with the site's copy, because it reads the same
-`src/config/site.ts` values the pages do.
+`next/og` — the app icon and wordmark, the tagline and social description in ink
+on the app's cream, and the hero photograph (`images/onboarding/event-memory.jpg`)
+fading into the cream from the right. It cannot drift out of sync with the site's
+copy, because it reads the same `src/config/site.ts` values the pages do. It is
+set in Inter from the static TTFs in `src/assets/fonts/` (SIL Open Font
+License), because `next/og`'s bundled face has no bold weight.
 
 To use designed artwork instead:
 
@@ -204,8 +222,8 @@ Before committing a new image:
 
 ```bash
 # check dimensions and file size
-python3 -c "from PIL import Image; im=Image.open('public/images/hero-family-sunset.jpg'); print(im.size, im.mode)"
-ls -lh public/images/
+python3 -c "from PIL import Image; im=Image.open('public/images/onboarding/event-memory.jpg'); print(im.size, im.mode)"
+ls -lh public/images/onboarding/
 ```
 
 Targets: photographs under ~700 KB each, icons under ~100 KB, OG image under

@@ -74,7 +74,7 @@ export function Mail({ address }: { address: string }) {
   return (
     <a
       href={`mailto:${address}`}
-      className="text-ink hover:text-gold-deep font-semibold underline decoration-1 underline-offset-4"
+      className="text-ink hover:text-ink-muted font-semibold underline decoration-1 underline-offset-4"
     >
       {address}
     </a>
@@ -86,7 +86,7 @@ export function A({ href, children }: { href: string; children: ReactNode }) {
   return (
     <Link
       href={href}
-      className="text-ink hover:text-gold-deep font-semibold underline decoration-1 underline-offset-4"
+      className="text-ink hover:text-ink-muted font-semibold underline decoration-1 underline-offset-4"
     >
       {children}
     </Link>
@@ -99,7 +99,7 @@ export function A({ href, children }: { href: string; children: ReactNode }) {
  */
 export function Placeholder({ children }: { children: ReactNode }) {
   return (
-    <span className="bg-shell text-gold-deep rounded px-1.5 py-0.5 text-[0.95em] font-medium">
+    <span className="bg-shell text-ink rounded px-1.5 py-0.5 text-[0.95em] font-medium">
       {children}
     </span>
   );

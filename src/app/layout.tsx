@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Inter } from "next/font/google";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SkipToContent } from "@/components/layout/SkipToContent";
@@ -8,19 +8,18 @@ import { ogImage, site } from "@/config/site";
 import "./globals.css";
 
 /*
-  Both faces are self-hosted by `next/font` at build time — no font requests
-  leave the visitor's browser, and there is no layout shift from a late swap.
-*/
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-fraunces",
-});
+  Self-hosted by `next/font` at build time — no font requests leave the
+  visitor's browser.
 
+  Inter is only the fallback. The type stack in `globals.css` names the system
+  font first, so Apple devices render SF exactly as the app does and never use
+  this face; `preload: false` means they never download it either.
+*/
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-inter",
+  preload: false,
 });
 
 /*
@@ -94,10 +93,9 @@ export const metadata: Metadata = gate.enabled ? gatedMetadata : siteMetadata;
 export const viewport: Viewport = gate.enabled
   ? { themeColor: "#1b1a18", colorScheme: "dark" }
   : {
-      themeColor: [
-        { media: "(prefers-color-scheme: light)", color: "#f7f2e8" },
-        { media: "(prefers-color-scheme: dark)", color: "#1b1a18" },
-      ],
+      // The site is light-only, like the app's album shell, so the browser
+      // chrome matches the page in both system appearances.
+      themeColor: "#f4efe6",
       colorScheme: "light",
     };
 
@@ -127,20 +125,14 @@ export default function RootLayout({
   */
   if (gate.enabled) {
     return (
-      <html
-        lang="en"
-        className={`${fraunces.variable} ${inter.variable} h-full antialiased`}
-      >
+      <html lang="en" className={`${inter.variable} h-full antialiased`}>
         <body className="bg-ink text-paper min-h-full">{children}</body>
       </html>
     );
   }
 
   return (
-    <html
-      lang="en"
-      className={`${fraunces.variable} ${inter.variable} h-full antialiased`}
-    >
+    <html lang="en" className={`${inter.variable} h-full antialiased`}>
       <body className="bg-paper flex min-h-full flex-col">
         <SkipToContent />
         <SiteHeader />

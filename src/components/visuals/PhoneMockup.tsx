@@ -31,7 +31,11 @@ export function PhoneMockup({
         className,
       )}
     >
-      {/* Warm halo so the dark device sits softly on cream. */}
+      {/*
+        The device stays dark on purpose: in the app, capture is the dark
+        theater (`VidefloTheme.Media`) inside the cream album. A warm halo lets
+        it sit softly on cream.
+      */}
       <div
         aria-hidden="true"
         className="absolute -inset-8 rounded-[999px] bg-[radial-gradient(60%_50%_at_50%_45%,rgba(230,184,92,0.22),transparent_70%)] blur-xl"
@@ -45,7 +49,9 @@ export function PhoneMockup({
               alt={alt}
               fill
               sizes="(min-width: 640px) 304px, 280px"
-              className="object-cover"
+              // A tall crop of a landscape photo: centred on the family, who sit
+              // left of the frame's middle.
+              className="object-cover object-[30%_50%]"
               priority={priority}
             />
 

@@ -40,7 +40,7 @@ export function CategoryCard({
     <Link
       href={`/help/topics/${category.id}`}
       className={cn(
-        "group border-line bg-paper relative flex h-full flex-col rounded-2xl border p-6 sm:p-7",
+        "group border-line bg-card relative flex h-full flex-col rounded-2xl border p-6 sm:p-7",
         "transition-[border-color,box-shadow,transform] duration-300 ease-out",
         "hover:border-line-strong hover:shadow-soft motion-safe:hover:-translate-y-0.5",
       )}
@@ -78,7 +78,7 @@ export function ArticleCard({
     <Link
       href={`/help/${article.slug}`}
       className={cn(
-        "group border-line bg-paper flex h-full flex-col rounded-2xl border p-6",
+        "group border-line bg-card flex h-full flex-col rounded-2xl border p-6",
         "transition-[border-color,box-shadow,transform] duration-300 ease-out",
         "hover:border-line-strong hover:shadow-soft motion-safe:hover:-translate-y-0.5",
       )}
@@ -90,7 +90,7 @@ export function ArticleCard({
       ) : null}
       <h3
         className={cn(
-          "font-display text-ink group-hover:text-gold-deep text-[1.0625rem] leading-snug font-semibold transition-colors",
+          "font-display text-ink group-hover:text-ink-muted text-[1.0625rem] leading-snug font-semibold transition-colors",
           showCategory && categoryLabel && "mt-2.5",
         )}
       >
@@ -118,7 +118,7 @@ export function ArticleRow({ article }: { article: HelpArticle }) {
       className="group border-line -mx-3 flex items-start gap-4 rounded-xl border-b px-3 py-5 transition-colors last:border-b-0 hover:bg-[color-mix(in_srgb,var(--color-cream)_60%,transparent)]"
     >
       <div className="min-w-0 flex-1">
-        <h3 className="font-display text-ink group-hover:text-gold-deep text-[1.0625rem] font-semibold transition-colors">
+        <h3 className="font-display text-ink group-hover:text-ink-muted text-[1.0625rem] font-semibold transition-colors">
           {article.title}
         </h3>
         <p className="text-ink-muted mt-1.5 text-[0.9375rem] leading-relaxed">

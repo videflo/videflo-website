@@ -231,7 +231,7 @@ export function HelpSearch({
         <div
           onPointerEnter={loadIndex}
           className={cn(
-            "border-line-strong bg-paper flex items-center gap-3 rounded-full border px-5 py-3.5 sm:px-6 sm:py-4",
+            "border-line-strong bg-card shadow-soft flex items-center gap-3 rounded-2xl border px-5 py-3.5 sm:px-6 sm:py-4",
             "shadow-soft focus-within:border-ink transition-colors duration-200",
           )}
         >
@@ -326,7 +326,7 @@ export function HelpSearch({
       {isOpen ? (
         <div
           className={cn(
-            "border-line bg-paper shadow-lift absolute inset-x-0 top-[calc(100%+0.75rem)] z-30 overflow-hidden rounded-2xl border",
+            "border-line bg-card shadow-lift absolute inset-x-0 top-[calc(100%+0.75rem)] z-30 overflow-hidden rounded-2xl border",
             "max-h-[min(28rem,60vh)] overflow-y-auto overscroll-contain",
           )}
         >
@@ -372,7 +372,7 @@ export function HelpSearch({
                 “subscription”, or{" "}
                 <Link
                   href="/support"
-                  className="text-ink hover:text-gold-deep font-semibold underline decoration-1 underline-offset-4"
+                  className="text-ink hover:text-ink-muted font-semibold underline decoration-1 underline-offset-4"
                 >
                   email us
                 </Link>{" "}

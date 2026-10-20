@@ -7,11 +7,11 @@ import { Reveal } from "@/components/ui/Reveal";
 export function Hero() {
   return (
     // The header floats over this section, hence the extra top padding.
-    <section className="bg-cream relative overflow-hidden pt-16 pb-16 sm:pt-24 sm:pb-24 lg:pt-28">
+    <section className="bg-paper relative overflow-hidden pt-16 pb-16 sm:pt-24 sm:pb-24 lg:pt-28">
       {/* Warm light falling from the top of the page. */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 -top-40 h-96 bg-[radial-gradient(50%_60%_at_50%_50%,rgba(230,184,92,0.18),transparent_72%)]"
+        className="pointer-events-none absolute inset-x-0 -top-40 h-96 bg-[radial-gradient(50%_60%_at_50%_50%,rgba(230,184,92,0.16),transparent_72%)]"
       />
 
       <Container>
@@ -21,7 +21,7 @@ export function Hero() {
           </Reveal>
 
           <Reveal delay={60}>
-            <h1 className="font-display text-display-xl text-ink mt-6 font-semibold">
+            <h1 className="font-display text-display-xl text-ink mt-6 font-bold">
               Capture Today.
               <br />
               Cherish Forever.
@@ -47,19 +47,21 @@ export function Hero() {
       <Container className="mt-14 sm:mt-20">
         <Reveal delay={120}>
           <figure className="relative">
-            <div className="bg-ink shadow-lift relative aspect-[4/3] w-full overflow-hidden rounded-3xl sm:aspect-[3/2] lg:aspect-[16/9]">
+            <div className="bg-shell shadow-lift ring-line relative aspect-[4/3] w-full overflow-hidden rounded-3xl ring-1 sm:aspect-[3/2] lg:aspect-[16/9]">
               <Image
-                src="/images/hero-family-sunset.jpg"
-                alt="A family standing together on a headland at dusk, watching the sun set over the ocean."
+                src="/images/onboarding/event-memory.jpg"
+                alt="A family sitting together on a blanket on the sand at dusk, looking out at the ocean."
                 fill
                 priority
                 sizes="(min-width: 1280px) 1152px, (min-width: 640px) 92vw, 100vw"
-                className="object-cover"
+                // The family sits low in the frame; the wide crops trim sky,
+                // never sand and people.
+                className="object-cover object-[50%_78%]"
               />
               {/* Camcorder timestamp, the same treatment the app uses. */}
               <div
                 aria-hidden="true"
-                className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/70 via-black/25 to-transparent"
+                className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/55 via-black/18 to-transparent"
               />
               <figcaption className="absolute bottom-5 left-5 sm:bottom-7 sm:left-8">
                 <span className="text-paper/80 block text-[0.625rem] font-semibold tracking-[0.22em] uppercase">

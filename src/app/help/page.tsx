@@ -13,6 +13,7 @@ import {
   popularArticles,
 } from "@/content/help";
 import { pageMetadata } from "@/lib/metadata";
+import { buttonStyles } from "@/components/ui/buttonStyles";
 
 export const metadata = pageMetadata({
   title: "Help Center",
@@ -105,7 +106,7 @@ export default function HelpCenterPage() {
               the site pairs a categorising eyebrow with a different headline.
             */}
             <Eyebrow>Guides &amp; answers</Eyebrow>
-            <h1 className="font-display text-display-lg text-ink mt-6 font-semibold">
+            <h1 className="font-display text-display-lg text-ink mt-6 font-bold">
               Help Center
             </h1>
             <p className="text-lead text-ink-muted mt-6">
@@ -181,7 +182,7 @@ export default function HelpCenterPage() {
               <Eyebrow>Browse</Eyebrow>
               <h2
                 id="topics-heading"
-                className="font-display text-display-md text-ink mt-6 font-semibold"
+                className="font-display text-display-md text-ink mt-6 font-bold"
               >
                 Find it by topic
               </h2>
@@ -214,7 +215,7 @@ export default function HelpCenterPage() {
               <Eyebrow>Questions</Eyebrow>
               <h2
                 id="faq-heading"
-                className="font-display text-display-md text-ink mt-6 font-semibold"
+                className="font-display text-display-md text-ink mt-6 font-bold"
               >
                 Frequently asked
               </h2>
@@ -231,7 +232,7 @@ export default function HelpCenterPage() {
                     key={item.question}
                     className="group border-line border-b [&_summary::-webkit-details-marker]:hidden"
                   >
-                    <summary className="font-display text-ink hover:text-gold-deep flex cursor-pointer list-none items-start justify-between gap-6 py-6 text-lg font-semibold transition-colors sm:text-xl">
+                    <summary className="font-display text-ink hover:text-ink-muted flex cursor-pointer list-none items-start justify-between gap-6 py-6 text-lg font-semibold transition-colors sm:text-xl">
                       {item.question}
                       <span
                         aria-hidden="true"
@@ -262,7 +263,7 @@ export default function HelpCenterPage() {
                       {item.article ? (
                         <Link
                           href={`/help/${item.article}`}
-                          className="text-ink hover:text-gold-deep mt-4 inline-block text-[0.9375rem] font-semibold underline decoration-1 underline-offset-4"
+                          className="text-ink hover:text-ink-muted mt-4 inline-block text-[0.9375rem] font-semibold underline decoration-1 underline-offset-4"
                         >
                           Read the full article
                         </Link>
@@ -276,28 +277,28 @@ export default function HelpCenterPage() {
         </Container>
       </Section>
 
-      <Section tone="ink" spacing="tight" labelledBy="still-stuck-heading">
+      <Section tone="shell" spacing="tight" labelledBy="still-stuck-heading">
         <Container>
           <div className="grid gap-10 lg:grid-cols-12 lg:items-center lg:gap-16">
             <div className="lg:col-span-7">
               <h2
                 id="still-stuck-heading"
-                className="font-display text-display-sm text-paper font-semibold"
+                className="font-display text-display-sm text-ink font-semibold"
               >
                 Still stuck? A person will read it.
               </h2>
-              <p className="text-cream-muted mt-4 text-[1.0625rem] leading-relaxed">
+              <p className="text-ink-muted mt-4 text-[1.0625rem] leading-relaxed">
                 {site.name} is made by a very small team, and every message is
                 answered by someone who works on the app. Tell us your phone
                 model, your iOS version, and what you were doing. It helps more
-                than you&rsquo;d think.
+                than you’d think.
               </p>
             </div>
 
             <div className="flex flex-col items-start gap-4 lg:col-span-5 lg:items-end">
               <a
                 href={`mailto:${contact.supportEmail}`}
-                className="bg-paper text-ink hover:bg-cream inline-flex items-center gap-3 rounded-full px-6 py-3.5 text-[0.9375rem] font-semibold transition-colors"
+                className={`${buttonStyles.primary} inline-flex items-center gap-3 px-6 py-3.5 text-[0.9375rem]`}
               >
                 <svg
                   aria-hidden="true"
@@ -316,7 +317,7 @@ export default function HelpCenterPage() {
               </a>
               <Link
                 href="/support"
-                className="text-cream-muted hover:text-paper text-[0.9375rem] font-semibold underline decoration-1 underline-offset-4 transition-colors"
+                className="text-ink hover:text-ink-muted text-[0.9375rem] font-semibold underline decoration-1 underline-offset-4 transition-colors"
               >
                 More ways to get support
               </Link>

@@ -16,6 +16,7 @@ import {
   type HelpArticle,
 } from "@/content/help";
 import { pageMetadata } from "@/lib/metadata";
+import { buttonStyles } from "@/components/ui/buttonStyles";
 
 type Params = { slug: string };
 
@@ -176,7 +177,7 @@ export default async function HelpArticlePage({
               />
               {category.title}
             </p>
-            <h1 className="font-display text-display-md text-ink mt-5 font-semibold">
+            <h1 className="font-display text-display-md text-ink mt-5 font-bold">
               {article.title}
             </h1>
             <p className="text-lead text-ink-muted mt-5">
@@ -310,13 +311,13 @@ export default async function HelpArticlePage({
                     href={`mailto:${contact.supportEmail}?subject=${encodeURIComponent(
                       `Help: ${article.title}`,
                     )}`}
-                    className="bg-ink text-paper hover:bg-ink-soft inline-flex items-center gap-2.5 rounded-full px-5 py-3 text-[0.9375rem] font-semibold transition-colors"
+                    className={`${buttonStyles.primary} inline-flex items-center gap-2.5 px-5 py-3 text-[0.9375rem]`}
                   >
                     Email support
                   </a>
                   <Link
                     href={`/help/topics/${category.id}`}
-                    className="text-ink hover:text-gold-deep text-[0.9375rem] font-semibold underline decoration-1 underline-offset-4 transition-colors"
+                    className="text-ink hover:text-ink-muted text-[0.9375rem] font-semibold underline decoration-1 underline-offset-4 transition-colors"
                   >
                     More on {category.title}
                   </Link>

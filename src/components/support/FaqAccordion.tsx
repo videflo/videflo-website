@@ -15,7 +15,7 @@ export function FaqAccordion() {
           key={item.question}
           className="group border-line border-b [&_summary::-webkit-details-marker]:hidden"
         >
-          <summary className="font-display text-ink hover:text-gold-deep flex cursor-pointer list-none items-start justify-between gap-6 py-6 text-lg font-semibold transition-colors sm:text-xl">
+          <summary className="font-display text-ink hover:text-ink-muted flex cursor-pointer list-none items-start justify-between gap-6 py-6 text-lg font-semibold transition-colors sm:text-xl">
             {item.question}
             <span
               aria-hidden="true"
@@ -51,14 +51,14 @@ export function FaqAccordion() {
                   href={item.link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-ink hover:text-gold-deep mt-4 inline-block text-[0.9375rem] font-semibold underline decoration-1 underline-offset-4"
+                  className="text-ink hover:text-ink-muted mt-4 inline-block text-[0.9375rem] font-semibold underline decoration-1 underline-offset-4"
                 >
                   {item.link.label}
                 </a>
               ) : (
                 <Link
                   href={item.link.href}
-                  className="text-ink hover:text-gold-deep mt-4 inline-block text-[0.9375rem] font-semibold underline decoration-1 underline-offset-4"
+                  className="text-ink hover:text-ink-muted mt-4 inline-block text-[0.9375rem] font-semibold underline decoration-1 underline-offset-4"
                 >
                   {item.link.label}
                 </Link>

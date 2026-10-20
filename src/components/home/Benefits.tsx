@@ -17,7 +17,7 @@ export function Benefits() {
             <Reveal delay={60}>
               <h2
                 id="why-videflo-heading"
-                className="font-display text-display-lg text-ink mt-6 font-semibold"
+                className="font-display text-display-lg text-ink mt-6 font-bold"
               >
                 What Videflo does today.
               </h2>

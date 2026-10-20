@@ -13,28 +13,23 @@ const highlights: readonly string[] = [
 
 export function NoEditing() {
   return (
-    <Section id="no-editing" tone="ink" labelledBy="no-editing-heading">
-      <div
-        aria-hidden="true"
-        className="grain-layer pointer-events-none absolute inset-0 opacity-[0.04] mix-blend-overlay"
-      />
-
+    <Section id="no-editing" tone="cream" labelledBy="no-editing-heading">
       <Container>
         <div className="grid gap-14 lg:grid-cols-12 lg:items-center lg:gap-16">
           <div className="lg:col-span-6">
             <Reveal>
-              <Eyebrow tone="dark">No editing required</Eyebrow>
+              <Eyebrow>No editing required</Eyebrow>
             </Reveal>
             <Reveal delay={60}>
               <h2
                 id="no-editing-heading"
-                className="font-display text-display-lg text-paper mt-6 font-semibold"
+                className="font-display text-display-lg text-ink mt-6 font-bold"
               >
                 Be there. Don&rsquo;t edit there.
               </h2>
             </Reveal>
             <Reveal delay={120}>
-              <p className="text-lead text-cream-muted mt-7 max-w-xl">
+              <p className="text-lead text-ink-muted mt-7 max-w-xl">
                 Videflo is designed so you can focus on the moment instead of
                 timelines, clips, transitions, and complicated editing tools.
               </p>
@@ -48,7 +43,7 @@ export function NoEditing() {
                       aria-hidden="true"
                       className="bg-gold mt-2 size-1.5 shrink-0 rounded-full"
                     />
-                    <span className="text-paper text-[1.0625rem] leading-relaxed">
+                    <span className="text-ink text-[1.0625rem] leading-relaxed">
                       {highlight}
                     </span>
                   </li>
@@ -57,7 +52,7 @@ export function NoEditing() {
             </Reveal>
 
             <Reveal delay={240}>
-              <p className="text-cream-faint mt-8 max-w-xl text-sm leading-relaxed">
+              <p className="text-ink-faint mt-8 max-w-xl text-sm leading-relaxed">
                 Videflo still does the technical work of joining your recordings
                 into one Tape. You just never have to do it yourself.
               </p>
@@ -66,7 +61,7 @@ export function NoEditing() {
 
           <Reveal delay={140} className="lg:col-span-6">
             <PhoneMockup
-              src="/images/hero-family-sunset.jpg"
+              src="/images/onboarding/event-memory.jpg"
               alt="Videflo’s recording screen, filmed on a family at sunset."
               timestamp="Thu, Jul 09 2026 · 7:52 PM"
             />

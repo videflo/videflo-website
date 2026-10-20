@@ -9,34 +9,33 @@ export function FinalCta() {
     <section
       id="download"
       aria-labelledby="download-heading"
-      className="on-dark bg-ink relative isolate overflow-hidden py-24 sm:py-32 lg:py-40"
+      className="bg-paper relative isolate overflow-hidden pb-24 sm:pb-32 lg:pb-40"
     >
-      <Image
-        src="/images/watching-together.jpg"
-        alt=""
-        aria-hidden="true"
-        fill
-        sizes="100vw"
-        className="-z-10 object-cover opacity-60"
-      />
-      <div
-        aria-hidden="true"
-        className="from-ink/80 via-ink/65 to-ink/95 absolute inset-0 -z-10 bg-gradient-to-b"
-      />
-      <div
-        aria-hidden="true"
-        className="grain-layer absolute inset-0 -z-10 opacity-[0.05] mix-blend-overlay"
-      />
-
       {/*
-        Standard container so the closing section starts on the same left edge as
-        every other section, rather than floating in the middle of the band.
+        The onboarding's own composition: the photograph on top, fading into
+        the cream beneath it so the headline sits on a clean field whatever the
+        bottom of the image holds (`OnboardingPhotoView`).
       */}
-      <Container>
+      <div className="relative aspect-[4/3] w-full sm:aspect-[2/1] lg:aspect-auto lg:h-[34rem]">
+        <Image
+          src="/images/onboarding/reliving-memory.jpg"
+          alt=""
+          aria-hidden="true"
+          fill
+          sizes="100vw"
+          className="object-cover object-[40%_35%]"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-x-0 -bottom-px h-[45%] bg-[linear-gradient(to_top,var(--color-paper)_0%,var(--color-paper)_6%,color-mix(in_srgb,var(--color-paper)_65%,transparent)_45%,transparent)]"
+        />
+      </div>
+
+      <Container className="relative -mt-6 sm:-mt-10">
         <Reveal>
           <h2
             id="download-heading"
-            className="font-display text-display-lg text-paper max-w-4xl font-semibold"
+            className="font-display text-display-lg text-ink max-w-4xl font-bold"
           >
             The moments happening today become the memories you treasure
             tomorrow.
@@ -44,7 +43,7 @@ export function FinalCta() {
         </Reveal>
 
         <Reveal delay={80}>
-          <p className="text-lead text-cream-muted mt-7 max-w-xl">
+          <p className="text-lead text-ink-muted mt-7 max-w-xl">
             Start a Tape for the thing you&rsquo;d hate to forget. Record it as
             it happens. Watch it back years from now, all in one piece.
           </p>
@@ -52,13 +51,18 @@ export function FinalCta() {
 
         <Reveal delay={140}>
           <div className="mt-10 flex flex-col items-start gap-4">
-            <AppStoreButton size="lg" variant="cream" />
-            <AppStoreNote tone="dark" />
+            <AppStoreButton size="lg" />
+            <AppStoreNote />
           </div>
         </Reveal>
 
         <Reveal delay={200}>
-          <p className="font-display text-gold mt-14 text-2xl font-semibold">
+          <p className="font-display text-ink mt-14 flex items-center gap-3 text-2xl font-semibold">
+            {/* Gold on cream is a fill, never thin text, as in the app. */}
+            <span
+              aria-hidden="true"
+              className="bg-gold h-1.5 w-8 rounded-full"
+            />
             {site.brandPhrase}
           </p>
         </Reveal>

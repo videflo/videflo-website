@@ -80,7 +80,12 @@ export function SiteHeader() {
           </nav>
 
           <div className="hidden lg:block">
-            <AppStoreButton size="sm" label="Download" fallback="section" />
+            <AppStoreButton
+              size="sm"
+              variant="secondary"
+              label="Download"
+              fallback="section"
+            />
           </div>
 
           <button
@@ -155,7 +160,7 @@ function NavLink({ href, children }: { href: string; children: string }) {
       {children}
       <span
         aria-hidden="true"
-        className="bg-gold absolute inset-x-1 -bottom-0.5 h-px origin-left scale-x-0 transition-transform duration-300 ease-out group-hover:scale-x-100"
+        className="bg-ink absolute inset-x-1 -bottom-0.5 h-px origin-left scale-x-0 transition-transform duration-300 ease-out group-hover:scale-x-100"
       />
     </Link>
   );

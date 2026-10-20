@@ -137,10 +137,10 @@ export default async function HelpTopicPage({
           <HelpBreadcrumbs crumbs={crumbs} />
 
           <div className="mt-7 max-w-3xl">
-            <span className="bg-paper text-ink-soft border-line inline-grid size-12 place-items-center rounded-xl border">
+            <span className="bg-card text-ink-soft border-line inline-grid size-12 place-items-center rounded-xl border">
               <CategoryIcon id={category.id} />
             </span>
-            <h1 className="font-display text-display-md text-ink mt-6 font-semibold">
+            <h1 className="font-display text-display-md text-ink mt-6 font-bold">
               {category.title}
             </h1>
             <p className="text-lead text-ink-muted mt-5">
@@ -197,7 +197,7 @@ export default async function HelpTopicPage({
 
           <Link
             href="/help"
-            className="text-ink hover:text-gold-deep mt-10 inline-flex items-center gap-2 text-[0.9375rem] font-semibold underline decoration-1 underline-offset-4 transition-colors"
+            className="text-ink hover:text-ink-muted mt-10 inline-flex items-center gap-2 text-[0.9375rem] font-semibold underline decoration-1 underline-offset-4 transition-colors"
           >
             <svg
               aria-hidden="true"

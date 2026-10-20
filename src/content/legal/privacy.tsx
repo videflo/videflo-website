@@ -196,7 +196,7 @@ export const privacySections: readonly LegalSection[] = [
           When you share a Tape, {site.name} Cloud records who owns it, who has
           been invited, who accepted, which recordings each person added, and,
           for each member, whether the owner has allowed them to download and
-          export the whole Tape. When you send or accept a Friends &amp; Family request, it records
+          export the whole Tape. When you send or accept a Friends & Family request, it records
           that connection. An invitation sent by text message contains a
           single-use link; the link identifies the invitation, not you, and the
           page it opens on this website names no Tape and no person.

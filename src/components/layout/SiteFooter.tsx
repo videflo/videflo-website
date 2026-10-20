@@ -9,21 +9,21 @@ export function SiteFooter() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="on-dark border-line-dark bg-ink text-paper border-t">
+    <footer className="border-line bg-shell text-ink border-t">
       <Container>
         <div className="grid gap-12 py-16 sm:py-20 lg:grid-cols-[1fr_auto] lg:gap-20">
           <div className="max-w-sm">
-            <Wordmark tone="dark" withSubtitle />
-            <p className="font-display text-paper mt-6 text-xl leading-snug">
+            <Wordmark withSubtitle />
+            <p className="font-display text-ink mt-6 text-xl leading-snug font-semibold">
               {site.tagline}
             </p>
-            <p className="text-cream-muted mt-4 text-sm leading-relaxed">
+            <p className="text-ink-muted mt-4 text-sm leading-relaxed">
               Questions, feedback, or trouble with the app? Write to us. A
               person reads every message.
             </p>
             <a
               href={`mailto:${contact.supportEmail}`}
-              className="text-gold hover:text-gold-soft mt-3 inline-block text-sm font-semibold underline decoration-1 underline-offset-4 transition-colors"
+              className="text-ink hover:text-ink-muted mt-3 inline-block text-sm font-semibold underline decoration-1 underline-offset-4 transition-colors"
             >
               {contact.supportEmail}
             </a>
@@ -33,7 +33,7 @@ export function SiteFooter() {
             <nav aria-labelledby="footer-nav-heading">
               <h2
                 id="footer-nav-heading"
-                className="text-cream-faint text-[0.6875rem] font-semibold tracking-[0.22em] uppercase"
+                className="text-ink-faint text-[0.6875rem] font-semibold tracking-[0.22em] uppercase"
               >
                 Videflo
               </h2>
@@ -42,7 +42,7 @@ export function SiteFooter() {
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className="text-cream-muted hover:text-paper text-sm transition-colors"
+                      className="text-ink-muted hover:text-ink text-sm transition-colors"
                     >
                       {item.label}
                     </Link>
@@ -55,7 +55,7 @@ export function SiteFooter() {
               <nav aria-labelledby="footer-social-heading">
                 <h2
                   id="footer-social-heading"
-                  className="text-cream-faint text-[0.6875rem] font-semibold tracking-[0.22em] uppercase"
+                  className="text-ink-faint text-[0.6875rem] font-semibold tracking-[0.22em] uppercase"
                 >
                   Elsewhere
                 </h2>
@@ -66,7 +66,7 @@ export function SiteFooter() {
                         href={social.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-cream-muted hover:text-paper text-sm transition-colors"
+                        className="text-ink-muted hover:text-ink text-sm transition-colors"
                       >
                         {social.label}
                       </a>
@@ -78,7 +78,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="border-line-dark text-cream-faint flex flex-col gap-4 border-t py-8 text-xs sm:flex-row sm:items-center sm:justify-between">
+        <div className="border-line text-ink-faint flex flex-col gap-4 border-t py-8 text-xs sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {year} {site.name}. All rights reserved.
           </p>

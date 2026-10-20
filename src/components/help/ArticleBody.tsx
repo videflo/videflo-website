@@ -196,7 +196,7 @@ export function ArticleBody({ article }: { article: HelpArticle }) {
                 <svg
                   aria-hidden="true"
                   viewBox="0 0 20 20"
-                  className="text-gold-deep mt-1 size-[1.0625rem] shrink-0"
+                  className="text-gold-mark mt-1 size-[1.0625rem] shrink-0"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="1.6"
@@ -266,7 +266,7 @@ export function ArticleBody({ article }: { article: HelpArticle }) {
                 key={faq.question}
                 className="group border-line border-b [&_summary::-webkit-details-marker]:hidden"
               >
-                <summary className="font-display text-ink hover:text-gold-deep flex cursor-pointer list-none items-start justify-between gap-6 py-5 text-[1.0625rem] font-semibold transition-colors sm:text-lg">
+                <summary className="font-display text-ink hover:text-ink-muted flex cursor-pointer list-none items-start justify-between gap-6 py-5 text-[1.0625rem] font-semibold transition-colors sm:text-lg">
                   {faq.question}
                   <span
                     aria-hidden="true"

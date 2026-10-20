@@ -4,52 +4,78 @@
   Videflo brand theme.
   Everything visual is derived from the tokens below — change a value here and it
   propagates across every page. Do not hard-code hex values in components.
+
+  Source of truth: the iOS app's warm cream album, `VidefloTheme.Colors` in
+  `Videflo/Design/VidefloTheme.swift`. Values are copied, not approximated, so
+  the site and the app read as one product. Where the site needs a value the app
+  does not define (AA-safe caption text), the comment says so.
 */
 @theme {
   /* ---- Surfaces ------------------------------------------------------ */
-  --color-paper: #fcfaf6; /* soft off-white — default page surface */
-  --color-cream: #f7f2e8; /* warm cream — alternating bands */
-  --color-shell: #f1e9d8; /* deeper cream — quiet emphasis */
-  --color-ink: #1b1a18; /* deep charcoal — text + dark sections */
-  --color-ink-raised: #26241f; /* raised surface on charcoal */
+  --color-paper: #f4efe6; /* app `background` — warm ivory, default surface */
+  --color-cream: #faf6ef; /* app `elevated` — on a light shell, up is lighter */
+  --color-card: #fbf8f2; /* app `card` — soft cream, deliberately not white */
+  --color-shell: #efe8dc; /* app `cardRaised` — recessed bands, quiet emphasis */
+  --color-artwork: #f4f0e5; /* sampled from the app's onboarding artwork */
+  --color-ink: #191714; /* app `textPrimary` — warm near-black */
+  --color-ink-raised: #26241f; /* raised surface on charcoal (phone mockup) */
 
   /* ---- Text ---------------------------------------------------------- */
-  --color-ink-soft: #38352f; /* secondary headings on light */
-  --color-ink-muted: #5b5347; /* body copy on light (AA on cream) */
-  --color-ink-faint: #6f6759; /* meta / captions on light (AA on cream) */
-  --color-cream-muted: #cdc6b8; /* body copy on charcoal */
-  --color-cream-faint: #a29a88; /* meta / captions on charcoal */
+  --color-ink-soft: #38342e; /* secondary headings on light */
+  --color-ink-muted: #6b635a; /* app `textSecondary` — body copy (≈5:1) */
+  /*
+    Captions and meta. The app's `textTertiary` (#877E71) is 3.4:1 and the app
+    never uses it for words; the site sets real sentences at this level, so it
+    keeps a darker value that still clears AA on every cream surface.
+  */
+  --color-ink-faint: #6f675b;
+  --color-cream-muted: #cdc6b8; /* body copy on charcoal (gate page only) */
+  --color-cream-faint: #a29a88; /* meta on charcoal (gate page only) */
 
   /* ---- Accents ------------------------------------------------------- */
-  --color-gold: #e6b85c; /* warm yellow — accents on dark only */
-  --color-gold-soft: #f0d29a;
-  --color-gold-deep: #8a5f18; /* gold-family text on light (AA, 5.0:1) */
   /*
-    The wordmark's "flo" on light surfaces — the app's own `accentDeep`, the dark
-    end of its gold gradient.
+    The one Videflo gold, used the way the app uses it: on cream it is a *fill*
+    carrying `on-gold` ink (the primary button, a dot, the active indicator) or
+    the wordmark — never thin text, which measures 1.6:1. Readable words on
+    cream are ink.
+  */
+  --color-gold: #e6b85c; /* app `accent` */
+  --color-gold-bright: #eec06a; /* app `accentGradient` start */
+  --color-on-gold: #201a0e; /* app `onAccent` — the one ink that sits on gold */
+  /*
+    The wordmark's "flo" on light surfaces, and large *decorative* glyphs — the
+    app's own `accentDeep`, the dark end of its gold gradient.
 
     This is a logotype, which WCAG 1.4.3 explicitly exempts from contrast
     requirements, and nothing depends on reading it: the link's accessible name is
-    "Videflo — home". That exemption is what lets the mark stay actually gold. Any
-    value dark enough to pass as body text (#a6741c, #8a5f18) turns visibly brown
-    on cream and stops reading as the brand colour at all.
-
-    Kept separate from `gold-deep`, which body links use and which does need the
-    full 4.5:1. Do not merge the two.
+    "Videflo — home". That exemption is what lets the mark stay actually gold.
+    Never use it for words or controls.
   */
   --color-gold-mark: #c9974a;
-  --color-rec: #c0563c; /* restrained warm recording red */
+  --color-rec: #e5484d; /* app `recording` */
+  --color-destructive: #c4353a; /* app `destructive` */
 
-  /* ---- Lines --------------------------------------------------------- */
-  --color-line: #e3dbc9; /* hairline on light */
-  --color-line-strong: #d3c9b2;
-  --color-line-dark: #35322c; /* hairline on charcoal */
+  /* ---- Lines (app `hairline` / `hairlineStrong`: ink at 8% / 14%) ---- */
+  --color-line: rgb(25 23 20 / 0.08);
+  --color-line-strong: rgb(25 23 20 / 0.14);
+  --color-line-dark: #35322c; /* hairline on charcoal (gate page only) */
+
+  /* ---- Radii (app `VidefloTheme.Radius`) ----------------------------- */
+  --radius-xl: 0.75rem; /* 12pt `control` — buttons, small controls */
+  --radius-2xl: 1.125rem; /* 18pt `card` */
+  --radius-3xl: 1.5rem; /* 24pt `feature` — hero media, large surfaces */
 
   /* ---- Type ---------------------------------------------------------- */
+  /*
+    The app sets every word in SF (the system font, default design — not
+    rounded, not serif). Apple devices get SF here too; elsewhere Inter stands
+    in. Display and body share the face, as in the app, and differ by weight.
+  */
   --font-display:
-    var(--font-fraunces), ui-serif, Georgia, "Times New Roman", serif;
+    -apple-system, BlinkMacSystemFont, var(--font-inter), "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
   --font-sans:
-    var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    -apple-system, BlinkMacSystemFont, var(--font-inter), "Segoe UI", Roboto,
     Helvetica, Arial, sans-serif;
 
   /* Fluid display scale. Lower bounds are tuned for a 320px viewport. */
@@ -72,11 +98,11 @@
   --text-lead: clamp(1.0625rem, 1.5vw, 1.3125rem);
   --text-lead--line-height: 1.6;
 
-  /* ---- Shadows (soft, never heavy) ---------------------------------- */
+  /* ---- Shadows: the app's one card shadow, warm ink, faint ----------- */
   --shadow-soft:
-    0 1px 2px rgb(27 26 24 / 0.04), 0 12px 28px -12px rgb(27 26 24 / 0.14);
+    0 1px 2px rgb(42 33 24 / 0.05), 0 12px 28px -14px rgb(42 33 24 / 0.16);
   --shadow-lift:
-    0 2px 4px rgb(27 26 24 / 0.05), 0 28px 60px -24px rgb(27 26 24 / 0.24);
+    0 2px 6px rgb(42 33 24 / 0.06), 0 30px 60px -28px rgb(42 33 24 / 0.28);
 }
 
 @layer base {
@@ -87,6 +113,8 @@
   }
 
   body {
+    /* The app's full-screen `backgroundGradient` is #F7F3EB → #F1EBE0; sections
+       paint their own tone over it, so this is only the page's resting colour. */
     background-color: var(--color-paper);
     color: var(--color-ink);
     font-family: var(--font-sans);

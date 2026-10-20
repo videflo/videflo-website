@@ -82,7 +82,7 @@ export default function InvitePage() {
           recipient's messages, and tapping it a second time now opens the app,
           because by then iOS has associated the domain.
         */}
-        <div className="border-ink/10 bg-cream-soft mt-12 rounded-2xl border p-6">
+        <div className="border-line bg-card mt-12 rounded-2xl border p-6">
           <h2 className="text-ink text-base font-semibold">
             Already have {site.name}?
           </h2>

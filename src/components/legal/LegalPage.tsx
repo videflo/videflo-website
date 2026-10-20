@@ -37,7 +37,7 @@ export function LegalPage({
         <Container>
           <div className="max-w-3xl">
             <Eyebrow>{eyebrow}</Eyebrow>
-            <h1 className="font-display text-display-lg text-ink mt-6 font-semibold">
+            <h1 className="font-display text-display-lg text-ink mt-6 font-bold">
               {title}
             </h1>
             <p className="text-lead text-ink-muted mt-6">{summary}</p>

@@ -16,7 +16,7 @@ export function PrivacyPromise() {
             <Reveal delay={60}>
               <h2
                 id="privacy-heading"
-                className="font-display text-display-lg text-ink mt-6 font-semibold"
+                className="font-display text-display-lg text-ink mt-6 font-bold"
               >
                 Your memories are personal.
               </h2>
@@ -32,7 +32,7 @@ export function PrivacyPromise() {
             <Reveal delay={180}>
               <Link
                 href="/privacy"
-                className="text-ink hover:text-gold-deep mt-8 inline-flex items-center gap-2 text-[0.9375rem] font-semibold underline decoration-1 underline-offset-[6px] transition-colors"
+                className="text-ink hover:text-ink-muted mt-8 inline-flex items-center gap-2 text-[0.9375rem] font-semibold underline decoration-1 underline-offset-[6px] transition-colors"
               >
                 Read the Privacy Policy
                 <svg
@@ -53,7 +53,7 @@ export function PrivacyPromise() {
           </div>
 
           <Reveal delay={100} className="lg:col-span-6">
-            <ul className="border-line-strong bg-paper/70 flex flex-col gap-5 rounded-2xl border p-7 sm:p-8">
+            <ul className="border-line bg-card shadow-soft flex flex-col gap-5 rounded-3xl border p-7 sm:p-8">
               {[
                 {
                   title: "Private unless you share",

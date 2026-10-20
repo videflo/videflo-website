@@ -6,14 +6,14 @@ import { Section } from "@/components/ui/Section";
 /** The quiet, sincere section. Deliberately restrained — no CTA, no ornament. */
 export function TheIdea() {
   return (
-    <Section id="the-idea" tone="paper" labelledBy="the-idea-heading">
+    <Section id="the-idea" tone="cream" labelledBy="the-idea-heading">
       <Container>
         <div className="grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
           <div className="lg:col-span-5">
             <Reveal>
               <h2
                 id="the-idea-heading"
-                className="font-display text-display-lg text-ink font-semibold"
+                className="font-display text-display-lg text-ink font-bold"
               >
                 Life doesn&rsquo;t happen in highlight reels.
               </h2>
@@ -34,10 +34,10 @@ export function TheIdea() {
 
           <Reveal delay={100} className="lg:col-span-7">
             <figure>
-              <div className="bg-ink shadow-soft relative aspect-[3/2] w-full overflow-hidden rounded-2xl">
+              <div className="bg-shell shadow-soft ring-line relative aspect-[3/2] w-full overflow-hidden rounded-3xl ring-1">
                 <Image
-                  src="/images/scattered-moments.jpg"
-                  alt="Dozens of small video stills from one family holiday, spread out loosely across a table."
+                  src="/images/onboarding/scattered-clips.jpg"
+                  alt="Small printed video stills from many different moments, scattered loosely across a cream tabletop."
                   fill
                   sizes="(min-width: 1024px) 660px, (min-width: 640px) 92vw, 100vw"
                   className="object-cover"
