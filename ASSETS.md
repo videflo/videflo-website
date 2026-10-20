@@ -118,6 +118,22 @@ text, logos and realism before use. Remaining artefacts are background blur
 only (an unreadable mark on a far-off child's shirt, faint unreadable captions
 in the photo album).
 
+**Summer Vacation recordings.** The four "Four recordings · one Tape" frames in
+the How It Works diagram (`src/components/visuals/TapeFlow.tsx`) live in
+`public/images/tapes/summer-vacation/` (1200×891 JPEG, quality 80):
+`1-arriving.jpg` (SAT), `2-the-beach.jpg` (SUN), `3-birthday-dinner.jpg` (TUE),
+`4-last-sunset.jpg` (THU). They show one fictional family across one trip: the
+same family as the Summer Vacation Tape card, because every scene was generated
+with that card's image attached as a Runway reference. Generated on 2026-10-20
+(about 12:45–1:20 AM MDT) with FLUX.2 Max, 4:3, 2K; 65 credits (13 per image
+with a reference), one rejected (a child missing, unchanged outfits), and one
+request blocked by the model's safety filter and refunded. The parents are
+consistent throughout; the second child reads as a boy at the beach and a girl
+at the birthday dinner, which was reviewed and accepted. One later beach
+correction was generated (about 13 more credits, so about 78 in all) but never
+downloaded or used. Originals, the reference and the exact prompts are in
+`~/Developer/Videflo/Brand Assets/Tape Photography/Summer Vacation Sequence/`.
+
 **If a photo is removed,** delete its `image` entry and the tile falls back to
 the warm CSS still frame built from the Tape's `palette`.
 

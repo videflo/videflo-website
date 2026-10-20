@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { CSSProperties } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 
@@ -5,9 +6,11 @@ import { Reveal } from "@/components/ui/Reveal";
  * The core product diagram: separate recordings, captured days apart, resolving
  * into one continuous Tape.
  *
- * Entirely CSS — no icons, no images, no library. The steps below it are a real
- * ordered list, so the sequence survives with images off and reads correctly to
- * a screen reader.
+ * Each recording shows a frame from the same fictional family's vacation (the
+ * family on the Summer Vacation Tape card), generated for Videflo; see
+ * ASSETS.md. The palette gradient sits beneath each photo while it loads and
+ * still colours the joined timeline. The steps below are a real ordered list,
+ * so the sequence reads correctly to a screen reader.
  */
 
 type Moment = {
@@ -16,6 +19,7 @@ type Moment = {
   /** Share of the finished Tape's timeline, in percent. Must total 100. */
   share: number;
   palette: { base: string; accent: string };
+  image: { src: string; alt: string; position?: string };
 };
 
 const moments: readonly Moment[] = [
@@ -24,24 +28,44 @@ const moments: readonly Moment[] = [
     when: "Sat",
     share: 24,
     palette: { base: "#2a221c", accent: "#c98f52" },
+    image: {
+      src: "/images/tapes/summer-vacation/1-arriving.jpg",
+      alt: "A family arriving on vacation, the parents walking up a sandy path with a suitcase and beach bag as their two children run ahead toward a yellow beach cottage.",
+      position: "50% 55%",
+    },
   },
   {
     label: "The beach",
     when: "Sun",
     share: 19,
     palette: { base: "#232a28", accent: "#d9ab5f" },
+    image: {
+      src: "/images/tapes/summer-vacation/2-the-beach.jpg",
+      alt: "The same family laughing as they build a sandcastle together at the water's edge on a sunny morning.",
+      position: "50% 50%",
+    },
   },
   {
     label: "Birthday dinner",
     when: "Tue",
     share: 33,
     palette: { base: "#2c211f", accent: "#c2704d" },
+    image: {
+      src: "/images/tapes/summer-vacation/3-birthday-dinner.jpg",
+      alt: "The same family at a seaside terrace table at dusk under string lights, a little girl gasping with delight at the candles on her birthday cake.",
+      position: "50% 55%",
+    },
   },
   {
     label: "Last sunset",
     when: "Thu",
     share: 24,
     palette: { base: "#241f1d", accent: "#e6b85c" },
+    image: {
+      src: "/images/tapes/summer-vacation/4-last-sunset.jpg",
+      alt: "The same family sitting close together on a blanket on the sand, smiling as they watch the sun set over the ocean.",
+      position: "55% 50%",
+    },
   },
 ];
 
@@ -65,10 +89,7 @@ export function TapeFlow({ steps }: { steps: readonly FlowStep[] }) {
         </div>
 
         {/* Individual recordings */}
-        <ul
-          aria-hidden="true"
-          className="relative mt-7 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4"
-        >
+        <ul className="relative mt-7 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
           {moments.map((moment) => (
             <li key={moment.label}>
               <div
@@ -79,10 +100,20 @@ export function TapeFlow({ steps }: { steps: readonly FlowStep[] }) {
                   } as CSSProperties
                 }
               >
-                <div className="absolute inset-0 bg-[radial-gradient(34%_30%_at_80%_16%,rgba(255,248,232,0.9),transparent_72%)]" />
-                <div className="grain-layer absolute inset-0 opacity-[0.08] mix-blend-multiply" />
-                <div className="ring-line absolute inset-0 rounded-xl ring-1 ring-inset" />
-                <span className="bg-card/85 text-ink absolute bottom-2 left-2 rounded-md px-1.5 py-0.5 text-[0.625rem] font-semibold tracking-[0.14em] uppercase">
+                <Image
+                  src={moment.image.src}
+                  alt={moment.image.alt}
+                  fill
+                  sizes="(min-width: 640px) 240px, 45vw"
+                  style={{ objectPosition: moment.image.position }}
+                  className="object-cover"
+                />
+                <div
+                  aria-hidden="true"
+                  className="ring-line absolute inset-0 rounded-xl ring-1 ring-inset"
+                />
+                {/* A cream label with a soft shadow stays readable on any photo. */}
+                <span className="bg-card/90 text-ink absolute bottom-2 left-2 rounded-md px-1.5 py-0.5 text-[0.625rem] font-semibold tracking-[0.14em] uppercase shadow-sm">
                   {moment.when}
                 </span>
               </div>
