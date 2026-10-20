@@ -8,14 +8,13 @@ import { cn } from "@/lib/cn";
  * cover on top, then the Tape's details in ink on the soft `card` surface, with
  * the 18pt card radius and a hairline edge.
  *
- * Until real lifestyle photography is supplied, each cover renders as a bright,
- * warm "still frame" built from the Tape's own palette — the palette washed
- * toward cream, a low sun, soft grain and a sprocket band — so the grid reads as
- * a shelf of home videos in the same light as the app's onboarding photography,
- * rather than a set of empty boxes.
+ * A Tape with an `image` shows its photograph. One without falls back to a
+ * bright, warm "still frame" built from the Tape's own palette — the palette
+ * washed toward cream, a low sun and soft grain — so a missing photo never reads
+ * as an empty box. Both carry the same sprocket band.
  *
- * To use a photograph instead, add `image: { src, alt }` to the entry in
- * `src/content/use-cases.ts`. Nothing else has to change; see ASSETS.md.
+ * Photographs are set in `src/content/use-cases.ts` as
+ * `image: { src, alt, position }`; see ASSETS.md for where they came from.
  */
 export function TapeFrame({
   tape,
@@ -59,6 +58,9 @@ export function TapeFrame({
               sizes ??
               "(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
             }
+            // The cover runs from 4:3 on phones to a thin wide band on the
+            // last desktop tile, so each photo names the point to keep.
+            style={{ objectPosition: tape.image.position ?? "50% 50%" }}
             className="object-cover transition-transform duration-700 ease-out motion-safe:group-hover:scale-[1.03]"
           />
         ) : (
@@ -70,15 +72,21 @@ export function TapeFrame({
             {/* Soft ground shadow, never a black vignette. */}
             <div className="absolute inset-0 bg-[radial-gradient(120%_60%_at_50%_120%,color-mix(in_srgb,var(--tape-mid)_22%,transparent),transparent_60%)]" />
             <div className="grain-layer absolute inset-0 opacity-[0.08] mix-blend-multiply" />
-            {/*
-              Sprocket band along the top edge. One graphic device is what makes
-              a cover read as a frame of film awaiting its photograph, rather
-              than as an image that failed to load.
-            */}
-            <div className="absolute inset-x-0 top-0 h-5 bg-[color-mix(in_srgb,var(--tape-accent)_45%,transparent)]" />
-            <div className="absolute inset-x-0 top-[0.4375rem] h-1.5 bg-[repeating-linear-gradient(90deg,transparent_0_0.375rem,rgba(255,250,240,0.7)_0.375rem_0.75rem)]" />
           </div>
         )}
+        {/*
+          Sprocket band along the top edge, over a photograph or the placeholder
+          alike. It is the one graphic device that makes every cover read as a
+          frame of film.
+        */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 top-0 h-5 bg-[color-mix(in_srgb,var(--tape-accent)_45%,transparent)]"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 top-[0.4375rem] h-1.5 bg-[repeating-linear-gradient(90deg,transparent_0_0.375rem,rgba(255,250,240,0.7)_0.375rem_0.75rem)]"
+        />
       </div>
 
       <figcaption className="border-line relative border-t px-5 pt-4 pb-5 sm:px-6 sm:pb-6">

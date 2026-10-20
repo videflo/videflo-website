@@ -9,9 +9,10 @@ import { useCases } from "@/content/use-cases";
  * Editorial layout, index-matched to `useCases`.
  *
  * One column on phones; paired at `sm`; an asymmetric twelve-column composition
- * at `lg` so the grid never reads as a row of identical cards. Tiles in the same
- * `lg` row share a fixed height (rather than an aspect ratio) so their edges
- * always line up even though their widths differ. Below `lg` the *cover* holds
+ * at `lg` so the grid never reads as a row of identical cards. Tiles that share
+ * an `lg` row share a fixed height (rather than an aspect ratio) so their edges
+ * always line up even though their widths differ; the full-width last tile
+ * stands alone and keeps an aspect ratio instead. Below `lg` the *cover* holds
  * the aspect ratio, as the app's Tape card holds a 4:3 thumbnail, and the
  * caption sits beneath it at its natural height.
  */
@@ -20,13 +21,13 @@ type Tile = { span: string; frame: string; cover: string; sizes: string };
 const tiles: readonly Tile[] = [
   {
     span: "sm:col-span-2 lg:col-span-7",
-    frame: "lg:h-[26rem]",
+    frame: "lg:h-[28rem]",
     cover: "aspect-[4/3] sm:aspect-[2/1] lg:aspect-auto",
     sizes: "(min-width: 1024px) 56vw, 100vw",
   },
   {
     span: "lg:col-span-5",
-    frame: "lg:h-[26rem]",
+    frame: "lg:h-[28rem]",
     cover: "aspect-[4/3] lg:aspect-auto",
     sizes: "(min-width: 1024px) 40vw, (min-width: 640px) 46vw, 100vw",
   },
@@ -50,20 +51,23 @@ const tiles: readonly Tile[] = [
   },
   {
     span: "lg:col-span-5",
-    frame: "lg:h-[26rem]",
+    frame: "lg:h-[28rem]",
     cover: "aspect-[4/3] lg:aspect-auto",
     sizes: "(min-width: 1024px) 40vw, (min-width: 640px) 46vw, 100vw",
   },
   {
     span: "lg:col-span-7",
-    frame: "lg:h-[26rem]",
+    frame: "lg:h-[28rem]",
     cover: "aspect-[4/3] lg:aspect-auto",
     sizes: "(min-width: 1024px) 56vw, (min-width: 640px) 46vw, 100vw",
   },
   {
+    // Full width, alone in its row, so nothing needs its edges to line up:
+    // the cover keeps a cinematic 5:2 instead of a fixed height, which at full
+    // width left a 6:1 sliver that showed little more than the faces.
     span: "sm:col-span-2 lg:col-span-12",
-    frame: "lg:h-[20rem]",
-    cover: "aspect-[4/3] sm:aspect-[2/1] lg:aspect-auto",
+    frame: "",
+    cover: "aspect-[4/3] sm:aspect-[2/1] lg:aspect-[5/2]",
     sizes: "100vw",
   },
 ];

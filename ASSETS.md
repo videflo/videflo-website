@@ -68,57 +68,58 @@ Recommended for replacements:
 
 ---
 
-## 2. Tape tiles (placeholder — designed, not missing)
+## 2. Tape tiles (generated photography, in place)
 
-The eight example Tapes in the “A Tape for every chapter” section render as the
-app renders a Tape card (`TapeCard.swift`): a cover on top, the Tape's details in
-ink beneath it on the `card` surface. Until photographs exist, each cover is a
-**bright CSS film frame**: the Tape's `accent` colour washed toward cream, a low
-warm sun, soft grain and a sprocket band along the top edge. They are meant to
-read as frames of film waiting for their photographs, in the same light as the
-onboarding photography — deliberate, not broken.
+The eight example Tapes in the "A Tape for every chapter" section each show a
+photograph, drawn as the app draws a Tape card (`TapeCard.swift`): the photo on
+top with a sprocket band along its edge, the Tape's details in ink beneath.
 
-**To use real photographs instead**, add an `image` to the entry in
-`src/content/use-cases.ts`:
+| File (`public/images/tapes/`) | Tape              | Scene                                                      |
+| ----------------------------- | ----------------- | ---------------------------------------------------------- |
+| `our-first-year.jpg`          | Our First Year    | New parents cradling their newborn on a sunlit bed         |
+| `summer-vacation.jpg`         | Summer Vacation   | A family running hand in hand through shallow beach waves  |
+| `grandmas-stories-v2.jpg`     | Grandma's Stories | A grandmother between her grandchildren over a photo album |
+| `football-season.jpg`         | Football Season   | A father carrying his cheering daughter after a game       |
+| `christmas-2026.jpg`          | Christmas 2026    | A family by the tree as their son opens a present          |
+| `growing-up.jpg`              | Growing Up        | A toddler's first steps, her father cheering behind her    |
+| `life-with-our-dog.jpg`       | Life With Our Dog | A golden retriever bounding ahead of a laughing family     |
+| `wedding-weekend.jpg`         | Wedding Weekend   | A couple's first dance at golden hour, guests clapping     |
 
-```ts
-{
-  name: "Summer Vacation",
-  line: "Sand in everything, and nobody minded.",
-  date: "07 · 09 · 2026",
-  palette: { base: "#23231f", mid: "#7a5c30", accent: "#e6b85c" },
-  image: {
-    src: "/images/tapes/summer-vacation.jpg",
-    alt: "Two children running into shallow surf at sunset, backlit by the sun.",
-  },
-}
-```
+Alt text, and each photo's `position` (the object-position that keeps faces in
+frame from the 4:3 phone crop to the widest desktop tile), live with the data
+in `src/content/use-cases.ts`.
 
-Nothing else needs to change — `TapeFrame` switches from the CSS field to the
-photograph automatically, and keeps the `palette` as the loading background.
+**Provenance.** All eight are AI-generated, not photographs of real people, and
+not stock. Generated on 2026-10-19 (11:35–11:55 PM MDT) in Runway, Tool Mode,
+on Videflo's account (team `thomastoailoa`), with **FLUX.2 Max** (Black Forest
+Labs, as hosted by Runway): 4:3, 2K, one image per generation, from original
+prompts describing invented scenes. No reference images, no named people,
+brands, characters or photographers. Grandma's Stories was regenerated on
+2026-10-20 (about 12:15–12:30 AM MDT) with the three people grouped tightly in
+the centre, because the nearly square desktop tile cut both grandchildren out
+of the first version. 11 generations, 110 credits in all: two rejected (garbled
+lettering on clothing; a child's arm ending in an adult's hand) and one
+superseded. Originals are 1680×1248 and are kept, read-only, in
+`~/Developer/Videflo/Brand Assets/Tape Photography/` (outside this repository)
+with their prompts. The site copies are 1600×1188 JPEG, quality 82, with no
+camera, location or author metadata.
 
-Suggested files, if you photograph all eight:
+**Terms relied on.** Runway Terms of Use (last updated 2026-09-15): §4.4, Runway
+"does not claim ownership of any of your Inputs or Outputs" and "does not
+restrict your commercial use of your Outputs"; §10.1(a), "outputs may not be
+unique" and similar outputs may be generated for others; §9(d), the user
+indemnifies Runway for infringement. Runway's terms say nothing specific about
+the third-party models it hosts. AI-generated images may not be protected by
+copyright, so Videflo cannot stop others from reusing them. This is a record
+of the basis, not legal advice.
 
-```
-public/images/tapes/our-first-year.jpg
-public/images/tapes/summer-vacation.jpg
-public/images/tapes/grandmas-stories.jpg
-public/images/tapes/football-season.jpg
-public/images/tapes/christmas-2026.jpg
-public/images/tapes/growing-up.jpg
-public/images/tapes/life-with-our-dog.jpg
-public/images/tapes/wedding-weekend.jpg
-```
+**Review.** Every image was checked at full size for faces, hands, anatomy,
+text, logos and realism before use. Remaining artefacts are background blur
+only (an unreadable mark on a far-off child's shirt, faint unreadable captions
+in the photo album).
 
-Dimensions: **1600×1200 (4:3)** covers every tile shape in the grid, including
-the tall 4:5 tiles and the wide 24:9 banner, because all of them crop with
-`object-cover`. JPEG, quality ~80.
-
-Alt text must describe **the moment in the photograph**, not the Tape name — the
-Tape name is already visible next to it as real text.
-
-Mixing is fine: tiles with an `image` show the photograph, tiles without keep
-the film frame. There is no visual penalty for filling them in one at a time.
+**If a photo is removed,** delete its `image` entry and the tile falls back to
+the warm CSS still frame built from the Tape's `palette`.
 
 ---
 
