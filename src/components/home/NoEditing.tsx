@@ -61,7 +61,7 @@ export function NoEditing() {
 
           <Reveal delay={140} className="lg:col-span-6">
             <PhoneMockup
-              src="/images/onboarding/event-memory.jpg"
+              src="/images/app/recording-preview.jpg"
               alt="Videflo’s recording screen, filmed on a family at sunset."
               timestamp="Thu, Jul 09 2026 · 7:52 PM"
             />

@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { useId, useState } from "react";
-import { appStore, contact } from "@/config/site";
+import type { MouseEvent } from "react";
+import { appStore, socials } from "@/config/site";
 import { cn } from "@/lib/cn";
 import { buttonStyles } from "./buttonStyles";
+import { SocialIcons } from "./SocialIcons";
 
 /**
  * The single download call to action used everywhere on the site.
@@ -13,14 +14,16 @@ import { buttonStyles } from "./buttonStyles";
  * `src/config/site.ts`:
  *
  *  1. `url` is a string  → a real external link to the App Store.
- *  2. `url` is null      → a complete, honest "coming soon" control. Depending
- *                          on `fallback` it either reveals a short notice with
- *                          an email path (`"notice"`, used where there is room
- *                          for it) or links to the download section of the
- *                          homepage (`"section"`, used in the header).
+ *  2. `url` is null      → "Coming Soon to the App Store". Depending on
+ *                          `fallback` it either points the visitor at the
+ *                          social icons `AppStoreNote` draws beneath it
+ *                          (`"notice"`: brought into view, briefly lit in gold,
+ *                          and focused), or links to the download section of
+ *                          the homepage (`"section"`, used in the header).
  *
- * There is deliberately no `href="#"` anywhere: a visitor never activates
- * something that silently goes nowhere.
+ * Setting `url` is the only switch; nothing watches App Review. There is
+ * deliberately no `href="#"` anywhere: a visitor never activates something that
+ * silently goes nowhere.
  */
 
 type Size = "lg" | "md" | "sm";
@@ -66,9 +69,6 @@ export function AppStoreButton({
   fallback?: "notice" | "section";
   className?: string;
 }) {
-  const noticeId = useId();
-  const [noticeShown, setNoticeShown] = useState(false);
-
   const shared = cn(
     "inline-flex items-center justify-center",
     sizes[size],
@@ -93,45 +93,57 @@ export function AppStoreButton({
   if (fallback === "section") {
     return (
       <Link href="/#download" className={shared}>
-        <DownloadGlyph />
-        {label}
+        {size === "sm"
+          ? appStore.comingSoonShortLabel
+          : appStore.comingSoonLabel}
       </Link>
     );
   }
 
   return (
-    <span className="inline-flex flex-col items-start gap-3">
-      <button
-        type="button"
-        onClick={() => setNoticeShown(true)}
-        aria-describedby={noticeShown ? noticeId : undefined}
-        className={shared}
-      >
-        <DownloadGlyph />
-        {label}
-      </button>
-      <span
-        id={noticeId}
-        role="status"
-        className="text-ink-muted max-w-[26rem] text-sm leading-relaxed"
-      >
-        {noticeShown ? (
-          <>
-            {appStore.comingSoonNotice}{" "}
-            <a
-              href={`mailto:${contact.supportEmail}?subject=Videflo%20launch%20updates`}
-              className="text-ink font-semibold underline decoration-1 underline-offset-4"
-            >
-              {contact.supportEmail}
-            </a>
-          </>
-        ) : null}
-      </span>
-    </span>
+    <Link href="/#download" onClick={showFollowRow} className={shared}>
+      {appStore.comingSoonLabel}
+    </Link>
   );
 }
 
-/** The "Coming soon to iPhone" / platform line that sits beneath a CTA. */
+/**
+ * Bring the follow row that sits with this button into view and light it up
+ * for a moment, moving focus to its first icon so keyboard and screen-reader
+ * users land where the visual cue points. Every caller renders the button and
+ * `AppStoreNote` in one wrapper; if a row isn't there the link simply goes to
+ * the homepage's download section, which has one.
+ */
+function showFollowRow(event: MouseEvent<HTMLAnchorElement>) {
+  const row =
+    event.currentTarget.parentElement?.querySelector<HTMLElement>(
+      "[data-follow-row]",
+    );
+  if (!row) return;
+  event.preventDefault();
+
+  const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const { top, bottom } = row.getBoundingClientRect();
+  if (top < 0 || bottom > innerHeight) {
+    row.scrollIntoView({
+      behavior: reduceMotion ? "auto" : "smooth",
+      block: "center",
+    });
+  }
+  row.querySelector("a")?.focus({ preventScroll: true });
+
+  row.dataset.highlight = "true";
+  window.clearTimeout(Number(row.dataset.highlightTimer));
+  row.dataset.highlightTimer = String(
+    window.setTimeout(() => delete row.dataset.highlight, 1600),
+  );
+}
+
+/**
+ * The line beneath a download button. Before launch it invites visitors to
+ * follow Videflo, with the social icons beneath it; after launch it is the
+ * brand line alone.
+ */
 export function AppStoreNote({
   tone = "light",
   className,
@@ -139,17 +151,31 @@ export function AppStoreNote({
   tone?: "light" | "dark";
   className?: string;
 }) {
+  if (appStore.url) {
+    return (
+      <p
+        className={cn(
+          "text-sm",
+          tone === "dark" ? "text-cream-faint" : "text-ink-faint",
+          className,
+        )}
+      >
+        {appStore.platformNote}
+      </p>
+    );
+  }
+
   return (
-    <p
-      className={cn(
-        "text-sm",
-        tone === "dark" ? "text-cream-faint" : "text-ink-faint",
-        className,
-      )}
-    >
-      {appStore.url
-        ? appStore.platformNote
-        : `${appStore.comingSoonLabel} · ${appStore.platformNote}`}
-    </p>
+    <div className={cn("flex flex-col items-start gap-3.5", className)}>
+      <p
+        className={cn(
+          "text-sm",
+          tone === "dark" ? "text-cream-faint" : "text-ink-muted",
+        )}
+      >
+        {socials.length > 0 ? appStore.followNote : appStore.comingSoonLabel}
+      </p>
+      <SocialIcons />
+    </div>
   );
 }

@@ -267,7 +267,7 @@ confirmed before going public.
 | `site`       | Name, canonical URL, tagline, brand phrase, descriptions, locale     |
 | `contact`    | `supportEmail`, `legalEmail`, `privacyEmail`                         |
 | `appStore`   | `url` (the big one — see below), coming-soon copy, platform note     |
-| `socials`    | Footer social links. Empty array → the footer omits the row entirely |
+| `socials`    | Official accounts: icons under the pre-launch button, footer links   |
 | `legal`      | Entity name, address, governing state/country, Privacy + Terms dates |
 | `primaryNav` | Header navigation                                                    |
 | `footerNav`  | Footer navigation                                                    |
@@ -276,9 +276,13 @@ confirmed before going public.
 
 `appStore.url` is `null` today, because Videflo is not on the App Store yet.
 While it is null, every download button renders in a complete, honest
-**coming-soon state** — the buttons look finished, say “Coming soon to the App
-Store · Made for iPhone” underneath, and reveal an email address when pressed.
-The header button links to the download section of the homepage.
+**coming-soon state**: the gold button reads “Coming Soon to the App Store”, and
+beneath it “Follow Videflo on social media for launch updates.” sits above a row
+of icons for the accounts in `socials`. Pressing the button brings that row into
+view, lights it in gold for a moment and focuses its first icon. The
+header button (“Coming Soon”) and the mobile-menu button link to the download
+section of the homepage. Nothing switches this automatically; App Review
+approval changes nothing until `url` is set.
 
 There is deliberately **no `href="#"` anywhere in this codebase.** Nothing a
 visitor clicks silently goes nowhere.
@@ -294,8 +298,8 @@ export const appStore = {
 ```
 
 Every button on every page becomes a real external link to the App Store, the
-microcopy switches to “Made for iPhone”, and the homepage's structured data gains
-an `installUrl`. Nothing else needs to change.
+follow line and icons beneath it give way to the brand line, and the homepage's
+structured data gains an `installUrl`. Nothing else needs to change.
 
 ---
 
@@ -419,7 +423,6 @@ See [the section above](#the-app-store-url).
 
 - Replace the Tape tile placeholders with real photography — see [ASSETS.md](./ASSETS.md).
 - Add the official Apple “Download on the App Store” badge — see ASSETS.md.
-- Add social links to `socials` in the config.
 - Decide whether you want website analytics, and if so update the Privacy
   Policy's website section to match.
 

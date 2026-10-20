@@ -33,7 +33,7 @@ one photographic identity. Filenames follow the app's asset names.
 
 | File                                    | Size      | App asset                    | Used by                                                   |
 | --------------------------------------- | --------- | ---------------------------- | --------------------------------------------------------- |
-| `images/onboarding/event-memory.jpg`    | 1536×1024 | `onboarding_event_memory`    | Homepage hero, and inside the phone mockup                |
+| `images/onboarding/event-memory.jpg`    | 1536×1024 | `onboarding_event_memory`    | Homepage hero; source of the phone mockup's preview       |
 | `images/onboarding/scattered-clips.jpg` | 1536×1024 | `onboarding_scattered_clips` | “Life doesn’t happen in highlight reels”                  |
 | `images/onboarding/tape-event.jpg`      | 1536×1024 | `onboarding_tape_event`      | Closing figure of the “How it works” section              |
 | `images/onboarding/reliving-memory.jpg` | 1536×1024 | `onboarding_reliving_memory` | Top of the closing download section, fading into the page |
@@ -142,9 +142,15 @@ the warm CSS still frame built from the Tape's `palette`.
 ## 3. App interface (placeholder — CSS mockup)
 
 `src/components/visuals/PhoneMockup.tsx` draws an iPhone and Videflo's recording
-screen in CSS: the dynamic island, the recording pill, the burned-in timestamp,
-the centred zoom slider, and the Finish · Record · Flip controls. The photograph
-inside is the camera preview.
+screen in CSS, mid-take, following the app's `RecordingView`: the 9:16 picture
+fitted between black mattes, Close, the red dot and timer, the live timestamp,
+the zoom slider at rest, and Flashlight · Stop · Pause (Record's ring shows the
+Stop square while recording; Pause sits opposite the timestamp). The photograph
+inside is the camera preview: `images/app/recording-preview.jpg`, a 576×1024
+(9:16) crop of `event-memory.jpg` at its full resolution (x 262–838, no
+resampling, JPEG quality 92), served at `quality={90}` (allowed in
+`next.config.ts`). Cropping the landscape photo in the browser made `next/image`
+send a copy sized for the frame's width, so the tall slice was enlarged about 3×.
 
 It stays sharp at any size and never goes out of date with a rebuild, so it is
 fine to ship. To use real screen captures instead:

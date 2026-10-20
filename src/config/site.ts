@@ -66,18 +66,21 @@ export const contact = {
  *  BEFORE LAUNCH: set `url` to the real App Store product URL, e.g.
  *    url: "https://apps.apple.com/app/videflo/id0000000000"
  *
- *  While `url` is null, every download call to action renders in a complete,
- *  clearly-labelled "coming soon" state instead of pointing at a dead link.
- *  There are no `#` placeholder hrefs anywhere in the site — see
- *  `src/components/ui/AppStoreButton.tsx` for the two rendered states.
+ *  While `url` is null, every download call to action renders a "Coming Soon
+ *  to the App Store" button that points visitors at the social icons beneath
+ *  it, with a line inviting them to follow Videflo for launch updates. There are no `#`
+ *  placeholder hrefs anywhere in the site; see
+ *  `src/components/ui/AppStoreButton.tsx` for the two rendered states. The
+ *  switch is manual: nothing watches App Review.
  *  --------------------------------------------------------------------- */
 export const appStore = {
   url: null as string | null,
-  /** Shown beneath download buttons while `url` is null. */
-  comingSoonLabel: "Coming soon to the App Store",
-  /** Shown when a visitor activates a download button while `url` is null. */
-  comingSoonNotice:
-    "Videflo isn’t on the App Store yet. Email us and we’ll let you know the day it arrives:",
+  /** The pre-launch button, shown in place of every download button. */
+  comingSoonLabel: "Coming Soon to the App Store",
+  /** The same, where space is tight (the desktop header). */
+  comingSoonShortLabel: "Coming Soon",
+  /** Shown beneath the pre-launch button, above the social icons. */
+  followNote: "Follow Videflo on social media for launch updates.",
   /**
    * Brand line beneath every download button. Deliberately not a platform
    * statement: Videflo ships on iPhone first and is planned for Android, so
@@ -145,13 +148,49 @@ export const availability = {
 /** ------------------------------------------------------------------------
  *  Social
  *
- *  Add an entry to make a link appear in the footer. Leave the array empty and
- *  the footer omits the social row entirely — no dead icons.
+ *  Videflo's official accounts. Each appears as an icon beneath the pre-launch
+ *  download button and as a link in the footer. Leave the array empty and both
+ *  disappear entirely — no dead icons. `icon` picks the glyph in
+ *  `src/components/ui/SocialIcons.tsx`. Destinations verified 2026-10-20.
+ *
+ *  Facebook (https://www.facebook.com/videflo, icon "facebook") is left out
+ *  until the owner confirms that page belongs to Videflo.
  *  --------------------------------------------------------------------- */
-export type SocialLink = { label: string; href: string };
+export type SocialNetwork =
+  "instagram" | "tiktok" | "facebook" | "youtube" | "threads";
+
+export type SocialLink = {
+  label: string;
+  handle: string;
+  href: string;
+  icon: SocialNetwork;
+};
 
 export const socials: readonly SocialLink[] = [
-  // { label: "Instagram", href: "https://instagram.com/videflo" },
+  {
+    label: "Instagram",
+    handle: "@itsvideflo",
+    href: "https://www.instagram.com/itsvideflo/",
+    icon: "instagram",
+  },
+  {
+    label: "TikTok",
+    handle: "@videflo",
+    href: "https://www.tiktok.com/@videflo",
+    icon: "tiktok",
+  },
+  {
+    label: "YouTube",
+    handle: "@itsvideflo",
+    href: "https://www.youtube.com/@itsvideflo",
+    icon: "youtube",
+  },
+  {
+    label: "Threads",
+    handle: "@itsvideflo",
+    href: "https://www.threads.com/@itsvideflo",
+    icon: "threads",
+  },
 ];
 
 /** ------------------------------------------------------------------------
