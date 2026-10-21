@@ -61,32 +61,53 @@ export const contact = {
 } as const;
 
 /** ------------------------------------------------------------------------
- *  App Store
+ *  App Store and Google Play
  *
- *  BEFORE LAUNCH: set `url` to the real App Store product URL, e.g.
- *    url: "https://apps.apple.com/app/videflo/id0000000000"
+ *  Each store has its own `url`, and each is switched on by hand, separately:
  *
- *  While `url` is null, every download call to action renders a "Coming Soon
- *  to the App Store" button that points visitors at the social icons beneath
- *  it, with a line inviting them to follow Videflo for launch updates. There are no `#`
- *  placeholder hrefs anywhere in the site; see
- *  `src/components/ui/AppStoreButton.tsx` for the two rendered states. The
- *  switch is manual: nothing watches App Review.
+ *    appStore.url:   "https://apps.apple.com/app/videflo/id0000000000"
+ *    googlePlay.url: "https://play.google.com/store/apps/details?id=…"
+ *
+ *  A store's download button exists only while its `url` is set. While
+ *  neither is set, every download call to action is one "Coming Soon to the
+ *  App Store & Google Play" button that points visitors at the social icons
+ *  beneath it, with a line saying iPhone launches first. Once one store is
+ *  live, its real button shows and the other is named as coming later. There
+ *  are no `#` placeholder hrefs anywhere in the site; see
+ *  `src/components/ui/AppStoreButton.tsx` for the rendered states. The
+ *  switches are manual: nothing watches App Review or Google Play review.
  *  --------------------------------------------------------------------- */
 export const appStore = {
   url: null as string | null,
-  /** The pre-launch button, shown in place of every download button. */
-  comingSoonLabel: "Coming Soon to the App Store",
+  /** The live button's default label. */
+  downloadLabel: "Download on the App Store",
+  /** Beneath the live Google Play button while iPhone is still to come. */
+  comingLaterNote: "iPhone coming later to the App Store.",
+  /**
+   * The pre-launch button, shown in place of every download button. The
+   * no-break spaces keep each store name whole when the label wraps on a phone.
+   */
+  comingSoonLabel: "Coming Soon to the App\u00a0Store & Google\u00a0Play",
   /** The same, where space is tight (the desktop header). */
   comingSoonShortLabel: "Coming Soon",
+  /** Beneath the pre-launch button: which platform comes first. */
+  launchOrderNote: "Launching first on iPhone. Android coming later.",
   /** Shown beneath the pre-launch button, above the social icons. */
   followNote: "Follow Videflo on social media for launch updates.",
   /**
-   * Brand line beneath every download button. Deliberately not a platform
-   * statement: Videflo ships on iPhone first and is planned for Android, so
-   * the brand positioning is not tied to a device.
+   * Brand line beneath the download buttons once both stores are live.
+   * Deliberately not a platform statement, so the brand positioning is not
+   * tied to a device.
    */
   platformNote: "Made for your memories.",
+} as const;
+
+export const googlePlay = {
+  url: null as string | null,
+  /** The live button's default label. */
+  downloadLabel: "Get it on Google Play",
+  /** Beneath the live App Store button while Android is still to come. */
+  comingLaterNote: "Android coming later to Google Play.",
 } as const;
 
 /** ------------------------------------------------------------------------
@@ -152,7 +173,6 @@ export const availability = {
  *  download button and as a link in the footer. Leave the array empty and both
  *  disappear entirely — no dead icons. `icon` picks the glyph in
  *  `src/components/ui/SocialIcons.tsx`. Destinations verified 2026-10-20.
-
  *  --------------------------------------------------------------------- */
 export type SocialNetwork =
   "instagram" | "tiktok" | "facebook" | "youtube" | "threads";

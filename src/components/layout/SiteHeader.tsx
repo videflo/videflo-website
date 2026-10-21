@@ -137,12 +137,7 @@ export function SiteHeader() {
               ))}
             </ul>
             <div className="mt-7 pb-2">
-              <AppStoreButton
-                size="md"
-                label="Download on the App Store"
-                fallback="section"
-                className="w-full"
-              />
+              <AppStoreButton size="md" fallback="section" className="w-full" />
             </div>
           </nav>
         </Container>

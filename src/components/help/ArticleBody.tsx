@@ -125,7 +125,7 @@ function Block({ block }: { block: HelpBlock }) {
     case "appStore":
       return (
         <div className="mt-7 flex flex-col items-start gap-3">
-          <AppStoreButton size="md" label="Download on the App Store" />
+          <AppStoreButton size="md" />
           <AppStoreNote />
         </div>
       );

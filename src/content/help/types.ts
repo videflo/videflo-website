@@ -20,7 +20,8 @@
  * Videflo Cloud at three capacities, automatic backup, Shared Tapes, Friends &
  * Family, notifications, Export Tape to Photos. Nothing here may promise
  * playback speed control, trimming, a "Prepare Tape" step, a yearly plan, a
- * free trial, Family Sharing, Android, or iPad.
+ * free trial, Family Sharing, or iPad. Android may be named only as coming
+ * later to Google Play (owner decision, 2026-10-20), never with a date.
  */
 
 /** A topic in the Help Center. Categories are the top level of navigation. */

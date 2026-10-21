@@ -6,7 +6,7 @@ import { PrivacyPromise } from "@/components/home/PrivacyPromise";
 import { TheIdea } from "@/components/home/TheIdea";
 import { UseCases } from "@/components/home/UseCases";
 import { WhatIsATape } from "@/components/home/WhatIsATape";
-import { appStore, site } from "@/config/site";
+import { appStore, googlePlay, site } from "@/config/site";
 
 /*
   No `metadata` export here on purpose. The root layout already declares exactly
@@ -45,7 +45,7 @@ function StructuredData() {
         "@id": `${site.url}/#app`,
         name: site.name,
         applicationCategory: "LifestyleApplication",
-        operatingSystem: "iOS",
+        operatingSystem: googlePlay.url ? "iOS, Android" : "iOS",
         description: site.socialDescription,
         publisher: { "@id": `${site.url}/#organization` },
         // Only emitted once the App Store URL is known.

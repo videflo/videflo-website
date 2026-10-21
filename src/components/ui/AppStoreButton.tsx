@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import type { MouseEvent } from "react";
-import { appStore, socials } from "@/config/site";
+import { appStore, googlePlay, socials } from "@/config/site";
 import { cn } from "@/lib/cn";
 import { buttonStyles } from "./buttonStyles";
 import { SocialIcons } from "./SocialIcons";
@@ -10,24 +10,31 @@ import { SocialIcons } from "./SocialIcons";
 /**
  * The single download call to action used everywhere on the site.
  *
- * Two rendered states, driven entirely by `appStore.url` in
- * `src/config/site.ts`:
+ * Driven entirely by `appStore.url` and `googlePlay.url` in
+ * `src/config/site.ts`, each set by hand and independently:
  *
- *  1. `url` is a string  → a real external link to the App Store.
- *  2. `url` is null      → "Coming Soon to the App Store". Depending on
- *                          `fallback` it either points the visitor at the
- *                          social icons `AppStoreNote` draws beneath it
- *                          (`"notice"`: brought into view, briefly lit in gold,
- *                          and focused), or links to the download section of
- *                          the homepage (`"section"`, used in the header).
+ *  1. A store's `url` is set → a real external link to that store. A store
+ *                              without a `url` never gets a button.
+ *  2. Neither is set         → "Coming Soon to the App Store & Google Play".
+ *                              Depending on `fallback` it either points the
+ *                              visitor at the social icons `AppStoreNote` draws
+ *                              beneath it (`"notice"`: brought into view,
+ *                              briefly lit in gold, and focused), or links to
+ *                              the download section of the homepage
+ *                              (`"section"`, used in the header).
  *
- * Setting `url` is the only switch; nothing watches App Review. There is
- * deliberately no `href="#"` anywhere: a visitor never activates something that
- * silently goes nowhere.
+ * Nothing watches App Review or Google Play review. There is deliberately no
+ * `href="#"` anywhere: a visitor never activates something that silently goes
+ * nowhere.
  */
 
 type Size = "lg" | "md" | "sm";
 type Variant = "primary" | "secondary";
+
+/** The stores that are publicly available, in the order they launch. */
+const liveStores = [appStore, googlePlay].flatMap((store) =>
+  store.url ? [{ url: store.url, label: store.downloadLabel }] : [],
+);
 
 const sizes: Record<Size, string> = {
   lg: "px-7 py-4 text-[0.9375rem] gap-3",
@@ -36,8 +43,8 @@ const sizes: Record<Size, string> = {
 };
 
 function DownloadGlyph() {
-  // Generic download glyph. The official Apple "Download on the App Store"
-  // badge should replace this before launch — see ASSETS.md.
+  // Generic download glyph. The official "Download on the App Store" and
+  // "Get it on Google Play" badges should replace this — see ASSETS.md.
   return (
     <svg
       aria-hidden="true"
@@ -59,12 +66,13 @@ function DownloadGlyph() {
 export function AppStoreButton({
   size = "md",
   variant = "primary",
-  label = "Download on the App Store",
+  label,
   fallback = "notice",
   className,
 }: {
   size?: Size;
   variant?: Variant;
+  /** Replaces the store's own label, but only while one store is live. */
   label?: string;
   fallback?: "notice" | "section";
   className?: string;
@@ -76,23 +84,54 @@ export function AppStoreButton({
     className,
   );
 
-  if (appStore.url) {
+  if (liveStores.length === 1) {
+    const [store] = liveStores;
     return (
       <a
-        href={appStore.url}
+        href={store.url}
         target="_blank"
         rel="noopener noreferrer"
         className={shared}
       >
         <DownloadGlyph />
-        {label}
+        {label ?? store.label}
       </a>
     );
   }
 
+  if (liveStores.length > 1) {
+    // In the header, one button leads to the homepage section that has both.
+    if (fallback === "section") {
+      return (
+        <Link href="/#download" className={shared}>
+          {label ?? "Download"}
+        </Link>
+      );
+    }
+    return (
+      <div className="flex flex-wrap gap-3">
+        {liveStores.map((store) => (
+          <a
+            key={store.url}
+            href={store.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={shared}
+          >
+            <DownloadGlyph />
+            {store.label}
+          </a>
+        ))}
+      </div>
+    );
+  }
+
+  // The full pre-launch label wraps on a phone; keep it centred and even.
+  const comingSoon = cn(shared, "text-center text-balance");
+
   if (fallback === "section") {
     return (
-      <Link href="/#download" className={shared}>
+      <Link href="/#download" className={comingSoon}>
         {size === "sm"
           ? appStore.comingSoonShortLabel
           : appStore.comingSoonLabel}
@@ -101,7 +140,7 @@ export function AppStoreButton({
   }
 
   return (
-    <Link href="/#download" onClick={showFollowRow} className={shared}>
+    <Link href="/#download" onClick={showFollowRow} className={comingSoon}>
       {appStore.comingSoonLabel}
     </Link>
   );
@@ -140,9 +179,10 @@ function showFollowRow(event: MouseEvent<HTMLAnchorElement>) {
 }
 
 /**
- * The line beneath a download button. Before launch it invites visitors to
- * follow Videflo, with the social icons beneath it; after launch it is the
- * brand line alone.
+ * The lines beneath a download button. Before launch they say iPhone comes
+ * first and invite visitors to follow Videflo, with the social icons beneath.
+ * While only one store is live they name the other as coming later, with the
+ * icons. Once both are live, the brand line alone.
  */
 export function AppStoreNote({
   tone = "light",
@@ -151,7 +191,9 @@ export function AppStoreNote({
   tone?: "light" | "dark";
   className?: string;
 }) {
-  if (appStore.url) {
+  const muted = tone === "dark" ? "text-cream-faint" : "text-ink-muted";
+
+  if (appStore.url && googlePlay.url) {
     return (
       <p
         className={cn(
@@ -165,16 +207,22 @@ export function AppStoreNote({
     );
   }
 
+  const comingLater = appStore.url
+    ? googlePlay.comingLaterNote
+    : googlePlay.url
+      ? appStore.comingLaterNote
+      : appStore.launchOrderNote;
+
   return (
     <div className={cn("flex flex-col items-start gap-3.5", className)}>
-      <p
-        className={cn(
-          "text-sm",
-          tone === "dark" ? "text-cream-faint" : "text-ink-muted",
-        )}
-      >
-        {socials.length > 0 ? appStore.followNote : appStore.comingSoonLabel}
-      </p>
+      <div className={cn("text-sm", muted)}>
+        <p className={tone === "dark" ? "text-cream-muted" : "text-ink-soft"}>
+          {comingLater}
+        </p>
+        {socials.length > 0 ? (
+          <p className="mt-1">{appStore.followNote}</p>
+        ) : null}
+      </div>
       <SocialIcons />
     </div>
   );

@@ -133,7 +133,7 @@ export const helpFaq: readonly HelpFaqItem[] = [
   {
     question: "Is Videflo available on Android or iPad?",
     answer: [
-      "No. Videflo is an iPhone app and requires iOS 18 or later. There's no iPad, Mac, or Android version.",
+      "Not yet. Videflo is launching first on iPhone and requires iOS 18 or later. An Android version is coming later to Google Play. There's no iPad or Mac version.",
     ],
     article: "download-videflo",
   },

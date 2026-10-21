@@ -225,7 +225,7 @@ twitter: {
 
 ---
 
-## 6. App Store badge (placeholder)
+## 6. App Store and Google Play badges (placeholder)
 
 The download buttons are Videflo's own button style with a generic download
 glyph — deliberately **not** an imitation of Apple's badge, since reproducing
@@ -236,6 +236,10 @@ Apple's Marketing Resources (App Store badge guidelines), save it as
 `public/brand/app-store-badge.svg`, and use it inside `AppStoreButton` in place
 of the glyph and label. Apple specifies minimum sizes and clear space; follow
 their guidelines rather than restyling the badge.
+
+The same applies to Google Play when `googlePlay.url` is set: use Google's
+official **“Get it on Google Play”** badge from its brand guidelines, saved as
+`public/brand/google-play-badge.svg`.
 
 ---
 

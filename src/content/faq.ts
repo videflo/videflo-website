@@ -7,8 +7,9 @@
  * structured data.
  *
  * ACCURACY RULE: every answer must describe the app as it actually behaves
- * (Videflo 1.0). Nothing here may promise Android, iPad, web playback, a free
- * trial, a yearly plan, or Family Sharing — none of those exist.
+ * (Videflo 1.0). Nothing here may promise iPad, web playback, a free trial, a
+ * yearly plan, or Family Sharing — none of those exist. Android may be named
+ * only as coming later to Google Play, never with a date.
  */
 export type FaqItem = {
   question: string;

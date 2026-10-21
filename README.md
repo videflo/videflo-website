@@ -267,27 +267,30 @@ confirmed before going public.
 | `site`       | Name, canonical URL, tagline, brand phrase, descriptions, locale     |
 | `contact`    | `supportEmail`, `legalEmail`, `privacyEmail`                         |
 | `appStore`   | `url` (the big one — see below), coming-soon copy, platform note     |
+| `googlePlay` | `url` for the Android launch, set separately — see below             |
 | `socials`    | Official accounts: icons under the pre-launch button, footer links   |
 | `legal`      | Entity name, address, governing state/country, Privacy + Terms dates |
 | `primaryNav` | Header navigation                                                    |
 | `footerNav`  | Footer navigation                                                    |
 
-### The App Store URL
+### The App Store and Google Play URLs
 
-`appStore.url` is `null` today, because Videflo is not on the App Store yet.
-While it is null, every download button renders in a complete, honest
-**coming-soon state**: the gold button reads “Coming Soon to the App Store”, and
-beneath it “Follow Videflo on social media for launch updates.” sits above a row
-of icons for the accounts in `socials`. Pressing the button brings that row into
+`appStore.url` and `googlePlay.url` are both `null` today, because Videflo is
+not in either store yet. While both are null, every download button renders in a
+complete, honest **coming-soon state**: the gold button reads “Coming Soon to the
+App Store & Google Play”, and beneath it “Launching first on iPhone. Android
+coming later.” and “Follow Videflo on social media for launch updates.” sit
+above a row of icons for the accounts in `socials`. Pressing the button brings that row into
 view, lights it in gold for a moment and focuses its first icon. The
 header button (“Coming Soon”) and the mobile-menu button link to the download
-section of the homepage. Nothing switches this automatically; App Review
-approval changes nothing until `url` is set.
+section of the homepage. Nothing switches this automatically; App Review or
+Google Play approval changes nothing until a `url` is set.
 
 There is deliberately **no `href="#"` anywhere in this codebase.** Nothing a
 visitor clicks silently goes nowhere.
 
-To go live, set one value:
+The two stores are switched on separately, each by setting one value, and a
+store never gets a button until its own `url` is set:
 
 ```ts
 // src/config/site.ts
@@ -295,11 +298,22 @@ export const appStore = {
   url: "https://apps.apple.com/app/videflo/id0000000000", // ← real product URL
   // ...
 };
+export const googlePlay = {
+  url: "https://play.google.com/store/apps/details?id=…", // ← later, real URL
+  // ...
+};
 ```
 
-Every button on every page becomes a real external link to the App Store, the
-follow line and icons beneath it give way to the brand line, and the homepage's
-structured data gains an `installUrl`. Nothing else needs to change.
+- **iPhone launches (only `appStore.url` set):** every button becomes a real
+  “Download on the App Store” link, and beneath it “Android coming later to
+  Google Play.” and the follow line stay above the icons. The homepage's
+  structured data gains an `installUrl`.
+- **Android launches too (both set):** each download spot shows both store
+  buttons, and the notes and icons give way to the brand line. The header and
+  mobile-menu buttons read “Download” and lead to the homepage's download
+  section, and the structured data lists Android as well.
+
+Nothing else needs to change.
 
 ---
 
@@ -417,12 +431,14 @@ In `src/config/site.ts`:
 
 ### 4. Set the App Store URL
 
-See [the section above](#the-app-store-url).
+See [the section above](#the-app-store-and-google-play-urls). Leave
+`googlePlay.url` null until the Android app is public.
 
 ### 5. Optional polish
 
 - Replace the Tape tile placeholders with real photography — see [ASSETS.md](./ASSETS.md).
-- Add the official Apple “Download on the App Store” badge — see ASSETS.md.
+- Add the official “Download on the App Store” and “Get it on Google Play”
+  badges — see ASSETS.md.
 - Decide whether you want website analytics, and if so update the Privacy
   Policy's website section to match.
 
@@ -614,11 +630,12 @@ owns page width and gutters. Use them rather than adding one-off padding.
 
 ## Known limitations
 
-- **The App Store link does not exist yet.** `appStore.url` in
-  `src/config/site.ts` is still `null`, so every download call to action renders
-  a clearly-labelled **“Coming soon to the App Store”** state instead of pointing
-  at a dead link. This is deliberate and is the correct state until the app
-  ships — see [the App Store URL](#the-app-store-url).
+- **The store links do not exist yet.** `appStore.url` and `googlePlay.url` in
+  `src/config/site.ts` are still `null`, so every download call to action
+  renders a clearly-labelled **“Coming Soon to the App Store & Google Play”**
+  state instead of pointing at a dead link. This is deliberate and is the
+  correct state until the app ships — see
+  [the App Store and Google Play URLs](#the-app-store-and-google-play-urls).
 - **The Featurebase public root portal still needs final verification.** The app
   links **Share Feedback** at a Featurebase workspace that has not yet been
   confirmed to resolve. Note that a status-code check cannot settle it:

@@ -143,7 +143,7 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
       "get",
     ],
     overview: [
-      "Videflo is an iPhone app, and the App Store is the only place to get it. Installing it works exactly like any other app, and there's nothing special to set up first.",
+      "Videflo is an iPhone app, and the App Store is the only place to get it for now. An Android version is coming later to Google Play. Installing it works exactly like any other app, and there's nothing special to set up first.",
     ],
     sections: [
       {
@@ -162,7 +162,7 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
             kind: "note",
             title: "iPhone only, for now",
             text: [
-              "Videflo isn't available for iPad, Mac, Apple TV, or Android. It's built around holding a phone and filming, so an iPhone is the only thing it runs on today.",
+              "Videflo isn't available for iPad, Mac, Apple TV, or Android. It's built around holding a phone and filming, so an iPhone is the only thing it runs on today. It's launching first on iPhone, and an Android version is coming later to Google Play.",
             ],
           },
         ],
@@ -265,7 +265,7 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
       {
         question: "Will there be an Android version?",
         answer: [
-          "There's nothing to announce. Videflo is built specifically for the iPhone camera, so a version for another platform would be a separate project rather than a port.",
+          "Yes. Videflo is launching first on iPhone, and an Android version is coming later to Google Play. There's no Android release date yet.",
         ],
       },
       {
