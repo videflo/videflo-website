@@ -162,7 +162,7 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
             kind: "note",
             title: "iPhone only, for now",
             text: [
-              "Videflo isn't available for iPad, Mac, Apple TV, or Android. It's built around holding a phone and filming, so an iPhone is the only thing it runs on today. It's launching first on iPhone, and an Android version is coming later to Google Play.",
+              "Videflo isn't available for iPad, Mac, Apple TV, or Android. It's built around holding a phone and filming, so an iPhone is the only thing it runs on today. It's available now on iPhone, and an Android version is coming later to Google Play.",
             ],
           },
         ],
@@ -265,7 +265,7 @@ export const gettingStartedArticles: readonly HelpArticle[] = [
       {
         question: "Will there be an Android version?",
         answer: [
-          "Yes. Videflo is launching first on iPhone, and an Android version is coming later to Google Play. There's no Android release date yet.",
+          "Yes. Videflo is available now on iPhone, and an Android version is coming later to Google Play. There's no Android release date yet.",
         ],
       },
       {

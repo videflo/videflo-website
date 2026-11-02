@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { AppStoreButton, AppStoreNote } from "@/components/ui/AppStoreButton";
+import { StoreBadges } from "@/components/ui/StoreBadges";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
@@ -36,10 +36,8 @@ export function Hero() {
           </Reveal>
 
           <Reveal delay={180}>
-            <div className="mt-9 flex flex-col items-start gap-4">
-              <AppStoreButton size="lg" />
-              <AppStoreNote />
-            </div>
+            {/* The page's one App Store badge (Apple: one per layout). */}
+            <StoreBadges className="mt-9" />
           </Reveal>
         </div>
       </Container>

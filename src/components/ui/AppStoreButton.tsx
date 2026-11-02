@@ -95,6 +95,7 @@ export function AppStoreButton({
       >
         <DownloadGlyph />
         {label ?? store.label}
+        <span className="sr-only"> (opens in a new tab)</span>
       </a>
     );
   }
@@ -120,6 +121,7 @@ export function AppStoreButton({
           >
             <DownloadGlyph />
             {store.label}
+            <span className="sr-only"> (opens in a new tab)</span>
           </a>
         ))}
       </div>
@@ -220,7 +222,12 @@ export function AppStoreNote({
           {comingLater}
         </p>
         {socials.length > 0 ? (
-          <p className="mt-1">{appStore.followNote}</p>
+          <p className="mt-1">
+            {/* Once iPhone is live the only launch left to follow is Android. */}
+            {appStore.url && !googlePlay.url
+              ? appStore.androidFollowNote
+              : appStore.followNote}
+          </p>
         ) : null}
       </div>
       <SocialIcons />

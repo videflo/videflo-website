@@ -225,17 +225,20 @@ twitter: {
 
 ---
 
-## 6. App Store and Google Play badges (placeholder)
+## 6. App Store and Google Play badges
 
-The download buttons are Videflo's own button style with a generic download
-glyph — deliberately **not** an imitation of Apple's badge, since reproducing
-Apple's mark by hand is a trademark problem.
+`public/brand/app-store-badge.svg` is Apple's official black US-English
+**“Download on the App Store”** badge, unmodified, downloaded on 2026-11-02 from
+Apple's marketing-tools service
+(`toolbox.marketingtools.apple.com/api/badges/download-on-the-app-store/black/en-us`,
+SHA-256 `a26fc5b38380272c92e9019a2eb8b45542a66814b3e2b203772db8904b9fb99f`).
+`src/components/ui/StoreBadges.tsx` renders it and documents the guideline
+rules it follows: black badge, App Store first, one badge per page, 48 px tall
+(minimum 40 px), clear space of a quarter of its height, no hover or animation.
 
-Before launch, download the official **“Download on the App Store”** badge from
-Apple's Marketing Resources (App Store badge guidelines), save it as
-`public/brand/app-store-badge.svg`, and use it inside `AppStoreButton` in place
-of the glyph and label. Apple specifies minimum sizes and clear space; follow
-their guidelines rather than restyling the badge.
+Every other download call to action stays Videflo's own text button with a
+generic download glyph — deliberately **not** an imitation of Apple's badge and
+never the Apple logo, which Apple does not allow on its own.
 
 The same applies to Google Play when `googlePlay.url` is set: use Google's
 official **“Get it on Google Play”** badge from its brand guidelines, saved as

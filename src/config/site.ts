@@ -65,7 +65,7 @@ export const contact = {
  *
  *  Each store has its own `url`, and each is switched on by hand, separately:
  *
- *    appStore.url:   "https://apps.apple.com/app/videflo/id0000000000"
+ *    appStore.url:   "https://apps.apple.com/us/app/id6804273983"
  *    googlePlay.url: "https://play.google.com/store/apps/details?id=…"
  *
  *  A store's download button exists only while its `url` is set. While
@@ -76,11 +76,24 @@ export const contact = {
  *  are no `#` placeholder hrefs anywhere in the site; see
  *  `src/components/ui/AppStoreButton.tsx` for the rendered states. The
  *  switches are manual: nothing watches App Review or Google Play review.
+ *
+ *  Videflo 1.0 went live on the App Store on 2026-11-02 (owner confirmed). The
+ *  URL is the exact one the owner supplied; Apple redirects it to the
+ *  canonical `/us/app/videflo/id6804273983` product page.
  *  --------------------------------------------------------------------- */
 export const appStore = {
-  url: null as string | null,
+  url: "https://apps.apple.com/us/app/id6804273983" as string | null,
   /** The live button's default label. */
   downloadLabel: "Download on the App Store",
+  /**
+   * The official badge's text alternative. Apple's artwork, unmodified, in
+   * `public/brand/app-store-badge.svg`; see ASSETS.md §6.
+   */
+  badgeAlt: "Download Videflo on the App Store",
+  /** Above the badge while the App Store is live. */
+  availableNowLabel: "Available now on the App Store",
+  /** Beneath the download button while Android is still to come. */
+  androidFollowNote: "Follow Videflo for Android launch updates.",
   /** Beneath the live Google Play button while iPhone is still to come. */
   comingLaterNote: "iPhone coming later to the App Store.",
   /**
@@ -108,6 +121,14 @@ export const googlePlay = {
   downloadLabel: "Get it on Google Play",
   /** Beneath the live App Store button while Android is still to come. */
   comingLaterNote: "Android coming later to Google Play.",
+  /**
+   * The non-interactive placeholder beside the App Store badge while Google
+   * Play is not live. Deliberately Videflo's own type, not Google's badge
+   * artwork: Google's badge may only be shown as a link to a live listing.
+   */
+  comingSoonPlatform: "Android",
+  comingSoonEyebrow: "Coming soon",
+  comingSoonAccessibleLabel: "Android version coming soon to Google Play",
 } as const;
 
 /** ------------------------------------------------------------------------

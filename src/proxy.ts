@@ -21,9 +21,25 @@ import { gate } from "@/config/gate";
  * makes the flag authoritative.
  */
 export function proxy(request: NextRequest) {
-  if (!gate.enabled) return NextResponse.next();
-
   const { pathname } = request.nextUrl;
+
+  if (!gate.enabled) {
+    /*
+      With the gate down, the Coming Soon route is outdated: Videflo is on the
+      App Store (2026-11-02). Anyone who reaches it directly goes home with a
+      permanent redirect. It lives here rather than in `next.config` so that
+      turning the gate back on still works: the gated rewrite to `gate.path`
+      below is internal, and this branch only runs while the gate is down.
+    */
+    if (pathname === gate.path) {
+      const home = request.nextUrl.clone();
+      home.pathname = "/";
+      home.search = "";
+      return NextResponse.redirect(home, 308);
+    }
+    return NextResponse.next();
+  }
+
   if (pathname === gate.path) return NextResponse.next();
 
   const url = request.nextUrl.clone();

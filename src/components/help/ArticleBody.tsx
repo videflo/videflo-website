@@ -1,5 +1,5 @@
 import { RichText } from "@/components/help/RichText";
-import { AppStoreButton, AppStoreNote } from "@/components/ui/AppStoreButton";
+import { StoreBadges } from "@/components/ui/StoreBadges";
 import type { HelpArticle, HelpBlock } from "@/content/help";
 
 /**
@@ -123,12 +123,7 @@ function Block({ block }: { block: HelpBlock }) {
       );
 
     case "appStore":
-      return (
-        <div className="mt-7 flex flex-col items-start gap-3">
-          <AppStoreButton size="md" />
-          <AppStoreNote />
-        </div>
-      );
+      return <StoreBadges className="mt-7" />;
   }
 }
 

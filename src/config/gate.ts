@@ -17,6 +17,9 @@
  *   - `src/app/robots.ts`     disallows crawling, stops advertising the sitemap
  *   - `src/app/sitemap.ts`    publishes no URLs
  *
+ * While `enabled` is false, `src/proxy.ts` permanently redirects `gate.path`
+ * itself to the homepage, so the outdated Coming Soon page is never shown.
+ *
  * TO RESTORE THE SITE: set `enabled` to false. Nothing else has to change, and
  * no content had to be deleted to gate it in the first place.
  */

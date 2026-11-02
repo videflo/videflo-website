@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { AppStoreButton, AppStoreNote } from "@/components/ui/AppStoreButton";
+import { StoreBadges } from "@/components/ui/StoreBadges";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Section } from "@/components/ui/Section";
@@ -67,10 +67,7 @@ export default function InvitePage() {
           app, sign in with Apple, and the invitation is waiting.
         </p>
 
-        <div className="mt-10">
-          <AppStoreButton size="lg" label={`Get ${site.name}`} />
-          <AppStoreNote className="mt-3" />
-        </div>
+        <StoreBadges className="mt-10" />
 
         {/*
           The one instruction that makes the flow work.
