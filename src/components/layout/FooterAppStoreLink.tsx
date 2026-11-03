@@ -1,7 +1,7 @@
 "use client";
 
-import { usePathname } from "next/navigation";
-import { appStore, appStoreUrlFor } from "@/config/site";
+import { appStore } from "@/config/site";
+import { useAppStoreHref } from "@/lib/useAppStoreHref";
 
 /**
  * The footer's App Store text link. A client component only so it can read the
@@ -10,7 +10,7 @@ import { appStore, appStoreUrlFor } from "@/config/site";
  * and everywhere else `appStore.url`, exactly as before.
  */
 export function FooterAppStoreLink() {
-  const href = appStoreUrlFor(usePathname());
+  const href = useAppStoreHref();
   if (!href) return null;
 
   return (

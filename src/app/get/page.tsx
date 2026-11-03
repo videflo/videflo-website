@@ -2,12 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { buttonStyles } from "@/components/ui/buttonStyles";
-import {
-  appStore,
-  appStoreCampaignLinks,
-  site,
-  subscription,
-} from "@/config/site";
+import { CampaignAppStoreLink } from "@/components/ui/CampaignAppStoreLink";
+import { appStore, site, subscription } from "@/config/site";
 import { pageMetadata } from "@/lib/metadata";
 import { cn } from "@/lib/cn";
 
@@ -20,8 +16,9 @@ import { cn } from "@/lib/cn";
  * navigates on its own: no timers, no pop-ups, no scripts.
  *
  * Every download link on this page (its own two, and the shared header and
- * footer links via `appStoreCampaignLinks`) uses Apple's App Store Connect
- * campaign link, exactly as App Store Connect generated it for the campaign `Videflo_Meta_Launch01`. The
+ * footer links) uses an App Store Connect campaign link chosen by `?src=`
+ * (`getPageSourceLinks`; plain /get = the paid Meta link), exactly as App
+ * Store Connect generated it for the campaign `Videflo_Meta_Launch01`. The
  * `pt` (provider) and `ct` (campaign) tokens are what attribute App Store page
  * views and first-time downloads to this campaign in App Store Connect →
  * Analytics → Campaigns. Do not edit the string; generate a new link in App
@@ -31,7 +28,6 @@ import { cn } from "@/lib/cn";
  * badge, unmodified, once on the page; the second call to action is the site's
  * own text button.
  */
-const CAMPAIGN_APP_STORE_URL = appStoreCampaignLinks["/get"];
 
 const PAGE_TITLE = "Get Videflo | Life in Tapes";
 const base = pageMetadata({
@@ -114,8 +110,7 @@ const sharedSteps = [
 
 function AppStoreBadge({ className }: { className?: string }) {
   return (
-    <a
-      href={CAMPAIGN_APP_STORE_URL}
+    <CampaignAppStoreLink
       className={cn(
         "focus-visible:outline-gold-mark inline-block rounded-[0.55rem] outline-offset-4 focus-visible:outline-2",
         className,
@@ -130,7 +125,7 @@ function AppStoreBadge({ className }: { className?: string }) {
         priority
         className="block h-14 w-auto"
       />
-    </a>
+    </CampaignAppStoreLink>
   );
 }
 
@@ -380,15 +375,14 @@ export default function GetVidefloPage() {
           </p>
           <p className="text-ink-muted mx-auto mt-4 max-w-md">{site.tagline}</p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <a
-              href={CAMPAIGN_APP_STORE_URL}
+            <CampaignAppStoreLink
               className={cn(
                 buttonStyles.primary,
                 "inline-flex h-14 items-center justify-center px-7 text-[0.9375rem]",
               )}
             >
               {appStore.downloadLabel}
-            </a>
+            </CampaignAppStoreLink>
             <GooglePlayComingSoon />
           </div>
           <SubscriptionNote className="mx-auto mt-6 max-w-md" />

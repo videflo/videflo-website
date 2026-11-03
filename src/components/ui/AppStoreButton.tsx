@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import type { MouseEvent } from "react";
-import { appStore, appStoreUrlFor, googlePlay, socials } from "@/config/site";
+import { appStore, googlePlay, socials } from "@/config/site";
+import { useAppStoreHref } from "@/lib/useAppStoreHref";
 import { cn } from "@/lib/cn";
 import { buttonStyles } from "./buttonStyles";
 import { SocialIcons } from "./SocialIcons";
@@ -78,7 +78,7 @@ export function AppStoreButton({
   fallback?: "notice" | "section";
   className?: string;
 }) {
-  const pathname = usePathname();
+  const campaignHref = useAppStoreHref();
   const shared = cn(
     "inline-flex items-center justify-center",
     sizes[size],
@@ -91,9 +91,7 @@ export function AppStoreButton({
     // On a campaign landing page (`appStoreCampaignLinks`), the App Store
     // button carries that page's App Store Connect campaign link.
     const href =
-      store.url === appStore.url
-        ? (appStoreUrlFor(pathname) ?? store.url)
-        : store.url;
+      store.url === appStore.url ? (campaignHref ?? store.url) : store.url;
     return (
       <a
         href={href}

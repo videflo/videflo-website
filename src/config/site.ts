@@ -132,8 +132,39 @@ export const appStoreCampaignLinks: Readonly<Record<string, string>> = {
     "https://apps.apple.com/app/apple-store/id6804273983?pt=129255776&ct=Videflo_Meta_Launch01&mt=8",
 };
 
-/** The App Store link to use on `pathname`: its campaign link, if it has one. */
-export function appStoreUrlFor(pathname: string | null): string | null {
+/**
+ * Source-aware links for `/get` (owner-approved 2026-11-03).
+ *
+ * `videflo.com/get?src=<key>` makes every App Store link on the page use that
+ * source's App Store Connect campaign link, so organic social traffic is not
+ * credited to the paid Meta campaign. The visible page is identical for every
+ * source; only the five download hrefs change.
+ *
+ * TEMPORARY: the published Meta ad links to plain `videflo.com/get`, so a
+ * missing or unknown `src` keeps the paid link (`appStoreCampaignLinks["/get"]`).
+ * Once the ad is deliberately moved to `?src=meta`, plain `/get` can become
+ * general website traffic.
+ */
+export const getPageSourceLinks: Readonly<Record<string, string>> = {
+  meta: "https://apps.apple.com/app/apple-store/id6804273983?pt=129255776&ct=Videflo_Meta_Launch01&mt=8",
+  ig: "https://apps.apple.com/app/apple-store/id6804273983?pt=129255776&ct=Videflo_Instagram_Organic&mt=8",
+  fb: "https://apps.apple.com/app/apple-store/id6804273983?pt=129255776&ct=Videflo_Facebook_Organic&mt=8",
+  tt: "https://apps.apple.com/app/apple-store/id6804273983?pt=129255776&ct=Videflo_TikTok_Organic&mt=8",
+  yt: "https://apps.apple.com/app/apple-store/id6804273983?pt=129255776&ct=Videflo_YouTube_Organic&mt=8",
+};
+
+/**
+ * The App Store link to use on `pathname`, given the `src` query value: the
+ * source's link on `/get` when `src` is a known key, otherwise the page's
+ * campaign link, otherwise `appStore.url`.
+ */
+export function appStoreUrlFor(
+  pathname: string | null,
+  src: string | null = null,
+): string | null {
+  if (pathname === "/get" && src && Object.hasOwn(getPageSourceLinks, src)) {
+    return getPageSourceLinks[src];
+  }
   return (pathname && appStoreCampaignLinks[pathname]) || appStore.url;
 }
 
