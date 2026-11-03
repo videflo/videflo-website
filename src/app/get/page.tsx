@@ -214,6 +214,42 @@ export default function GetVidefloPage() {
         </Container>
       </section>
 
+      {/*
+        Shared Tapes (owner-approved copy, 2026-11-03). The subscription line
+        matches the Help Center ("Does a member need their own subscription?").
+      */}
+      <section
+        aria-labelledby="shared-tapes-heading"
+        className="bg-paper border-line border-t py-14 sm:py-20"
+      >
+        <Container width="narrow">
+          <div className="bg-card shadow-soft ring-line rounded-3xl px-6 py-10 text-center ring-1 sm:px-12 sm:py-14">
+            <p className="text-ink-faint flex items-center justify-center gap-2.5 text-[0.6875rem] font-semibold tracking-[0.22em] uppercase">
+              <span
+                aria-hidden="true"
+                className="bg-gold size-2 rounded-full"
+              />
+              Shared Tapes
+            </p>
+            <h2
+              id="shared-tapes-heading"
+              className="font-display text-ink mt-5 text-3xl font-bold tracking-[-0.02em] sm:text-4xl"
+            >
+              Better memories, together.
+            </h2>
+            <p className="text-lead text-ink-muted mx-auto mt-5 max-w-xl">
+              With Shared Tapes, family and friends can contribute their
+              recordings to the same Tape. One celebration, different
+              perspectives, one continuous memory.
+            </p>
+            <p className="text-ink-muted border-line mx-auto mt-8 max-w-md border-t pt-6 text-sm leading-relaxed">
+              Each person who adds recordings needs their own active Videflo
+              subscription.
+            </p>
+          </div>
+        </Container>
+      </section>
+
       <section className="bg-cream border-line border-t py-14 sm:py-20">
         <Container width="narrow" className="text-center">
           <p className="font-display text-ink text-2xl font-semibold sm:text-3xl">
