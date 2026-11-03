@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { buttonStyles } from "@/components/ui/buttonStyles";
@@ -32,13 +33,21 @@ import { cn } from "@/lib/cn";
  */
 const CAMPAIGN_APP_STORE_URL = appStoreCampaignLinks["/get"];
 
-export const metadata = {
-  ...pageMetadata({
-    title: "Get Videflo for iPhone",
-    description:
-      "Capture birthdays, vacations, and everyday moments in one continuous Tape instead of scattered video clips.",
-    path: "/get",
-  }),
+const PAGE_TITLE = "Get Videflo | Life in Tapes";
+const base = pageMetadata({
+  title: PAGE_TITLE,
+  description:
+    "Capture birthdays, vacations, and everyday moments in one continuous Tape instead of scattered video clips.",
+  path: "/get",
+});
+
+export const metadata: Metadata = {
+  ...base,
+  // Exactly this title in the tab and in link previews: `absolute` skips the
+  // layout's "%s | Videflo" template, and the social titles are set to match.
+  title: { absolute: PAGE_TITLE },
+  openGraph: { ...base.openGraph, title: PAGE_TITLE },
+  twitter: { ...base.twitter, title: PAGE_TITLE },
   // A campaign landing page: reachable by anyone, but not a search result.
   robots: { index: false, follow: true },
 };
