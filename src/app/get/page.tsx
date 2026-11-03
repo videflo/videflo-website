@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
-import { Eyebrow } from "@/components/ui/Eyebrow";
 import { buttonStyles } from "@/components/ui/buttonStyles";
 import {
   appStore,
@@ -81,15 +80,44 @@ function AppStoreBadge({ className }: { className?: string }) {
   );
 }
 
+/**
+ * Google Play, not yet available. Deliberately not Google's badge (its artwork
+ * may only link to a live Play listing) and deliberately not a link or button:
+ * a plain, non-focusable label in a dashed outline, matching the site's
+ * existing "Android · Coming soon" placeholder in `StoreBadges.tsx`.
+ */
+function GooglePlayComingSoon({ className }: { className?: string }) {
+  return (
+    <p
+      className={cn(
+        "border-line-strong inline-flex h-14 cursor-default items-center rounded-[0.6rem] border border-dashed px-5 select-none",
+        className,
+      )}
+    >
+      <span className="sr-only">
+        Google Play: coming soon. Videflo is not available on Android yet.
+      </span>
+      <span aria-hidden="true" className="flex flex-col text-left leading-none">
+        <span className="text-ink-faint text-[0.625rem] font-semibold tracking-[0.18em] uppercase">
+          Coming soon
+        </span>
+        <span className="font-display text-ink-soft mt-1.5 text-[1.0625rem] font-semibold">
+          Google Play
+        </span>
+      </span>
+    </p>
+  );
+}
+
 function SubscriptionNote({ className }: { className?: string }) {
   return (
     <p className={cn("text-ink-muted text-sm leading-relaxed", className)}>
-      Videflo requires a subscription:{" "}
+      Videflo requires a subscription.{" "}
       <strong className="text-ink font-semibold">
-        {subscription.basePriceUSD}/{subscription.billingPeriod}
+        {subscription.basePriceUSD}/{subscription.billingPeriod} (USD)
       </strong>{" "}
       in the US, including {subscription.includedStorageLabel} of Videflo Cloud.
-      It renews monthly until you cancel in your Apple Account settings.
+      Prices may vary by country. Automatically renews until canceled.
     </p>
   );
 }
@@ -125,9 +153,7 @@ export default function GetVidefloPage() {
                 </div>
               </div>
 
-              <Eyebrow className="mt-10">For iPhone</Eyebrow>
-
-              <h1 className="font-display text-display-xl text-ink mt-5 font-bold">
+              <h1 className="font-display text-display-xl text-ink mt-10 font-bold">
                 Your memories.
                 <br />
                 One Tape.
@@ -138,8 +164,9 @@ export default function GetVidefloPage() {
                 continuous Tape instead of scattered video clips.
               </p>
 
-              <div className="mt-8">
+              <div className="mt-8 flex flex-wrap items-center gap-4">
                 <AppStoreBadge />
+                <GooglePlayComingSoon />
               </div>
 
               <SubscriptionNote className="mt-6 max-w-md" />
@@ -184,15 +211,18 @@ export default function GetVidefloPage() {
             Videflo. Life in Tapes.
           </p>
           <p className="text-ink-muted mx-auto mt-4 max-w-md">{site.tagline}</p>
-          <a
-            href={CAMPAIGN_APP_STORE_URL}
-            className={cn(
-              buttonStyles.primary,
-              "mt-8 inline-flex items-center justify-center px-7 py-4 text-[0.9375rem]",
-            )}
-          >
-            {appStore.downloadLabel}
-          </a>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+            <a
+              href={CAMPAIGN_APP_STORE_URL}
+              className={cn(
+                buttonStyles.primary,
+                "inline-flex h-14 items-center justify-center px-7 text-[0.9375rem]",
+              )}
+            >
+              {appStore.downloadLabel}
+            </a>
+            <GooglePlayComingSoon />
+          </div>
           <SubscriptionNote className="mx-auto mt-6 max-w-md" />
         </Container>
       </section>
