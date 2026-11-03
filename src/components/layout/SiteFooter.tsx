@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Wordmark } from "@/components/ui/Wordmark";
-import { appStore, contact, footerNav, site, socials } from "@/config/site";
+import { contact, footerNav, site, socials } from "@/config/site";
+import { FooterAppStoreLink } from "./FooterAppStoreLink";
 
 export function SiteFooter() {
   // Evaluated when the page is rendered/built, so the year never goes stale in
@@ -39,19 +40,7 @@ export function SiteFooter() {
               </h2>
               <ul className="mt-5 flex flex-col gap-3.5">
                 {/* A text link, not a second badge: Apple allows one per layout. */}
-                {appStore.url ? (
-                  <li>
-                    <a
-                      href={appStore.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-ink hover:text-ink-muted text-sm font-semibold transition-colors"
-                    >
-                      {appStore.downloadLabel}
-                      <span className="sr-only"> (opens in a new tab)</span>
-                    </a>
-                  </li>
-                ) : null}
+                <FooterAppStoreLink />
                 {footerNav.map((item) => (
                   <li key={item.href}>
                     <Link

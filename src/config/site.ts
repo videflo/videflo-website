@@ -115,6 +115,28 @@ export const appStore = {
   platformNote: "Made for your memories.",
 } as const;
 
+/**
+ * App Store Connect campaign links, by page.
+ *
+ * On a page listed here, every App Store link (the page's own buttons, the
+ * header's Download button and the footer's App Store link) uses that page's
+ * campaign link instead of `appStore.url`, so App Store Connect → Analytics →
+ * Campaigns attributes the visit. Every other page keeps `appStore.url`.
+ *
+ * Paste links exactly as App Store Connect generates them; never hand-edit the
+ * `pt`/`ct` tokens. `/get` is the Meta Launch 01 landing page (owner-approved
+ * 2026-11-03).
+ */
+export const appStoreCampaignLinks: Readonly<Record<string, string>> = {
+  "/get":
+    "https://apps.apple.com/app/apple-store/id6804273983?pt=129255776&ct=Videflo_Meta_Launch01&mt=8",
+};
+
+/** The App Store link to use on `pathname`: its campaign link, if it has one. */
+export function appStoreUrlFor(pathname: string | null): string | null {
+  return (pathname && appStoreCampaignLinks[pathname]) || appStore.url;
+}
+
 export const googlePlay = {
   url: null as string | null,
   /** The live button's default label. */
