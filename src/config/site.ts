@@ -154,16 +154,41 @@ export const getPageSourceLinks: Readonly<Record<string, string>> = {
 };
 
 /**
- * The App Store link to use on `pathname`, given the `src` query value: the
- * source's link on `/get` when `src` is a known key, otherwise the page's
- * campaign link, otherwise `appStore.url`.
+ * The homepage's one attributed source (owner-approved 2026-11-03): Instagram's
+ * bio link is plain `https://videflo.com`, and Instagram itself appends
+ * `utm_source=ig&utm_medium=social&utm_content=link_in_bio` when it is tapped
+ * (observed on the live profile). Only that exact `utm_source` value switches
+ * the homepage's App Store links to the Instagram organic link; every other
+ * homepage visit keeps `appStore.url`. Not every Instagram visit carries the
+ * tag (e.g. a typed or copied link), so this undercounts rather than guesses.
+ */
+export const homepageUtmSourceLinks: Readonly<Record<string, string>> = {
+  ig: getPageSourceLinks.ig,
+};
+
+/**
+ * The App Store link to use on `pathname`, given the `src` and `utm_source`
+ * query values:
+ *  - `/get`: the source's link when `src` is a known key, otherwise the
+ *    page's campaign link (unchanged behaviour);
+ *  - `/`: the Instagram organic link when `utm_source=ig`, otherwise
+ *    `appStore.url`;
+ *  - any other page: its campaign link if it has one, otherwise `appStore.url`.
  */
 export function appStoreUrlFor(
   pathname: string | null,
   src: string | null = null,
+  utmSource: string | null = null,
 ): string | null {
   if (pathname === "/get" && src && Object.hasOwn(getPageSourceLinks, src)) {
     return getPageSourceLinks[src];
+  }
+  if (
+    pathname === "/" &&
+    utmSource &&
+    Object.hasOwn(homepageUtmSourceLinks, utmSource)
+  ) {
+    return homepageUtmSourceLinks[utmSource];
   }
   return (pathname && appStoreCampaignLinks[pathname]) || appStore.url;
 }

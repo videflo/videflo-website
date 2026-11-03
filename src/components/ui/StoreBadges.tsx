@@ -2,6 +2,7 @@ import Image from "next/image";
 import { appStore, googlePlay } from "@/config/site";
 import { cn } from "@/lib/cn";
 import { AppStoreButton, AppStoreNote } from "./AppStoreButton";
+import { CampaignAppStoreLink } from "./CampaignAppStoreLink";
 
 /**
  * The download badges: Apple's official "Download on the App Store" badge,
@@ -60,10 +61,8 @@ export function StoreBadges({ className }: { className?: string }) {
 
       <ul className="flex flex-wrap items-center gap-4">
         <li>
-          <a
-            href={appStore.url}
-            target="_blank"
-            rel="noopener noreferrer"
+          <CampaignAppStoreLink
+            newTab
             className="focus-visible:outline-gold-mark block rounded-[0.55rem] outline-offset-4 focus-visible:outline-2"
           >
             <Image
@@ -75,7 +74,7 @@ export function StoreBadges({ className }: { className?: string }) {
               className="block h-12 w-auto"
             />
             <span className="sr-only"> (opens in a new tab)</span>
-          </a>
+          </CampaignAppStoreLink>
         </li>
 
         <li>
