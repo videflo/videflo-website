@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { AppStoreButton } from "@/components/ui/AppStoreButton";
 import { Container } from "@/components/ui/Container";
@@ -15,8 +16,12 @@ import { cn } from "@/lib/cn";
  * a hairline once the page scrolls — defined, never heavy. The mobile menu is a
  * standard disclosure: labelled toggle, Escape to close, focus returned to the
  * button, and body scroll locked while open.
+ *
+ * Not rendered on `/get`, the paid-campaign landing page, which carries its own
+ * branding in the hero and has no top navigation (owner decision, 2026-11-04).
  */
 export function SiteHeader() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const toggleRef = useRef<HTMLButtonElement>(null);
@@ -49,6 +54,8 @@ export function SiteHeader() {
       document.removeEventListener("keydown", onKeyDown);
     };
   }, [menuOpen]);
+
+  if (pathname === "/get") return null;
 
   return (
     <header

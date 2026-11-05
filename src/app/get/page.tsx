@@ -16,8 +16,11 @@ import { cn } from "@/lib/cn";
  * its price (owner decision, 2026-11-04). Nothing here navigates on its own: no
  * timers, no pop-ups, no scripts.
  *
- * Every download link on this page (its own two, and the shared header and
- * footer links) uses an App Store Connect campaign link chosen by `?src=`
+ * It has no top navigation: `SiteHeader` renders nothing on this path, and the
+ * hero carries the branding.
+ *
+ * Every download link on this page (its own two, and the shared footer link)
+ * uses an App Store Connect campaign link chosen by `?src=`
  * (`getPageSourceLinks`; plain /get = the paid Meta link), exactly as App
  * Store Connect generated it for the campaign `Videflo_Meta_Launch01`. The
  * `pt` (provider) and `ct` (campaign) tokens are what attribute App Store page
@@ -124,7 +127,7 @@ function AppStoreBadge({ className }: { className?: string }) {
         height={56}
         unoptimized
         priority
-        className="block h-14 w-auto"
+        className="block h-16 w-auto"
       />
     </CampaignAppStoreLink>
   );
@@ -133,28 +136,21 @@ function AppStoreBadge({ className }: { className?: string }) {
 /**
  * Google Play, not yet available. Deliberately not Google's badge (its artwork
  * may only link to a live Play listing) and deliberately not a link or button:
- * a plain, non-focusable label in a dashed outline, matching the site's
- * existing "Android · Coming soon" placeholder in `StoreBadges.tsx`.
+ * a quiet, non-focusable line of text, so the App Store stays the one call to
+ * action on the page.
  */
 function GooglePlayComingSoon({ className }: { className?: string }) {
   return (
     <p
       className={cn(
-        "border-line-strong inline-flex h-14 cursor-default items-center rounded-[0.6rem] border border-dashed px-5 select-none",
+        "text-ink-muted cursor-default text-sm select-none",
         className,
       )}
     >
       <span className="sr-only">
         Google Play: coming soon. Videflo is not available on Android yet.
       </span>
-      <span aria-hidden="true" className="flex flex-col text-left leading-none">
-        <span className="text-ink-faint text-[0.625rem] font-semibold tracking-[0.18em] uppercase">
-          Coming soon
-        </span>
-        <span className="font-display text-ink-soft mt-1.5 text-[1.0625rem] font-semibold">
-          Google Play
-        </span>
-      </span>
+      <span aria-hidden="true">Google Play: Coming soon</span>
     </p>
   );
 }
@@ -162,7 +158,7 @@ function GooglePlayComingSoon({ className }: { className?: string }) {
 export default function GetVidefloPage() {
   return (
     <>
-      <section className="bg-paper relative overflow-hidden pt-14 pb-14 sm:pt-20 sm:pb-20">
+      <section className="bg-paper relative overflow-hidden pt-7 pb-14 sm:pt-14 sm:pb-20 lg:pt-20">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-x-0 -top-40 h-96 bg-[radial-gradient(50%_60%_at_50%_50%,rgba(230,184,92,0.16),transparent_72%)]"
@@ -190,7 +186,7 @@ export default function GetVidefloPage() {
                 </div>
               </div>
 
-              <h1 className="font-display text-display-xl text-ink mt-10 font-bold">
+              <h1 className="font-display text-display-xl text-ink mt-7 font-bold sm:mt-10">
                 Your memories.
                 <br />
                 One Tape.
@@ -201,7 +197,12 @@ export default function GetVidefloPage() {
                 continuous Tape instead of scattered video clips.
               </p>
 
-              <div className="mt-8 flex flex-wrap items-center gap-4">
+              <p className="font-display text-ink-soft border-gold/60 mt-5 border-l-2 pl-4 text-lg font-medium sm:text-xl">
+                Don&rsquo;t just capture moments. Keep the whole memory
+                together.
+              </p>
+
+              <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-6">
                 <AppStoreBadge />
                 <GooglePlayComingSoon />
               </div>
@@ -354,7 +355,7 @@ export default function GetVidefloPage() {
             Videflo. Life in Tapes.
           </p>
           <p className="text-ink-muted mx-auto mt-4 max-w-md">{site.tagline}</p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+          <div className="mt-8 flex flex-col items-center justify-center gap-4">
             <CampaignAppStoreLink
               className={cn(
                 buttonStyles.primary,
