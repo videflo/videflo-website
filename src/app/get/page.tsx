@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { buttonStyles } from "@/components/ui/buttonStyles";
 import { CampaignAppStoreLink } from "@/components/ui/CampaignAppStoreLink";
-import { appStore, site, subscription } from "@/config/site";
+import { appStore, site } from "@/config/site";
 import { pageMetadata } from "@/lib/metadata";
 import { cn } from "@/lib/cn";
 
@@ -11,9 +11,10 @@ import { cn } from "@/lib/cn";
  * /get — the landing page for Videflo's first paid campaign (Meta Launch 01,
  * approved by the owner 2026-11-03).
  *
- * A real page, not a redirect: it explains Videflo, shows the real app, states
- * the subscription price, and leaves the decision to the visitor. Nothing here
- * navigates on its own: no timers, no pop-ups, no scripts.
+ * A real page, not a redirect: it explains Videflo, shows the real app, and
+ * leaves the decision to the visitor. It mentions neither the subscription nor
+ * its price (owner decision, 2026-11-04). Nothing here navigates on its own: no
+ * timers, no pop-ups, no scripts.
  *
  * Every download link on this page (its own two, and the shared header and
  * footer links) uses an App Store Connect campaign link chosen by `?src=`
@@ -158,19 +159,6 @@ function GooglePlayComingSoon({ className }: { className?: string }) {
   );
 }
 
-function SubscriptionNote({ className }: { className?: string }) {
-  return (
-    <p className={cn("text-ink-muted text-sm leading-relaxed", className)}>
-      Videflo requires a subscription.{" "}
-      <strong className="text-ink font-semibold">
-        {subscription.basePriceUSD}/{subscription.billingPeriod} (USD)
-      </strong>{" "}
-      in the US, including {subscription.includedStorageLabel} of Videflo Cloud.
-      Prices may vary by country. Automatically renews until canceled.
-    </p>
-  );
-}
-
 export default function GetVidefloPage() {
   return (
     <>
@@ -217,8 +205,6 @@ export default function GetVidefloPage() {
                 <AppStoreBadge />
                 <GooglePlayComingSoon />
               </div>
-
-              <SubscriptionNote className="mt-6 max-w-md" />
             </div>
 
             <ul className="mx-auto grid w-full max-w-[34rem] grid-cols-2 gap-4 sm:gap-6 lg:w-[34rem]">
@@ -262,8 +248,7 @@ export default function GetVidefloPage() {
         with CC0 / public-domain tile photos and no identifiable people (see
         Videflo-Marketing/stock/CREDITS.md). The steps describe only what any
         member can do or see; ordering and Finalize Tape stay unmentioned
-        because they belong to the Tape's owner. The subscription line matches
-        the Help Center ("Does a member need their own subscription?").
+        because they belong to the Tape's owner.
       */}
       <section
         aria-labelledby="shared-tapes-heading"
@@ -358,11 +343,6 @@ export default function GetVidefloPage() {
                   </li>
                 ))}
               </ol>
-
-              <p className="text-ink-soft border-gold/60 mt-8 border-l-2 pl-4 text-sm leading-relaxed">
-                Each person who adds recordings needs their own active Videflo
-                subscription.
-              </p>
             </div>
           </div>
         </Container>
@@ -385,7 +365,6 @@ export default function GetVidefloPage() {
             </CampaignAppStoreLink>
             <GooglePlayComingSoon />
           </div>
-          <SubscriptionNote className="mx-auto mt-6 max-w-md" />
         </Container>
       </section>
     </>
