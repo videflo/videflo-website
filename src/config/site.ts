@@ -15,7 +15,7 @@ export const site = {
   name: "Videflo",
   /** Canonical origin, no trailing slash. Used for metadata, sitemap, robots. */
   url: "https://videflo.com",
-  tagline: "Capture Today. Cherish Forever.",
+  tagline: "Your Life. One Tape.",
   brandPhrase: "Life in Tapes.",
   description:
     "Create continuous Tapes from life’s moments and revisit the memories that matter most.",
@@ -36,7 +36,7 @@ export const ogImage = {
   url: "/opengraph-image",
   width: 1200,
   height: 630,
-  alt: "Videflo | Capture Today. Cherish Forever.",
+  alt: "Videflo | Your Life. One Tape.",
 } as const;
 
 /** ------------------------------------------------------------------------

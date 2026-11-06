@@ -1,80 +1,47 @@
-import Image from "next/image";
-import { StoreBadges } from "@/components/ui/StoreBadges";
 import { Container } from "@/components/ui/Container";
-import { Eyebrow } from "@/components/ui/Eyebrow";
-import { Reveal } from "@/components/ui/Reveal";
+import { StoreBadges } from "@/components/ui/StoreBadges";
+import { SubscriptionRequired } from "@/components/ui/SubscriptionRequired";
+import { appScreens } from "@/components/visuals/appScreens";
+import { DeviceFrame } from "@/components/visuals/DeviceFrame";
+import { TapeRibbon } from "@/components/visuals/TapeRibbon";
 
 export function Hero() {
   return (
-    // The header floats over this section, hence the extra top padding.
-    <section className="bg-paper relative overflow-hidden pt-16 pb-16 sm:pt-24 sm:pb-24 lg:pt-28">
-      {/* Warm light falling from the top of the page. */}
+    <section className="bg-paper relative isolate overflow-hidden pt-8 sm:pt-14 lg:pt-16">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 -top-40 h-96 bg-[radial-gradient(50%_60%_at_50%_50%,rgba(230,184,92,0.16),transparent_72%)]"
+        className="pointer-events-none absolute -top-40 -right-40 -z-20 size-[44rem] rounded-full bg-[radial-gradient(closest-side,rgba(248,185,95,0.42),transparent)]"
+      />
+      <TapeRibbon
+        id="hero-ribbon"
+        className="top-[62%] left-1/2 -z-10 h-72 w-[190%] -translate-x-1/2 sm:h-96 lg:top-[34%] lg:left-[64%] lg:w-[60%] lg:translate-x-0"
       />
 
       <Container>
-        <div className="relative max-w-3xl">
-          <Reveal>
-            <Eyebrow>Made for the moments that matter</Eyebrow>
-          </Reveal>
-
-          <Reveal delay={60}>
-            <h1 className="font-display text-display-xl text-ink mt-6 font-bold">
-              Capture Today.
+        <div className="grid items-end gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,27rem)] lg:gap-16">
+          <div className="max-w-2xl lg:pb-28">
+            <h1 className="font-display text-display-xl text-ink font-bold">
+              Your Life.
               <br />
-              Cherish Forever.
+              <span className="text-coral">One Tape.</span>
             </h1>
-          </Reveal>
-
-          <Reveal delay={120}>
-            <p className="text-lead text-ink-muted mt-7 max-w-2xl">
-              Turn life&rsquo;s moments into continuous Tapes you can revisit
-              for years to come.
+            <p className="text-lead text-ink-soft mt-6 max-w-xl">
+              Capture birthdays, vacations, everyday moments, and everything in
+              between in one continuous Tape.
             </p>
-          </Reveal>
-
-          <Reveal delay={180}>
             {/* The page's one App Store badge (Apple: one per layout). */}
-            <StoreBadges className="mt-9" />
-          </Reveal>
-        </div>
-      </Container>
+            <StoreBadges className="mt-8" />
+            <SubscriptionRequired className="mt-4" />
+          </div>
 
-      <Container className="mt-14 sm:mt-20">
-        <Reveal delay={120}>
-          <figure className="relative">
-            <div className="bg-shell shadow-lift ring-line relative aspect-[4/3] w-full overflow-hidden rounded-3xl ring-1 sm:aspect-[3/2] lg:aspect-[16/9]">
-              <Image
-                src="/images/onboarding/event-memory.jpg"
-                alt="A family sitting together on a blanket on the sand at dusk, looking out at the ocean."
-                fill
-                priority
-                sizes="(min-width: 1280px) 1152px, (min-width: 640px) 92vw, 100vw"
-                // The family sits low in the frame; the wide crops trim sky,
-                // never sand and people.
-                className="object-cover object-[50%_78%]"
-              />
-              {/* Camcorder timestamp, the same treatment the app uses. */}
-              <div
-                aria-hidden="true"
-                className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/55 via-black/18 to-transparent"
-              />
-              <figcaption className="absolute bottom-5 left-5 sm:bottom-7 sm:left-8">
-                <span className="text-paper/80 block text-[0.625rem] font-semibold tracking-[0.22em] uppercase">
-                  Tape
-                </span>
-                <span className="font-display text-paper mt-1 block text-lg font-semibold sm:text-xl">
-                  Summer Vacation
-                </span>
-                <span className="text-paper/85 mt-0.5 block text-xs tabular-nums">
-                  Jul 09, 2026 · 7:48 PM
-                </span>
-              </figcaption>
-            </div>
-          </figure>
-        </Reveal>
+          <div className="mx-auto h-[27rem] w-full max-w-[20rem] overflow-hidden sm:h-[34rem] sm:max-w-[24rem] lg:h-[40rem] lg:max-w-none">
+            <DeviceFrame
+              screen={appScreens.recording}
+              sizes="(min-width: 1024px) 432px, (min-width: 640px) 384px, 320px"
+              priority
+            />
+          </div>
+        </div>
       </Container>
     </section>
   );

@@ -3,18 +3,24 @@ import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { buttonStyles } from "@/components/ui/buttonStyles";
 import { CampaignAppStoreLink } from "@/components/ui/CampaignAppStoreLink";
+import { SubscriptionRequired } from "@/components/ui/SubscriptionRequired";
+import { appScreens } from "@/components/visuals/appScreens";
+import { DeviceFrame } from "@/components/visuals/DeviceFrame";
+import { TapeRibbon } from "@/components/visuals/TapeRibbon";
 import { appStore, site } from "@/config/site";
 import { pageMetadata } from "@/lib/metadata";
 import { cn } from "@/lib/cn";
 
 /**
  * /get — the landing page for Videflo's first paid campaign (Meta Launch 01,
- * approved by the owner 2026-11-03).
+ * approved by the owner 2026-11-03), restyled to match the "Bright Gallery Nov
+ * 2026" App Store screenshots.
  *
  * A real page, not a redirect: it explains Videflo, shows the real app, and
- * leaves the decision to the visitor. It mentions neither the subscription nor
- * its price (owner decision, 2026-11-04). Nothing here navigates on its own: no
- * timers, no pop-ups, no scripts.
+ * leaves the decision to the visitor. It says a subscription is required beside
+ * each download call to action, without the price (owner decision, 2026-11-05).
+ * The App Store listing and the paywall state the price before any charge.
+ * Nothing here navigates on its own: no timers, no pop-ups, no scripts.
  *
  * It has no top navigation: `SiteHeader` renders nothing on this path, and the
  * hero carries the branding.
@@ -52,63 +58,24 @@ export const metadata: Metadata = {
   robots: { index: false, follow: true },
 };
 
-const screens = [
+const moments = [
   {
-    src: "/images/get/recording-screen.jpg",
-    alt: "Videflo's recording screen on iPhone, filming a girl blowing out birthday candles in a Tape named Mayas Birthday.",
-    title: "Record",
-    caption: "Every moment of the event goes into the same Tape.",
+    title: "Keep adding memories.",
+    body: "Come back anytime and continue the same Tape.",
+    screen: appScreens.homeContinue,
+    panel: "bg-peach",
   },
   {
-    src: "/images/get/playback-screen.jpg",
-    alt: "Videflo's player on iPhone, playing the Mayas Birthday Tape as one continuous video with a Continue Recording button.",
-    title: "Relive",
-    caption: "Play it back as one continuous story, and keep adding to it.",
-  },
-] as const;
-
-const iconProps = {
-  "aria-hidden": true,
-  viewBox: "0 0 24 24",
-  className: "size-5",
-  fill: "none",
-  stroke: "currentColor",
-  strokeWidth: 1.8,
-  strokeLinecap: "round",
-  strokeLinejoin: "round",
-} as const;
-
-const sharedSteps = [
-  {
-    title: "Create a Tape",
-    body: "Start recording a birthday, vacation, wedding, or any experience.",
-    icon: (
-      <svg {...iconProps}>
-        <rect x="3" y="6" width="13" height="12" rx="2.5" />
-        <path d="m16 10.5 5-3v9l-5-3" />
-      </svg>
-    ),
+    title: "Relive every moment.",
+    body: "Watch it all back as one continuous Tape.",
+    screen: appScreens.playback,
+    panel: "bg-sky",
   },
   {
-    title: "Invite Family & Friends",
-    body: "Invite others to contribute their recordings to the same Tape.",
-    icon: (
-      <svg {...iconProps}>
-        <circle cx="9" cy="8.5" r="3.2" />
-        <path d="M3.5 19c.6-3.2 2.8-5 5.5-5s4.9 1.8 5.5 5" />
-        <path d="M18 8v6M15 11h6" />
-      </svg>
-    ),
-  },
-  {
-    title: "Relive Together",
-    body: "Watch the recordings come together as one continuous memory.",
-    icon: (
-      <svg {...iconProps}>
-        <circle cx="12" cy="12" r="9" />
-        <path d="m10 8.5 5 3.5-5 3.5z" fill="currentColor" stroke="none" />
-      </svg>
-    ),
+    title: "Make memories together.",
+    body: "Family and friends add to the same Tape. Each person who adds recordings needs their own subscription.",
+    screen: appScreens.sharedTapes,
+    panel: "bg-card ring-line ring-1",
   },
 ] as const;
 
@@ -158,204 +125,106 @@ function GooglePlayComingSoon({ className }: { className?: string }) {
 export default function GetVidefloPage() {
   return (
     <>
-      <section className="bg-paper relative overflow-hidden pt-7 pb-14 sm:pt-14 sm:pb-20 lg:pt-20">
+      <section className="bg-paper relative isolate overflow-hidden pt-6 sm:pt-12 lg:pt-16">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 -top-40 h-96 bg-[radial-gradient(50%_60%_at_50%_50%,rgba(230,184,92,0.16),transparent_72%)]"
+          className="pointer-events-none absolute -top-40 -right-40 -z-20 size-[40rem] rounded-full bg-[radial-gradient(closest-side,rgba(248,185,95,0.4),transparent)]"
+        />
+        <TapeRibbon
+          id="get-ribbon"
+          className="top-[66%] left-1/2 -z-10 h-64 w-[200%] -translate-x-1/2 lg:top-[34%] lg:left-[66%] lg:h-96 lg:w-[58%] lg:translate-x-0"
         />
 
-        <Container className="relative">
-          <div className="grid items-center gap-12 lg:grid-cols-[1fr_auto] lg:gap-16">
-            <div className="max-w-xl">
+        <Container>
+          <div className="grid items-end gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,25rem)] lg:gap-16">
+            <div className="max-w-xl lg:pb-24">
               <div className="flex items-center gap-3">
                 <Image
                   src="/brand/videflo-app-icon.png"
                   alt=""
-                  width={56}
-                  height={56}
+                  width={44}
+                  height={44}
                   priority
-                  className="shadow-soft size-14 rounded-[1.1rem]"
+                  className="shadow-soft size-11 rounded-[0.8rem]"
                 />
-                <div>
-                  <p className="text-ink font-sans text-xl leading-none font-semibold tracking-[-0.01em]">
-                    {site.name}
-                  </p>
-                  <p className="text-ink-faint mt-1.5 text-[0.625rem] font-semibold tracking-[0.22em] uppercase">
-                    Life in Tapes
-                  </p>
-                </div>
+                <p className="text-ink font-sans text-lg leading-none font-semibold tracking-[-0.01em]">
+                  {site.name}
+                </p>
               </div>
 
-              <h1 className="font-display text-display-xl text-ink mt-7 font-bold sm:mt-10">
-                Your memories.
+              <h1 className="font-display text-display-xl text-ink mt-5 font-bold sm:mt-8">
+                Your Life.
                 <br />
-                One Tape.
+                <span className="text-coral">One Tape.</span>
               </h1>
 
-              <p className="text-lead text-ink-muted mt-6">
+              <p className="text-lead text-ink-soft mt-4 text-balance sm:mt-6">
                 Capture birthdays, vacations, and everyday moments in one
-                continuous Tape instead of scattered video clips.
+                continuous Tape.
               </p>
 
-              <p className="font-display text-ink-soft border-gold/60 mt-5 border-l-2 pl-4 text-lg font-medium sm:text-xl">
-                Don&rsquo;t just capture moments. Keep the whole memory
-                together.
+              <p className="text-ink-muted mt-2 font-medium text-balance sm:mt-3">
+                No editing. Private unless you share. Keep adding memories.
               </p>
 
-              <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-6">
+              <div className="mt-5 flex flex-col items-start gap-3 sm:mt-7">
                 <AppStoreBadge />
+                <SubscriptionRequired className="max-w-md" />
                 <GooglePlayComingSoon />
               </div>
             </div>
 
-            <ul className="mx-auto grid w-full max-w-[34rem] grid-cols-2 gap-4 sm:gap-6 lg:w-[34rem]">
-              {screens.map((screen, i) => (
-                <li key={screen.src} className={i === 1 ? "mt-10" : ""}>
-                  <figure>
-                    <div className="bg-ink shadow-lift rounded-[2rem] p-[0.45rem] ring-1 ring-white/12 sm:rounded-[2.4rem] sm:p-2">
-                      <div className="relative aspect-[860/1737] overflow-hidden rounded-[1.6rem] bg-black sm:rounded-[1.9rem]">
-                        <Image
-                          src={screen.src}
-                          alt={screen.alt}
-                          fill
-                          sizes="(min-width: 1024px) 260px, 45vw"
-                          quality={88}
-                          priority={i === 0}
-                          className="object-cover"
-                        />
-                      </div>
-                    </div>
-                    <figcaption className="mt-4">
-                      <span className="text-ink block text-sm font-semibold">
-                        {screen.title}
-                      </span>
-                      <span className="text-ink-muted mt-1 block text-sm">
-                        {screen.caption}
-                      </span>
-                    </figcaption>
-                  </figure>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </Container>
-      </section>
-
-      {/*
-        Shared Tapes showcase (owner-approved copy, 2026-11-03).
-
-        The phone shows Videflo's real Shared filter on Your Tapes, the same
-        capture published as App Store screenshot #4: genuine app interface,
-        with CC0 / public-domain tile photos and no identifiable people (see
-        Videflo-Marketing/stock/CREDITS.md). The steps describe only what any
-        member can do or see; ordering and Finalize Tape stay unmentioned
-        because they belong to the Tape's owner.
-      */}
-      <section
-        aria-labelledby="shared-tapes-heading"
-        className="bg-paper border-line relative overflow-hidden border-t py-16 sm:py-24"
-      >
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 top-0 h-80 bg-[radial-gradient(45%_55%_at_50%_0%,rgba(230,184,92,0.14),transparent_72%)]"
-        />
-        <Container className="relative">
-          <header className="mx-auto max-w-2xl text-center">
-            <p className="text-ink-faint flex items-center justify-center gap-2.5 text-[0.6875rem] font-semibold tracking-[0.22em] uppercase">
-              <span
-                aria-hidden="true"
-                className="bg-gold size-2 rounded-full"
+            <div className="mx-auto h-[24rem] w-full max-w-[19rem] overflow-hidden sm:h-[32rem] sm:max-w-[23rem] lg:h-[38rem] lg:max-w-none">
+              <DeviceFrame
+                screen={appScreens.recording}
+                sizes="(min-width: 1024px) 400px, (min-width: 640px) 368px, 304px"
+                priority
               />
-              Shared Tapes
-            </p>
-            <h2
-              id="shared-tapes-heading"
-              className="font-display text-ink mt-5 text-4xl font-bold tracking-[-0.025em] sm:text-5xl"
-            >
-              Better memories, together.
-            </h2>
-            <p className="text-ink-soft mt-5 text-lg font-medium sm:text-xl">
-              One event. Different perspectives. One continuous Tape.
-            </p>
-          </header>
-
-          <div className="mt-14 grid items-center gap-12 sm:mt-20 lg:grid-cols-[auto_1fr] lg:gap-20">
-            <figure className="order-2 mx-auto w-full max-w-[17rem] sm:max-w-[19rem] lg:order-1">
-              <div className="relative">
-                <div
-                  aria-hidden="true"
-                  className="absolute -inset-8 rounded-[999px] bg-[radial-gradient(60%_50%_at_50%_45%,rgba(230,184,92,0.22),transparent_70%)] blur-xl"
-                />
-                <div className="bg-ink shadow-lift relative rounded-[2.6rem] p-2 ring-1 ring-white/12">
-                  <div className="relative aspect-[860/1737] overflow-hidden rounded-[2.1rem] bg-black">
-                    <Image
-                      src="/images/get/shared-tapes-screen.jpg"
-                      alt="Videflo's Your Tapes screen with the Shared filter on, showing nine Shared Tapes such as Birthday Party by Mike and Family Reunion by David."
-                      fill
-                      sizes="(min-width: 640px) 304px, 272px"
-                      quality={88}
-                      className="object-cover"
-                    />
-                  </div>
-                </div>
-              </div>
-              <figcaption className="text-ink-muted mt-5 text-center text-sm">
-                Shared Tapes, gathered in one place in the app.
-              </figcaption>
-            </figure>
-
-            <div className="order-1 max-w-xl lg:order-2">
-              <h3 className="font-display text-ink text-2xl font-semibold tracking-[-0.015em] sm:text-3xl">
-                Everyone remembers the moment differently.
-              </h3>
-              <p className="text-ink-muted mt-5 text-lg leading-relaxed">
-                Mom captures the birthday candles. Dad records the laughter.
-                Grandma catches the moments everyone else missed.
-              </p>
-              <p className="text-ink-muted mt-4 text-lg leading-relaxed">
-                With Videflo Shared Tapes, everyone can contribute their
-                recordings to the same Tape, creating one complete memory to
-                relive together.
-              </p>
-
-              <ol className="mt-10 grid gap-4">
-                {sharedSteps.map((step, i) => (
-                  <li
-                    key={step.title}
-                    className="bg-card ring-line flex gap-4 rounded-2xl p-5 ring-1"
-                  >
-                    <span
-                      aria-hidden="true"
-                      className="bg-gold text-on-gold grid size-10 shrink-0 place-items-center rounded-full"
-                    >
-                      {step.icon}
-                    </span>
-                    <div>
-                      <p className="text-ink font-semibold">
-                        <span className="text-ink-faint mr-2 tabular-nums">
-                          {i + 1}.
-                        </span>
-                        {step.title}
-                      </p>
-                      <p className="text-ink-muted mt-1 text-sm leading-relaxed">
-                        {step.body}
-                      </p>
-                    </div>
-                  </li>
-                ))}
-              </ol>
             </div>
           </div>
         </Container>
       </section>
 
-      <section className="bg-cream border-line border-t py-14 sm:py-20">
-        <Container width="narrow" className="text-center">
-          <p className="font-display text-ink text-2xl font-semibold sm:text-3xl">
-            Videflo. Life in Tapes.
-          </p>
-          <p className="text-ink-muted mx-auto mt-4 max-w-md">{site.tagline}</p>
-          <div className="mt-8 flex flex-col items-center justify-center gap-4">
+      <section
+        aria-labelledby="get-moments-heading"
+        className="bg-shell py-12 sm:py-20"
+      >
+        <Container>
+          <h2
+            id="get-moments-heading"
+            className="font-display text-display-md text-ink max-w-2xl font-bold"
+          >
+            Don&rsquo;t just capture moments. Keep the whole memory together.
+          </h2>
+
+          <ul className="mt-8 grid gap-4 sm:mt-12 md:grid-cols-3 md:gap-5">
+            {moments.map((moment) => (
+              <li
+                key={moment.title}
+                className={cn(
+                  "flex flex-col overflow-hidden rounded-3xl",
+                  moment.panel,
+                )}
+              >
+                <div className="p-6 pb-6">
+                  <h3 className="font-display text-ink text-2xl font-bold">
+                    {moment.title}
+                  </h3>
+                  <p className="text-ink-muted mt-2 leading-relaxed">
+                    {moment.body}
+                  </p>
+                </div>
+                <div className="mt-auto h-64 overflow-hidden px-[16%] lg:h-80">
+                  <DeviceFrame
+                    screen={moment.screen}
+                    sizes="(min-width: 768px) 22vw, 68vw"
+                  />
+                </div>
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-10 flex flex-col items-center gap-4 text-center sm:mt-14">
             <CampaignAppStoreLink
               className={cn(
                 buttonStyles.primary,
@@ -364,6 +233,7 @@ export default function GetVidefloPage() {
             >
               {appStore.downloadLabel}
             </CampaignAppStoreLink>
+            <SubscriptionRequired className="max-w-md" />
             <GooglePlayComingSoon />
           </div>
         </Container>

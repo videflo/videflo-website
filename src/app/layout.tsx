@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Fraunces, Inter } from "next/font/google";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SkipToContent } from "@/components/layout/SkipToContent";
@@ -20,6 +20,17 @@ const inter = Inter({
   display: "swap",
   variable: "--font-inter",
   preload: false,
+});
+
+/*
+  The App Store gallery's headline face. Also self-hosted by `next/font`, so no
+  font request leaves the site. Only the axes the headlines use are loaded.
+*/
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  display: "swap",
+  axes: ["SOFT", "opsz"],
+  variable: "--font-fraunces",
 });
 
 /*
@@ -125,14 +136,20 @@ export default function RootLayout({
   */
   if (gate.enabled) {
     return (
-      <html lang="en" className={`${inter.variable} h-full antialiased`}>
+      <html
+        lang="en"
+        className={`${inter.variable} ${fraunces.variable} h-full antialiased`}
+      >
         <body className="bg-ink text-paper min-h-full">{children}</body>
       </html>
     );
   }
 
   return (
-    <html lang="en" className={`${inter.variable} h-full antialiased`}>
+    <html
+      lang="en"
+      className={`${inter.variable} ${fraunces.variable} h-full antialiased`}
+    >
       <body className="bg-paper flex min-h-full flex-col">
         <SkipToContent />
         <SiteHeader />

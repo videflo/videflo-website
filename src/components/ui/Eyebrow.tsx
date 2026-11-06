@@ -15,16 +15,13 @@ export function Eyebrow({
     <p
       className={cn(
         "flex items-center gap-2.5 text-[0.6875rem] font-semibold tracking-[0.22em] uppercase",
-        tone === "dark" ? "text-cream-faint" : "text-ink-faint",
+        tone === "dark" ? "text-cream-faint" : "text-coral",
         className,
       )}
     >
       <span
         aria-hidden="true"
-        className={cn(
-          "h-px w-6",
-          tone === "dark" ? "bg-line-dark" : "bg-line-strong",
-        )}
+        className={cn("h-px w-6", tone === "dark" ? "bg-line-dark" : "bg-gold")}
       />
       {children}
     </p>

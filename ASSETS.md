@@ -139,7 +139,17 @@ the warm CSS still frame built from the Tape's `palette`.
 
 ---
 
-## 3. App interface (placeholder — CSS mockup)
+## App screens (Bright Gallery, Nov 2026)
+
+`public/images/app-screens/` holds real Videflo screens for the homepage and `/get`, exported from the approved App Store sources by `Videflo-Marketing/14_app_store_screenshot_redesign/tools/export_web_screens.py`.
+
+- **Stop lines are privacy lines.** Home stops above the Together row, which shows real @handles. Your Tapes screens stop above the tab bar, where real Tape titles sit behind the glass. Do not re-export them taller.
+- **Composite content.** The recording screens replace a green-monitor camera picture with an AI-generated clip. Tape covers, titles and owner names on Your Tapes are demo content on real interface pixels. The Tape name was corrected to "Maya's Birthday".
+- **People.** All people are AI-generated scenes, not customers. Provenance is recorded in that folder's README.
+
+## 3. App interface (retired CSS mockup)
+
+The homepage no longer uses the CSS mockup described here. It uses the real screens above.
 
 `src/components/visuals/PhoneMockup.tsx` draws an iPhone and Videflo's recording
 screen in CSS, mid-take, following the app's `RecordingView`: the 9:16 picture

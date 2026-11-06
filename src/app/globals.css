@@ -1,63 +1,60 @@
 @import "tailwindcss";
 
 /*
-  Videflo brand theme.
+  Videflo brand theme: the bright identity from the "Bright Gallery Nov 2026"
+  App Store screenshots.
   Everything visual is derived from the tokens below — change a value here and it
   propagates across every page. Do not hard-code hex values in components.
 
-  Source of truth: the iOS app's warm cream album, `VidefloTheme.Colors` in
-  `Videflo/Design/VidefloTheme.swift`. Values are copied, not approximated, so
-  the site and the app read as one product. Where the site needs a value the app
-  does not define (AA-safe caption text), the comment says so.
+  The website is deliberately brighter than the app. The app keeps its own
+  interface (`VidefloTheme.Colors`), and real screens appear on this site
+  unchanged inside a device frame.
 */
 @theme {
   /* ---- Surfaces ------------------------------------------------------ */
-  --color-paper: #f4efe6; /* app `background` — warm ivory, default surface */
-  --color-cream: #faf6ef; /* app `elevated` — on a light shell, up is lighter */
-  --color-card: #fbf8f2; /* app `card` — soft cream, deliberately not white */
-  --color-shell: #efe8dc; /* app `cardRaised` — recessed bands, quiet emphasis */
+  --color-paper: #fff8ef; /* warm cream — default surface */
+  --color-cream: #fffdf9; /* soft white — alternate bands */
+  --color-card: #ffffff; /* white — cards on cream */
+  --color-shell: #fff0e2; /* pale peach — recessed bands, footer */
+  --color-peach: #ffe5d1; /* soft peach — feature panels */
+  --color-sky: #dff1fc; /* soft blue — feature panels */
+  --color-sky-deep: #a9d8f5; /* sky blue — decorative only */
   --color-artwork: #f4f0e5; /* sampled from the app's onboarding artwork */
-  --color-ink: #191714; /* app `textPrimary` — warm near-black */
-  --color-ink-raised: #26241f; /* raised surface on charcoal (phone mockup) */
+  --color-ink: #222222; /* charcoal */
+  --color-ink-raised: #26241f; /* raised surface on charcoal (gate page only) */
 
   /* ---- Text ---------------------------------------------------------- */
-  --color-ink-soft: #38342e; /* secondary headings on light */
-  --color-ink-muted: #6b635a; /* app `textSecondary` — body copy (≈5:1) */
-  /*
-    Captions and meta. The app's `textTertiary` (#877E71) is 3.4:1 and the app
-    never uses it for words; the site sets real sentences at this level, so it
-    keeps a darker value that still clears AA on every cream surface.
-  */
-  --color-ink-faint: #6f675b;
+  --color-ink-soft: #3a332d; /* secondary headings on light */
+  --color-ink-muted: #5f564e; /* body copy: at least 5.5:1 on peach and sky */
+  --color-ink-faint: #665d53; /* captions and meta: at least 4.5:1 on every tint */
   --color-cream-muted: #cdc6b8; /* body copy on charcoal (gate page only) */
   --color-cream-faint: #a29a88; /* meta on charcoal (gate page only) */
 
   /* ---- Accents ------------------------------------------------------- */
   /*
-    The one Videflo gold, used the way the app uses it: on cream it is a *fill*
-    carrying `on-gold` ink (the primary button, a dot, the active indicator) or
-    the wordmark — never thin text, which measures 1.6:1. Readable words on
-    cream are ink.
+    Golden orange is a *fill* carrying `on-gold` ink (the primary button, a dot),
+    or decoration. It measures under 3:1 on cream, so never use it for words.
+    Coral `#ff7865` has the same limit: decoration only. Readable coral words use
+    `coral`, the same darker value as the App Store headlines (3.8:1 or better on
+    these grounds, so large text only).
   */
-  --color-gold: #e6b85c; /* app `accent` */
-  --color-gold-bright: #eec06a; /* app `accentGradient` start */
-  --color-on-gold: #201a0e; /* app `onAccent` — the one ink that sits on gold */
+  --color-gold: #f4a340;
+  --color-gold-bright: #f8b95f;
+  --color-on-gold: #2a1a05;
+  --color-coral: #c94430;
+  --color-coral-bright: #ff7865;
   /*
-    The wordmark's "flo" on light surfaces, and large *decorative* glyphs — the
-    app's own `accentDeep`, the dark end of its gold gradient.
-
-    This is a logotype, which WCAG 1.4.3 explicitly exempts from contrast
-    requirements, and nothing depends on reading it: the link's accessible name is
-    "Videflo — home". That exemption is what lets the mark stay actually gold.
+    The wordmark's "flo" on light surfaces: the logo's own gold, unchanged. WCAG
+    1.4.3 exempts logotypes, and the link's accessible name is "Videflo — home".
     Never use it for words or controls.
   */
   --color-gold-mark: #c9974a;
   --color-rec: #e5484d; /* app `recording` */
   --color-destructive: #c4353a; /* app `destructive` */
 
-  /* ---- Lines (app `hairline` / `hairlineStrong`: ink at 8% / 14%) ---- */
-  --color-line: rgb(25 23 20 / 0.08);
-  --color-line-strong: rgb(25 23 20 / 0.14);
+  /* ---- Lines: charcoal at 8% / 14% ------------------------------------ */
+  --color-line: rgb(34 34 34 / 0.08);
+  --color-line-strong: rgb(34 34 34 / 0.14);
   --color-line-dark: #35322c; /* hairline on charcoal (gate page only) */
 
   /* ---- Radii (app `VidefloTheme.Radius`) ----------------------------- */
@@ -67,20 +64,18 @@
 
   /* ---- Type ---------------------------------------------------------- */
   /*
-    The app sets every word in SF (the system font, default design — not
-    rounded, not serif). Apple devices get SF here too; elsewhere Inter stands
-    in. Display and body share the face, as in the app, and differ by weight.
+    Headlines use Fraunces, the App Store gallery's face, self-hosted by
+    `next/font`. Body copy uses the system font first (SF on Apple devices, as in
+    the app), with Inter elsewhere.
   */
-  --font-display:
-    -apple-system, BlinkMacSystemFont, var(--font-inter), "Segoe UI", Roboto,
-    Helvetica, Arial, sans-serif;
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
   --font-sans:
     -apple-system, BlinkMacSystemFont, var(--font-inter), "Segoe UI", Roboto,
     Helvetica, Arial, sans-serif;
 
   /* Fluid display scale. Lower bounds are tuned for a 320px viewport. */
-  --text-display-xl: clamp(2.375rem, 7.2vw, 5rem);
-  --text-display-xl--line-height: 1.04;
+  --text-display-xl: clamp(3.125rem, 7.4vw, 5.75rem);
+  --text-display-xl--line-height: 1.02;
   --text-display-xl--letter-spacing: -0.022em;
 
   --text-display-lg: clamp(2rem, 5.2vw, 3.5rem);
@@ -100,9 +95,9 @@
 
   /* ---- Shadows: the app's one card shadow, warm ink, faint ----------- */
   --shadow-soft:
-    0 1px 2px rgb(42 33 24 / 0.05), 0 12px 28px -14px rgb(42 33 24 / 0.16);
+    0 1px 2px rgb(120 72 40 / 0.06), 0 12px 28px -14px rgb(120 72 40 / 0.2);
   --shadow-lift:
-    0 2px 6px rgb(42 33 24 / 0.06), 0 30px 60px -28px rgb(42 33 24 / 0.28);
+    0 2px 6px rgb(120 72 40 / 0.08), 0 34px 64px -28px rgb(120 72 40 / 0.42);
 }
 
 @layer base {
@@ -113,8 +108,7 @@
   }
 
   body {
-    /* The app's full-screen `backgroundGradient` is #F7F3EB → #F1EBE0; sections
-       paint their own tone over it, so this is only the page's resting colour. */
+    /* Sections paint their own tone over this page-level resting colour. */
     background-color: var(--color-paper);
     color: var(--color-ink);
     font-family: var(--font-sans);
@@ -143,6 +137,12 @@
   h2,
   h3 {
     text-wrap: balance;
+  }
+
+  /* The soft, warm cut of Fraunces used by the App Store headlines. */
+  .font-display {
+    font-variation-settings: "SOFT" 100;
+    font-optical-sizing: auto;
   }
 
   /* Long emails / URLs in legal + support copy must never widen the page. */

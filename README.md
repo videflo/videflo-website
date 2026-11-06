@@ -3,7 +3,7 @@
 The public marketing site for **Videflo** — an iPhone app that turns life's
 moments into continuous _Tapes_ you can revisit for years.
 
-> **Capture Today. Cherish Forever.** · Life in Tapes.
+> **Your Life. One Tape.** · Life in Tapes.
 
 Four marketing pages, a 50-page Help Center, a custom 404, and no moving parts:
 everything is statically generated, every asset is local, and every

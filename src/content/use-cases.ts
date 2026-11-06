@@ -67,9 +67,9 @@ export const useCases: readonly UseCase[] = [
     },
   },
   {
-    name: "Christmas 2026",
+    name: "Christmas 2025",
     line: "Morning light, torn paper, the same old songs.",
-    date: "12 · 25 · 2026",
+    date: "12 · 25 · 2025",
     palette: { base: "#2a1e1c", mid: "#6e3a2e", accent: "#c96f4e" },
     image: {
       src: "/images/tapes/christmas-2026.jpg",

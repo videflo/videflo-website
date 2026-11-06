@@ -23,10 +23,10 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 const colors = {
-  paper: "#f4efe6",
-  ink: "#191714",
-  inkMuted: "#6b635a",
-  gold: "#e6b85c",
+  paper: "#fff8ef",
+  ink: "#222222",
+  inkMuted: "#5f564e",
+  gold: "#f4a340",
   goldMark: "#c9974a",
 };
 
@@ -152,8 +152,8 @@ export default async function OpenGraphImage() {
             flexDirection: "column",
           }}
         >
-          <span>Capture Today.</span>
-          <span>Cherish Forever.</span>
+          <span>Your Life.</span>
+          <span>One Tape.</span>
         </div>
 
         <div

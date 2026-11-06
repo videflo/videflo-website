@@ -1,12 +1,14 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/cn";
 
-export type SectionTone = "paper" | "cream" | "shell" | "ink";
+export type SectionTone = "paper" | "cream" | "shell" | "peach" | "sky" | "ink";
 
 const tones: Record<SectionTone, string> = {
   paper: "bg-paper text-ink",
   cream: "bg-cream text-ink",
   shell: "bg-shell text-ink",
+  peach: "bg-peach text-ink",
+  sky: "bg-sky text-ink",
   // `on-dark` flips the focus ring so it stays visible against charcoal.
   ink: "bg-ink text-paper on-dark",
 };

@@ -2,6 +2,7 @@ import Image from "next/image";
 import { AppStoreButton, AppStoreNote } from "@/components/ui/AppStoreButton";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
+import { SubscriptionRequired } from "@/components/ui/SubscriptionRequired";
 import { site } from "@/config/site";
 
 export function FinalCta() {
@@ -52,6 +53,7 @@ export function FinalCta() {
         <Reveal delay={140}>
           <div className="mt-10 flex flex-col items-start gap-4">
             <AppStoreButton size="lg" />
+            <SubscriptionRequired />
             <AppStoreNote />
           </div>
         </Reveal>
@@ -63,7 +65,7 @@ export function FinalCta() {
               aria-hidden="true"
               className="bg-gold h-1.5 w-8 rounded-full"
             />
-            {site.brandPhrase}
+            {site.tagline}
           </p>
         </Reveal>
       </Container>
