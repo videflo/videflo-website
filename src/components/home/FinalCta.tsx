@@ -3,7 +3,6 @@ import { AppStoreButton, AppStoreNote } from "@/components/ui/AppStoreButton";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { SubscriptionRequired } from "@/components/ui/SubscriptionRequired";
-import { site } from "@/config/site";
 
 export function FinalCta() {
   return (
@@ -45,8 +44,7 @@ export function FinalCta() {
 
         <Reveal delay={80}>
           <p className="text-lead text-ink-muted mt-7 max-w-xl">
-            Start a Tape for the thing you&rsquo;d hate to forget. Record it as
-            it happens. Watch it back years from now, all in one piece.
+            Start a Tape for the thing you&rsquo;d hate to forget.
           </p>
         </Reveal>
 
@@ -56,17 +54,6 @@ export function FinalCta() {
             <SubscriptionRequired />
             <AppStoreNote />
           </div>
-        </Reveal>
-
-        <Reveal delay={200}>
-          <p className="font-display text-ink mt-14 flex items-center gap-3 text-2xl font-semibold">
-            {/* Gold on cream is a fill, never thin text, as in the app. */}
-            <span
-              aria-hidden="true"
-              className="bg-gold h-1.5 w-8 rounded-full"
-            />
-            {site.tagline}
-          </p>
         </Reveal>
       </Container>
     </section>

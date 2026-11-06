@@ -8,28 +8,20 @@ import { useCases } from "@/content/use-cases";
 /**
  * Editorial layout, index-matched to `useCases`.
  *
- * One column on phones; paired at `sm`; an asymmetric twelve-column composition
- * at `lg` so the grid never reads as a row of identical cards. Tiles that share
- * an `lg` row share a fixed height (rather than an aspect ratio) so their edges
- * always line up even though their widths differ; the full-width last tile
- * stands alone and keeps an aspect ratio instead. Below `lg` the *cover* holds
- * the aspect ratio, as the app's Tape card holds a 4:3 thumbnail, and the
- * caption sits beneath it at its natural height.
+ * One column on phones; one wide tile over a pair at `sm`; three across at `lg`.
+ * The `lg` row shares a fixed height (rather than an aspect ratio) so the tiles'
+ * edges always line up. Below `lg` the *cover* holds the aspect ratio, as the
+ * app's Tape card holds a 4:3 thumbnail, and the caption sits beneath it at its
+ * natural height.
  */
 type Tile = { span: string; frame: string; cover: string; sizes: string };
 
 const tiles: readonly Tile[] = [
   {
-    span: "sm:col-span-2 lg:col-span-7",
-    frame: "lg:h-[28rem]",
+    span: "sm:col-span-2 lg:col-span-4",
+    frame: "lg:h-[30rem]",
     cover: "aspect-[4/3] sm:aspect-[2/1] lg:aspect-auto",
-    sizes: "(min-width: 1024px) 56vw, 100vw",
-  },
-  {
-    span: "lg:col-span-5",
-    frame: "lg:h-[28rem]",
-    cover: "aspect-[4/3] lg:aspect-auto",
-    sizes: "(min-width: 1024px) 40vw, (min-width: 640px) 46vw, 100vw",
+    sizes: "(min-width: 1024px) 31vw, 100vw",
   },
   {
     span: "lg:col-span-4",
@@ -42,33 +34,6 @@ const tiles: readonly Tile[] = [
     frame: "lg:h-[30rem]",
     cover: "aspect-[4/3] lg:aspect-auto",
     sizes: "(min-width: 1024px) 31vw, (min-width: 640px) 46vw, 100vw",
-  },
-  {
-    span: "lg:col-span-4",
-    frame: "lg:h-[30rem]",
-    cover: "aspect-[4/3] lg:aspect-auto",
-    sizes: "(min-width: 1024px) 31vw, (min-width: 640px) 46vw, 100vw",
-  },
-  {
-    span: "lg:col-span-5",
-    frame: "lg:h-[28rem]",
-    cover: "aspect-[4/3] lg:aspect-auto",
-    sizes: "(min-width: 1024px) 40vw, (min-width: 640px) 46vw, 100vw",
-  },
-  {
-    span: "lg:col-span-7",
-    frame: "lg:h-[28rem]",
-    cover: "aspect-[4/3] lg:aspect-auto",
-    sizes: "(min-width: 1024px) 56vw, (min-width: 640px) 46vw, 100vw",
-  },
-  {
-    // Full width, alone in its row, so nothing needs its edges to line up:
-    // the cover keeps a cinematic 5:2 instead of a fixed height, which at full
-    // width left a 6:1 sliver that showed little more than the faces.
-    span: "sm:col-span-2 lg:col-span-12",
-    frame: "",
-    cover: "aspect-[4/3] sm:aspect-[2/1] lg:aspect-[5/2]",
-    sizes: "100vw",
   },
 ];
 
@@ -78,14 +43,14 @@ export function UseCases() {
       <Container>
         <div className="max-w-2xl">
           <Reveal>
-            <Eyebrow>Tapes worth keeping</Eyebrow>
+            <Eyebrow>Made for real life</Eyebrow>
           </Reveal>
           <Reveal delay={60}>
             <h2
               id="tapes-heading"
               className="font-display text-display-lg text-ink mt-6 font-bold"
             >
-              A Tape for every chapter.
+              Life doesn&rsquo;t happen in highlight reels.
             </h2>
           </Reveal>
           <Reveal delay={120}>

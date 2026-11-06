@@ -26,8 +26,8 @@ export function Hero() {
               <span className="text-coral">One Tape.</span>
             </h1>
             <p className="text-lead text-ink-soft mt-6 max-w-xl">
-              Capture birthdays, vacations, everyday moments, and everything in
-              between in one continuous Tape.
+              Capture birthdays, vacations, and everyday moments in one
+              continuous Tape.
             </p>
             {/* The page's one App Store badge (Apple: one per layout). */}
             <StoreBadges className="mt-8" />

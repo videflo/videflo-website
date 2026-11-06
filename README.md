@@ -126,8 +126,7 @@ src/
     site.ts                 ⭐ EVERY launch-critical value
 
   content/
-    use-cases.ts            The eight example Tapes
-    benefits.ts             The "what Videflo does today" list
+    use-cases.ts            The three example Tapes
     faq.ts                  Support FAQ (also feeds FAQPage structured data)
     legal/privacy.tsx       Privacy Policy sections
     legal/terms.tsx         Terms of Service sections
@@ -461,12 +460,11 @@ Copy that changes often lives in `src/content/` as plain typed data, so you neve
 have to open a component to change words:
 
 - **Example Tapes** — `use-cases.ts`. Keep every name a single _event or chapter_
-  (“Summer Vacation”, “Our First Year”), never a whole life. That distinction is
+  (“Growing Up”, “Family Vacations”), never a whole life. That distinction is
   the product idea.
-- **Benefits** — `benefits.ts`. Everything here must be true of the app _today_
-  (Videflo 1.0: Sign in with Apple, Videflo Cloud, Shared Tapes, Export Tape).
-  No AI, Android, iPad, or web playback — none of those exist, and the site must
-  not imply otherwise.
+- **Trust details** — the `assurances` list in `components/home/Features.tsx`.
+  Everything here must be true of the app _today_. No AI, Android, iPad, or web
+  playback — none of those exist, and the site must not imply otherwise.
 - **FAQ** — `faq.ts`. Answers are plain strings so the same words appear on the
   page and in the FAQPage structured data without drifting apart. This is the
   `/support` FAQ; the Help Center keeps its own in `content/help/faq.ts`.

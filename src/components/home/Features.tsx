@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
@@ -7,20 +8,30 @@ import { subscription } from "@/config/site";
 import { appScreens, type AppScreen } from "@/components/visuals/appScreens";
 import { DeviceFrame } from "@/components/visuals/DeviceFrame";
 
-const tapeFeatures = [
+/**
+ * The homepage's trust details, in one place. Everything here must be true of
+ * the app today. Export is worded for "your Tapes" because only a Shared Tape's
+ * owner may export it.
+ */
+const assurances: readonly {
+  title: string;
+  body: string;
+  link?: { href: string; label: string };
+}[] = [
   {
-    title: "Continuous recording",
-    body: "Record inside Videflo, and every recording joins the same Tape.",
+    title: "Private unless you share",
+    body: "A Tape is yours alone until you invite someone. No feed, no followers, no ads, and no trackers.",
+    link: { href: "/privacy", label: "Read the Privacy Policy" },
   },
   {
-    title: "Continue Recording",
-    body: "One tap takes you back into the Tape, ready to add the next moment.",
+    title: "Your originals stay yours",
+    body: "Videflo Cloud is a protective copy, never a replacement. The files on your phone are never edited, and you can delete a Tape everywhere in one step.",
   },
   {
-    title: "Tape playback",
-    body: "Watch it from beginning to end instead of hunting through separate clips.",
+    title: "Export anytime",
+    body: "Save your Tapes to Photos as one finished video whenever you want to keep them elsewhere.",
   },
-] as const;
+];
 
 const showcases: readonly {
   title: string;
@@ -52,7 +63,8 @@ const showcases: readonly {
 
 export function Features() {
   return (
-    <Section id="features" tone="cream" labelledBy="features-heading">
+    // `why-videflo` is the target of the header and footer "Why Videflo" links.
+    <Section id="why-videflo" tone="cream" labelledBy="features-heading">
       <Container>
         <div className="max-w-2xl">
           <Reveal>
@@ -79,18 +91,9 @@ export function Features() {
               quality={82}
               className="h-auto w-full rounded-2xl"
             />
-            <dl className="mt-7 grid gap-6 sm:mt-9 md:grid-cols-3">
-              {tapeFeatures.map((feature) => (
-                <div key={feature.title}>
-                  <dt className="font-display text-ink text-xl font-bold">
-                    {feature.title}
-                  </dt>
-                  <dd className="text-ink-muted mt-2 leading-relaxed">
-                    {feature.body}
-                  </dd>
-                </div>
-              ))}
-            </dl>
+            <p className="text-ink-muted mt-6 leading-relaxed sm:mt-7">
+              No clips to arrange. Press record, and the Tape grows on its own.
+            </p>
           </div>
         </Reveal>
 
@@ -123,6 +126,53 @@ export function Features() {
             </Reveal>
           ))}
         </ul>
+
+        <Reveal delay={80}>
+          <div id="privacy" className="bg-shell mt-5 rounded-3xl p-6 sm:p-9">
+            <dl className="grid gap-6 md:grid-cols-3">
+              {assurances.map((item) => (
+                <div key={item.title}>
+                  <dt className="font-display text-ink text-xl font-bold">
+                    {item.title}
+                  </dt>
+                  <dd className="text-ink-muted mt-2 leading-relaxed">
+                    {item.body}
+                    {item.link ? (
+                      <>
+                        {" "}
+                        <Link
+                          href={item.link.href}
+                          className="text-ink font-semibold underline decoration-1 underline-offset-4"
+                        >
+                          {item.link.label}
+                        </Link>
+                      </>
+                    ) : null}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+
+            {/*
+              Required caveat: Videflo Cloud is a protective copy, not a
+              guarantee, and a recording made with backup switched off — or
+              interrupted before its upload finished — exists on one phone only.
+              Do not remove or soften this without owner sign-off.
+            */}
+            <p className="text-ink-faint border-line mt-7 border-t pt-6 text-sm leading-relaxed sm:mt-9">
+              One honest note: Videflo Cloud protects a recording once its
+              upload has finished, and only while backup is switched on. Until
+              then a recording exists on your phone alone. Keep a device backup
+              too, and export the Tapes you couldn&rsquo;t replace.{" "}
+              <Link
+                href="/support#storage"
+                className="text-ink font-semibold underline decoration-1 underline-offset-4"
+              >
+                How Videflo keeps your Tapes safe
+              </Link>
+            </p>
+          </div>
+        </Reveal>
       </Container>
     </Section>
   );

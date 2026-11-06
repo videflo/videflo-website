@@ -24,7 +24,7 @@ const steps: readonly {
     panel: "bg-peach",
   },
   {
-    title: "Relive the whole story.",
+    title: "Relive the story.",
     body: "Press play and every recording plays through as one continuous memory.",
     screen: appScreens.playback,
     panel: "bg-sky",

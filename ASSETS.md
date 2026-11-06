@@ -34,7 +34,7 @@ one photographic identity. Filenames follow the app's asset names.
 | File                                    | Size      | App asset                    | Used by                                                   |
 | --------------------------------------- | --------- | ---------------------------- | --------------------------------------------------------- |
 | `images/onboarding/event-memory.jpg`    | 1536×1024 | `onboarding_event_memory`    | Homepage hero; source of the phone mockup's preview       |
-| `images/onboarding/scattered-clips.jpg` | 1536×1024 | `onboarding_scattered_clips` | “Life doesn’t happen in highlight reels”                  |
+| `images/onboarding/scattered-clips.jpg` | 1536×1024 | `onboarding_scattered_clips` | Not on the homepage since the Nov 2026 cleanup            |
 | `images/onboarding/tape-event.jpg`      | 1536×1024 | `onboarding_tape_event`      | Closing figure of the “How it works” section              |
 | `images/onboarding/reliving-memory.jpg` | 1536×1024 | `onboarding_reliving_memory` | Top of the closing download section, fading into the page |
 
@@ -70,7 +70,8 @@ Recommended for replacements:
 
 ## 2. Tape tiles (generated photography, in place)
 
-The eight example Tapes in the "A Tape for every chapter" section each show a
+Eight example Tapes were generated; the "Made for real life" section now shows
+three (`growing-up`, `summer-vacation`, `grandmas-stories-v2`). Each shows a
 photograph, drawn as the app draws a Tape card (`TapeCard.swift`): the photo on
 top with a sprocket band along its edge, the Tape's details in ink beneath.
 

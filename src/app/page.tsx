@@ -1,10 +1,7 @@
-import { Benefits } from "@/components/home/Benefits";
 import { FinalCta } from "@/components/home/FinalCta";
 import { Features } from "@/components/home/Features";
 import { Hero } from "@/components/home/Hero";
 import { HowItWorks } from "@/components/home/HowItWorks";
-import { PrivacyPromise } from "@/components/home/PrivacyPromise";
-import { TheIdea } from "@/components/home/TheIdea";
 import { UseCases } from "@/components/home/UseCases";
 import { appStore, googlePlay, site } from "@/config/site";
 
@@ -70,10 +67,7 @@ export default function HomePage() {
       <Hero />
       <HowItWorks />
       <Features />
-      <TheIdea />
       <UseCases />
-      <Benefits />
-      <PrivacyPromise />
       <FinalCta />
     </>
   );
