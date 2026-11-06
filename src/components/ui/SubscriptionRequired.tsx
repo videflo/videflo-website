@@ -6,7 +6,7 @@ export function SubscriptionRequired({ className }: { className?: string }) {
     <p
       data-subscription-disclosure
       className={cn(
-        "text-ink-soft text-[0.9375rem] leading-snug font-medium text-balance",
+        "text-ink-muted text-sm leading-snug font-normal text-balance",
         className,
       )}
     >
