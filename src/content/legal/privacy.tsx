@@ -10,7 +10,13 @@
  *  `NSPrivacyTracking` false. Every factual claim below describes behaviour
  *  that exists in that build:
  *
- *    - Sign in with Apple is required; identity comes from Apple's signed token.
+ *    - An account is required, created with Sign in with Apple or Sign in with
+ *      Google (Videflo 1.0.1). Apple identity comes from Apple's signed token;
+ *      Google identity comes through Supabase Auth's Google OAuth (scopes
+ *      openid, email, profile). Supabase stores the Google subject, email and
+ *      its verified flag, name, and profile-picture URL; the apps use none of
+ *      the name or picture for the Profile. Same-verified-email identities are
+ *      linked automatically by Supabase Auth; manual linking is off.
  *    - A Profile (display name, username, photo or preset avatar) is required.
  *    - Recordings are made on the phone and, while "Back Up to Videflo Cloud"
  *      is on (the default), copied to Videflo Cloud with their Tape details.
@@ -92,9 +98,12 @@ export const privacySections: readonly LegalSection[] = [
       <>
         <UL>
           <LI>
-            <strong className="text-ink">You sign in with Apple.</strong>{" "}
-            {site.name} requires a {site.name} account, and Sign in with Apple
-            is the only way to create one. There is no {site.name} password.
+            <strong className="text-ink">
+              You sign in with Apple or Google.
+            </strong>{" "}
+            {site.name} requires a {site.name} account. You create one by
+            signing in with Apple or, if you prefer, with Google. There is no{" "}
+            {site.name} password.
           </LI>
           <LI>
             <strong className="text-ink">You subscribe.</strong> {site.name} is
@@ -142,6 +151,39 @@ export const privacySections: readonly LegalSection[] = [
           Apple’s private relay address rather than your real one. {site.name}{" "}
           uses this to identify your account. Your email address is never shown
           to other {site.name} users and cannot be used to search for you.
+        </P>
+        <P>
+          When you sign in with Google, Google confirms who you are to{" "}
+          {site.name} Cloud through our authentication provider, Supabase.
+          Google shares a stable identifier for your Google Account, the email
+          address on your Google Account and whether Google has verified it, and
+          the name and a link to the profile picture on your Google Account.{" "}
+          {site.name} Cloud keeps these with your account’s sign-in record and
+          uses the identifier and email address to identify your account, in the
+          same way as for Apple. {site.name} does not currently use your Google
+          name or picture for your {site.name} Profile, and does not show them
+          to other users.
+        </P>
+        <P>
+          Signing in with Google gives {site.name} only this basic sign-in
+          information. It does not give {site.name} access to your Gmail, Google
+          Drive, Google Photos, contacts, calendar or any other content in your
+          Google Account.
+        </P>
+        <P>
+          <strong className="text-ink">
+            Signing in with Apple and with Google.
+          </strong>{" "}
+          Each {site.name} account has one email address. If you sign in with
+          Google using an email address that already belongs to an existing{" "}
+          {site.name} account and is verified by both providers (for example,
+          because you previously signed in with Apple using that same address),
+          Google is normally added as another way to sign in to that same
+          account, and your Tapes, Profile and subscription stay as they are. If
+          the addresses do not match, including when you chose Hide My Email
+          with Apple, signing in with Google creates a separate, new {site.name}{" "}
+          account. To keep using an existing account, sign in the same way you
+          did before.
         </P>
 
         <H3>Profile information</H3>
@@ -424,8 +466,7 @@ export const privacySections: readonly LegalSection[] = [
           </LI>
           <LI>
             <strong className="text-ink">No {site.name} password.</strong> We
-            never hold a password for you. Sign in with Apple is the only way
-            in.
+            never hold a password for you. You sign in with Apple or Google.
           </LI>
         </UL>
       </>
@@ -522,11 +563,25 @@ export const privacySections: readonly LegalSection[] = [
             and payment information is governed by Apple’s own privacy policy.
           </LI>
           <LI>
+            <strong className="text-ink">Google:</strong> Sign in with Google,
+            when you choose it. Google confirms who you are and shares the basic
+            account information described under{" "}
+            <A href="/privacy#information-we-process">
+              Information {site.name} processes
+            </A>
+            . Google’s handling of your Google Account is governed by{" "}
+            <A href="https://policies.google.com/privacy">
+              Google’s own privacy policy
+            </A>
+            .
+          </LI>
+          <LI>
             <strong className="text-ink">Supabase:</strong> the infrastructure
-            behind {site.name} Cloud: your account, the database that holds your
-            Tape details, Profile, connections and notifications, the storage
-            that holds your recordings and profile photo, and the server code
-            that enforces who may access what.
+            behind {site.name} Cloud: your account and sign-in (including
+            receiving the result of Sign in with Apple and Sign in with Google),
+            the database that holds your Tape details, Profile, connections and
+            notifications, the storage that holds your recordings and profile
+            photo, and the server code that enforces who may access what.
           </LI>
           <LI>
             <strong className="text-ink">RevenueCat:</strong> subscription
@@ -639,12 +694,15 @@ export const privacySections: readonly LegalSection[] = [
             this automatically, and we will tell you before we begin. Deleting
             a Tape removes it from your device and from {site.name} Cloud,
             including from every member’s view of a Shared Tape. When the owner
-            deletes a Shared Tape with Delete for Everyone, it is removed
-            immediately, including
-            recordings other members added and copies on members’ devices inside{" "}
-            {site.name}. On a Shared Tape, the owner can delete any single
-            recording, and a member can delete a recording they added, from{" "}
-            {site.name} Cloud for everyone. On a personal Tape, deleting a
+            deletes a Shared Tape with Delete for Everyone, it is removed from{" "}
+            {site.name} Cloud immediately, including recordings other members
+            added. Copies on members’ devices inside {site.name} are removed the
+            next time each device connects to {site.name} Cloud; on a device
+            that is offline, or that has the Tape open or is recording, this
+            happens as soon as it safely can. Videos already saved to Apple
+            Photos are not affected. On a Shared Tape, the owner can delete any
+            single recording, and a member can delete a recording they added,
+            from {site.name} Cloud for everyone. On a personal Tape, deleting a
             single recording removes it from your device and from {site.name}{" "}
             Cloud. If you are offline, the recording disappears from the Tape
             immediately, and cloud deletion completes when your iPhone
@@ -725,9 +783,9 @@ export const privacySections: readonly LegalSection[] = [
         </P>
         <UL>
           <LI>
-            your account, Profile, profile photo, Friends &amp; Family
-            connections, invitations, notifications and push registrations are
-            deleted;
+            your account (including the Apple or Google sign-in details it
+            holds), Profile, profile photo, Friends &amp; Family connections,
+            invitations, notifications and push registrations are deleted;
           </LI>
           <LI>
             blocks you made, and blocks other people made of you, are deleted;
@@ -758,18 +816,31 @@ export const privacySections: readonly LegalSection[] = [
           </LI>
         </UL>
         <P>
-          When you use <strong className="text-ink">Delete Account</strong>,{" "}
-          {site.name} first asks Apple to revoke {site.name}’s access to
-          your Sign in with Apple account. Once Apple confirms revocation,{" "}
-          {site.name}’s access is revoked. If Apple cannot confirm it,
-          nothing is deleted and the app asks you to try again. Only then does{" "}
-          {site.name} delete your account and data as described above. If you
-          sign in with Apple again later, it starts a new account. You can also
-          check or remove {site.name}{" "}yourself: open the Settings app on your
-          iPhone, tap your name, then tap Sign in with Apple (on some versions
-          of iOS this is inside Sign-In &amp; Security). Apple explains this in{" "}
+          When you use <strong className="text-ink">Delete Account</strong> and
+          your account includes Sign in with Apple, {site.name} first asks Apple
+          to revoke {site.name}’s access to your Sign in with Apple account.
+          Once Apple confirms revocation, {site.name}’s access is revoked. If
+          Apple cannot confirm it, nothing is deleted and the app asks you to
+          try again. Only then does {site.name} delete your account and data as
+          described above. If you sign in with Apple again later, it starts a
+          new account. You can also check or remove {site.name} yourself: open
+          the Settings app on your iPhone, tap your name, then tap Sign in with
+          Apple (on some versions of iOS this is inside Sign-In &amp; Security).
+          Apple explains this in{" "}
           <A href="https://support.apple.com/en-us/102571">
             Manage your apps with Sign in with Apple
+          </A>
+          .
+        </P>
+        <P>
+          If your account uses only Sign in with Google, there is nothing at
+          Apple to revoke, and {site.name} deletes your account and data as
+          described above. If you sign in with Google again later, it starts a
+          new account. Deleting your {site.name} account does not delete your
+          Google Account. You can also check or remove {site.name}’s access
+          yourself in your Google Account, under{" "}
+          <A href="https://myaccount.google.com/connections">
+            Third-party apps &amp; services
           </A>
           .
         </P>

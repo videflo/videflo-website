@@ -4,7 +4,8 @@
  * ============================================================================
  *
  *  Written against the shipping product (Videflo 1.0, build 23): a required
- *  Videflo account (Sign in with Apple), one auto-renewing monthly subscription
+ *  Videflo account (Sign in with Apple, or Sign in with Google from Videflo
+ *  1.0.1), one auto-renewing monthly subscription
  *  that includes Videflo Cloud at a choice of storage capacities, automatic
  *  cloud protection of recordings, Shared Tapes with invited members, Delete
  *  Tape that removes a Tape everywhere, and Delete Account.
@@ -141,12 +142,18 @@ export const termsSections: readonly LegalSection[] = [
     content: (
       <>
         <P>
-          {site.name} requires an account, created and accessed with Sign in
-          with Apple. You may create one account for yourself. You are
-          responsible for everything that happens under your account, for
-          keeping your Apple Account and your device secure, and for telling us
-          promptly if you believe your account has been used without your
-          permission.
+          {site.name} requires an account, created and accessed by signing in
+          with Apple or with Google. You may create one account for yourself.
+          You are responsible for everything that happens under your account,
+          for keeping the Apple Account or Google Account you sign in with, and
+          your device, secure, and for telling us promptly if you believe your
+          account has been used without your permission. To keep using your
+          account, sign in the same way each time: signing in a different way
+          from before can create a separate account by mistake (the{" "}
+          <A href="/privacy#information-we-process">Privacy Policy</A> explains
+          when Apple and Google sign-ins lead to the same account). If that
+          happens, email <Mail address={contact.supportEmail} /> so we can help
+          you return to your original account.
         </P>
         <P>
           Your Profile (your display name, username and photo or avatar) is
@@ -641,7 +648,8 @@ export const termsSections: readonly LegalSection[] = [
       <>
         <P>
           Your subscription belongs to your Apple Account. If you reinstall{" "}
-          {site.name} or set up a new phone, sign in with Apple and, if the
+          {site.name} or set up a new phone, sign in to your {site.name} account
+          the same way as before (with Apple or with Google) and, if the
           subscription screen appears, use{" "}
           <strong className="text-ink">Restore Purchases</strong> to restore an
           eligible active subscription bought with the same Apple Account.
@@ -888,6 +896,11 @@ export const termsSections: readonly LegalSection[] = [
           downloads, sign-in, purchases, restoring purchases and notification
           delivery. Your use of the App Store and your Apple Account is governed
           by Apple’s terms, not ours.
+        </P>
+        <P>
+          If you choose to sign in with Google, Google provides that sign-in.
+          Your use of your Google Account is governed by Google’s terms, not
+          ours.
         </P>
         <P>
           You acknowledge that Apple has no obligation to provide maintenance or
